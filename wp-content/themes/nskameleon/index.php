@@ -1,52 +1,31 @@
 <?php
 /**
  * The main template file
- *
- * This is the most generic template file in a WordPress theme and one
- * of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query,
- * e.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * First NSClick responsive Wordpress theme
+ * 
  */
 
 get_header(); ?>
-
-<div id="main-content" class="main-content">
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-		<?php
-			if ( have_posts() ) :
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
-
-					/*
-					 * Include the post format-specific template for the content. If you want to
-					 * use this in a child theme, then include a file called called content-___.php
-					 * (where ___ is the post format) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-
-				endwhile;
-
-			else :
-				// If no content, include the "No posts found" template.
-				get_template_part( 'content', 'none' );
-
-			endif;
-		?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-	<?php get_sidebar( 'content' ); ?>
-</div><!-- #main-content -->
-
+<div id="main-content">
+	<div class="content">
+		<div class="section group">
+			<div class="col span_12_of_12">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/nskameleon-slider.png" alt="NSkameleon"/>
+				<h1>Bienvenido a NSkameleon</h1>
+				<h2>El primer Tema para Wordpress, visible en todo tipo de dispositivos, creado por NSclick.</h2>
+				<p>Donec ut bibendum nibh. Quisque placerat aliquam bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ultricies nisl et nisi scelerisque, ac pulvinar ante mollis. Nam varius auctor ornare. Maecenas sit amet porta ligula. Praesent ut justo convallis, porta orci eu, suscipit neque. Sed aliquet ipsum a turpis pulvinar sagittis. In eget mauris sapien. Phasellus quis ullamcorper odio, vel congue nulla. Donec interdum, mauris at bibendum vehicula, nibh orci accumsan ante, facilisis tempus sapien dui at mi. Suspendisse sit amet sollicitudin erat.</p>
+			</div>
+		</div>
+		<div class="section group">
+			<div class="col span_6_of_12">
+				<p>Donec ut bibendum nibh. Quisque placerat aliquam bibendum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ultricies nisl et nisi scelerisque, ac pulvinar ante mollis. Nam varius auctor ornare. Maecenas sit amet porta ligula. Praesent ut justo convallis, porta orci eu, suscipit neque. Sed aliquet ipsum a turpis pulvinar sagittis. In eget mauris sapien. Phasellus quis ullamcorper odio, vel congue nulla. Donec interdum, mauris at bibendum vehicula, nibh orci accumsan ante, facilisis tempus sapien dui at mi. Suspendisse sit amet sollicitudin erat.</p>
+			</div>
+			<div class="col span_6_of_12">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/nskameleon-slider.png" alt="NSkameleon"/>
+			</div>
+		</div>
+		<div class="spacer">&nbsp;</div>
+	</div>
+</div>
 <?php
-get_sidebar();
 get_footer();
