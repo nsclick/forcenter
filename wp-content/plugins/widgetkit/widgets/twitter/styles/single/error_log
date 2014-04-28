@@ -1,0 +1,2 @@
+[11-Mar-2014 22:35:21 UTC] PHP Fatal error:  Call to a member function getText() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/twitter/styles/single/template.php on line 3
+[06-Apr-2014 08:13:48 UTC] PHP Fatal error:  Call to a member function getText() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/twitter/styles/single/template.php on line 3

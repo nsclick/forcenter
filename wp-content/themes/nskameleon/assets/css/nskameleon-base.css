@@ -2,19 +2,20 @@
 /* CSS For Base Theme */
 
 body{margin:0;padding:0;font-family:Helvetica, Arial, Helvetica, sans-serif;font-size:12px;color:#444}
-*,#wrapper{margin:0;padding:0;text-decoration:none;border:0;background:#ddd}
+*,#wrapper{margin:0;padding:0;text-decoration:none;border:0}
 /* div for clear floating elements */
 .divclear{clear:both;height:0}
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
-.content{width:990px;margin:0 auto;background:#eee}
+.content{margin:0 auto;background:#eee}
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{padding:10px}
 h1{font-size:36px}
 h2{font-size:28px}
-a{color:#444;font-weight:bold}
+a{color:#444}
 p{padding:10px;line-height:16px}
 ul,ol,li{list-style:none}
+img{max-width:100%}
 /* End General Styles */
 
 /* General Elements */

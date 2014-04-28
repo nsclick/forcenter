@@ -1,0 +1,101 @@
+/* NSkamelon Responsive Wordpress theme by NSclick */
+/* CSS For Base Theme */
+
+body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11px;font-family:'Open Sans','sans-serif'!important}
+*,#wrapper{}
+/* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
+.content{width:980px}
+
+/* General Styles */
+h1, h2, h3, h4, h5, h6{}
+h1{}
+h2{}
+a{}
+p{}
+ul,ol,li{}
+img{}
+/* End General Styles */
+
+/* General Elements */
+.spacer{padding:5px;height:0}
+.hr{background:url(../images/hr-bg.png) center center repeat-x;height:20px;width:100%}
+.box-a{border:1px solid #fff;height:196px;position:relative;display:block}
+.box-b{border:1px solid #fff;height:196px;position:relative;display:block}
+.box-c{border:1px solid #fff;height:57px;position:relative;display:block}
+.box-b:hover,.box-a:hover, .box-c:hover{border:1px solid rgba(40,80,163,1)}
+.box-b img{position:absolute;top:0;left:0;z-index:1}
+.box-b span.title{background:rgba(40,80,163,0.85);display:block;position:absolute;right:0;top:0;padding:10px 20px;color:#fff;z-index:2;font-size:16px}
+.box-b span.link{background:#fff;display:block;position:absolute;right:10px;bottom:10px;padding:5px 10px;color:#2850a3;z-index:2;font-size:12px;font-weight:bold;-webkit-box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3);-moz-box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3);box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3)}
+.box-b span.link2{background:#35a81e;display:block;position:absolute;right:10px;bottom:10px;padding:10px 20px;color:#fff;z-index:2;font-size:14px;border-bottom:1px solid rgba(255,255,255,.5);-webkit-background-clip:padding-box;background-clip:padding-box;-moz-background-clip:padding-box;-ms-background-clip:padding-box}
+.box-c img.bg{position:absolute;top:0;left:0;z-index:1}
+.box-c span.bg{position:absolute;top:0;left:0;height:0;width:43%;border-bottom:57px solid rgba(40,80,163,0.85);border-right:45px solid transparent;z-index:2}
+.box-c .title{color:#fff;font-size:13px;z-index:3;position:absolute;display:table;height:57px;width:196px}
+.box-c .title span{display:table-cell;vertical-align:middle;padding:0 0 0 10px;max-width:10px}
+#sliderhome .slides article p{padding:0}
+/* End General Elements */
+
+/* Header */
+#header{}
+#header .content{background:#d8d6d6}
+#header #toolbar{text-align:right}
+#header #toolbar .toolbar-box{display:inline-block;width:350px}
+#header #toolbar .toolbar-box span{display:block;margin-bottom:10px}
+#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;float:right;display:block;padding:5px 0}
+#header #toolbar .toolbar-box a img{vertical-align:top}
+#header #toolbar .toolbar-box .sel{width:170px;height:20px;overflow:hidden;background:url(../images/select-bg.png) no-repeat right;border: 1px solid #dbe1e4;display:block;float:right;margin-left:5px}
+#header #toolbar .toolbar-box .sel select{background:transparent;width:198px;padding:0px;font-size:11px;line-height:1;border:0;border-radius:0;height:20px;-webkit-appearance:none;font-size:9px}
+#header #toolbar .toolbar-box .sea{display:block;width:100px;border:1px solid #dbe1e4;float:right;margin-left:5px}
+#header #toolbar .toolbar-box .sea input{border:1px solid #3056a4;width:76px;height:18px;background:url(../images/search-bg.png) repeat-x top left}
+#header #toolbar .toolbar-box .sea button{border-left:1px solid #dbe1e4}
+#header #toolbar a.tool{}
+#header #toolbar a.tool:hover{}
+#header #toolbar a.tool i{}
+#header #toolbar a.tool img{}
+#header #logo-container{padding:0}
+#header #logo-container a#logo{}
+#header #logo-container a#logo img{}
+#header #logo-container span#slogan{}
+#header #menu{}
+#header #menu ul#nav{width:100%;display:table;table-layout:fixed}
+#header #menu ul#nav .divclear{display:none}
+#header #menu ul#nav li.nav-link{display:table-cell;width:auto;text-align:center;float:none}
+#header #menu ul#nav li.nav-link a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e}
+#header #menu ul#nav li:first-of-type a{border-left:none}
+#header #menu ul#nav li:last-of-type a{border-right:none}
+#header #menu ul#nav li.nav-link a:hover{color:#2850a3;background:#fff}
+/* End Header */
+
+/* Main Content */
+#main-content{}
+#main-content .content{background:#d8d6d6}
+#main-content img{}
+/* End Main Content */
+
+/* Footer */
+#footer{background:url(../images/footer-bg.png) repeat-y center top #fff}
+#footer .content{background:#aca9a9;border-top:1px solid #616060}
+#footer .submenu{padding:0} 
+#footer .submenu ul.subnav{}
+#footer .submenu ul.subnav.main-nav a{font-weight:bold}
+#footer .submenu ul.subnav li.nav-link{}
+#footer .submenu ul.subnav li.nav-link a{padding:5px 0}
+#footer .submenu ul.subnav li.nav-link:first-of-type a{font-weight:bold}
+#footer .submenu ul.subnav li.nav-link a:hover{background:none}
+#footer .submenu ul.subnav li.nav-link a i{}
+#footer .partners{}
+#footer .partners .partner{text-align:right;margin-bottom:10px}
+#footer .partners .partner a.partner-logo{}
+#footer .partners .partner a.partner-logo img{}
+#footer .partners .partner a.partner-logo span.partner-text{}
+#footer .copyright{padding:0}
+#footer .copyright p{text-align:right;padding:0 0 10px}
+#footer .copyright p a{}
+/* End Footer */
+
+
+/* Forcenter Camouflage */
+
+/* End Forcenter Camouflage */
+
+/* END CSS For Base Theme */
+/* Ricardo Escobar */

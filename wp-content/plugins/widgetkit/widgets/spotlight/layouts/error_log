@@ -1,0 +1,2 @@
+[11-Mar-2014 22:22:50 UTC] PHP Fatal error:  Call to a member function link() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/spotlight/layouts/dashboard.php on line 25
+[03-Apr-2014 12:15:12 UTC] PHP Fatal error:  Call to a member function link() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/spotlight/layouts/dashboard.php on line 25
