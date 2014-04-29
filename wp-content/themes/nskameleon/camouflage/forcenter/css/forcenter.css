@@ -5,6 +5,7 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 *,#wrapper{}
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
 .content{width:980px}
+.content p:first-of-type,.content p:last-of-type{display:none}
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}
@@ -19,18 +20,19 @@ img{}
 /* General Elements */
 .spacer{padding:5px;height:0}
 .hr{background:url(../images/hr-bg.png) center center repeat-x;height:20px;width:100%}
-.box-a{border:1px solid #fff;height:196px;position:relative;display:block}
-.box-b{border:1px solid #fff;height:196px;position:relative;display:block}
-.box-c{border:1px solid #fff;height:57px;position:relative;display:block}
-.box-b:hover,.box-a:hover, .box-c:hover{border:1px solid rgba(40,80,163,1)}
-.box-b img{position:absolute;top:0;left:0;z-index:1}
-.box-b span.title{background:rgba(40,80,163,0.85);display:block;position:absolute;right:0;top:0;padding:10px 20px;color:#fff;z-index:2;font-size:16px}
-.box-b span.link{background:#fff;display:block;position:absolute;right:10px;bottom:10px;padding:5px 10px;color:#2850a3;z-index:2;font-size:12px;font-weight:bold;-webkit-box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3);-moz-box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3);box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3)}
-.box-b span.link2{background:#35a81e;display:block;position:absolute;right:10px;bottom:10px;padding:10px 20px;color:#fff;z-index:2;font-size:14px;border-bottom:1px solid rgba(255,255,255,.5);-webkit-background-clip:padding-box;background-clip:padding-box;-moz-background-clip:padding-box;-ms-background-clip:padding-box}
-.box-c img.bg{position:absolute;top:0;left:0;z-index:1}
-.box-c span.bg{position:absolute;top:0;left:0;height:0;width:43%;border-bottom:57px solid rgba(40,80,163,0.85);border-right:45px solid transparent;z-index:2}
-.box-c .title{color:#fff;font-size:13px;z-index:3;position:absolute;display:table;height:57px;width:196px}
-.box-c .title span{display:table-cell;vertical-align:middle;padding:0 0 0 10px;max-width:10px}
+.box_a{border:1px solid #fff;height:196px;position:relative;display:block}
+.box_a img, .box_c img.bg{height:100%;width:100%}
+.box_b{border:1px solid #fff;height:196px;position:relative;display:block}
+.box_c{border:1px solid #fff;height:57px;position:relative;display:block}
+.box_b:hover,.box_a:hover, .box_c:hover{border:1px solid rgba(40,80,163,1)}
+.box_b img{position:absolute;top:0;left:0;z-index:1;height:100%;width:100%}
+.box_b span.title{background:rgba(40,80,163,0.85);display:block;position:absolute;right:0;top:0;padding:10px 20px;color:#fff;z-index:2;font-size:16px}
+.box_b span.link{background:#fff;display:block;position:absolute;right:10px;bottom:10px;padding:5px 10px;color:#2850a3;z-index:2;font-size:12px;font-weight:bold;-moz-box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3);box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3);-webkit-box-shadow:inset 0px 0px 4px 1px rgba(40,81,161,0.3)}
+.box_b span.link2{background:#35a81e;display:block;position:absolute;right:10px;bottom:10px;padding:10px 20px;color:#fff;z-index:2;font-size:14px;border-bottom:1px solid rgba(255,255,255,.5);-webkit-background-clip:padding-box;background-clip:padding-box;-moz-background-clip:padding-box;-ms-background-clip:padding-box}
+.box_c img.bg{position:absolute;top:0;left:0;z-index:1}
+.box_c span.bg{position:absolute;top:0;left:0;height:0;width:43%;border-bottom:57px solid rgba(40,80,163,0.85);border-right:45px solid transparent;z-index:2}
+.box_c .title{color:#fff;font-size:13px;z-index:3;position:absolute;display:table;height:57px;width:196px}
+.box_c .title span{display:table-cell;vertical-align:middle;padding:0 0 0 10px;max-width:10px}
 #sliderhome .slides article p{padding:0}
 /* End General Elements */
 
