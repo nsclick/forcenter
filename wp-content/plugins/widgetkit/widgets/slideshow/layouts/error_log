@@ -1,9 +1,0 @@
-[11-Mar-2014 22:24:53 UTC] PHP Fatal error:  Call to a member function link() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/dashboard.php on line 28
-[11-Mar-2014 22:30:09 UTC] PHP Fatal error:  Call to a member function xpath() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/item.php on line 20
-[11-Mar-2014 22:30:51 UTC] PHP Fatal error:  Call to a member function render() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/edit.php on line 3
-[22-Mar-2014 01:53:25 UTC] PHP Fatal error:  Call to a member function xpath() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/item.php on line 20
-[22-Mar-2014 02:11:08 UTC] PHP Fatal error:  Call to a member function link() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/dashboard.php on line 28
-[22-Mar-2014 03:52:33 UTC] PHP Fatal error:  Call to a member function render() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/edit.php on line 3
-[02-Apr-2014 09:43:57 UTC] PHP Fatal error:  Call to a member function link() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/dashboard.php on line 28
-[03-Apr-2014 14:46:47 UTC] PHP Fatal error:  Call to a member function xpath() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/item.php on line 20
-[03-Apr-2014 17:18:22 UTC] PHP Fatal error:  Call to a member function render() on a non-object in /home/chevrole/inalco/wp-content/plugins/widgetkit/widgets/slideshow/layouts/edit.php on line 3
