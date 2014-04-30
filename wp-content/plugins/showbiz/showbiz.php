@@ -52,7 +52,7 @@ try{
 		$content = ob_get_contents();
 		ob_clean();
 		ob_end_clean();
-
+		do_shortcode($content);
 		//handle slider output types
 		if(!empty($slider)){
 			$outputType = $slider->getParam("output_type","");

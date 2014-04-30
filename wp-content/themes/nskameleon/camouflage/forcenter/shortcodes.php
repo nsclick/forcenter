@@ -148,3 +148,10 @@ function ns_box_c_shortcode( $atts ) {
 }
 add_shortcode( 'box_c', 'ns_box_c_shortcode' );
 
+//[auto_carrousel img="" title="" price=""]
+function ns_auto_carrousel_shortcode( $atts ) {
+	extract( $atts );
+	return 'holamundo';
+}
+add_shortcode( 'auto_carrousel', 'ns_auto_carrousel_shortcode' );
+
