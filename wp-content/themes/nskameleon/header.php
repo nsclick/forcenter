@@ -42,27 +42,23 @@
 				<div class="content">
 					<div class="spacer">&nbsp;</div><div class="spacer">&nbsp;</div>
 					<div class="section group">
+
+						<?php /*header-left-sidebar*/ ?>
 						<div class="col span_6_of_12">
+							
 							<div id="logo-container">
 								<a href="<?php echo get_site_url(); ?>/" id="logo"> <img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="logo"/> </a>
 							</div>
 						</div>
+												
+						<?php /*header-rigth-sidebar*/ ?>
 						<div class="col span_6_of_12">
-							<div id="toolbar">
-								<div class="toolbar-box">
-									<span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350.png" alt="Forcenter"/></span>
-									<div class="sea">
-										<input type="text" /><button type="submit"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-search.png" alt="Forcenter"/></button>
-									</div>
-									<div class="sel">
-										<select>
-											<option>Tienes seleccionados 0 veh&iacute;culos</option>
-										</select>
-									</div>
-									<a href="#"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter"/> Contacto</a>
-								</div>
-							</div>
+							<?php dynamic_sidebar( 'header-right-sidebar' ); ?> 
 						</div>
+					
+					
+					
+					
 					</div>
 					<div class="spacer">&nbsp;</div><div class="spacer">&nbsp;</div>
 					<div class="section group">

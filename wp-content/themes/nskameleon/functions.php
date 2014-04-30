@@ -37,3 +37,26 @@ function register_nsk_menu() {
 }
 add_action( 'init', 'register_nsk_menu' );
  
+
+if ( ! function_exists( 'header_right_sidebar' ) ) {
+
+// Register Sidebar
+function header_right_sidebar() {
+
+	$args = array(
+		'id'            => 'header-right-sidebar',
+		'name'          => __( 'Header Right Sidebar', 'text_domain' ),
+		'description'   => __( 'Appears in the header section at the right.', 'text_domain' ),
+		'before_title'  => '<h3 class=',
+		'after_title'   => '</h3>',
+		'before_widget' => '<div id=',
+		'after_widget'  => '</div>',
+	);
+	register_sidebar( $args );
+
+}
+
+// Hook into the 'widgets_init' action
+add_action( 'widgets_init', 'header_right_sidebar' );
+
+}

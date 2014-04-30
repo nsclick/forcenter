@@ -31,3 +31,7 @@ add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' );
 /*
  * Loading the shortcodes*/
  require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes.php');
+
+/*
+ * Loading the widgets*/
+ require_once (ACTIVE_CAMOUFLAGE_PATH . '/widgets.php');
