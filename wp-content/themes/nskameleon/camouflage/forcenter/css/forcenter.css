@@ -60,17 +60,19 @@ img{}
 #header #menu{}
 #header #menu ul#nav{width:100%;display:table;table-layout:fixed}
 #header #menu ul#nav .divclear{display:none}
-#header #menu ul#nav li.nav-link{display:table-cell;width:auto;text-align:center;float:none}
-#header #menu ul#nav li.nav-link a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e}
+#header #menu ul#nav li{display:table-cell;width:auto;text-align:center;float:none}
+#header #menu ul#nav li a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e;display:block}
 #header #menu ul#nav li:first-of-type a{border-left:none}
 #header #menu ul#nav li:last-of-type a{border-right:none}
-#header #menu ul#nav li.nav-link a:hover{color:#2850a3;background:#fff}
+#header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
+#header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
 /* End Header */
 
 /* Main Content */
 #main-content{}
 #main-content .content{background:#d8d6d6}
 #main-content img{}
+#main-content .fullwidthbanner-container{width:auto!important}
 /* End Main Content */
 
 /* Footer */
