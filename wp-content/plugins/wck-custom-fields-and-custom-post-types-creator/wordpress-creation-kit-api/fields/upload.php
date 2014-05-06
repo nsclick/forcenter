@@ -43,10 +43,10 @@ $element.= '<a href="#" class="button wck_upload_button" id="upload_'. esc_attr(
 if( is_user_logged_in() )
 	$element.= 'data-uploader_logged_in="true"';
 
-if( $details['multiple_upload'] == 'true' )
+//if( $details['multiple_upload'] == 'true' )
 	$element.= ' data-multiple_upload="true"';
-else	
-	$element.= ' data-multiple_upload="false"';
+//else	
+	//$element.= ' data-multiple_upload="false"';
 	
 if( $context != 'fep' )
 	$element.= ' data-upload_in_backend="true"';
