@@ -111,14 +111,14 @@ function ns_box_b_shortcode( $atts ) {
 		<img src="<?php echo $img ?>" alt="<?php echo $title ?>"/>
 	</a>	
 <?php
-	return ob_get_clean();
+return ob_get_clean();
 }
 add_shortcode( 'box_b', 'ns_box_b_shortcode' );
 
 //[box_b2 link="" link_text="" title="" img=""]
 function ns_box_b2_shortcode( $atts ) {
-	extract( $atts );
-	ob_start();
+extract( $atts );
+ob_start();
 ?> 
 	<a href="<?php echo $link ?>" class="box_b">
 		<span class="title"><?php echo $title ?></span>
@@ -126,14 +126,14 @@ function ns_box_b2_shortcode( $atts ) {
 		<img src="<?php echo $img ?>" alt="<?php echo $title ?>"/>
 	</a>	
 <?php
-	return ob_get_clean();
+return ob_get_clean();
 }
 add_shortcode( 'box_b2', 'ns_box_b2_shortcode' );
 
 //[box_c link="" title="" img=""]
 function ns_box_c_shortcode( $atts ) {
-	extract( $atts );
-	ob_start();
+extract( $atts );
+ob_start();
 ?> 
 	<div class="box_c">
 		<a href="<?php echo $link ?>" class="title">
@@ -144,14 +144,216 @@ function ns_box_c_shortcode( $atts ) {
 		<img class="bg" src="<?php echo $img ?>" alt="<?php echo $title ?>"/>
 	</div>		
 <?php
-	return ob_get_clean();
+return ob_get_clean();
 }
 add_shortcode( 'box_c', 'ns_box_c_shortcode' );
 
-//[auto_carrousel img="" title="" price=""]
-function ns_auto_carrousel_shortcode( $atts ) {
-	extract( $atts );
-	return 'holamundo';
+//[breadcrumbs]
+function ns_breadcrumbs_shortcode( $atts ) {
+ob_start();
+?> 
+	<div id="breadcrumbs">
+		<ul>Est&aacute;s en:
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#"><?php echo get_the_title($ID); ?></a></li>
+		</ul>
+	</div>		
+<?php
+return ob_get_clean();
 }
-add_shortcode( 'auto_carrousel', 'ns_auto_carrousel_shortcode' );
+add_shortcode( 'breadcrumbs', 'ns_breadcrumbs_shortcode' );
 
+//[page_title]
+function ns_page_title_shortcode( $atts ) {
+ob_start();
+?> 
+	<h1 id="page_title"><?php echo get_the_title($ID); ?></h1>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'page_title', 'ns_page_title_shortcode' );
+
+//[showcase]
+function ns_showcase_shortcode( $atts ) {
+ob_start();
+?> 
+	<div class="showcase">
+		<ul class="cate">
+			<li><a href="#">Categor&iacute;a</a></li>
+			<li class="activ"><a href="#">Categor&iacute;a</a></li>
+			<div class="divclear">&nbsp;</div>
+		</ul>
+		<div class="section group cotiza">
+			<div class="col span_6_of_12 pt1">
+				<div class="section group">
+					<div class="col span_4_of_12">
+						<div class="cont"> 
+							<label for="modelo">Modelo</label>
+							<select>
+								<option>Corsa</option>
+							</select>
+						</div>
+					</div>
+					<div class="col span_4_of_12">
+						<div class="cont"> 
+							<label for="version">Versi&oacute;n</label>
+							<select>
+								<option>Corsa</option>
+							</select>
+						</div>
+					</div>
+					<div class="col span_4_of_12">
+						<div class="cont"> 
+							<label for="cotiz">&nbsp;</label>
+							<a href="#" class="btn">Cotizar <i class="icon-chevron-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col span_6_of_12 pt2">
+				<div class="section group">
+					<div class="col span_4_of_12">
+						<div class="cont">
+							<label for="slider">Precio:</label>
+							<div id="slider-range" name="slider"></div>
+						</div>
+					</div>
+					<div class="col span_4_of_12">
+						<div class="cont">
+							<label for="minp">Desde</label>
+							<input type="text" id="minp" name="minp" />
+						</div>
+					</div>
+					<div class="col span_4_of_12">
+						<div class="cont">
+							<label for="slider">Hasta</label>
+							<input type="text" id="maxp" name="maxp"/>
+						</div>
+					</div>
+  				</div>
+			</div>
+		</div>
+		<div class="section group filter">
+			<div class="col span_6_of_12">
+				<p>asdasd</p>
+			</div>
+			<div class="col span_6_of_12">
+				<p>
+					<label for="orden">Ordenar:</label>
+					<select>
+						<option>De menor a mayor precio</option>
+					</select>
+				</p>
+			</div>
+		</div>
+		<ul class="showgrid">
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+						<div class="divclear">&nbsp;</div>
+					</div>				
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" alt="Spark" />
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li>
+			<div class="divclear">&nbsp;</div>
+		</ul>
+	</div>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'showcase', 'ns_showcase_shortcode' );

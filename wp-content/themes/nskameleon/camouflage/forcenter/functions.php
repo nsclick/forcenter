@@ -22,9 +22,14 @@ function nsk_fc_scripts() {
 	wp_enqueue_style( 'nsk-theme-googlefonts', esc_url_raw( 'http://fonts.googleapis.com/css?family=Open+Sans:400,700' ), array(), null );
 	
 	// Scripts
-//	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20140319', true );
+	//	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20140319', true );
 	//
 	//wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?&sensor=false', array(), '3', true);
+	
+	//Slider para showcases: autos nuevos, autos usados, accesorios
+	wp_enqueue_script('jquery-ui-slider');
+	wp_enqueue_script( 'nsk-price-slider-js', get_template_directory_uri() . '/camouflage/forcenter/js/price-slider.js', array( 'jquery' ), null, true );
+	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' ); 
  

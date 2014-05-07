@@ -19,6 +19,10 @@ function nsk_scripts() {
 	wp_enqueue_style( 'nsk-1024x769', get_template_directory_uri() . '/assets/css/1024.css', array(), null, 'only screen and (max-width: 1024px) and (min-width: 769px)' );
 	wp_enqueue_style( 'nsk-768x481', get_template_directory_uri() . '/assets/css/768.css', array(), null, 'only screen and (max-width: 768px) and (min-width: 481px)' );
 	wp_enqueue_style( 'nsk-480', get_template_directory_uri() . '/assets/css/480.css', array(), null, 'only screen and (max-width: 480px)' );
+	
+	//Common
+	wp_enqueue_script( 'nsk-common-js', get_template_directory_uri() . '/assets/js/common.js', array( 'jquery' ), null, true );
+	
 }
 add_action( 'wp_enqueue_scripts', 'nsk_scripts' ); 
 
