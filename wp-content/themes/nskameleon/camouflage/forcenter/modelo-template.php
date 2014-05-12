@@ -7,7 +7,7 @@ $post = $wp_query->post;
 
 // Getting metas
 $metas = get_post_meta( $post->ID );
-
+/*
 $galleryIDs = get_post_meta( $post->ID, 'model-gallery', true ); 
 $galleryIDs = explode(',', $galleryIDs[0]['fotos']);
 
@@ -31,9 +31,11 @@ foreach($galleryIDs as $id){
 // Getting the complementray data
 $extra = get_post_meta( $post->ID, 'complementarios', true ); 
 $extra = $extra[0];
-
+*/
 get_header(); ?>
 
-<pre><?php print_r($post) ?></pre>
+
+
+<?php echo do_shortcode($post->post_content) ?>
 
 <?php get_footer(); ?>

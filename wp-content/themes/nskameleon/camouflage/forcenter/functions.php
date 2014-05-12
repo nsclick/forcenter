@@ -285,3 +285,35 @@ function get_models(){
 }
 
 
+/**
+ * Add Autos taxonomy
+ *
+ */
+function add_ctm_family_taxonomies() {
+  // Add new "Locations" taxonomy to Posts
+  register_taxonomy('familia', 'modelo', array(
+    // Hierarchical taxonomy (like categories)
+    'hierarchical' => true,
+    // This array of options controls the labels displayed in the WordPress Admin UI
+    'labels' => array(
+      'name' => _x( 'Familias', 'taxonomy general name' ),
+      'singular_name' => _x( 'Familia', 'taxonomy singular name' ),
+      'search_items' =>  __( 'Buscar Familias' ),
+      'all_items' => __( 'Todas las Familias' ),
+      'parent_item' => __( 'Familia Padre' ),
+      'parent_item_colon' => __( 'Familia Padre:' ),
+      'edit_item' => __( 'Modificar Familia' ),
+      'update_item' => __( 'Actualizar Familia' ),
+      'add_new_item' => __( 'Adicionar Familia' ),
+      'new_item_name' => __( 'Nuevo nombre de Familia' ),
+      'menu_name' => __( 'Familias' ),
+    ),
+    // Control the slugs used for this taxonomy
+    'rewrite' => array(
+      'slug' => 'familias', // This controls the base slug that will display before each term
+      'with_front' => false, // Don't display the category base before "/locations/"
+      'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+    ),
+  ));
+}
+add_action( 'init', 'add_ctm_family_taxonomies', 0 );
