@@ -26,15 +26,13 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements and feature detects -->
-		<script src="<?php echo get_template_directory_uri(); ?>/assets/js/modernizr-2.5.3-min.js"></script>
-		<!-- Font-Awesome 3.2.1 (compatible with IE7) -->
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.min.css">
+		<?php wp_head(); ?>
+		
+		<!-- Font-awesome -->
+		<link href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if IE 7]>
   			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome-ie7.min.css">
 		<![endif]-->
-		
-		<?php wp_head(); ?>
 	</head>
 	<body>
 		<div id="wrapper">
