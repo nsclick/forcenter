@@ -33,6 +33,13 @@ function nsk_fc_scripts() {
 	
 	//Cotizador
 	wp_enqueue_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
+	
+	//Versiones
+	wp_enqueue_script( 'nsk-versiones-js', get_template_directory_uri() . '/camouflage/forcenter/js/versiones.js', array( 'jquery' ), null, true );
+	
+	//Servicio Técnico: Date-picker
+	wp_enqueue_script('jquery-ui-datepicker');
+	wp_enqueue_script( 'nsk-date-picker-js', get_template_directory_uri() . '/camouflage/forcenter/js/date-picker.js', array( 'jquery' ), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' ); 
  
