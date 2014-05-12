@@ -5,20 +5,21 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 *,#wrapper{}
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
 .content{width:980px}
-.content p:first-of-type,.content p:last-of-type{display:none}
+/*.content p:first-of-type,.content p:last-of-type{display:none}*/
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}
 h1{}
 h2{}
 a{}
-p{}
+p{padding:0 0 10px}
 ul,ol,li{}
 img{}
+select{}
 /* End General Styles */
 
 /* General Elements */
-.spacer{padding:5px;height:0}
+.spacer{padding:10px;height:0}
 .hr{background:url(../images/hr-bg.png) center center repeat-x;height:20px;width:100%}
 .box_a{border:1px solid #fff;height:196px;position:relative;display:block}
 .box_a img, .box_c img.bg{height:100%;width:100%}
@@ -72,7 +73,195 @@ img{}
 #main-content{}
 #main-content .content{background:#d8d6d6}
 #main-content img{}
+/* Slider destacados */
 #main-content .fullwidthbanner-container{width:auto!important}
+#main-content #showbiz_carrouselhome_1 .sb-navigation-play{display:none!important}
+#main-content #showbiz_carrouselhome_1.showbiz-container{position:relative;height:184px;border:1px solid #fff;border-top:none;background:#c0c0c0}
+#main-content #showbiz_carrouselhome_1 .showbiz-navigation{position:absolute;width:100%;height:100%}
+#main-content #showbiz_carrouselhome_1 .sb-navigation-left{width:4%;position:absolute;height:100%;left:0;background:url(../images/ico-left-arrow.png) center center no-repeat;border:none}
+#main-content #showbiz_carrouselhome_1 .sb-navigation-right{width:4%;position:absolute;height:100%;right:0;background:url(../images/ico-right-arrow.png) center center no-repeat;border:none}
+#main-content #showbiz_carrouselhome_1 .sb-navigation-left i,#main-content #showbiz_carrouselhome_1 .sb-navigation-right i{display:none}
+#main-content .showbiz{position:absolute;width:92%;height:200px;margin:0 4%}
+#main-content .showbiz .overflowholder{margin-top:10px}
+#main-content .showbiz .overflowholder ul li .botones{display:none;width:100%}
+#main-content .showbiz .overflowholder ul li .botones a.vermas,#main-content .showbiz .overflowholder ul li .botones a.cotizar{display:block;width:48%;color:#fff;padding:5px 0;float:left;background:#66676a;text-align:center;-webkit-box-shadow:inset 0px 0px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 0px 2px 0px rgba(0,0,0,0.3);box-shadow:inset 0px 0px 2px 0px rgba(0,0,0,0.3)}
+#main-content .showbiz .overflowholder ul li .botones a.cotizar{margin-left:4%;background:#35a81e}
+#main-content .showbiz .overflowholder ul li{width:154px!important;height:154px!important;padding:3px;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;border:1px solid #fff}
+#main-content #showbiz_carrouselhome_1 .mediaholder{border:none;padding:0;background:none}
+#main-content #showbiz_carrouselhome_1 .mediaholder img{width:167px;height:99px}
+#main-content .showbiz h4{color:#2850a3;padding:20px 3px 5px;font-size:14px;}
+#main-content .showbiz h4:before{content: "Ford ";font-weight:normal;color:#2850a3}
+#main-content .showbiz h4 b{font-weight:bold}
+#main-content .showbiz .sprice{color:#46484b;font-weight:bold;font-size:12px;padding:0 3px}
+#main-content .showbiz .sprice:before{content: "Desde ";font-weight:normal;color:#46484b;font-style:italic}
+#main-content .showbiz .overflowholder ul li:hover{background-color:#fff;background-image:url(../images/bg-slice-auto-up2.png),url(../images/bg-slice-auto-down2.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important}
+#main-content .showbiz .overflowholder ul li:hover .sprice{display:none}
+#main-content .showbiz .overflowholder ul li:hover h4,#main-content .showbiz .overflowholder ul li:hover h4:before{color:#616368}
+#main-content .showbiz .overflowholder ul li:hover h4{padding:10px 3px 5px}
+#main-content .showbiz .overflowholder ul li:hover img{filter:none;filter:none;-webkit-filter:none}
+#main-content .showbiz .overflowholder ul li:hover .botones{display:block}
+/* END Slider destacados */
+/* Shortcode Breadcrumbs */
+#breadcrumbs{border-bottom:1px solid #e2e2e3;width:100%;padding:20px 0 10px}
+#breadcrumbs li{display:inline-block}
+#breadcrumbs li:after{content: " >"}
+#breadcrumbs li:last-of-type{font-weight:bold}
+#breadcrumbs li:last-of-type:after{content:""}
+#breadcrumbs li a{font-size:10px}
+/* END Shortcode Breadcrumbs */
+/* Shotcode Page Title */
+h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
+/* END Shotcode Page Title */
+/* Grid de elementos: autos nuevos, autos usados y accesorios */
+.showcase ul.cate{display:block;width:100%;border-bottom:1px solid #3359a8}
+.showcase ul.cate li{display:block;float:left}
+.showcase ul.cate li a{color:#46484b;display:block;padding:7px 14px;background:#fff}
+.showcase ul.cate li.activ a{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
+.showcase ul.cate li a:hover{box-shadow:inset 0 -4px 0px -2px #46484b;-moz-box-shadow:inset 0 -4px 0px -2px #46484b;-webkit-box-shadow:inset 0 -4px 0px -2px #46484b;-ms-box-shadow:inset 0 -4px 0px -2px #46484b}
+.showcase .cotiza{background:#fff}
+.showcase .cotiza .pt1{box-shadow:inset -2px 1px 0px -1px #aaa;-webkit-box-shadow:inset -2px 1px 0px -1px #aaa;-moz-box-shadow:inset -2px 1px 0px -1px #aaa;-ms-box-shadow:inset -2px 1px 0px -1px #aaa}
+.showcase .cotiza .pt2{width:50%;margin:0}
+.showcase .cotiza .col .section .col .cont{padding:10px 5px}
+.showcase .cotiza .col .section .col:first-of-type .cont{padding:10px 0 10px 10px}
+.showcase .cotiza .col .section .col:last-of-type .cont{padding:10px 10px 10px 0}
+.showcase .cotiza .col .section .col .cont label{display:block;height:15px;margin-bottom:5px}
+.showcase .cotiza .col .section .col .cont select{display:block;max-width:100%;min-width:10px;width:100%;border:1px solid #aaa;color:#46484b;height:25px}
+.showcase .cotiza .col .section .col .cont input{height:23px;display:block;width:100%;border:1px solid #aaa;width:138px;padding:0 3px}
+.showcase .cotiza .col .section .col .cont .btn{height:14px;display:block;width:104px;background:#6bbd00;color:#fff;padding:6px 0 5px 42px;font-size:13px;font-weight:bold;position:relative}
+.showcase .cotiza .col .section .col .cont .btn i{position:absolute;right:0;display:block;padding:6px;top:0;border-left:1px solid #fff}
+.showcase .cotiza .col .section .col .cont #slider-range{margin-top:12px}
+.showcase .filter .col:last-of-type p{text-align:right}
+.showcase .filter .col:last-of-type select{border:1px solid #aaa;color:#46484b}
+.showcase .filter p{padding:10px}
+.showcase .showgrid{display:block;width:99%;padding:10px 0.5% 0;background:url(../images/bg-categorias.png) top repeat-x #fff}
+.showcase .showgrid li{display:block;width:19%;margin:0 0.5% 10px;float:left;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23)}
+.showcase .showgrid li .cont{display:block;padding:5px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative}
+.showcase .showgrid li .cont img{width:100%;height:122px}
+.showcase .showgrid li .cont .name{color:#2850a3;font-size:12px;font-weight:bold;display:block;padding:7px 0}
+.showcase .showgrid li .cont .price{display:block;color:#414042;font-weight:bold}
+.showcase .showgrid li .cont .price:before{content: "Desde "}
+.showcase .showgrid li .cont .botones{background:url(../images/bg-item.png) repeat;position:absolute;height:100%;width:100%;top:0;left:0;display:none}
+.showcase .showgrid li:hover .cont .botones{display:block}
+.showcase .showgrid li .cont .botones a{display:block;width:31%;float:left;padding:5px 20px 5px 2%;background:#000;color:#fff;position:relative;text-align:center}
+.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 4%;background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+.showcase .showgrid li .cont .botones a.ver{margin:102px 4% 0 2%;background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+.showcase .showgrid li .cont .botones a i{position:absolute;top:0;right:0;padding:6px 6px 4px;border-left:1px solid #fff}
+.showcase .showgrid li .cont .botones a.cotizar:hover{background:#e08f00}
+.showcase .showgrid li .cont .botones a.ver:hover{background:#61ab01}
+/* END Grid de elementos: autos nuevos, autos usados y accesorios */
+/* Cotizador */
+.image_b{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
+.article{background:#fff;border-top:1px solid #2850a3}
+.cotizador{padding:10px;-webkit-border-image:url(../images/box2-b.png) 30 30 round;border-image:url(../images/box2-b.png) 30 30 round;position:relative}
+.cotizador #step1,.cotizador #step2,.cotizador #step3{display:none}
+.cotizador #step1.activ,.cotizador #step2.activ,.cotizador #step3.activ{display:block}
+.cotizador .tab{display:block;float:left;width:26%;color:#888;font-size:14px;height:23px;color:#666971;font-weight:bold;font-style:italic}
+.cotizador .tab.tab1{background:url(../images/bg-tab-grey-left.png) left top;margin:0 4.5% 10px 0;padding:9px 0 0 2%}
+.cotizador .tab.tab1 .tail{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-right2.png) right top;position:absolute;top:10px;left:28.7%}
+.cotizador .tab.tab2{background:url(../images/bg-tab-grey-center.png);margin:0 4.5% 10px;padding:9px 0 0 0}
+.cotizador .tab.tab2 .head{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-left.png) left top;position:absolute;top:10px;left:31.6%}
+.cotizador .tab.tab2 .tail{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-right2.png) right top;position:absolute;top:10px;left:62.6%}
+.cotizador .tab.tab3{background:url(../images/bg-tab-grey-right.png) right top;margin:0 0 10px 4.5%;padding:9px 2% 0 0}
+.cotizador .tab.tab3 .head{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-left.png) left top;position:absolute;top:10px;left:65.5%}
+.cotizador .tab.tab1.activ{background:url(../images/bg-tab-blue-left.png) left top;color:#fff}
+.cotizador .tab.tab1.activ .tail{background:url(../images/bg-tab-corner-blue-right.png) right top}
+.cotizador .tab.tab2.activ{background:url(../images/bg-tab-blue-center.png);color:#fff}
+.cotizador .tab.tab2.activ .head{background:url(../images/bg-tab-corner-blue-left2.png) left top}
+.cotizador .tab.tab2.activ .tail{background:url(../images/bg-tab-corner-blue-right.png) right top}
+.cotizador .tab.tab3.activ{background:url(../images/bg-tab-blue-right.png) right top;color:#fff}
+.cotizador .tab.tab3.activ .head{background:url(../images/bg-tab-corner-blue-left2.png) left top}
+.cotizador .selector .title{width:100%;border-bottom:1px solid #2850a3;margin:0 0 10px}
+.cotizador .selector .title h3{padding:5px 15px;color:#fff;font-size:14px;background:#2850a3;display:inline-block;font-weight:normal}
+.cotizador .selector .producto{margin:10px 0;border-bottom:1px solid #c0bfbf;padding:10px 0}
+.cotizador .selector .producto .img{float:left;width:32%;margin-right:3%}
+.cotizador .selector .producto .img .name,.cotizador .selector .producto .img .price{color:#46484b;font-size:14px;margin-bottom:5px;font-weight:bold}
+.cotizador .selector .producto .details{float:left;width:42%;margin-right:3%;padding:38px 0 0 0}
+.cotizador .selector .producto .details .select{display:block;margin:0 0 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2}
+.cotizador .selector .producto .details .select label{width:30%;display:block;float:left;padding-top:4px}
+.cotizador .selector .producto .details .select select{width:68%;display:block;float:left;border:1px solid #5a9dd3;color:#666971}
+.cotizador .selector .producto .option{float:left;width:20%;padding:38px 0 0 0}
+.cotizador .selector .producto .option a{display:block;text-align:center}
+.cotizador .selector .producto .option a i{font-size:16px;color:#6581bb;background:#f3f3f3;display:inline-block;padding:2px 4px}
+.cotizador .selector .producto .option a:hover{color:#444}
+.cotizador .selector .disclaimer{width:100%;padding:10px;text-align:center}
+.cotizador .link{text-align:right;padding:10px 0}
+.cotizador .link button{color:#fff;font-size:14px;display:inline-block;position:relative;background:url(../images/bg-tab-blue-center.png);font-style:italic}
+.cotizador .link button i{position:absolute;top:0;padding:10px 12px}
+.cotizador .link button#go1, .cotizador .link button#go2, .cotizador .link button#go3{padding:9px 49px 9px 15px;float:right}
+.cotizador .link button#go1 i, .cotizador .link button#go2 i, .cotizador .link button#go3 i{right:0;border-left:1px solid #fff}
+.cotizador .link button#back2, .cotizador .link button#back3{padding:9px 15px 9px 49px;float:left}
+.cotizador .link button#back2 i, .cotizador .link button#back3 i{left:0;border-right:1px solid #fff}
+.cotizador #step2 .selector .producto,.cotizador #step3 .selector .producto{float:none;width:100%;margin:0}
+.cotizador #step2 .selector .producto .details,.cotizador #step3 .selector .producto .details{float:none;width:100%;margin:0;padding:0}
+.cotizador .selector .producto .details .select input{width:66%;display:block;float:left;border:1px solid #5a9dd3;color:##666971;padding:1px 1%}
+.cotizador .selector .producto .details .select textarea{width:66%;display:block;float:left;border:1px solid #5a9dd3;color:##666971;padding:2px 1%;height:100px}
+/* END Cotizador */
+/* Modelos */
+.modelo .head .banner .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:612px;float:left}
+.modelo .head .banner .wborder img{margin:1px 0 0 1px;width:610px;height:360px}
+.modelo .head .banner .text{float:left;padding-left:20px}
+.modelo .head .banner .text p{background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png);background-position:top, bottom;background-repeat:repeat-x;padding:15px 20px;height:330px;border:1px solid #aaa;border-top:1px solid #2850a3;box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:306px}
+.modelo .head .images{margin:20px 0;padding:15px 20px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #aaa}
+.modelo .lista{border:1px solid #aaa;border-top:1px solid #2850a3;padding:15px;background:#fff;margin-bottom:20px}
+.modelo .lista .li{background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;margin-bottom:10px}
+.modelo .lista .section:last-of-type .li{margin:0}
+.modelo .lista .li .span_5_of_12{font-weight:bold;padding:11px 0 0 0;font-size:12px}
+.modelo .lista .li .span_2_of_12{font-style:italic;padding:11px 0 0 0}
+.modelo .lista .li .span_5_of_12:last-of-type{text-align:right;padding:0}
+.modelo .lista .li .span_5_of_12 a{color:#fff;font-size:14px;display:inline-block;background:url(../images/bg-tab-blue-center.png);font-style:italic;padding:9px 49px 9px 15px;position:relative}
+.modelo .lista .li .span_5_of_12 a:first-of-type{background:url(../images/bg-btn-verde-s.png);margin-right:10px}
+.modelo .lista .li .span_5_of_12 a i{position:absolute;top:0;padding:10px 12px;right:0;border-left:1px solid #fff}
+.modelo .lista .sign{position:relative}
+.modelo .lista .sign span{display:block;font-size:19px;height:50px;background:#2850a3;color:#fff;padding:4px 0 0 40px;margin:0 0 0 -30px;width:125px;position:absolute}
+.modelo .lista .sign span:after{width:0;height:0;border-top:27px solid transparent;border-bottom:27px solid transparent;border-left:15px solid #2850a3;position:absolute;content:"";top:0px;right:-15px}
+.modelo .lista .sign span b{display:block;font-size:22px}
+.modelo .tabla{}
+.modelo .tabla .menu{border-bottom:1px solid #2850a3}
+.modelo .tabla .menu ul li{float:left;display:block}
+.modelo .tabla .menu ul li a{display:block;padding:10px 20px;background:#fff;font-size:12px}
+.modelo .tabla .menu ul li a:hover, .modelo .tabla .menu ul li.activ a, .modelo .tabla .menu ul li.activ a:hover{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
+.modelo .tabla .menu ul li a:hover{font-weight:normal}
+.modelo .tabla .lista{border:1px solid #aaa;border-top:none;background:#fff}
+.modelo .tabla .lista .row{width:100%;display:table;table-layout:fixed;border-right:1px solid #d7dde2;font-size:12px}
+.modelo .tabla .lista .row:first-of-type .cell{background:#2850a3;color:#fff}
+.modelo .tabla .lista .row:first-of-type .cell:first-of-type{background:none;color:#444;border:none}
+.modelo .tabla .lista .row:last-of-type{border-bottom:1px solid #d7dde2}
+.modelo .tabla .lista .row .cell{display:table-cell;width:auto;text-align:center;float:none;border:1px solid #d7dde2;border-bottom:none;border-right:none;padding:5px}
+.modelo .tabla .lista .row .cell i{font-size:16px}
+.modelo .tabla .lista .row .cell i.icon-remove-sign{color:#e23a1c}
+.modelo .tabla .lista .row .cell i.icon-ok-sign{color:#35a81e}
+/* END Modelos */
+/* Version */
+.version .head .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
+.version .head .subhead{margin-top:10px}
+.version .head .subhead .col.col1, .version .head .subhead .col.col2, .version .head .subhead .col.col3{background-color:#fff;background-image:url(../images/bg-deg.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);color:#666971;height:40px;padding:10px 0}
+.version .head .subhead .col.col1{font-size:20px;font-style:italic;font-weight:bold}
+.version .head .subhead .col .cont{padding:0 10px}
+.version .head .subhead .col.col1 a{display:block;position:relative;padding:2px 0 1px 40px}
+.version .head .subhead .col.col1 b{font-size:14px;display:block;margin-bottom:3px}
+.version .head .subhead .col.col1 i{color:#2850a3;font-size:41px;position:absolute;top:0;left:0}
+.version .head .subhead .col.col2 select{border:1px solid #5a9dd3;color:#666971;margin-top:8px;width:100%}
+.version .head .subhead .col.col3{display:table}
+.version .head .subhead .col.col3 .cont{display:table-cell;vertical-align:middle}
+.version .head .subhead .col.col3 b{font-size:30px}
+.version .head .subhead .col.col4{height:60px;padding:0;display:table}
+.version .head .subhead .col.col4 a{background:url(../images/bg-btn-verde64.png);color:#fff;display:block;height:60px;position:relative;display:table-cell;vertical-align:middle;font-size:18px;font-weight:bold;font-style:italic;padding:0 64px 0 10px;text-align:center}
+.version .head .subhead .col.col4 a i{font-size:23px;position:absolute;top:0;right:0;height:22px;border-left:1px solid #fff;padding:19px}
+.version .body{margin:20px 0 0 0}
+.version .body ul.menu{border-bottom:1px solid #3157a6;width:100%;display:block}
+.version .body ul.menu li{float:left;display:block}
+.version .body ul.menu li a{background:#fff;color:#666971;font-size:12px;padding:10px 20px;display:block}
+.version .body ul.menu li a.activ{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
+.version .body .cont{background:#fff;padding:20px 10px}
+.version .body .cont .color img{margin:10px 0}
+.version .body .cont .color ul.chart{display:block;margin:10px 0}
+.version .body .cont .color ul.chart li{float:left;margin:0 10px 10px 0;display:block;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;-ms-border-radius:2px}
+.version .body .cont .color ul.chart li a{display:block;width:21px;height:21px;border:1px solid #dcdfe1;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;-ms-border-radius:2px}
+.version .body .cont .color ul.chart li.activ{-webkit-box-shadow:0px 0px 0px 1px rgba(97,98,99,1);-moz-box-shadow:0px 0px 0px 1px rgba(97,98,99,1);box-shadow:0px 0px 0px 1px rgba(97,98,99,1)}
+.version .body .cont .span_8_of_12 .cont{padding:0 10px}
+.version .body .cont .span_8_of_12 .cont h4{padding:10px 0;font-size:14px;color:#2850a3}
+.version .body .cont .galeria .show{}
+/* END Version */
 /* End Main Content */
 
 /* Footer */
@@ -95,11 +284,6 @@ img{}
 #footer .copyright p{text-align:right;padding:0 0 10px}
 #footer .copyright p a{}
 /* End Footer */
-
-
-/* Forcenter Camouflage */
-
-/* End Forcenter Camouflage */
 
 /* END CSS For Base Theme */
 /* Ricardo Escobar */
