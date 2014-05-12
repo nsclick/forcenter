@@ -589,6 +589,11 @@ function ns_cotizador_shortcode( $atts ) {
 								</select>
 								<div class="divclear">&nbsp;</div>
 							</div>
+							<div class="select" style="float:right">
+								<label for="comentarios">Comentarios:</label>
+								<textarea name="comentarios"></textarea>
+								<div class="divclear">&nbsp;</div>
+							</div>
 							<div class="select">
 								<label for="donde">D&oacute;nde nos conoci&oacute;:</label>
 								<select name="donde">
@@ -598,11 +603,8 @@ function ns_cotizador_shortcode( $atts ) {
 								</select>
 								<div class="divclear">&nbsp;</div>
 							</div>
-							<div class="select">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
+							
+							<div class="divclear">&nbsp;</div>
 						</div>
 						<div class="divclear">&nbsp;</div>
 					</div>
@@ -857,12 +859,12 @@ function ns_version_shortcode( $atts ) {
 			</div>
 			<div class="body">
 				<ul class="menu">
-					<li><a href="#" class="activ" id="link1">Informaci&oacute;n general</a></li>
-					<li><a href="#" id="link2">Fotos y videos</a></li>
-					<li><a href="#" id="link3">Caracter&iacute;sticas t&eacute;cnicas</a></li>
+					<li><a class="activ" id="link1">Informaci&oacute;n general</a></li>
+					<li><a id="link2">Fotos y videos</a></li>
+					<li><a id="link3">Caracter&iacute;sticas t&eacute;cnicas</a></li>
 					<div class="divclear">&nbsp;</div>
 				</ul>
-				<div class="cont" id="cont1">
+				<div class="cont activ" id="cont1">
 					<div class="section group">
 						<div class="col span_4_of_12">
 							<div class="color">
@@ -908,8 +910,8 @@ function ns_version_shortcode( $atts ) {
 					</div>
 				</div>
 				<div class="cont" id="cont2">
-					<div class="section group">
-						<div class="col span_4_of_12">
+					<div class="galeria">
+						<div class="side">
 							<div class="color">
 								<b>Colores Disponibles:</b>
 								<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
@@ -934,66 +936,50 @@ function ns_version_shortcode( $atts ) {
 								<img src="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" alt="asd" title="asd"/>
 							</a>
 						</div>
-						<div class="col span_8_of_12">
-							<div class="cont">
-							<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-							</div>
+						<div class="show">
+							<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
+							<ul>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<div class="divclear">&nbsp;</div>	
+							</ul>
 						</div>
+						<div class="divclear">&nbsp;</div>
 					</div>
 				</div>
 				<div class="cont" id="cont3">
-					<div class="section group">
-						<div class="col span_4_of_12">
-							<div class="color">
-								<b>Colores Disponibles:</b>
-								<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
-								<b>Azul Candy</b>
-								<ul class="chart">
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li class="activ"><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<div class="divclear">&nbsp;</div>
-								</ul>
-							</div>
-							<a href="#" class="box_b">
-								<span class="title">Hola</span>
-								<span class="link2">Hola</span>
-								<img src="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" alt="asd" title="asd"/>
-							</a>
+					<div class="section group tabla">
+						<div class="col span_3_of_12">
+							<ul class="menu2">
+								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<li><a href="#" class="activ"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+							</ul>
 						</div>
-						<div class="col span_8_of_12">
-							<div class="cont">
-							<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-							</div>
+						<div class="col span_9_of_12">
+							<table>
+								<thead><tr><td>Interior</td><td>Modelo</td></tr></thead>
+								<tbody>
+									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td><i class="icon-remove-sign"></i></td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td><i class="icon-ok-sign"></i></td></tr>
+									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
@@ -1003,3 +989,255 @@ function ns_version_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'version', 'ns_version_shortcode' );
+
+
+
+//[servicio]
+function ns_servicio_shortcode( $atts ) {
+	ob_start();
+	?> 
+		<div class="cotizador">
+			<div id="step3" class="activ servicio">
+				<div class="selector">
+					<div class="title">
+						<h3>Agendar cita</h3>
+						<span>Todos los campos son obligatorios.</span>
+					</div>
+					<div class="producto">
+						<div class="details">
+							<div class="select">
+								<label for="nombre">Nombre completo:</label>
+								<input name="nombre" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="modelo">Modelo:</label>
+								<select name="modelo">
+									<option>
+										Auto
+									</option>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="email">E-mail:</label>
+								<input name="email" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="fecha">D&iacute;a que desea agendar:</label>
+								<input name="fecha" type="text" id="datepicker" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select" style="float:right">
+								<label for="comentarios">Comentarios:</label>
+								<textarea name="comentarios"></textarea>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="rut">RUT:</label>
+								<input name="rut" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="fono">Tel&eacute;fono:</label>
+								<input name="fono" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="divclear">&nbsp;</div>
+						</div>
+						<div class="divclear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="link">
+					<button id="go3">Agendar<i class="icon-chevron-right"></i></button>
+					<div class="divclear">&nbsp;</div>
+				</div>
+			</div>
+		</div>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'servicio', 'ns_servicio_shortcode' );
+
+//[mantencion]
+function ns_mantencion_shortcode( $atts ) {
+	ob_start();
+	?> 
+		<div class="cotizador">
+			<div id="step3" class="activ servicio">
+				<div class="selector">
+					<div class="title">
+						<h3>Agendar cita</h3>
+						<span>Todos los campos son obligatorios.</span>
+					</div>
+					<div class="producto">
+						<div class="details">
+							<div class="select">
+								<label for="nombre">Nombre completo:</label>
+								<input name="nombre" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="modelo">Modelo:</label>
+								<select name="modelo">
+									<option>
+										Auto
+									</option>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="email">E-mail:</label>
+								<input name="email" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="fecha">D&iacute;a que desea agendar:</label>
+								<input name="fecha" type="text" id="datepicker" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select" style="float:right">
+								<label for="comentarios">Comentarios:</label>
+								<textarea name="comentarios"></textarea>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="rut">RUT:</label>
+								<input name="rut" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="fono">Tel&eacute;fono:</label>
+								<input name="fono" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="divclear">&nbsp;</div>
+						</div>
+						<div class="divclear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="link">
+					<button id="go3">Agendar<i class="icon-chevron-right"></i></button>
+					<div class="divclear">&nbsp;</div>
+				</div>
+			</div>
+		</div>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'mantencion', 'ns_mantencion_shortcode' );
+
+//[accesorios]
+function ns_accesorios_shortcode( $atts ) {
+ob_start();
+?> 
+	<div class="showcase accesorios">
+		<div class="menu">
+			<ul class="cate">
+				<li><a href="#">Categor&iacute;a</a></li>
+				<li class="activ"><a href="#">Categor&iacute;a</a></li>
+				<div class="divclear">&nbsp;</div>
+			</ul>
+			<p>Hay <b>7</b> accesorios disponibles</p>
+		</div>
+		<ul class="showgrid">
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li><li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<div class="botones">
+						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+					</div>				
+				</div>
+			</li>
+			<div class="divclear">&nbsp;</div>
+		</ul>
+	</div>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'accesorios', 'ns_accesorios_shortcode' );
