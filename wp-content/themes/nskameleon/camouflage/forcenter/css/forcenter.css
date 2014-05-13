@@ -75,20 +75,20 @@ select{}
 /* Slider destacados */
 #main-content .fullwidthbanner-container{width:auto!important}
 #main-content #showbiz_carrouselhome_1 .sb-navigation-play{display:none!important}
-#main-content #showbiz_carrouselhome_1.showbiz-container{position:relative;height:184px;border:1px solid #fff;border-top:none;background:#c0c0c0}
+#main-content #showbiz_carrouselhome_1.showbiz-container{position:relative;height:200px;border:1px solid #fff;border-top:none;background:#c0c0c0}
 #main-content #showbiz_carrouselhome_1 .showbiz-navigation{position:absolute;width:100%;height:100%}
-#main-content #showbiz_carrouselhome_1 .sb-navigation-left{width:4%;position:absolute;height:100%;left:0;background:url(../images/ico-left-arrow.png) center center no-repeat;border:none}
-#main-content #showbiz_carrouselhome_1 .sb-navigation-right{width:4%;position:absolute;height:100%;right:0;background:url(../images/ico-right-arrow.png) center center no-repeat;border:none}
+#main-content #showbiz_carrouselhome_1 .sb-navigation-left{width:2.5%;position:absolute;height:100%;left:0;background:url(../images/ico-left-arrow.png) center center no-repeat;border:none;margin:0;padding:0}
+#main-content #showbiz_carrouselhome_1 .sb-navigation-right{width:2.5%;position:absolute;height:100%;right:0;background:url(../images/ico-right-arrow.png) center center no-repeat;border:none;margin:0;padding:0}
 #main-content #showbiz_carrouselhome_1 .sb-navigation-left i,#main-content #showbiz_carrouselhome_1 .sb-navigation-right i{display:none}
-#main-content .showbiz{position:absolute;width:92%;height:200px;margin:0 4%}
+#main-content .showbiz{position:absolute;width:95.1%;height:200px;margin:0 2.5%}
 #main-content .showbiz .overflowholder{margin-top:10px}
 #main-content .showbiz .overflowholder ul li .botones{display:none;width:100%}
 #main-content .showbiz .overflowholder ul li .botones a.vermas,#main-content .showbiz .overflowholder ul li .botones a.cotizar{display:block;width:48%;color:#fff;padding:5px 0;float:left;background:#66676a;text-align:center;-webkit-box-shadow:inset 0px 0px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 0px 2px 0px rgba(0,0,0,0.3);box-shadow:inset 0px 0px 2px 0px rgba(0,0,0,0.3)}
 #main-content .showbiz .overflowholder ul li .botones a.cotizar{margin-left:4%;background:#35a81e}
-#main-content .showbiz .overflowholder ul li{width:154px!important;height:154px!important;padding:3px;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;border:1px solid #fff}
+#main-content .showbiz .overflowholder ul li{width:174px!important;height:170px!important;padding:3px;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;border:1px solid #fff;margin-right:5px}
 #main-content #showbiz_carrouselhome_1 .mediaholder{border:none;padding:0;background:none}
-#main-content #showbiz_carrouselhome_1 .mediaholder img{width:167px;height:99px}
-#main-content .showbiz h4{color:#2850a3;padding:20px 3px 5px;font-size:14px;}
+#main-content #showbiz_carrouselhome_1 .mediaholder img{width:174px;height:122px}
+#main-content .showbiz h4{color:#2850a3;padding:10px 3px 5px;font-size:14px;}
 #main-content .showbiz h4:before{content: "Ford ";font-weight:normal;color:#2850a3}
 #main-content .showbiz h4 b{font-weight:bold}
 #main-content .showbiz .sprice{color:#46484b;font-weight:bold;font-size:12px;padding:0 3px}
@@ -132,7 +132,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase .filter .col:last-of-type p{text-align:right}
 .showcase .filter .col:last-of-type select{border:1px solid #aaa;color:#46484b}
 .showcase .filter p{padding:10px}
-.showcase .showgrid{display:block;width:99%;padding:10px 0.5% 0;background:url(../images/bg-categorias.png) top repeat-x #fff}
+.showcase .showgrid{display:block;width:99%;padding:10px 0.5% 0;background:#fff}
 .showcase .showgrid li{display:block;width:19%;margin:0 0.5% 10px;float:left;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23)}
 .showcase .showgrid li .cont{display:block;padding:5px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative}
 .showcase .showgrid li .cont img{width:100%;height:122px}
@@ -186,8 +186,8 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .cotizador .link{text-align:right;padding:10px 0}
 .cotizador .link button{color:#fff;font-size:14px;display:inline-block;position:relative;background:url(../images/bg-tab-blue-center.png);font-style:italic}
 .cotizador .link button i{position:absolute;top:0;padding:10px 12px}
-.cotizador .link button#go1, .cotizador .link button#go2, .cotizador .link button#go3{padding:9px 49px 9px 15px;float:right}
-.cotizador .link button#go1 i, .cotizador .link button#go2 i, .cotizador .link button#go3 i{right:0;border-left:1px solid #fff}
+.cotizador .link button#go1, .cotizador .link button#go2, .cotizador .link button#go3, .cotizador .link button#done{padding:9px 49px 9px 15px;float:right}
+.cotizador .link button#go1 i, .cotizador .link button#go2 i, .cotizador .link button#go3 i, .cotizador .link button#done i{right:0;border-left:1px solid #fff}
 .cotizador .link button#back2, .cotizador .link button#back3{padding:9px 15px 9px 49px;float:left}
 .cotizador .link button#back2 i, .cotizador .link button#back3 i{left:0;border-right:1px solid #fff}
 .cotizador #step2 .selector .producto{float:none;width:100%;margin:0}
@@ -291,6 +291,51 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase.accesorios .showgrid li .cont .botones a.ver{float:none;display:inline-block}
 .showcase.accesorios .showgrid li .cont .botones{text-align:right}
 /* END Accesorios */
+/* Sucursal */
+.sucursal{position:relative;margin-bottom:10px}
+.sucursal .overlap{width:33%;height:100%;position:absolute;background:rgba(40,80,163,0.7);color:#fff}
+.sucursal .overlap .par{position:absolute;bottom:0;left:10px}
+.sucursal .link{position:absolute;right:20px;bottom:20px}
+.sucursal .link a{background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 5px 10px;display:block}
+.sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
+.sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
+.sucursald ul li{display:block;float:left}
+.sucursald ul li a{color:#46484b;display:block;padding:7px 14px;background:#fff;cursor:pointer}
+.sucursald ul li a.activ{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
+.sucursald ul li a:hover{box-shadow:inset 0 -4px 0px -2px #46484b;-moz-box-shadow:inset 0 -4px 0px -2px #46484b;-webkit-box-shadow:inset 0 -4px 0px -2px #46484b;-ms-box-shadow:inset 0 -4px 0px -2px #46484b}
+.sucursald .cont.activa{display:block}
+.sucursald .cont{background:#fff;padding:10px;display:none}
+.sucursald .cont h4{font-size:16px;color:#3359a8}
+.sucursald .cont p{display:block;margin:0 0 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2}
+.sucursald .cont p b{display:block}
+.sucursald .cont .galeria{margin-top:20px}
+.sucursald .cont .galeria .links{float:left;width:40%}
+.sucursald .cont .galeria .links a{display:block;width:48%;margin:0 2% 5px 0;float:left;position:relative;cursor:pointer}
+.sucursald .cont .galeria .links a .hov{position:absolute;width:100%;height:100%;background:rgba(255,255,255,0.5);display:block}
+.sucursald .cont .galeria .links a:hover .hov, .sucursald .cont .galeria .links a.activ .hov{display:none}
+.sucursald .cont .galeria .links a .activo{display:none;position:absolute;height:10px;width:100%;background:#3359a8}
+.sucursald .cont .galeria .links a.activ{box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
+.sucursald .cont .galeria .links a.activ .activo{display:block}
+.sucursald .cont .galeria .show{float:left;width:60%}
+.sucursald .cont .galeria .show img{border:1px solid #d7dde2}
+/* END Sucursal */
+/* Repuestos */
+ul.lista{border-top:1px solid #2850a3;background:#fff}
+ul.lista h4{color:#2850a3;font-size:16px}
+ul.lista li{font-size:12px;padding:10px 10px 20px 20px;margin:0 10px 10px;border-bottom:1px solid #d7dde2;position:relative}
+ul.lista li:last-of-type{border:none}
+ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
+.cotizador.repuestos #step1 .selector .producto .details,.cotizador.repuestos #step2 .selector .producto .details{float:none;width:100%;margin:0;padding:0}
+.cotizador.repuestos #step1 .selector .producto,.cotizador.repuestos #step2 .selector .producto{float:none;width:102%;margin:0}
+.cotizador.repuestos #step1 .selector .producto .details .select,.cotizador.repuestos #step2 .selector .producto .details .select{margin:0 16px 10px 0;width:44%;float:left}
+.cotizador.repuestos #step1 .selector .producto .details .select label,.cotizador.repuestos #step2 .selector .producto .details .select label{padding-top:0}
+.cotizador.repuestos .tab{width:42%}
+.cotizador.repuestos .tab.tab1 .tail{left:44.3%}
+.cotizador.repuestos .tab.tab2 .head{left:47.1%}
+.cotizador.repuestos .tab.tab2 .tail{left:93.6%;background:url(../images/bg-tab-grey-right.png) right top}
+.cotizador.repuestos .tab.tab2.activ .tail{background:url(../images/bg-tab-blue-right.png) right top}
+.cotizador.repuestos h4{padding:10px 0;font-size:13px} 
+/* END Repuestos */
 /* End Main Content */
 
 /* Footer */

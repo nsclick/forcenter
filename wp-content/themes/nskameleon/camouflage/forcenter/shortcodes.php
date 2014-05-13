@@ -1241,3 +1241,314 @@ ob_start();
 return ob_get_clean();
 }
 add_shortcode( 'accesorios', 'ns_accesorios_shortcode' );
+
+//[sucursal name=""]
+function ns_sucursal_shortcode( $atts ) {
+	extract( $atts );
+ob_start();
+?> 
+	<div class="sucursal">
+		<div class="overlap">
+			<h4><?php echo $name ?></h4>
+			<div class="par">
+				<p><b>Direcci&oacute;n:</b><br />Avenida Irarrázaval 1445, Ñuñoa</p>
+				<p>Tel&eacute;fono:<br/>+562 2222 2222</p>
+			</div>
+		</div>
+		<div class="link">
+			<a href="#">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
+		</div>
+		<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+	</div>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'sucursal', 'ns_sucursal_shortcode' );
+
+//[sucursald]
+function ns_sucursald_shortcode( $atts ) {
+	ob_start();
+?> 
+	<div class="sucursald">
+		<ul>
+			<li><a class="activ" id="suc1">Casa Matriz</a></li>
+			<li><a id="suc2">Sucursal 2</a></li>
+			<li><a id="suc3">Sucursal 3</a></li>
+			<li><a id="suc4">Sucursal 4</a></li>
+			<div class="divclear">&nbsp;</div>
+		</ul>
+		<div class="cont activa" id="sucu1">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Casa Matriz</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+		<div class="cont" id="sucu2">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Sucursal 2</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+		<div class="cont" id="sucu3">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Sucursal 3</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+		<div class="cont" id="sucu4">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Sucursal 3</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+	</div>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'sucursald', 'ns_sucursald_shortcode' );
+
+//[lista title=""]...[/lista]
+function ns_lista_shortcode( $atts, $content = null  ) {
+	extract( $atts );
+	ob_start();
+	?> 
+		<ul class="lista">
+			<h4><?php echo $title ?></h4>
+			<?php echo do_shortcode($content) ?>
+		</ul>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'lista', 'ns_lista_shortcode' );
+
+//[elemento text=""]
+function ns_elemento_shortcode( $atts ) {
+	extract( $atts );
+	ob_start();
+	?> 
+		<li><i class="icon-chevron-right"></i> <?php echo $text ?></li>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'elemento', 'ns_elemento_shortcode' );
+
+
+//[repuestos]
+function ns_repuestos_shortcode( $atts ) {
+	ob_start();
+	?> 
+		<div class="cotizador repuestos">
+			<div class="tab tab1 activ">01. Datos de su veh&iacute;culo<span class="tail">&nbsp;</span></div>
+			<div class="tab tab2"><span class="head">&nbsp;</span>02. Ingrese sus datos<span class="tail">&nbsp;</span></div>
+			<div class="divclear">&nbsp;</div>
+			<div id="step1" class="activ">
+				<p>Utilice el siguiente formulario para solicitar una cotizaci&oacute;n por repuestos para su Ford.</p>
+				<div class="selector">
+					<div class="producto">
+						<div class="details">
+							<div class="select">
+								<label for="modelo">Modelo:</label>
+								<select name="modelo">
+									<option>
+										Modelo
+									</option>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="version">Versi&oacute;n:</label>
+								<select name="version">
+									<option>
+										Versi&oacute;n
+									</option>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="nomodelo">¿No est&aacute; su modelo?:</label>
+								<input name="nomodelo" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="chasis-vin">Chasis o VIN:</label>
+								<input name="chasis-vin" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="divclear">&nbsp;</div>
+							<div class="select" style="float:none;width:auto">
+								<label for="comentarios">Comentarios:</label>
+								<textarea name="comentarios"></textarea>
+								<div class="divclear">&nbsp;</div>
+							</div>
+						</div>
+						<div class="divclear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="link">
+					<button id="go1">Ingrese sus datos <i class="icon-chevron-right"></i></button>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<h4>¿Qué es el VIN o Chasis?</h4>
+				<p>(Vehicle Identification Number o Número de identificación del Vehículo)<br />
+					Los lugares más comunes para encontrar el # VIN son:<br />
+					En el marco de la puerta del lado del conductor. (Algunos casos se ven en el lado del pasajero)<br />
+					En el tablero muy cerca al parabrisas.<br />
+					En el mismo motor.<br />
+					En la columna de dirección.<br />
+					En el bracket que soporta el radiador.<br />
+					En el arco de rueda de la mano derecha.<br />
+					Y principalmente, en el PADRÓN.<br />
+				</p>
+			</div>
+			<div id="step2">
+				<div class="selector">
+					<div class="producto">
+						<div class="details">
+							<div class="select">
+								<label for="nombres">Nombres:</label>
+								<input name="nombres" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="email">E-mail:</label>
+								<input name="email" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="rut">RUT:</label>
+								<input name="rut" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="fono">Tel&eacute;fono:</label>
+								<input name="fono" type="text" />
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="comuna">Comuna:</label>
+								<select name="comuna">
+									<option>
+										12
+									</option>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select" style="float:right">
+								<label for="comentarios">Comentarios:</label>
+								<textarea name="comentarios"></textarea>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							<div class="select">
+								<label for="donde">D&oacute;nde nos conoci&oacute;:</label>
+								<select name="donde">
+									<option>
+										12
+									</option>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							
+							<div class="divclear">&nbsp;</div>
+						</div>
+						<div class="divclear">&nbsp;</div>
+					</div>
+				</div>
+				<div class="link">
+					<button id="back2"><i class="icon-chevron-left"></i> Volver al paso 1</button>
+					<button id="done">Enviar <i class="icon-chevron-right"></i></button>
+					<div class="divclear">&nbsp;</div>
+				</div>
+			</div>
+		</div>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'repuestos', 'ns_repuestos_shortcode' );
