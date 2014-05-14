@@ -44,7 +44,8 @@ if( is_user_logged_in() )
 	
 if( !empty( $post_id ) )
 	$element.= ' data-post_id="'. $post_id .'"';
-	
+
+$details['multiple_upload'] = 'true';
 if( !empty( $details['multiple_upload'] ) ){
 	if( $details['multiple_upload'] == 'true' )
 		$element.= ' data-multiple_upload="true"';

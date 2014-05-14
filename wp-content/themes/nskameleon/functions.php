@@ -1,8 +1,23 @@
 <?php
 
-define ('THEME_PATH', get_theme_root() . '/nskameleon');
+define('THEME_PATH', get_theme_root() . '/nskameleon');
+
+require_once(THEME_PATH . '/includes/helpers.php');
+ 
+ 
 define('ACTIVE_CAMOUFLAGE', 'forcenter');
-define('ACTIVE_CAMOUFLAGE_PATH', THEME_PATH. '/camouflage/' . ACTIVE_CAMOUFLAGE);
+define('ACTIVE_MOBILE_CAMOUFLAGE', 'forcenter-mb');
+
+// Camouflage  swichter
+if(ACTIVE_MOBILE_CAMOUFLAGE){
+	if(ismobile()){
+		define('ACTIVE_CAMOUFLAGE_PATH', THEME_PATH. '/camouflage/' . ACTIVE_MOBILE_CAMOUFLAGE);
+	}
+}
+
+if (!defined('ACTIVE_CAMOUFLAGE_PATH')) {
+    define('ACTIVE_CAMOUFLAGE_PATH', THEME_PATH. '/camouflage/' . ACTIVE_CAMOUFLAGE);
+}
  
 /**
  * Enqueue scripts and styles for the front end.
