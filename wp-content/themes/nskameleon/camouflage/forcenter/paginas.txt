@@ -10,6 +10,10 @@
 
 [section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][text]Cotice su auto en el siguiente formulario, agregue los autos que desea cotizar mientras navega por nuestro sitio web. En el podr&aacute;s encontrar secciones de autos nuevos y usados. El limite m&aacute;ximo de autos por cotizaci&oacute;n son 3 modelos que pueden variar entre auto nuevo y usado. Ademas podr&aacute;s cotizar un m&aacute;ximo de 3 accesorios Ford.[/text][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_8][article][cotizador][/article][/col_8][/section][spacer]
 
+---Desabolladura y Pintura---
+
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][lista title="Nuestros Beneficios"][elemento text="Atenci&oacute;n a clientes particulares y empresas."][elemento text="Alianza con todas las compa&ntilde;&iacute;as de seguros."][elemento text="Modernas y renovadas instalaciones."][elemento text="Atendido por un equipo de profesionales con una amplia experiencia automotriz."][/lista][text]Nos ocupamos del &oacute;ptimo funcionamiento y asistencia a su veh&iacute;culo. Nuestro taller es atendido por un equipo de profesionales con una amplia experiencia, para brindarle la m&aacute;xima seguridad y eficiencia en nuestro trabajo. Para eso tambi&eacute;n hemos implementado un c&oacute;modo y r&aacute;pido sistema de agendamiento y seguimiento online de la reparaci&oacute;n de su veh&iacute;culo.[/text][/col_4][col_8][article][dyp][/article][/col_8][/section][spacer]
+
 ---home---
 
 [section][col_12][rev_slider homeslider][/col_12][/section][section][col_12][showbiz carrouselhome][/col_12][/section][section][col_12][hr][/col_12][/section][section][col_4][box_a link="http://www.rescobar.com" img_url="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" img_title="asdasd"][/col_4][col_4][box_b link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_4][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][/section][section][col_12][hr][/col_12][/section][section][col_4][box_c link="http://www.rescobar.com" title="texto" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_4][box_c link="http://www.rescobar.com" title="texto" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_4][box_c link="http://www.rescobar.com" title="texto" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][/section][spacer]
@@ -22,9 +26,21 @@
 
 [section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][modelo name="Captiva"][/col_12][/section][spacer]
 
+---Repuestos---
+
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][lista title="¿Por qu&eacute; elegir repuestos genuinos?"][elemento text="Garantizan el buen funcionamiento de su veh&iacute;culo."][elemento text="&Uacute;nicos que tienen el respaldo de Chevrolet."][elemento text="Brindan seguridad, tranquilidad y confianza."][elemento text="Repuestos para todos los modelos y or&iacute;genes."][/lista][text]Nuestro departamento de repuestos le brinda una atenci&oacute;n precisa y de calidad. Ponemos a su alcance un cat&aacute;logo de accesorios genuinos, adem&aacute;s de ofrecerle mecanismos de importaci&oacute;n, compra y env&iacute;o r&aacute;pidos, que le permitir&aacute;n cuidar la integridad y valor de su veh&iacute;culo. Para completar nuestra labor, Inalco tambi&eacute;n le ofrece una reposici&oacute;n e instalaci&oacute;n garantizada.[/text][/col_4][col_8][article][repuestos][/article][/col_8][/section][spacer]
+
 ---Servicio Técnico---
 
 [section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][text]<b>Servicio T&eacute;cnico Ford</b> de primer nivel. Cotice a trav&eacute;s de esta p&aacute;gina o ub&iacute;quenos en nuestra sucursal.[/text][text]Direcci&oacute,n: Avda. Irarr&aacute;zaval 1445, &Ntilde;u&ntilde;oa.[/text][text]Horario:<br/>Lun - Vier 8:30 a 18:30 hrs. S&aacute;bado 9.00 a 14 hrs.[/text][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_8][article][servicio][/article][/col_8][/section][spacer]
+
+---Sucursal---
+
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][sucursald][/col_12][/section][spacer]
+
+---Sucursales---
+
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_6][sucursal name="Casa_Matriz"][/col_6][col_6][sucursal name="Mall Plaza Tobalaba"][/col_6][/section][section][col_6][sucursal name="Mall Plaza Alameda"][/col_6][col_6][sucursal name="Seminuevos"][/col_6][/section][spacer]
 
 ---Versión---
 

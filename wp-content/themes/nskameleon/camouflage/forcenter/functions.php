@@ -31,7 +31,7 @@ function nsk_fc_scripts() {
 	wp_enqueue_script( 'nsk-price-slider-js', get_template_directory_uri() . '/camouflage/forcenter/js/price-slider.js', array( 'jquery' ), null, true );
 	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 	
-	//Cotizador
+	//Cotizador y repuestos
 	wp_enqueue_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
 	
 	//Versiones
@@ -40,6 +40,13 @@ function nsk_fc_scripts() {
 	//Servicio Técnico: Date-picker
 	wp_enqueue_script('jquery-ui-datepicker');
 	wp_enqueue_script( 'nsk-date-picker-js', get_template_directory_uri() . '/camouflage/forcenter/js/date-picker.js', array( 'jquery' ), null, true );
+	
+	//Sucursales
+	wp_enqueue_script( 'nsk-sucursales-js', get_template_directory_uri() . '/camouflage/forcenter/js/sucursales.js', array( 'jquery' ), null, true );
+	
+	//Desabolladura y Pintura
+	wp_enqueue_script('jquery-ui-dialog');
+	wp_enqueue_script( 'nsk-dialog-js', get_template_directory_uri() . '/camouflage/forcenter/js/dialog.js', array( 'jquery' ), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' ); 
  
