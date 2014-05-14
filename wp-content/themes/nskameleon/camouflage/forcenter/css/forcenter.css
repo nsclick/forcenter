@@ -336,6 +336,15 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .cotizador.repuestos .tab.tab2.activ .tail{background:url(../images/bg-tab-blue-right.png) right top}
 .cotizador.repuestos h4{padding:10px 0;font-size:13px} 
 /* END Repuestos */
+/* Desabolladura y Pintura */
+.dyp{padding-bottom:10px}
+.dyp p{padding:10px}
+.dyp #dialog, .ui-state-hover{display:block;margin:10px;border:1px solid #d7dde2;border-top:1px solid #2850a3;padding:10px 85px 10px 10px;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;text-align:left;position:relative;background:url(../images/bg-selector.png) top repeat-x #fff;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+.dyp #dialog span span{display:block;font-size:18px;border-bottom:1px solid #d7dde2;padding:0 0 3px 0;margin-bottom:3px;font-weight:bold;font-style:italic}
+.dyp #dialog span span b{color:#2850a3}
+#dialog.ui-state-hover span{color:inherit!important}
+.dyp #dialog i{position:absolute;top:0;right:-1px;display:block;padding:18px 26px 19px;color:#fff;background:#2850a3;font-size:36px}
+/* END Desabolladura y Pintura */
 /* End Main Content */
 
 /* Footer */
@@ -361,3 +370,4 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 
 /* END CSS For Base Theme */
 /* Ricardo Escobar */
+/* azul #2850a3 */
