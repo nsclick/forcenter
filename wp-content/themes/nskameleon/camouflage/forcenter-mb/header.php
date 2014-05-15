@@ -34,26 +34,21 @@
   			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome-ie7.min.css">
 		<![endif]-->
 	</head>
-	<body>
+	<?php
+		$post = $wp_query->post;
+		//var_dump($post);
+	?>
+	<body id="<?php echo $post->post_name ?>">
 		<div id="wrapper">
 			<div id="header">
 				<div class="content">
-					<div class="spacer">&nbsp;</div><div class="spacer">&nbsp;</div>
-					<div class="section group">
-
-						<?php /*header-left-sidebar*/ ?>
-						<div class="col span_6_of_12">
-							
-							<div id="logo-container">
-								<a href="<?php echo get_site_url(); ?>/" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter-mb/images/logo-ford.png" alt="logo"/> </a>
-							</div>
-						</div>
-												
-						<?php /*Place the forcenter logo here*/ ?>
-						<div class="col span_6_of_12">
-							Forcenter logo
-						</div>
+					<div id="back">
+						<a href="#"><i class="icon-chevron-left"></i> Volver</a>
 					</div>
-					
+					<div class="logo">
+						<?php /*header-left-sidebar*/ ?>
+							<a href="<?php echo get_site_url(); ?>/" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter-mb/images/logo-ford-forcenter.png" alt="Ford"/> </a>
+						<?php /*Place the forcenter logo here*/ ?>
+					</div>
 				</div>
 			</div>

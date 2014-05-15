@@ -95,8 +95,20 @@ add_shortcode( 'spacer', 'ns_spacer_shortcode' );
 
 //[box_a link="" img_url="" img_title=""]
 function ns_box_a_shortcode( $atts ) {
-	extract( $atts ); 
-	return '<a href="'.$link.'" class="box_a"><img src="'.$img_url.'" alt="'.$img_title.'" title="'.$img_title.'"/></a>';
+	extract( $atts );
+	ob_start(); 
+	?> 
+		<ul class="menu">
+			<li><a href="autos-nuevos"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="mantenciones"><span>Agende su mantenci&oacute;n</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="servicio-tecnico"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="repuestos"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="desabolladura-y-pintura"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="sucursales"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+		</ul>
+<?php
+return ob_get_clean();
 }
 add_shortcode( 'box_a', 'ns_box_a_shortcode' );
 
@@ -150,19 +162,9 @@ add_shortcode( 'box_c', 'ns_box_c_shortcode' );
 
 //[breadcrumbs]
 function ns_breadcrumbs_shortcode( $atts ) {
-	global $wp_query;
-	$post = $wp_query->post;
-	
-	extract( $atts );
-
 	ob_start();
-
 ?> 
 	<div id="breadcrumbs">
-		<ul>Est&aacute;s en:
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#"><?php echo get_the_title($post->ID); ?></a></li>
-		</ul>
 	</div>		
 <?php
 return ob_get_clean();
@@ -173,7 +175,7 @@ add_shortcode( 'breadcrumbs', 'ns_breadcrumbs_shortcode' );
 function ns_page_title_shortcode( $atts ) {
 	global $wp_query;
 	
-	extract( $atts );
+	//extract( $atts );
 	
 	//Get the current post
 	$post = $wp_query->post;
@@ -191,72 +193,9 @@ function ns_showcase_shortcode( $atts ) {
 ob_start();
 ?> 
 	<div class="showcase">
-		<ul class="cate">
-			<li><a href="#">Categor&iacute;a</a></li>
-			<li class="activ"><a href="#">Categor&iacute;a</a></li>
-			<div class="divclear">&nbsp;</div>
-		</ul>
-		<div class="section group cotiza">
-			<div class="col span_6_of_12 pt1">
-				<div class="section group">
-					<div class="col span_4_of_12">
-						<div class="cont"> 
-							<label for="modelo">Modelo</label>
-							<select>
-								<option>Corsa</option>
-							</select>
-						</div>
-					</div>
-					<div class="col span_4_of_12">
-						<div class="cont"> 
-							<label for="version">Versi&oacute;n</label>
-							<select>
-								<option>Corsa</option>
-							</select>
-						</div>
-					</div>
-					<div class="col span_4_of_12">
-						<div class="cont"> 
-							<label for="cotiz">&nbsp;</label>
-							<a href="#" class="btn">Cotizar <i class="icon-chevron-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col span_6_of_12 pt2">
-				<div class="section group">
-					<div class="col span_4_of_12">
-						<div class="cont">
-							<label for="slider">Precio:</label>
-							<div id="slider-range" name="slider"></div>
-						</div>
-					</div>
-					<div class="col span_4_of_12">
-						<div class="cont">
-							<label for="minp">Desde</label>
-							<input type="text" id="minp" name="minp" />
-						</div>
-					</div>
-					<div class="col span_4_of_12">
-						<div class="cont">
-							<label for="slider">Hasta</label>
-							<input type="text" id="maxp" name="maxp"/>
-						</div>
-					</div>
-  				</div>
-			</div>
-		</div>
 		<div class="section group filter">
-			<div class="col span_6_of_12">
-				<p>asdasd</p>
-			</div>
-			<div class="col span_6_of_12">
-				<p>
-					<label for="orden">Ordenar:</label>
-					<select>
-						<option>De menor a mayor precio</option>
-					</select>
-				</p>
+			<div class="col span_12_of_12">
+				<p>Tenemos 13 veh&iacute;culos</p>
 			</div>
 		</div>
 		<ul class="showgrid">
@@ -265,11 +204,7 @@ ob_start();
 					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
 					<span class="name">Spark</span>
 					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-						<div class="divclear">&nbsp;</div>
-					</div>				
+					<a href="modelo" class="ver">Ver</a>
 				</div>
 			</li>
 			<li>
@@ -277,93 +212,65 @@ ob_start();
 					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
 					<span class="name">Spark</span>
 					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
-						<a href="#" class="ver">Ver <i class="icon-chevron-right"></i></a>
-					</div>				
+					<a href="modelo" class="ver">Ver</a>
 				</div>
 			</li>
-			<div class="divclear">&nbsp;</div>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
+			<li>
+				<div class="cont">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+					<span class="name">Spark</span>
+					<span class="price">$4.130.000</span>
+					<a href="modelo" class="ver">Ver</a>
+				</div>
+			</li>
 		</ul>
 	</div>	
 <?php
@@ -410,147 +317,18 @@ add_shortcode( 'article', 'ns_article_shortcode' );
 function ns_cotizador_shortcode( $atts ) {
 	ob_start();
 	?> 
+		<div class="showcase">
+			<ul class="showgrid">
+				<li>
+					<div class="cont">
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="Nombre-auto" title="Nombre-auto"/>
+						<span class="name">Spark</span>
+						<span class="price">$4.130.000</span>
+					</div>
+				</li>
+			</ul>
+		</div>
 		<div class="cotizador">
-			<div class="tab tab1 activ">01. Seleccione<span class="tail">&nbsp;</span></div>
-			<div class="tab tab2"><span class="head">&nbsp;</span>01. Financiamiento<span class="tail">&nbsp;</span></div>
-			<div class="tab tab3"><span class="head">&nbsp;</span>01. Ingrese sus datos</div>
-			<div class="divclear">&nbsp;</div>
-			<div id="step1" class="activ">
-				<div class="selector">
-					<div class="title">
-						<h3>Seleccione Auto(s)</h3>
-					</div>
-					<div class="producto">
-						<div class="img">
-							<div class="name">Ford Focus Sedan SE MT</div>
-							<div class="price">$14.000.000</div>
-							<!-- La idea es que aquí el ALT y TITLE sean el nombre del auto -->
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="auto" title="auto"/></div>
-						<div class="details">
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Ford Focus Sedan
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="version">Versi&oacute;n:</label>
-								<select name="version">
-									<option>
-										SE MT
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="option"><a href="#"><i class="icon-plus"></i> Agregar a la lista</a></div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-					<div class="producto">
-						<div class="img">
-							<div class="name">Ford Focus Sedan SE MT</div>
-							<div class="price">$14.000.000</div>
-							<!-- La idea es que aquí el ALT y TITLE sean el nombre del auto -->
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="auto" title="auto"/></div>
-						<div class="details">
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Ford Focus Sedan
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="version">Versi&oacute;n:</label>
-								<select name="version">
-									<option>
-										SE MT
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="option"><a href="#"><i class="icon-remove"></i> Quitar de la lista</a></div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-					<div class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 veh&iacute;culos.</div>
-				</div>
-				<div class="selector">
-					<div class="title">
-						<h3>Seleccione Accesorio(s)</h3>
-					</div>
-					<div class="producto">
-						<div class="img">
-							<div class="name">Ford Focus Sedan SE MT</div>
-							<div class="price">$14.000.000</div>
-							<!-- La idea es que aquí el ALT y TITLE sean el nombre del auto -->
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="auto" title="auto"/></div>
-						<div class="details">
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Ford Focus Sedan
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="version">Versi&oacute;n:</label>
-								<select name="version">
-									<option>
-										SE MT
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="option"><a href="#"><i class="icon-plus"></i> Agregar a la lista</a></div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-					<div class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 accesorios.</div>
-				</div>
-				<div class="link">
-					<button id="go1">Paso 02: Financiamiento <i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
-			<div id="step2">
-				<div class="selector">
-					<div class="title">
-						<h3>¿C&oacute;mo pagar&aacute;?</h3>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="pie">Pie:</label>
-								<input name="pie" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="cuotas">Cuotas:</label>
-								<select name="cuotas">
-									<option>
-										12
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="back2"><i class="icon-chevron-left"></i> Volver al paso 1</button>
-					<button id="go2">Paso 03: Ingrese sus datos <i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
 			<div id="step3">
 				<div class="selector">
 					<div class="title">
@@ -559,73 +337,30 @@ function ns_cotizador_shortcode( $atts ) {
 					<div class="producto">
 						<div class="details">
 							<div class="select">
-								<label for="rut">RUT:</label>
-								<input name="rut" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
 								<label for="nombres">Nombres:</label>
 								<input name="nombres" type="text" />
-								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="paterno">Apellido Paterno:</label>
 								<input name="paterno" type="text" />
-								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="materno">Apellido Materno:</label>
 								<input name="materno" type="text" />
-								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="fono">Tel&eacute;fono:</label>
 								<input name="fono" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="movil">Celular:</label>
-								<input name="movil" type="text" />
-								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="email">E-mail:</label>
 								<input name="email" type="text" />
-								<div class="divclear">&nbsp;</div>
 							</div>
-							<div class="select">
-								<label for="comuna">Comuna:</label>
-								<select name="comuna">
-									<option>
-										12
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="donde">D&oacute;nde nos conoci&oacute;:</label>
-								<select name="donde">
-									<option>
-										12
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							
-							<div class="divclear">&nbsp;</div>
 						</div>
-						<div class="divclear">&nbsp;</div>
 					</div>
 				</div>
 				<div class="link">
-					<button id="back3"><i class="icon-chevron-left"></i> Volver al paso 2</button>
 					<button id="go3">Solicitar Cotizaci&oacute;n <i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
 				</div>
 			</div>
 		</div>	
@@ -670,190 +405,45 @@ function ns_modelo_shortcode( $atts ) {
 	
 	ob_start();
 	?> 
+		<h1 id="page_title2">Autos Nuevos</h1>
 		<div class="modelo">
 			<div class="head">
 				<div class="banner">
 					<div class="wborder"><img class="main-pic" src="<?php echo $gallery['exterior'][0]['src'] ?>" alt="<?php echo $gallery['exterior'][0]['alt'] ?>" title="<?php echo $gallery['exterior'][0]['title'] ?>"/></div>
-					<div class="text">
-						<p><?php echo $extra['descripcion'] ?></p>
-					</div>
 					<div class="divclear">&nbsp;</div>
 				</div>
-				<div class="images">
-					<div class="section group">
-					<?php /* Adding two outside pics */ ?>
-						<?php for($x = 0; $x < 2; $x++ ): ?>
-						<div class="col span_3_of_12">
-							<img class="thumb-pic" src="<?php echo $gallery['exterior'][$x]['src'] ?>" alt="<?php echo $gallery['exterior'][$x]['alt'] ?>" title="<?php echo $gallery['exterior'][$x]['alt'] ?>"/>
-						</div>
-						<?php endfor; ?>
-
-					<?php /* Adding two inside pics */ ?>
-						<?php for($x = 0; $x < 2; $x++ ): ?>
-						<div class="col span_3_of_12">
-							<img class="thumb-pic" src="<?php echo $gallery['interior'][$x]['src'] ?>" alt="<?php echo $gallery['interior'][$x]['alt'] ?>" title="<?php echo $gallery['interior'][$x]['alt'] ?>"/>
-						</div>
-						<?php endfor; ?>
-
-
-
-					</div>
-				</div>
-				<div class="lista">
-					<div class="sign">
-						<span><b>Versiones</b>Disponibles</span>
-					</div>
+				<ul class="lista">
 					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
+					<li>
+						<div class="cont">
+							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+							<span class="name">Spark</span>
+							<span class="price">$4.130.000</span>
+							<a href="../version" class="ver">Ver</a>
 						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</li>				
 					<!-- fin un elemento -->
 					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
+					<li>
+						<div class="cont">
+							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+							<span class="name">Spark</span>
+							<span class="price">$4.130.000</span>
+							<a href="../version" class="ver">Ver</a>
 						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</li>				
 					<!-- fin un elemento -->
 					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
+					<li>
+						<div class="cont">
+							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+							<span class="name">Spark</span>
+							<span class="price">$4.130.000</span>
+							<a href="../version" class="ver">Ver</a>
 						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</li>				
 					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-				</div>
-				<div class="tabla">
-					<div class="menu">
-						<ul>
-							<li class="activ"><a href="#">Detalle</a></li>
-							<li><a href="#">Detalle</a></li>
-							<li><a href="#">Detalle</a></li>
-							<div class="divclear">&nbsp;</div>
-						</ul>
-					</div>
-					<div class="lista">
-						<div class="row">
-							<div class="cell">Interior</div>
-							<div class="cell">Modelo1</div>
-							<div class="cell">Modelo2</div>
-							<div class="cell">Modelo3</div>
-						</div>
-						<div class="row">
-							<div class="cell">Caracter&iacute;stica</div>
-							<div class="cell"><i class="icon-ok-sign"></i></div>
-							<div class="cell"><i class="icon-remove-sign"></i></div>
-							<div class="cell"><i class="icon-remove-sign"></i></div>
-						</div>
-					</div>
-				</div>
+				</ul>
 			</div>
 		</div>	
 	<?php
@@ -863,173 +453,42 @@ add_shortcode( 'modelo', 'ns_modelo_shortcode' );
 
 //[version name=""]
 function ns_version_shortcode( $atts ) {
-	extract( $atts );
 	ob_start();
 	?> 
+		<h1 id="page_title2">Autos Nuevos</h1>
 		<div class="version">
 			<div class="head">
+				<div class="section group subhead">
+					<div class="col span_6_of_12 col2">
+						<div class="cont">
+							<h4><?php echo get_the_title($ID); ?></h4>
+						</div>
+					</div>
+					<div class="col span_6_of_12 col3">
+						<div class="cont">
+							Precio <b>$10.490.000</b>
+						</div>
+					</div>
+				</div>
 				<div class="wborder"> 
 					<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>	
 				</div>
-				<div class="section group subhead">
-					<div class="col span_6_of_12">
-						<div class="section group">
-							<div class="col span_7_of_12 col1">
-								<div class="cont">
-									<a href="#">
-										<i class="icon-download"></i>
-										<b>Descargar:</b>
-										Ficha T&eacute;cnica / Manual
-									</a>
-								</div>
-							</div>
-							<div class="col span_5_of_12 col2">
-								<div class="cont">
-									<b>Otras versiones:</b>
-									<select>
-										<option>Otra versi&oacute;n mejor</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col span_6_of_12">
-						<div class="col span_6_of_12 col3">
-							<div class="cont">
-								Precio <b>$10.490.000</b>
-							</div>
-						</div>
-						<div class="col span_6_of_12 col4">
-							<a href="#">Cotiza AHORA <i class="icon-chevron-right"></i></a>
-						</div>
-					</div>
-				</div>
+			</div>
+			<div class="contec">
+				<a href="../cotizador" class="cotizar">
+					<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter-mb/images/ico-car.png" alt="Cotizar" title="Cotizar"/>
+					Cotizar
+				</a>
 			</div>
 			<div class="body">
-				<ul class="menu">
-					<li><a class="activ" id="link1">Informaci&oacute;n general</a></li>
-					<li><a id="link2">Fotos y videos</a></li>
-					<li><a id="link3">Caracter&iacute;sticas t&eacute;cnicas</a></li>
+				<div class="menu">
+					<a><i class="icon-chevron-sign-left"></i></a>
+					<span class="place">Dise&ntilde;o</span>
+					<a><i class="icon-chevron-sign-right"></i></a>
 					<div class="divclear">&nbsp;</div>
-				</ul>
+				</div>
 				<div class="cont activ" id="cont1">
-					<div class="section group">
-						<div class="col span_4_of_12">
-							<div class="color">
-								<b>Colores Disponibles:</b>
-								<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
-								<b>Azul Candy</b>
-								<ul class="chart">
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li class="activ"><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<div class="divclear">&nbsp;</div>
-								</ul>
-							</div>
-							<a href="#" class="box_b">
-								<span class="title">Hola</span>
-								<span class="link2">Hola</span>
-								<img src="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" alt="asd" title="asd"/>
-							</a>
-						</div>
-						<div class="col span_8_of_12">
-							<div class="cont">
-							<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-								<h4>T&iacute;tulo</h4>
-								<p>La figura ascendente y sus l&iacute;neas que convergen en el capot le dan al nuevo Chevrolet Spark GT una apariencia din&aacute;mica, convirti&eacute;ndolo en el centro de todas las miradas. A eso se suman su spoiler trasero incorporado y los detalles al color de la carrocer&iacute;a. A simple vista es un auto compacto pero interiormente te sorprender&aacute; por lo espacioso y por su dise&ntilde;o moderno en el que sobresalen sus formas curvas y la consola central sim&eacute;trica. 
-	Por otra parte, el color de la tapicería combina a la perfecci&oacute;n con el exterior, creando as&iacute; una atm&oacute;sfera fresca y juvenil que podr&aacute;s conocer en cualquier concesionario Inalco.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="cont" id="cont2">
-					<div class="galeria">
-						<div class="side">
-							<div class="color">
-								<b>Colores Disponibles:</b>
-								<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
-								<b>Azul Candy</b>
-								<ul class="chart">
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li class="activ"><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<li><a href="#" style="background:red">&nbsp;</a></li>
-									<div class="divclear">&nbsp;</div>
-								</ul>
-							</div>
-							<a href="#" class="box_b">
-								<span class="title">Hola</span>
-								<span class="link2">Hola</span>
-								<img src="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" alt="asd" title="asd"/>
-							</a>
-						</div>
-						<div class="show">
-							<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
-							<ul>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<div class="divclear">&nbsp;</div>	
-							</ul>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="cont" id="cont3">
-					<div class="section group tabla">
-						<div class="col span_3_of_12">
-							<ul class="menu2">
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#" class="activ"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-							</ul>
-						</div>
-						<div class="col span_9_of_12">
-							<table>
-								<thead><tr><td>Interior</td><td>Modelo</td></tr></thead>
-								<tbody>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td><i class="icon-remove-sign"></i></td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td><i class="icon-ok-sign"></i></td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
+					<p>asdasdasdasdas</p>
 				</div>
 			</div>
 		</div>	
@@ -1045,63 +504,20 @@ function ns_servicio_shortcode( $atts ) {
 	ob_start();
 	?> 
 		<div class="cotizador">
-			<div id="step3" class="activ servicio">
-				<div class="selector">
-					<div class="title">
-						<h3>Agendar cita</h3>
-						<span>Todos los campos son obligatorios.</span>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="nombre">Nombre completo:</label>
-								<input name="nombre" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Auto
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fecha">D&iacute;a que desea agendar:</label>
-								<input name="fecha" type="text" id="datepicker" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="rut">RUT:</label>
-								<input name="rut" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="divclear">&nbsp;</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="go3">Agendar<i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
+			<div class="intro">
+				<p>Somos un taller autorizado por la marca Ford y contamos con los m&aacute;s altos est&aacute;ndares de calidad para atenderlo superando sus expectativas. Agende el servicio t&eacute;cnico para su auto Ford aqu&iacute;.</p>
+				<h4>Con nosotros, usted cuenta con:</h4>
+				<ul>
+					<li><i class="icon-chevron-sign-right"></i> Rapidez y calidad.</li>
+					<li><i class="icon-chevron-sign-right"></i> Pronta disponibilidad de agendamiento.</li>
+					<li><i class="icon-chevron-sign-right"></i> Precios competitivos.</li>
+				</ul>
 			</div>
+		</div>
+		<div id="home">
+			<ul class="menu">
+				<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			</ul>
 		</div>	
 	<?php
 return ob_get_clean();
@@ -1111,65 +527,22 @@ add_shortcode( 'servicio', 'ns_servicio_shortcode' );
 //[mantencion]
 function ns_mantencion_shortcode( $atts ) {
 	ob_start();
-	?> 
+	?> 	
 		<div class="cotizador">
-			<div id="step3" class="activ servicio">
-				<div class="selector">
-					<div class="title">
-						<h3>Agendar cita</h3>
-						<span>Todos los campos son obligatorios.</span>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="nombre">Nombre completo:</label>
-								<input name="nombre" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Auto
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fecha">D&iacute;a que desea agendar:</label>
-								<input name="fecha" type="text" id="datepicker" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="rut">RUT:</label>
-								<input name="rut" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="divclear">&nbsp;</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="go3">Agendar<i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
+			<div class="intro">
+				<p>Queremos cuidar y prolongar la vida de su Ford haciendo su mantenci&oacute;n lo m&aacute;s grata posible. Valoramos su tiempo, agende su hora y estar&aacute;n los repuestos y todo lo necesario para su veh&iacute;culo al momento de su llegada. Agende su mantenci&oacute;n aqu&iacute;.</p>
+				<h4>Con nosotros, usted cuenta con:</h4>
+				<ul>
+					<li><i class="icon-chevron-sign-right"></i> T&eacute;cnicos altamente calificados.</li>
+					<li><i class="icon-chevron-sign-right"></i> Pronta disponibilidad de atenci&oacute;n.</li>
+					<li><i class="icon-chevron-sign-right"></i> Precios competitivos.</li>
+				</ul>
 			</div>
+		</div>
+		<div id="home">
+			<ul class="menu">
+				<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			</ul>
 		</div>	
 	<?php
 return ob_get_clean();
@@ -1301,3 +674,233 @@ function ns_iframe( $atts ) {
 
 }
 add_shortcode( 'iframe', 'ns_iframe' );
+
+//[sucursal name=""]
+function ns_sucursal_shortcode( $atts ) {
+	extract( $atts );
+ob_start();
+?> 
+	<div class="sucursal">
+		<div class="overlap">
+			<h4><?php echo $name ?></h4>
+			<div class="par">
+				<p><b>Direcci&oacute;n:</b><br />Avenida Irarrázaval 1445, Ñuñoa</p>
+				<p>Tel&eacute;fono:<br/>+562 2222 2222</p>
+			</div>
+		</div>
+		<div class="link">
+			<a href="#">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
+		</div>
+		<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+	</div>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'sucursal', 'ns_sucursal_shortcode' );
+
+//[sucursald]
+function ns_sucursald_shortcode( $atts ) {
+	ob_start();
+?> 
+	<div class="sucursald">
+		<ul>
+			<li><a class="activ" id="suc1">Casa Matriz</a></li>
+			<li><a id="suc2">Sucursal 2</a></li>
+			<li><a id="suc3">Sucursal 3</a></li>
+			<li><a id="suc4">Sucursal 4</a></li>
+			<div class="divclear">&nbsp;</div>
+		</ul>
+		<div class="cont activa" id="sucu1">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Casa Matriz</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+		<div class="cont" id="sucu2">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Sucursal 2</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+		<div class="cont" id="sucu3">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Sucursal 3</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+		<div class="cont" id="sucu4">
+			<div class="section group">
+				<div class="col span_7_of_12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
+				</div>
+				<div class="col span_5_of_12">
+					<h4>Sucursal 3</h4>
+					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
+					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
+					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+				</div>
+			</div>
+			<div class="galeria">
+				<div class="links">
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<div class="divclear">&nbsp;</div>
+				</div>
+				<div class="show">
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+				</div>
+				<div class="divclear">&nbsp;</div>
+			</div>
+		</div>
+	</div>	
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'sucursald', 'ns_sucursald_shortcode' );
+
+//[lista title=""]...[/lista]
+function ns_lista_shortcode( $atts, $content = null  ) {
+	extract( $atts );
+	ob_start();
+	?> 
+		<ul class="lista">
+			<h4><?php echo $title ?></h4>
+			<?php echo do_shortcode($content) ?>
+		</ul>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'lista', 'ns_lista_shortcode' );
+
+//[elemento text=""]
+function ns_elemento_shortcode( $atts ) {
+	extract( $atts );
+	ob_start();
+	?> 
+		<li><i class="icon-chevron-right"></i> <?php echo $text ?></li>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'elemento', 'ns_elemento_shortcode' );
+
+
+//[repuestos]
+function ns_repuestos_shortcode( $atts ) {
+	ob_start();
+	?> 
+		<div class="cotizador">
+			<div class="intro">
+				<p>Contamos con el mix m&aacute;s amplio de repuestos originales para su auto Ford. Adem&aacute;s importamos aquellos repuestos Ford de menor rotaci&oacute;n y/o antig&uuml;edad. Valoramos su tiempo consiguiendo los repuestos para su auto en el menor plazo.</p>
+				<h4>Nuestros beneficios:</h4>
+				<ul>
+					<li><i class="icon-chevron-sign-right"></i> Utilizamos repuestos originales autorizados.</li>
+					<li><i class="icon-chevron-sign-right"></i> Alta calidad prolongando la vida &uacute;til de su Ford.</li>
+				</ul>
+			</div>
+		</div>
+		<div id="home">
+			<ul class="menu">
+				<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			</ul>
+		</div>		
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'repuestos', 'ns_repuestos_shortcode' );
+
+//[dyp]
+function ns_dyp_shortcode( $atts ) {
+	ob_start();
+	?> 
+		<div class="cotizador">
+			<div class="intro">
+				<p>Nuestros profesionales cuentan con amplia experiencia y conocimientos para brindarle el mejor cuidado a su auto Ford, comprometidos con la seguridad y eficiencia en nuestro trabajo. Agende el servicio de Desabolladura y Pintura aqu&iacute;.</p>
+				<h4>Nuestros beneficios:</h4>
+				<ul>
+					<li><i class="icon-chevron-sign-right"></i> Atenci&oacute;n a clientes particulares y empresas.</li>
+					<li><i class="icon-chevron-sign-right"></i> Alianzas con todas las compa&ntilde;&iacute;as de seguros.</li>
+					<li><i class="icon-chevron-sign-right"></i> Modernas y renovadas instalaciones.</li>
+					<li><i class="icon-chevron-sign-right"></i> Atendido por un equipo de profesionales con una amplia experiencia automotriz.</li>
+				</ul>
+			</div>
+		</div>
+		<div id="home">
+			<ul class="menu">
+				<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			</ul>
+		</div>
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'dyp', 'ns_dyp_shortcode' );
+
