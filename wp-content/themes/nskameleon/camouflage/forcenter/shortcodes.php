@@ -153,7 +153,7 @@ function ns_breadcrumbs_shortcode( $atts ) {
 	global $wp_query;
 	$post = $wp_query->post;
 	
-	extract( $atts );
+//	extract( $atts );
 
 	ob_start();
 
@@ -173,7 +173,7 @@ add_shortcode( 'breadcrumbs', 'ns_breadcrumbs_shortcode' );
 function ns_page_title_shortcode( $atts ) {
 	global $wp_query;
 	
-	extract( $atts );
+	//extract( $atts );
 	
 	//Get the current post
 	$post = $wp_query->post;
@@ -863,7 +863,42 @@ add_shortcode( 'modelo', 'ns_modelo_shortcode' );
 
 //[version name=""]
 function ns_version_shortcode( $atts ) {
-	extract( $atts );
+
+	global $wp_query;
+		
+	//Get the current post
+	$post = $wp_query->post;
+	$versionID = $post->ID;
+	
+	//Getting the model
+	$modelID = get_post_meta( $post->ID, '_related_model', true);
+	$model = get_post( $modelID );
+	
+	//Loding the gallery from the parent model
+	$galleryIDs = get_post_meta( $modelID, 'model-gallery', true ); 
+	$galleryIDs = explode(',', $galleryIDs[0]['fotos']);
+	$gallery = array();
+
+	foreach($galleryIDs as $id){
+
+		$attachment = get_post( $id );
+		$type = strtolower( $attachment->post_content ); //Interior or Exterior
+		$gallery[$type][] = array(
+			'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+			'caption' => $attachment->post_excerpt,
+			'type' => $type,
+			'href' => get_permalink( $attachment->ID ),
+			'src' => $attachment->guid,
+			'title' => $attachment->post_title
+		);
+	}	 
+	
+	
+	//Getting the metas
+	$metas = get_post_meta( $post->ID, 'version-data', true ); 
+
+	echo '<pre>',print_r($metas),'</pre>';
+	
 	ob_start();
 	?> 
 		<div class="version">
@@ -985,16 +1020,18 @@ function ns_version_shortcode( $atts ) {
 							</a>
 						</div>
 						<div class="show">
-							<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
+							<img class="main-pic" src="<?php echo $gallery['exterior'][0]['src'] ?>" alt="<?php echo $gallery['exterior'][0]['alt'] ?>" title="<?php echo $gallery['exterior'][0]['title'] ?>"/>
 							<ul>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
-								<li><a href="#"><img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/auto.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a></li>
+								<?php //Outside pics ?>
+								<?php foreach ($gallery['exterior'] as $pic): ?>
+								<li><a class="thumb-pic" href="#"><img src="<?php echo $pic['src'] ?>" alt="<?php echo $pic['alt'] ?>" title="<?php echo $pic['title'] ?>"/></a></li>
+								<?php endforeach; ?>
+
+								<?php //Outside pics ?>
+								<?php foreach ($gallery['interior'] as $pic): ?>
+								<li><a class="thumb-pic" href="#"><img src="<?php echo $pic['src'] ?>" alt="<?php echo $pic['alt'] ?>" title="<?php echo $pic['title'] ?>"/></a></li>
+								<?php endforeach; ?>
+
 								<div class="divclear">&nbsp;</div>	
 							</ul>
 						</div>
