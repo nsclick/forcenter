@@ -208,9 +208,9 @@ class custom_post_related {
                 echo ' value="' . esc_attr( $value ) . '" size="25" />';*/
         echo '<select id="related_model" name="related_model">';
 		echo '<option value="">Seleecione Modelo</option>';
-		foreach($models as $id => $name){
-			$selected = ($value == $id) ? 'selected' : '';
-			echo '<option value="'. $id .'" ' . $selected . '>' . $name . '</option>';
+		foreach($models as $model){
+			$selected = ($value == $model->ID) ? 'selected' : '';
+			echo '<option value="'. $model->ID .'" ' . $selected . '>' . $model->post_title . '</option>';
 		}
         echo '</select>';
 	}
@@ -218,27 +218,16 @@ class custom_post_related {
 }
 
 function get_models(){
-	$type = 'modelo';
-	$args=array(
-	  'post_type' => $type,
-	  'post_status' => 'publish',
-	  'posts_per_page' => -1,
-	  //'caller_get_posts'=> 1
-	);
-	$my_query = null;
-	$my_query = new WP_Query($args);
-	$models = array();
-	if( $my_query->have_posts() ) {
-		while ($my_query->have_posts()){
-			$my_query->the_post();
-			$models[get_the_ID()] = get_the_title();
-		}
-	}
-	
-	wp_reset_query(); 
+	global $wpdb;
+	$models = $wpdb->get_results( "SELECT * FROM wp_posts where post_type='modelo' AND post_status='publish'", OBJECT );	
 	return $models;
 }
 
+function get_related_versions($modelID){
+	global $wpdb;
+	$versions = $wpdb->get_results( "SELECT p.* FROM wp_posts p, wp_postmeta m  where p.post_type='version' AND p.post_status='publish' AND p.ID=m.post_id AND m.meta_key='_related_model' AND m.meta_value='$modelID'", OBJECT );	
+	return $versions;
+}
 
 /**
  * Add Autos taxonomy
@@ -283,17 +272,56 @@ add_action( 'init', 'add_ctm_family_taxonomies', 0 );
 *
 * @return string The filtered editor content.
 */
-function wpdocs_post_editor_template( $content ) {
-// Only return the filtered content if it's empty
-if ( empty( $content ) ) {
-$template = 'The <code><a href="">NAME</a></code> filter allows you to do X.' . "\n\n";
-$template .= 'It is evaluated in <code><a href="">FUNCTION</a></code> in the <a href="">FILE</a> file.' . "\n\n";
-$template .= '<code>NAME</code> accepts # argument.' . "\n\n";
-$template .= 'Example:' . "\n\n";
-$template .= 'View the <a href="">code example on Gist</a>.';
-return $template;
-} else {
-return $content;
+function nsk_fc_post_editor_template( $content ) {
+	global $wp_query;
+		
+	// Only return the filtered content if it's empty
+	if ( empty( $content ) && isset($_GET['post_type']) ) {
+		
+		switch($_GET['post_type']){
+			case 'version':
+				$content = '[section]
+	[col_12]
+		[breadcrumbs]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[page_title]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[version]
+	[/col_12]
+[/section]
+[spacer]';
+				break;
+			case 'modelo':
+				$content = '[section]
+	[col_12]
+		[breadcrumbs]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[page_title]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[modelo]
+	[/col_12]
+[/section]
+[spacer]';
+				break;
+			default;
+				$content = '';
+		}
+		
+		return $content;
+	}
+	
+	return $content;
 }
-}
-// add_filter( 'the_editor_content', 'wpdocs_post_editor_template' );
+add_filter( 'the_editor_content', 'nsk_fc_post_editor_template' );

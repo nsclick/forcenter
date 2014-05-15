@@ -79,3 +79,19 @@ function header_right_sidebar() {
 add_action( 'widgets_init', 'header_right_sidebar' );
 
 }
+
+/**
+ * Clear the content
+ *
+ */
+function nsk_the_content_cleaner( $content ) {
+
+    if ( is_single() ){
+        // Add image to the beginning of each page
+        $content = str_replace(array("\n", "\r", "\t"), '', $content);
+	}
+
+    // Returns the content.
+    return $content;
+}
+add_filter( 'the_content', 'nsk_the_content_cleaner', 5 );

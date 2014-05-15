@@ -10,6 +10,7 @@ function nsk_fc_scripts() {
 	
 	//Getting the post to contextualize the scripts
 	$post = $wp_query->post;
+	//echo '<pre>',print_r($post),'</pre>';
 	
 	// Base Forcenter CSS
 	wp_enqueue_style( 'forcenter', get_template_directory_uri() . '/camouflage/forcenter/css/forcenter.css', array(), null, 'all' );
@@ -37,6 +38,10 @@ function nsk_fc_scripts() {
 	//Versions post type scripts
 	if( $post->post_type == 'version' ){
 		wp_enqueue_script( 'nsk-versiones-js', get_template_directory_uri() . '/camouflage/forcenter/js/versiones.js', array( 'jquery' ), null, true );
+	}
+	
+	if($post->post_name == 'autos-nuevos'){
+		wp_enqueue_script( 'nsk-versiones-js', get_template_directory_uri() . '/camouflage/forcenter/js/autos_nuevos.js', array( 'jquery' ), null, true );
 	}
 	
 	//Sucursales

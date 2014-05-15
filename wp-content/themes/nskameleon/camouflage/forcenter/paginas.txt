@@ -24,7 +24,22 @@
 
 ---Modelo---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][modelo name="Captiva"][/col_12][/section][spacer]
+[section]
+	[col_12]
+		[breadcrumbs]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[page_title]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[modelo]
+	[/col_12]
+[/section]
+[spacer]
 
 ---Repuestos---
 

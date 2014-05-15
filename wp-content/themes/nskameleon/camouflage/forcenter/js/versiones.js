@@ -37,6 +37,30 @@
 	
 		});
 		
+		$('.color-opt').click(function( e ) { 
+			e.preventDefault();
+			
+			var target = $( '.color-main-img' );
+			var colorName = $( '.color-name' );
+			
+			$( '.color > ul > li' ).removeClass( 'activ' );
+			var selectedFcId = $( this ).parent().attr( 'fc-color-id' );
+			$("li[fc-color-id='" + selectedFcId + "']").addClass( "activ" );
+						
+			target.attr( 'src',  $( this ).attr( 'fc-src' ) );
+			target.attr( 'alt',  $( this ).attr( 'fc-alt' ) );
+			target.attr( 'title',  $( this ).attr( 'fc-title' ) );
+						
+			colorName.html( $( this ).attr( 'fc-title' ) );			
+			
+		});
+		
+		$( '#other-versions' ).change(function (e){
+			e.preventDefault();
+			var url = $( this ).val();
+			if(url)
+				window.location.href = url;
+		});
 		
 	});
 })(window, jQuery);
