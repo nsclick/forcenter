@@ -38,7 +38,7 @@
 		<div id="wrapper">
 			<div id="header">
 				<div class="content">
-					<div class="spacer">&nbsp;</div><div class="spacer">&nbsp;</div>
+					<div class="spacer">&nbsp;</div>
 					<div class="section group">
 
 						<?php /*header-left-sidebar*/ ?>
@@ -58,7 +58,7 @@
 					
 					
 					</div>
-					<div class="spacer">&nbsp;</div><div class="spacer">&nbsp;</div>
+					<div class="spacer">&nbsp;</div>
 					<div class="section group">
 						<div class="col span_12_of_12">
 							<div id="menu">
