@@ -131,7 +131,7 @@ ob_start();
 	<a href="<?php echo $link ?>" class="box_b">
 		<span class="title"><?php echo $title ?></span>
 		<span class="link2"><?php echo $link_text ?></span>
-		<img src="<?php echo $img ?>" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+		<img src="<?php echo $img ?>" alt="<?php echo strip_tags($title) ?>" title="<?php echo strip_tags($title) ?>"/>
 	</a>	
 <?php
 return ob_get_clean();

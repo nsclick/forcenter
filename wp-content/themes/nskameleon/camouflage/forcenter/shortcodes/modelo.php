@@ -34,6 +34,9 @@ function ns_modelo_shortcode( $atts ) {
 	$extra = get_post_meta( $post->ID, 'complementarios', true ); 
 	$extra = $extra[0];
 	
+	//Get the related versions
+	$relatedVersions = get_related_versions($post->ID);
+	
 	ob_start();
 	?> 
 		<div class="modelo">
@@ -69,7 +72,30 @@ function ns_modelo_shortcode( $atts ) {
 					<div class="sign">
 						<span><b>Versiones</b>Disponibles</span>
 					</div>
-					<!-- un elemento -->
+					
+					<?php
+						$techSpecs = $specIndex = array();
+						foreach( $relatedVersions as $version ): 
+					?>
+					<?php
+						//Getting vesion custom fields
+						$customFields = get_post_meta( $version->ID, 'version-data', true ); 
+						$customFields = $customFields[0];
+						//Price
+						$price = number_format($customFields['precio'], 0, ',', '.');
+						//Getting the features
+						$filePath = get_attached_file($customFields['carateristicas-tecnicas']);
+						$fileRows = file($filePath);
+						
+						foreach($fileRows as $row){
+							$rcRow = explode("\t", $row);
+							$type = trim( ucwords ( mb_strtolower ($rcRow[0], 'UTF-8') ) );
+							$feature = ucwords ( mb_strtolower ( trim($rcRow[1]), 'UTF-8' ) );
+							$types[$type][$feature ] = true;
+							$techSpecs[$version->post_title][$type][$feature] = trim($rcRow[2]);
+						}
+					?>
+					<!-- Versión -->
 					<div class="section group">
 						<div class="col span_2_of_12">
 							&nbsp;
@@ -77,148 +103,64 @@ function ns_modelo_shortcode( $atts ) {
 						<div class="col span_10_of_12">
 							<div class="section group li">
 								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
+									<?php echo $version->post_title ?>
 								</div>
 								<div class="col span_2_of_12">
-									Desde $13.265.000
+									Desde $<?php echo $price ?>
 								</div>
 								<div class="col span_5_of_12">
 									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
+									<a href="<?php echo get_permalink($version->ID) ?>">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<div class="section group">
-						<div class="col span_2_of_12">
-							&nbsp;
-						</div>
-						<div class="col span_10_of_12">
-							<div class="section group li">
-								<div class="col span_5_of_12">
-									CHEVROLET CAPTIVA IV LS 2.4L FWD 6MT
-								</div>
-								<div class="col span_2_of_12">
-									Desde $13.265.000
-								</div>
-								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
-									<a href="#">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- fin un elemento -->
+					<!-- fin Versión -->
+					<?php endforeach; ?>
 				</div>
-				<div class="tabla">
+				
+				<?php
+					$typesIndexes = array_keys($types);
+				?>
+				<div class="tabla" id="table-tech-specs">
 					<div class="menu">
-						<ul>
-							<li class="activ"><a href="#">Detalle</a></li>
-							<li><a href="#">Detalle</a></li>
-							<li><a href="#">Detalle</a></li>
+						<ul id="specs-tech-types">
+							<?php foreach($typesIndexes as $key => $t): ?>
+							<li><a class="spec-type" href="#" list-id="<?php echo md5($t) ?>"><?php echo $t; ?></a></li>
+							<?php endforeach; ?>
 							<div class="divclear">&nbsp;</div>
 						</ul>
 					</div>
-					<div class="lista">
+					
+					<?php foreach( $typesIndexes as $type ): ?>
+					<!-- C1 -->
+					<div class="lista hide" id="<?php echo md5($type) ?>">
 						<div class="row">
-							<div class="cell">Interior</div>
-							<div class="cell">Modelo1</div>
-							<div class="cell">Modelo2</div>
-							<div class="cell">Modelo3</div>
+							<div class="cell"><?php echo $type ?></div>
+							<?php foreach($techSpecs as $v => $t ): ?>
+							<div class="cell"><?php echo $v ?></div>
+							<?php endforeach; ?>
 						</div>
+						
+						<?php foreach($types[$type] as $feature => $val): ?>
 						<div class="row">
-							<div class="cell">Caracter&iacute;stica</div>
-							<div class="cell"><i class="icon-ok-sign"></i></div>
-							<div class="cell"><i class="icon-remove-sign"></i></div>
-							<div class="cell"><i class="icon-remove-sign"></i></div>
+							<div class="cell"><?php echo $feature; ?></div>
+							<?php foreach($techSpecs as $v => $t ): ?>
+							<?php
+								$value = $t[$type][$feature];
+								if($value == 's')
+									$value = '<i class="icon-ok-sign"></i>';
+								if(!$value || $value == 'n')
+									$value = '<i class="icon-remove-sign"></i>';
+							?>
+							<div class="cell"><?php echo $value ?></div>
+							<?php endforeach; ?>
 						</div>
+						<?php endforeach; ?>
 					</div>
+					<!-- END C1 -->
+					<?php endforeach; ?>					
+					
 				</div>
 			</div>
 		</div>	

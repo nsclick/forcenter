@@ -68,7 +68,10 @@ function ns_version_shortcode( $atts ) {
 	//Getting the features
 	$filePath = get_attached_file($customFields['carateristicas-tecnicas']);
 	$fileRows = file($filePath);
-	echo '<pre>',print_r( $fileRows ),'</pre>';
+	foreach($fileRows as $row){
+		$rcRow = explode("\t", $row);
+		$techSpecs[trim(ucwords ( mb_strtolower ($rcRow[0], 'UTF-8') ))][ucwords ( mb_strtolower ( trim($rcRow[1], 'UTF-8') ) )] = trim($rcRow[2]);
+	}
 	
 	ob_start();
 	?> 
@@ -190,29 +193,29 @@ function ns_version_shortcode( $atts ) {
 					<div class="section group tabla">
 						<div class="col span_3_of_12">
 							<ul class="menu2">
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#" class="activ"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
-								<li><a href="#"><i class="icon-chevron-sign-right"></i> Interior</a></li>
+								<?php foreach($techSpecs as $key => $tc): ?>
+									<li><a href="#<?php echo md5($key) ?>"><i class="icon-chevron-sign-right"></i> <?php echo $key ?></a></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 						<div class="col span_9_of_12">
+							<?php foreach($techSpecs as $key => $tsSet): ?>
 							<table>
-								<thead><tr><td>Interior</td><td>Modelo</td></tr></thead>
+								<thead><tr id="<?php echo md5($key) ?>"><td><?php echo $key; ?></td><td><?php echo $post->post_title ?></td></tr></thead>
 								<tbody>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td><i class="icon-remove-sign"></i></td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td><i class="icon-ok-sign"></i></td></tr>
-									<tr><td>Caracter&iacute;sticas</td><td>Descripci&oacute;n</td></tr>
+									<?php foreach($tsSet as $key => $value): ?>
+										<?php
+											if($value == 's')
+												$value = '<i class="icon-ok-sign">';
+											if($value == 'n')
+												$value = '<i class="icon-remove-sign">';
+										?>
+										<tr><td><?php echo $key; ?></td><td><?php echo $value; ?></td></tr>
+									<?php endforeach; ?>
 								</tbody>
 							</table>
+							<?php endforeach; ?>
+							
 						</div>
 					</div>
 				</div>

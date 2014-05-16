@@ -5,6 +5,7 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 *,#wrapper{}
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
 .content{width:980px}
+.hide{display:none}
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}

@@ -11,7 +11,7 @@
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<title><?php wp_title( '| Forcenter Consesionario Ford', true, 'right' ); ?></title>
 		<meta name="description" content="First NSClick responsive Wordpress theme.">
 		<meta name="keywords" content="responsive, grid, system, web design, nsclick, chile">
 
