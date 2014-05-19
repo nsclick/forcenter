@@ -1,12 +1,15 @@
 <?php
-// Autos nuevos Shortcode
-require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php');
+function add_shortcodes () {
+	// Autos nuevos Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php');
 
-// Modelo Shortcode
-require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php');
+	// Modelo Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php');
 
-// Version Shortcode
-require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php');
+	// Version Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php');
+}
+add_action( 'init', 'add_shortcodes', 1 );
 
 //[section]...[/section]
 function ns_section_shortcode( $atts, $content = null ) {
