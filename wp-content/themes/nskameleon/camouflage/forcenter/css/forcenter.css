@@ -67,12 +67,28 @@ select{}
 #header #menu ul#nav li:last-of-type a{border-right:none}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
+
+
+
+/*prueba*/
+#header #menu ul#nav{width:100%;display:block;table-layout:auto}
+#header #menu ul#nav .divclear{display:block;height:0}
+#header #menu ul#nav li{display:block;width:12%;text-align:center;float:left}
+#header #menu ul#nav li:first-of-type{width:11%}
+#header #menu ul#nav li:last-of-type{width:17%}
 /* End Header */
 
 /* Main Content */
 #main-content{}
 #main-content .content{background:#d8d6d6}
 #main-content img{}
+/* slider principal */
+.rev_slider_wrapper .tp-leftarrow.square-old,.rev_slider_wrapper .tp-rightarrow.square-old{height:17px!important;width:15px!important;background-position:center 0}
+.rev_slider_wrapper .bullet{background:#999!important;height:17px!important;border:1px solid #fff;width:17px!important;margin:0 0 0 3px}
+.rev_slider_wrapper .bullet.selected{background:#2850a3!important}
+.rev_slider_wrapper .tp-leftarrow.square-old{margin:0 -3px}
+.rev_slider_wrapper .tp-rightarrow.square-old{margin:0}
+/* END slider principal */
 /* Slider destacados */
 #main-content .fullwidthbanner-container{width:auto!important}
 #main-content #showbiz_carrouselhome_1 .sb-navigation-play{display:none!important}
@@ -340,7 +356,7 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 /* Desabolladura y Pintura */
 .dyp{padding-bottom:10px}
 .dyp p{padding:10px}
-.dyp #dialog, .ui-state-hover{display:block;margin:10px;border:1px solid #d7dde2;border-top:1px solid #2850a3;padding:10px 85px 10px 10px;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;text-align:left;position:relative;background:url(../images/bg-selector.png) top repeat-x #fff;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+.dyp #dialog{display:block;margin:10px;border:1px solid #d7dde2;border-top:1px solid #2850a3;padding:10px 85px 10px 10px;border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;text-align:left;position:relative;background:url(../images/bg-selector.png) top repeat-x #fff;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
 .dyp #dialog span span{display:block;font-size:18px;border-bottom:1px solid #d7dde2;padding:0 0 3px 0;margin-bottom:3px;font-weight:bold;font-style:italic}
 .dyp #dialog span span b{color:#2850a3}
 #dialog.ui-state-hover span{color:inherit!important}
