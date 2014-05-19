@@ -17,16 +17,17 @@ class FormProcessor {
 		return true;
 	}
 	
-	private function sendEmail($to, $subject, $message){
+	protected function sendEmail($to, $subject, $message){
+		//return true;
 		return wp_mail( $to, $subject, $message );
 	}
 	
 	public function getError(){
-		return json_decode( array('state' => 'error', 'msg' => $this->errorMsg ) );
+		return json_encode( array('state' => 'error', 'msg' => $this->errorMsg ) );
 	}
 	
-	public function getError(){
-		return json_decode( array('state' => 'ok', 'msg' => $this->result ) );
+	public function getResult(){
+		return json_encode( array('state' => 'ok', 'msg' => $this->result ) );
 	}
 	
 }
@@ -41,7 +42,7 @@ class ServicioTecnico extends FormProcessor{
 		}
 		
 		$email = $this->formatEmail($data);
-		if(!$this->sendEmail($to, $subject, $message)){
+		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
 			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
 			return false;		
 		}
@@ -55,18 +56,22 @@ class ServicioTecnico extends FormProcessor{
 	* formatEmail
 	*/
 	public function formatEmail($data) {
-		$body = '';
-    
-		foreach ($data AS $key => $field) {
-			$body .= $key . ': ' . $field;
-			$body .= "\n"; 
+		$body = "DATOS DEL SOLICITANTE:\n";
+		
+		$excluded = array('st-token', '_wp_http_referer');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$body .= $key . ': ' . $value;
+				$body .= "\n"; 
+			}
 		}
     
     $email = 'creyes@nsclick.cl';
     		 
     return array(
       'to'      => $email,
-      'subject' => 'Solicitud de Servicio Técnico',
+      'subject' => 'Solicitud de Agendamiento Servicio Técnico',
       'body'    => $body
     );
   }
@@ -89,7 +94,7 @@ class FormFactory {
    */
   public static function create($className = null) {
     
-    if (!class_exists($className) || !$action) {
+    if (!class_exists($className) || !$className) {
       exit (json_encode(array(
         'state' => false,
         'data'  => 'Error: Favor intente de nuevo más tarde.'
@@ -111,6 +116,6 @@ unset($data['action']);
 
 $processor = FormFactory::create($action); 
 if($processor->send($data))
-	$processor->getResult();
+	die($processor->getResult());
 else
-	$processor->getError();
+	die($processor->getError());

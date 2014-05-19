@@ -218,6 +218,12 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .cotizador #step3 .selector .producto{float:none;width:102%;margin:0}
 .cotizador #step3 .selector .producto .details .select{margin:0 16px 10px 0;width:44%;float:left}
 .cotizador #step3 .selector .producto .details .select label{padding-top:0}
+.cotizador .link button#go3 span:last-of-type{display:none}
+.cotizador .link button#go3 span:first-of-type{display:inline}
+.cotizador .link button#go3.deactiv{background:#999}
+.cotizador .link button#go3.deactiv span:first-of-type{display:none}
+.cotizador .link button#go3.deactiv span:last-of-type{display:inline}
+.cotizador .link button#go3.deactiv i{display:none}
 /* END Cotizador */
 /* Modelos */
 .modelo .head .banner .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:612px;float:left}

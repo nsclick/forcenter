@@ -24,7 +24,7 @@ function nsk_fc_scripts() {
 	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 	
 	//Common JS script
-	wp_enqueue_script( 'nsk-common-js', get_template_directory_uri() . '/camouflage/forcenter/js/common.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'nsk-fc-common-js', get_template_directory_uri() . '/camouflage/forcenter/js/common-fs.js', array( 'jquery' ), null, true );
 	
 	
 	//Cotizador y repuestos
