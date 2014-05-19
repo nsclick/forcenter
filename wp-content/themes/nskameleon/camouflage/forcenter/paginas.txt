@@ -47,7 +47,33 @@
 
 ---Servicio Técnico---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][text]<b>Servicio T&eacute;cnico Ford</b> de primer nivel. Cotice a trav&eacute;s de esta p&aacute;gina o ub&iacute;quenos en nuestra sucursal.[/text][text]Direcci&oacute,n: Avda. Irarr&aacute;zaval 1445, &Ntilde;u&ntilde;oa.[/text][text]Horario:<br/>Lun - Vier 8:30 a 18:30 hrs. S&aacute;bado 9.00 a 14 hrs.[/text][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_8][article][servicio][/article][/col_8][/section][spacer]
+[section]
+	[col_12]
+		[breadcrumbs]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[page_title]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[image_b ID="216"]
+	[/col_12]
+[/section]
+[spacer]
+[section]
+	[col_4]
+		[text]<b>Servicio T&eacute;cnico Ford</b> de primer nivel. Cotice a trav&eacute;s de esta p&aacute;gina o ub&iacute;quenos en nuestra sucursal.[/text]
+		[text]Direcci&oacute,n: Avda. Irarr&aacute;zaval 1445, &Ntilde;u&ntilde;oa.[/text][text]Horario:<br/>Lun - Vier 8:30 a 18:30 hrs. S&aacute;bado 9.00 a 14 hrs.[/text]
+		[quotebox_accesories]
+	[/col_4]
+	[col_8]
+		[article][servicio][/article]
+	[/col_8]
+[/section]
+[spacer]
 
 ---Sucursal---
 

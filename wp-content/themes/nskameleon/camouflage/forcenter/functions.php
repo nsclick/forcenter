@@ -23,13 +23,13 @@ function nsk_fc_scripts() {
 	wp_enqueue_script( 'nsk-price-slider-js', get_template_directory_uri() . '/camouflage/forcenter/js/price-slider.js', array( 'jquery' ), null, true );
 	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 	
+	//Common JS script
+	wp_enqueue_script( 'nsk-common-js', get_template_directory_uri() . '/camouflage/forcenter/js/common.js', array( 'jquery' ), null, true );
+	
+	
 	//Cotizador y repuestos
 	wp_enqueue_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
 		
-	//Servicio Técnico: Date-picker
-	wp_enqueue_script('jquery-ui-datepicker');
-	wp_enqueue_script( 'nsk-date-picker-js', get_template_directory_uri() . '/camouflage/forcenter/js/date-picker.js', array( 'jquery' ), null, true );
-	
 	//Model post type scripts
 	if( $post->post_type == 'modelo' ){
 		wp_enqueue_script( 'nsk-modelos-js', get_template_directory_uri() . '/camouflage/forcenter/js/modelos.js', array( 'jquery' ), null, true );

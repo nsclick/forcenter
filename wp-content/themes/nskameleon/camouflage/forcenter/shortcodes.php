@@ -8,6 +8,9 @@ require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php');
 // Version Shortcode
 require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php');
 
+// Servicio Técnico Shortcode
+require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/servicio_tecnico.php');
+
 //[section]...[/section]
 function ns_section_shortcode( $atts, $content = null ) {
 	return '<div class="section group">' . do_shortcode($content) . '</div>' . "\n";
@@ -212,8 +215,11 @@ add_shortcode( 'image', 'ns_image_shortcode' );
 function ns_image_b_shortcode( $atts ) {
 	extract( $atts );
 	ob_start();
+
+	$img = wp_get_attachment_url( $id );
+	
 	?> 
-		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></div>	
+		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($id); ?>" title="<?php echo get_the_title($id); ?>"/></div>	
 	<?php
 return ob_get_clean();
 }
@@ -494,74 +500,6 @@ function draw_color_elem($colorPics){
 	<?php
 
 }
-
-//[servicio]
-function ns_servicio_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<div class="cotizador">
-			<div id="step3" class="activ servicio">
-				<div class="selector">
-					<div class="title">
-						<h3>Agendar cita</h3>
-						<span>Todos los campos son obligatorios.</span>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="nombre">Nombre completo:</label>
-								<input name="nombre" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Auto
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fecha">D&iacute;a que desea agendar:</label>
-								<input name="fecha" type="text" id="datepicker" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="rut">RUT:</label>
-								<input name="rut" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="divclear">&nbsp;</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="go3">Agendar<i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'servicio', 'ns_servicio_shortcode' );
 
 //[mantencion]
 function ns_mantencion_shortcode( $atts ) {
