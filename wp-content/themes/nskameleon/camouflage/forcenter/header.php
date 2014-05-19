@@ -49,6 +49,92 @@
 						<div class="col span_12_of_12">
 							<div id="menu">
 								<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_id' => 'nav') ); ?>
+								<ul class="typemenu">
+									<!-- Un elemento -->
+									<li>
+										<a href="#" id="tipo1">Autos Ford <i class="icon-chevron-right"></i></a>
+										<ul class="typesubmenu" id="tipo1d">
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<div class="divclear">&nbsp;</div>
+										</ul>
+									</li>										
+									<!--/ Un elemento -->
+									<!-- Un elemento -->
+									<li>
+										<a href="#" id="tipo1">Autos Ford <i class="icon-chevron-right"></i></a>
+										<ul class="typesubmenu" id="tipo1d">
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<div class="divclear">&nbsp;</div>
+										</ul>
+									</li>										
+									<!--/ Un elemento -->
+									<!-- Un elemento -->
+									<li>
+										<a href="#" id="tipo1">Autos Ford <i class="icon-chevron-right"></i></a>
+										<ul class="typesubmenu" id="tipo1d">
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto --><!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto --><!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto --><!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto --><!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<div class="divclear">&nbsp;</div>
+										</ul>
+									</li>										
+									<!--/ Un elemento -->
+									<!-- Un elemento -->
+									<li>
+										<a href="#" id="tipo1">Autos Ford <i class="icon-chevron-right"></i></a>
+										<ul class="typesubmenu" id="tipo1d">
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<div class="divclear">&nbsp;</div>
+										</ul>
+									</li>										
+									<!--/ Un elemento -->
+									<!-- Un elemento -->
+									<li>
+										<a href="#" id="tipo1">Autos Ford <i class="icon-chevron-right"></i></a>
+										<ul class="typesubmenu" id="tipo1d">
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<!-- Un auto -->
+											<li><a href="#"><img src="http://localhost/forcenter/wp-content/uploads/2014/05/03_focus_miniatura.jpg"alt="Ford Focus" title="Ford Focus"/><h4>Ford Focus</h4>Desde $99.999.999</a></li>
+											<!--/ Un auto -->
+											<div class="divclear">&nbsp;</div>
+										</ul>
+									</li>										
+									<!--/ Un elemento -->
+								</ul>
 							</div>
 						</div>
 					</div>
