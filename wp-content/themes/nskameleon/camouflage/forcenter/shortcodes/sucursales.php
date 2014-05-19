@@ -23,7 +23,7 @@ return ob_get_clean();
 }
 add_shortcode( 'sucursal', 'ns_sucursal_shortcode' );
 
-//[sucursald lat="" lon="" name="" number="" direccion="" telefono="" horario1="" horario2="" foto1="" foto2="" foto3="" foto4="" foto5="" foto6=""]
+//[sucursald lat="" lng="" name="" number="" direccion="" telefono="" horario1="" horario2="" foto1="" foto2="" foto3="" foto4="" foto5="" foto6=""]
 function ns_sucursald_shortcode( $atts ) {
 	
 	wp_enqueue_script( 'nsk-sucursales-js', get_template_directory_uri() . '/camouflage/forcenter/js/sucursales.js', array( 'jquery' ), null, true );
@@ -69,12 +69,12 @@ function ns_sucursald_shortcode( $atts ) {
 			</div>
 			<div class="galeria">
 				<div class="links">
-					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo $foto1 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo $foto2 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo $foto3 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo $foto4 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo $foto5 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo $foto6 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
 					<div class="divclear">&nbsp;</div>
 				</div>
 				<div class="show">
