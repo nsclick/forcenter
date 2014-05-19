@@ -234,7 +234,7 @@ function get_related_versions($modelID){
  *
  */
 function add_ctm_family_taxonomies() {
-  // Add new "Locations" taxonomy to Posts
+  // Add new "familia" taxonomy to Posts
   register_taxonomy('familia', 'modelo', array(
     // Hierarchical taxonomy (like categories)
     'hierarchical' => true,

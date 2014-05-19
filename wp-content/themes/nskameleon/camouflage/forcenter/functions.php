@@ -10,7 +10,7 @@ function nsk_fc_scripts() {
 	
 	//Getting the post to contextualize the scripts
 	$post = $wp_query->post;
-	//echo '<pre>',print_r($post),'</pre>';
+	// echo '<pre>',print_r($post),'</pre>';
 	
 	// Base Forcenter CSS
 	wp_enqueue_style( 'forcenter', get_template_directory_uri() . '/camouflage/forcenter/css/forcenter.css', array(), null, 'all' );
@@ -20,7 +20,7 @@ function nsk_fc_scripts() {
 	
 	//Slider para showcases: autos nuevos, autos usados, accesorios
 	wp_enqueue_script('jquery-ui-slider');
-	wp_enqueue_script( 'nsk-price-slider-js', get_template_directory_uri() . '/camouflage/forcenter/js/price-slider.js', array( 'jquery' ), null, true );
+	
 	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 	
 	//Common JS script
@@ -40,9 +40,8 @@ function nsk_fc_scripts() {
 		wp_enqueue_script( 'nsk-versiones-js', get_template_directory_uri() . '/camouflage/forcenter/js/versiones.js', array( 'jquery' ), null, true );
 	}
 	
-	if($post->post_name == 'autos-nuevos'){
-		wp_enqueue_script( 'nsk-versiones-js', get_template_directory_uri() . '/camouflage/forcenter/js/autos_nuevos.js', array( 'jquery' ), null, true );
-	}
+	// Showcase
+	wp_register_script( 'nsk-autos-nuevos-js', get_template_directory_uri() . '/camouflage/forcenter/js/autos_nuevos.js', array( 'jquery' ), null, true );
 	
 	//Sucursales
 	wp_enqueue_script( 'nsk-sucursales-js', get_template_directory_uri() . '/camouflage/forcenter/js/sucursales.js', array( 'jquery' ), null, true );
@@ -53,6 +52,10 @@ function nsk_fc_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' ); 
+
+/*
+ * Loading the custom post and such*/
+ require_once (ACTIVE_CAMOUFLAGE_PATH . '/custom_posts.php');
  
 /*
  * Loading the shortcodes*/
@@ -62,6 +65,3 @@ add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' );
  * Loading the widgets*/
  require_once (ACTIVE_CAMOUFLAGE_PATH . '/widgets.php');
 
-/*
- * Loading the custom post and such*/
- require_once (ACTIVE_CAMOUFLAGE_PATH . '/custom_posts.php');
