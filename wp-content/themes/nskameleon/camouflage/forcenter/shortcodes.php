@@ -1,12 +1,15 @@
 <?php
-// Autos nuevos Shortcode
-require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php');
+function add_shortcodes () {
+	// Autos nuevos Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php');
 
-// Modelo Shortcode
-require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php');
+	// Modelo Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php');
 
-// Version Shortcode
-require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php');
+	// Version Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php');
+}
+add_action( 'init', 'add_shortcodes', 1 );
 
 //[section]...[/section]
 function ns_section_shortcode( $atts, $content = null ) {
@@ -131,7 +134,7 @@ ob_start();
 	<a href="<?php echo $link ?>" class="box_b">
 		<span class="title"><?php echo $title ?></span>
 		<span class="link2"><?php echo $link_text ?></span>
-		<img src="<?php echo $img ?>" alt="<?php echo strip_tags($title) ?>" title="<?php echo strip_tags($title) ?>"/>
+		<img src="<?php echo $img ?>" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
 	</a>	
 <?php
 return ob_get_clean();
