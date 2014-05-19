@@ -95,6 +95,56 @@ function register_cpt_version()
 	register_post_type('version', $args);
 }
 
+
+add_action('init', 'register_cpt_accesorio');
+
+function register_cpt_accesorio()
+{
+	$labels = array(
+		'name' => _x('Accesorios', 'nsk_fc_txt') , 
+		'singular_name' => _x('Accesorio', 'nsk_fc_txt') ,
+		'add_new' => _x('Add New', 'nsk_fc_txt') ,
+		'add_new_item' => _x('Add New Accesorio', 'nsk_fc_txt') ,
+		'edit_item' => _x('Edit Accesorio', 'nsk_fc_txt') ,
+		'new_item' => _x('New Accesorio', 'nsk_fc_txt') ,
+		'view_item' => _x('View Accesorio', 'nsk_fc_txt') ,
+		'search_items' => _x('Search Accesorios', 'nsk_fc_txt') ,
+		'not_found' => _x('No Accesorios found', 'nsk_fc_txt') ,
+		'not_found_in_trash' => _x('No Accesorios found in Trash', 'nsk_fc_txt') ,
+		'parent_item_colon' => _x('Parent Modelo:', 'nsk_fc_txt') ,
+		'menu_name' => _x('Accesorios', 'nsk_fc_txt') ,
+	);
+	$args = array(
+		'labels' => $labels,
+		'hierarchical' => false,
+		'description' => 'Accesorios Ford',
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',
+			'page-attributes'
+		) ,
+		'taxonomies' => array(
+			'page-category'
+		) ,
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 5,
+		'show_in_nav_menus' => true,
+		'publicly_queryable' => true,
+		'exclude_from_search' => false,
+		'has_archive' => true,
+		'query_var' => true,
+		'can_export' => true,
+		'rewrite' => true,
+		'capability_type' => 'page'
+	);
+	register_post_type('accesorio', $args);
+}
+
+
+
 /**
  * Calls the class on the post edit screen.
  */
@@ -123,7 +173,7 @@ class custom_post_related {
 	 * Adds the meta box container.
 	 */
 	public function add_meta_box( $post_type ) {
-            $post_types = array('version');     //limit meta box to certain post types
+            $post_types = array('version', 'accesorio');     //limit meta box to certain post types
             if ( in_array( $post_type, $post_types )) {
 				add_meta_box(
 					'set_related_version_box'
@@ -281,39 +331,41 @@ function nsk_fc_post_editor_template( $content ) {
 		switch($_GET['post_type']){
 			case 'version':
 				$content = '[section]
-	[col_12]
-		[breadcrumbs]
-	[/col_12]
+	[col_12][breadcrumbs][/col_12]
 [/section]
 [section]
-	[col_12]
-		[page_title]
-	[/col_12]
+	[col_12][page_title][/col_12]
 [/section]
 [section]
-	[col_12]
-		[version]
-	[/col_12]
+	[col_12][version][/col_12]
 [/section]
 [spacer]';
 				break;
 			case 'modelo':
 				$content = '[section]
-	[col_12]
-		[breadcrumbs]
-	[/col_12]
+	[col_12][breadcrumbs][/col_12]
 [/section]
 [section]
-	[col_12]
-		[page_title]
-	[/col_12]
+	[col_12][page_title][/col_12]
 [/section]
 [section]
-	[col_12]
-		[modelo]
-	[/col_12]
+	[col_12][modelo][/col_12]
 [/section]
 [spacer]';
+				break;
+			case 'accesorio':
+				$content = '[section]
+	[col_12][breadcrumbs][/col_12]
+[/section]
+[section]
+	[col_12][page_title][/col_12]
+[/section]
+[section]
+	[col_12][accesorios][/col_12]
+[/section]
+[section]
+	[col_12][spacer][/col_12]
+[/section]';
 				break;
 			default;
 				$content = '';
@@ -325,3 +377,4 @@ function nsk_fc_post_editor_template( $content ) {
 	return $content;
 }
 add_filter( 'the_editor_content', 'nsk_fc_post_editor_template' );
+

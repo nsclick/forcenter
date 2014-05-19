@@ -1,6 +1,17 @@
 ---ACCESORIOS---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][accesorios][/col_12][/section][section][col_12][spacer][/col_12][/section]
+[section]
+	[col_12][breadcrumbs][/col_12]
+[/section]
+[section]
+	[col_12][page_title][/col_12]
+[/section]
+[section]
+	[col_12][accesorios][/col_12]
+[/section]
+[section]
+	[col_12][spacer][/col_12]
+[/section]
 
 ---Autos Nuevos---
 
