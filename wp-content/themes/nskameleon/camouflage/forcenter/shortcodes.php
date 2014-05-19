@@ -721,19 +721,19 @@ return ob_get_clean();
 }
 add_shortcode( 'sucursal', 'ns_sucursal_shortcode' );
 
-//[sucursald name="" number=""]
+//[sucursald number="" direccion="" telefono="" horario1="" horario2="" foto1="" foto2="" foto3="" foto4="" foto5="" foto6=""]
 function ns_sucursald_shortcode( $atts ) {
 	ob_start();
 ?> 
 	<div class="sucursald">
 		<style>
-			.sucursald ul li a#suc<?php echo $number ?>{box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
+			.sucursald ul li a#suc<?php echo $number ?>{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
 		</style>
 		<ul>
 			<li><a href="#" id="suc1">Casa Matriz</a></li>
-			<li><a href="#" id="suc2">Sucursal 2</a></li>
-			<li><a href="#" id="suc3">Sucursal 3</a></li>
-			<li><a href="#" id="suc4">Sucursal 4</a></li>
+			<li><a href="#" id="suc2">Sucursal Mall Plaza Tobalaba</a></li>
+			<li><a href="#" id="suc3">Sucursal Mall Plaza Alameda</a></li>
+			<li><a href="#" id="suc4">Sucursal Seminuevos</a></li>
 			<div class="divclear">&nbsp;</div>
 		</ul>
 		<div class="cont" id="sucu1">
@@ -742,24 +742,24 @@ function ns_sucursald_shortcode( $atts ) {
 					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
 				</div>
 				<div class="col span_5_of_12">
-					<h4>Casa Matriz</h4>
-					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
-					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
-					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
+					<h4><?php echo get_the_title($ID); ?></h4>
+					<p><b>Direcci&oacute;n:</b><?php echo $direccion ?></p>
+					<p><b>Tel&eacute;fono:</b><?php echo $telefono ?></p>
+					<p><b>Horario:</b><?php echo $horario1 ?><br /><?php echo $horario2 ?></p>
 				</div>
 			</div>
 			<div class="galeria">
 				<div class="links">
-					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
+					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
+					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></a>
 					<div class="divclear">&nbsp;</div>
 				</div>
 				<div class="show">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
 				</div>
 				<div class="divclear">&nbsp;</div>
 			</div>

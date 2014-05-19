@@ -6,6 +6,10 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
 .content{width:980px}
 .hide{display:none}
+.mb-on{display:none}
+@media only screen and (max-width: 768px){
+	.mb-no{display:none}
+}
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}
@@ -320,8 +324,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .sucursald ul li a{color:#46484b;display:block;padding:7px 14px;background:#fff;cursor:pointer}
 .sucursald ul li a.activ{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
 .sucursald ul li a:hover{box-shadow:inset 0 -4px 0px -2px #46484b;-moz-box-shadow:inset 0 -4px 0px -2px #46484b;-webkit-box-shadow:inset 0 -4px 0px -2px #46484b;-ms-box-shadow:inset 0 -4px 0px -2px #46484b}
-.sucursald .cont.activa{display:block}
-.sucursald .cont{background:#fff;padding:10px;display:none}
+.sucursald .cont{background:#fff;padding:10px}
 .sucursald .cont h4{font-size:16px;color:#3359a8}
 .sucursald .cont p{display:block;margin:0 0 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2}
 .sucursald .cont p b{display:block}
