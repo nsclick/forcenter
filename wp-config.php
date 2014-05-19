@@ -20,9 +20,9 @@ define('DB_ENV', 'development');
 // ** MySQL settings - You can get this info from your web host ** //
 switch(DB_ENV){
 	case 'development':
-                define('DB_NAME', 'forcenter2');
-                define('DB_USER', 'forcenter');
-                define('DB_PASSWORD', 'nsdev');
+                define('DB_NAME', 'forcenter');
+                define('DB_USER', 'root');
+                define('DB_PASSWORD', '');
                 define('DB_HOST', 'localhost');
                 break;
         case 'qa':
