@@ -49,6 +49,22 @@
 						<div class="col span_12_of_12">
 							<div id="menu">
 								<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_id' => 'nav') ); ?>
+								<ul class="typemenu">
+									<li><a href="#">Tipo</a>
+										<ul>
+											<li>modelo</li>
+											<li>modelo</li>
+											<li>modelo</li>
+											<li>modelo</li>
+											<div class="divclear">&nbsp;</div>
+										</ul>
+									</li>										
+									<li><a href="#">Tipo</a></li>
+									<li><a href="#">Tipo</a></li>
+									<li><a href="#">Tipo</a></li>
+									<li><a href="#">Tipo</a></li>
+									<li><a href="#">Tipo</a></li>
+								</ul>
 							</div>
 						</div>
 					</div>

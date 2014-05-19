@@ -63,7 +63,7 @@ select{}
 #header #logo-container a#logo img{}
 #header #logo-container span#slogan{}
 #header #menu{}
-#header #menu ul#nav{width:100%;display:table;table-layout:fixed}
+#header #menu ul#nav{width:100%;display:table;table-layout:fixed;position:relative}
 #header #menu ul#nav .divclear{display:none}
 #header #menu ul#nav li{display:table-cell;width:auto;text-align:center;float:none}
 #header #menu ul#nav li a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e;display:block}
@@ -71,6 +71,15 @@ select{}
 #header #menu ul#nav li:last-of-type a{border-right:none}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
+#header #menu .typemenu{display:none}
+#header #menu ul#nav li:first-child:hover ul.typemenu{display:block}
+#header #menu ul#nav li ul.typemenu{width:15%;position:absolute}
+#header #menu ul#nav li ul.typemenu li{display:block}
+#header #menu ul#nav li ul.typemenu li a{display:block;padding:5px 10px}
+#header #menu ul#nav li ul.typemenu li ul{display:none}
+#header #menu ul#nav li ul.typemenu li:hover ul{display:block;width:85%}
+#header #menu ul#nav li ul.typemenu li ul li{display:block;width:20%}
+
 
 
 
