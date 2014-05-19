@@ -43,8 +43,6 @@ function nsk_fc_scripts() {
 	// Showcase
 	wp_register_script( 'nsk-autos-nuevos-js', get_template_directory_uri() . '/camouflage/forcenter/js/autos_nuevos.js', array( 'jquery' ), null, true );
 	
-	//Sucursales
-	wp_enqueue_script( 'nsk-sucursales-js', get_template_directory_uri() . '/camouflage/forcenter/js/sucursales.js', array( 'jquery' ), null, true );
 	
 	//Desabolladura y Pintura
 	wp_enqueue_script('jquery-ui-dialog');

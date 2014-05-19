@@ -75,9 +75,25 @@
 [/section]
 [spacer]
 
----Sucursal---
+---Sucursal Casa Matriz---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][sucursald][/col_12][/section][spacer]
+[section]
+	[col_12]
+		[breadcrumbs]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[page_title]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[sucursald lat="-33.449024" lng="-70.619043" ]
+	[/col_12]
+[/section]
+[spacer]
+
 
 ---Sucursales---
 

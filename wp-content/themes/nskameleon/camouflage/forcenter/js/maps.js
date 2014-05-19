@@ -1,4 +1,4 @@
-function lMap(lat, lng, wrapper, icon, title) {
+function loadMap(lat, lng, wrapper, icon, title) {
 	var latlng = new google.maps.LatLng(lat,lng);
 	var settings = {
 		zoom: 15,
@@ -24,11 +24,4 @@ function lMap(lat, lng, wrapper, icon, title) {
 		zIndex: 4 
 	});		
 }
-// /wp_enqueue_script( 'google_maps_api','http://maps.google.com/maps/api/js?sensor=false');
-/*<script type="text/javascript">
-jQuery(window).load(function () {
-        initializeMap('-33.452652', '-70.682413', 'mapa', '<?php bloginfo('siteurl'); ?>/wp-content/themes/yoo_master_wp/images/logo_mapa.png', 'Sucursal Alameda');
-});
-</script>
-*/
 
