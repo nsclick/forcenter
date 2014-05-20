@@ -81,7 +81,7 @@ function ns_servicio_shortcode( $atts ) {
 						<div class="divclear">&nbsp;</div>
 					</div>
 				</div>
-				<div class="enviado" class="hide">
+				<div id="enviado" class="hide">
 					<h2>Su mensaje ha sido enviado.</h2>
 					<p>Nos comunicaremos a la brevedad.</p>
 				</div>

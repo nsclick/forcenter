@@ -14,6 +14,9 @@ function add_shortcodes () {
 
 	// Sucursales Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/sucursales.php');
+	
+	// Contacto Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/contacto.php');
 
 }
 add_action( 'init', 'add_shortcodes', 1 );
