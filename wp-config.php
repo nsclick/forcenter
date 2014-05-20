@@ -15,7 +15,7 @@
  */
 
 /* Change this value to switch to the correct Env: possible values are:  development, qa, production*/
-define('DB_ENV', 'development');
+define('DB_ENV', 'qa');
 
 // ** MySQL settings - You can get this info from your web host ** //
 switch(DB_ENV){
@@ -26,9 +26,9 @@ switch(DB_ENV){
                 define('DB_HOST', 'localhost');
                 break;
         case 'qa':
-                define('DB_NAME', 'qasitech_qa');
-                define('DB_USER', 'qasitech_qa');
-                define('DB_PASSWORD', 'ZHuTkGx4u6KJ');
+                define('DB_NAME', 'forcente_qa');
+                define('DB_USER', 'forcente_qa');
+                define('DB_PASSWORD', 'r838nAwI8WDU');
                 define('DB_HOST', 'localhost');
                 break;
         case 'production':
