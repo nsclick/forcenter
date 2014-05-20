@@ -74,7 +74,7 @@ select{}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li a:hover ul.typemenu{display:block}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
-#header #menu ul#nav ul.typemenu{display:none;width:15%;position:absolute;background:#fff;top:27px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
+#header #menu ul#nav ul.typemenu{display:none;width:15%;position:absolute;background:#fff;top:27px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);z-index:300}
 #header #menu ul#nav ul.typemenu li{display:block;width:100%;background:none;color:#444}
 #header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none}
 #header #menu ul#nav ul.typemenu li a:hover{background:#2850a3;color:#fff}
@@ -152,7 +152,7 @@ select{}
 /* Shotcode Page Title */
 h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Shotcode Page Title */
-/* Grid de elementos: autos nuevos, autos usados y accesorios */
+/* Grid de elementos: autos nuevos y accesorios */
 .showcase ul.cate{display:block;width:100%;border-bottom:1px solid #3359a8}
 .showcase ul.cate li{display:block;float:left}
 .showcase ul.cate li a{color:#46484b;display:block;padding:7px 14px;background:#fff}
@@ -188,7 +188,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase .showgrid li .cont .botones a i{position:absolute;top:0;right:0;padding:6px 6px 4px;border-left:1px solid #fff}
 .showcase .showgrid li .cont .botones a.cotizar:hover{background:#e08f00}
 .showcase .showgrid li .cont .botones a.ver:hover{background:#61ab01}
-/* END Grid de elementos: autos nuevos, autos usados y accesorios */
+/* END Grid de elementos: autos nuevos y accesorios */
 /* Cotizador */
 .image_b{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
 .article{background:#fff;border-top:1px solid #2850a3}
@@ -395,6 +395,9 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 #dialog.ui-state-hover span{color:inherit!important}
 .dyp #dialog i{position:absolute;top:0;right:-1px;display:block;padding:18px 26px 19px;color:#fff;background:#2850a3;font-size:36px}
 /* END Desabolladura y Pintura */
+/* Autos usados */
+.iframe{width:100%;height:1000px;overflow-x:hidden!important;background:#fff;border-top:1px solid #2850a3}
+/* END Autos usados*/
 /* End Main Content */
 
 /* Footer */

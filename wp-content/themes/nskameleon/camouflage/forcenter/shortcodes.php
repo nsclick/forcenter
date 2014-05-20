@@ -691,14 +691,14 @@ return ob_get_clean();
 }
 add_shortcode( 'accesorios', 'ns_accesorios_shortcode' );
 
-//[iframe src="" scrolling=""]
+//[iframe src="" scrolling="" class=""]
 function ns_iframe( $atts ) {
 	extract( $atts ); 
 	
 	$scrolling = isset($scrolling) ? $scrolling : 'auto';
 	$src = isset($src) ? $src : '#';
 	
-	return '<iframe class="' . $class . '" src="'.$src.'" scrolling="' . $scrolling . '" width="900" height="700">';
+	return '<iframe class="' . $class . '" src="'.$src.'" scrolling="' . $scrolling . '" width="900" height="700"></iframe>';
 
 }
 add_shortcode( 'iframe', 'ns_iframe' );
