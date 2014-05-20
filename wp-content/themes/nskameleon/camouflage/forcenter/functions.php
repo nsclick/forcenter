@@ -24,7 +24,7 @@ function nsk_fc_scripts() {
 	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 	
 	//Common JS script
-	wp_enqueue_script( 'nsk-common-js', get_template_directory_uri() . '/camouflage/forcenter/js/common.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'nsk-fc-common-js', get_template_directory_uri() . '/camouflage/forcenter/js/common-fs.js', array( 'jquery' ), null, true );
 	
 	
 	//Cotizador y repuestos
@@ -47,6 +47,9 @@ function nsk_fc_scripts() {
 	//Desabolladura y Pintura
 	wp_enqueue_script('jquery-ui-dialog');
 	wp_enqueue_script( 'nsk-dialog-js', get_template_directory_uri() . '/camouflage/forcenter/js/dialog.js', array( 'jquery' ), null, true );
+	
+	// Typemenu (submenú del header)
+	wp_enqueue_script( 'nsk-typemenu-js', get_template_directory_uri() . '/camouflage/forcenter/js/typemenu.js', array( 'jquery' ), null, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' ); 

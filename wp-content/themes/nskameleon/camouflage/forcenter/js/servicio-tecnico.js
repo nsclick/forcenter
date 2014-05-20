@@ -11,15 +11,18 @@
 				var queryString = $('#servicio-tecnico-form').formSerialize();
 				var formAction = $('#servicio-tecnico-form').attr( 'action' );
 				
+				addWaiting($( this ));
+				
 				$.post( formAction, queryString, function( data ) {
 					
 					if(!data.state){
-						alert( 'error' );
+						removeWaiting($( '#go3' ));
+						formErrorResponse( true, data.msg );
 						return false;
 					}
 					
-					formSuccessResponse( true, 'Error' );
-					//setTimeout(function() { $(".enviando p.dos").fadeIn(1500); }, 1500);
+					formSuccessResponse( $("#servicio-tecnico-form"), 'Su solicitud ha sido enviada con éxito', 'Gracias por contactarnos' );
+					return true;
 				}, "json"); 
 				
 			}
