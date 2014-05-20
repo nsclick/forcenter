@@ -69,16 +69,13 @@
 							</div>
 						</div>
 						<div class="col span_4_of_12">
-							<div class="col span_6_of_12">
+							<div class="col span_3_of_12">
 								&nbsp;
 							</div>
-							<div class="col span_6_of_12">
+							<div class="col span_9_of_12">
 								<div class="partners">
 									<div class="partner">
-										<a href="#" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter-trans.png" alt="partner"/></a>
-									</div>
-									<div class="partner">
-										<a href="#" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-trans.png" alt="partner"/></a>
+										<a href="#" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-forcenter_bn.png" alt="partner"/></a>
 									</div>
 								</div>
 							</div>
