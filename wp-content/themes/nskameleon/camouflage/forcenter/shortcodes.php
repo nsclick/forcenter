@@ -15,6 +15,9 @@ function add_shortcodes () {
 	// Sucursales Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/sucursales.php');
 
+	// Accesorios Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/accesorios.php');
+
 }
 add_action( 'init', 'add_shortcodes', 1 );
 
@@ -576,120 +579,6 @@ function ns_mantencion_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'mantencion', 'ns_mantencion_shortcode' );
-
-//[accesorios]
-function ns_accesorios_shortcode( $atts ) {
-ob_start();
-?> 
-	<div class="showcase accesorios">
-		<div class="menu">
-			<ul class="cate">
-				<li><a href="#">Categor&iacute;a</a></li>
-				<li class="activ"><a href="#">Categor&iacute;a</a></li>
-				<div class="divclear">&nbsp;</div>
-			</ul>
-			<p>Hay <b>7</b> accesorios disponibles</p>
-		</div>
-		<ul class="showgrid">
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li><li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<div class="botones">
-						<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
-					</div>				
-				</div>
-			</li>
-			<div class="divclear">&nbsp;</div>
-		</ul>
-	</div>	
-<?php
-return ob_get_clean();
-}
-add_shortcode( 'accesorios', 'ns_accesorios_shortcode' );
 
 //[iframe src="" scrolling=""]
 function ns_iframe( $atts ) {
