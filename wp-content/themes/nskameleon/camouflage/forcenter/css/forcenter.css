@@ -8,10 +8,9 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 .hide{display:none}
 .mb-on{display:none}
 @media only screen and (max-width: 768px){
-	.mb-no{display:none}
+.mb-no{display:none}
 }
 .hide{display:none!important}
-
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}

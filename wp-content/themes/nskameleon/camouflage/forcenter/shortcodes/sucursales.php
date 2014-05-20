@@ -1,6 +1,6 @@
 <?php
 
-//[sucursal name=""]
+//[sucursal name="" direccion="" telefono="" foto="" link=""]
 function ns_sucursal_shortcode( $atts ) {
 	extract( $atts );
 ob_start();
@@ -9,14 +9,14 @@ ob_start();
 		<div class="overlap">
 			<h4><?php echo $name ?></h4>
 			<div class="par">
-				<p><b>Direcci&oacute;n:</b><br />Avenida Irarrázaval 1445, Ñuñoa</p>
-				<p>Tel&eacute;fono:<br/>+562 2222 2222</p>
+				<p><b>Direcci&oacute;n:</b><br /><?php echo $direccion ?></p>
+				<p>Tel&eacute;fono:<br/><?php echo $telefono ?></p>
 			</div>
 		</div>
 		<div class="link">
-			<a href="#">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
+			<a href="<?php echo $link ?>">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
 		</div>
-		<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
+		<img src="<?php echo $foto ?>" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
 	</div>	
 <?php
 return ob_get_clean();
@@ -78,7 +78,7 @@ function ns_sucursald_shortcode( $atts ) {
 					<div class="divclear">&nbsp;</div>
 				</div>
 				<div class="show">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
+					<img src="<?php echo $foto1 ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>
 				</div>
 				<div class="divclear">&nbsp;</div>
 			</div>
