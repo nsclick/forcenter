@@ -100,13 +100,68 @@
 	lng="-70.5545969" 
 	name="Casa Matriz" 
 	posicion_menu="1" 
-	direccion="aqui" 
-	telefono="1322" 
-	horario1="luasdasd" 
-	horario2="asdasdas" 
+	direccion="Avenida Irarrázaval 1445, Ñuñoa" 
+	telefono="(56 2) 2740 3300" 
+	horario1="Ventas: Lun a Vie: 9:00 a 20:00 hrs." 
+	horario2="Sáb: 10:00 a 14:00 hrs." 
 ]
 
+--- Sucursal Mall Plaza Tobalaba
+[section]
+	[col_12][breadcrumbs][/col_12]
+[/section]
+[section]
+	[col_12][page_title][/col_12]
+[/section]
+[sucursald 
+	sucursales_ids="218,372,374,376" 
+	lat="-33.4450869" 
+	lng="-70.5545969" 
+	name="Sucursal Mall Plaza Tobalaba" 
+	posicion_menu="2" 
+	direccion="Avda. Camilo Henríquez 3296 Puente Alto, Santiago" 
+	telefono="(56 2) 2586 0644 - 2586 0645" 
+	horario1="Ventas: Lun a Dom: 10:30 a 21:00 hrs" 
+	horario2="" 
+]
 
+--- Sucursal Mall Plaza Alameda
+[section]
+	[col_12][breadcrumbs][/col_12]
+[/section]
+[section]
+	[col_12][page_title][/col_12]
+[/section]
+[sucursald 
+	sucursales_ids="218,372,374,376" 
+	lat="-33.4450869" 
+	lng="-70.5545969" 
+	name="Sucursal Mall Plaza Alameda" 
+	posicion_menu="3" 
+	direccion="Avda. Libertador Bernardo O'Higgins N° 3470 - Estacion Central" 
+	telefono="(56 2) 2898 7930 - 2898 7932" 
+	horario1="Ventas: Lun a Dom: 10:30 a 21:30 hrs." 
+	horario2="" 
+]
+
+--- Sucursal Seminuevos
+[section]
+	[col_12][breadcrumbs][/col_12]
+[/section]
+[section]
+	[col_12][page_title][/col_12]
+[/section]
+[sucursald 
+	sucursales_ids="218,372,374,376" 
+	lat="-33.4450869" 
+	lng="-70.5545969" 
+	name="Sucursal Seminuevos" 
+	posicion_menu="4" 
+	direccion="Avenida Irarrázaval 357, Esquina Seminario. Estación Metro Irarrázaval, Entrada de estacionamiento privado por seminario #808" 
+	telefono="(56 2) 2740 33 44" 
+	horario1="Lun a Vie: 9:30 a 19:30 hrs." 
+	horario2="Sáb: 10:00 a 18:00 hrs." 
+]
 
 ---Sucursales---
 
