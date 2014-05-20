@@ -23,7 +23,23 @@
 
 ---Desabolladura y Pintura---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][lista title="Nuestros Beneficios"][elemento text="Atenci&oacute;n a clientes particulares y empresas."][elemento text="Alianza con todas las compa&ntilde;&iacute;as de seguros."][elemento text="Modernas y renovadas instalaciones."][elemento text="Atendido por un equipo de profesionales con una amplia experiencia automotriz."][/lista][text]Nos ocupamos del &oacute;ptimo funcionamiento y asistencia a su veh&iacute;culo. Nuestro taller es atendido por un equipo de profesionales con una amplia experiencia, para brindarle la m&aacute;xima seguridad y eficiencia en nuestro trabajo. Para eso tambi&eacute;n hemos implementado un c&oacute;modo y r&aacute;pido sistema de agendamiento y seguimiento online de la reparaci&oacute;n de su veh&iacute;culo.[/text][/col_4][col_8][article][dyp][/article][/col_8][/section][spacer]
+[section][col_12][breadcrumbs][/col_12][/section]
+[section][col_12][page_title][/col_12][/section]
+[section][col_12][image_b ID=""][/col_12][/section]
+[spacer]
+[section]
+	[col_4]
+		[lista title="Nuestros Beneficios"]
+			[elemento text="Atenci&oacute;n a clientes particulares y empresas."]
+			[elemento text="Alianza con todas las compa&ntilde;&iacute;as de seguros."]
+			[elemento text="Modernas y renovadas instalaciones."]
+			[elemento text="Atendido por un equipo de profesionales con una amplia experiencia automotriz."]
+		[/lista]
+		[text]Nos ocupamos del &oacute;ptimo funcionamiento y asistencia a su veh&iacute;culo. Nuestro taller es atendido por un equipo de profesionales con una amplia experiencia, para brindarle la m&aacute;xima seguridad y eficiencia en nuestro trabajo. Para eso tambi&eacute;n hemos implementado un c&oacute;modo y r&aacute;pido sistema de agendamiento y seguimiento online de la reparaci&oacute;n de su veh&iacute;culo.[/text]
+	[/col_4]
+	[col_8][article][dyp][/article][/col_8]
+[/section]
+[spacer]
 
 ---home---
 
@@ -201,10 +217,6 @@
 
 
 ---Versión---
-
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][version name="Captiva_Cool"][/col_12][/section][spacer]
-
-
 [section]
 	[col_12]
 		[breadcrumbs]
@@ -221,6 +233,6 @@
 	[/col_12]
 [/section]
 [spacer]
---- Autos Seminuevos ---
 
+--- Autos Seminuevos ---
 [iframe src="http://www.destacados.cl/fcliente_forcenter.asp"]
