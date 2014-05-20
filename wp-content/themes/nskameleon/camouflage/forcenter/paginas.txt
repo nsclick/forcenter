@@ -89,26 +89,43 @@
 ---Sucursal Casa Matriz---
 
 [section]
-	[col_12]
-		[breadcrumbs]
-	[/col_12]
+	[col_12][breadcrumbs][/col_12]
 [/section]
 [section]
-	[col_12]
-		[page_title]
-	[/col_12]
+	[col_12][page_title][/col_12]
 [/section]
-[section]
-	[col_12]
-		[sucursald lat="-33.449024" lng="-70.619043" ]
-	[/col_12]
-[/section]
-[spacer]
+[sucursald 
+	sucursales_ids="218,372,374,376" 
+	lat="-33.4450869" 
+	lng="-70.5545969" 
+	name="Casa Matriz" 
+	posicion_menu="1" 
+	direccion="aqui" 
+	telefono="1322" 
+	horario1="luasdasd" 
+	horario2="asdasdas" 
+]
+
 
 
 ---Sucursales---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_6][sucursal name="Casa_Matriz"][/col_6][col_6][sucursal name="Mall Plaza Tobalaba"][/col_6][/section][section][col_6][sucursal name="Mall Plaza Alameda"][/col_6][col_6][sucursal name="Seminuevos"][/col_6][/section][spacer]
+[section]
+	[col_12][breadcrumbs][/col_12]
+[/section]
+[section]
+	[col_12][page_title][/col_12]
+[/section]
+[section]
+	[col_6][sucursal name="Casa Matriz" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" fotoID="229" postID="#"][/col_6]
+	[col_6][sucursal name="Casa Matrizasas" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" fotoID="229" postID="#"][/col_6]
+[/section]
+[section]
+	[col_6][sucursal name="Casa Matriz" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" fotoID="229" postID="#"][/col_6]
+	[col_6][sucursal name="Casa Matriz" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" fotoID="229" postID="#"][/col_6]
+[/section]
+[spacer]
+
 
 ---Versión---
 

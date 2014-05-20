@@ -17,10 +17,9 @@ removeWaiting = function (elem){
 
 formSuccessResponse = function (elem, title, message) {
 	elem.hide();
-	$( '#enviado' ).removeClass('hide');
-	$( '#enviado h2' ).html(title);
-	$( '#enviado p' ).html(message);
-
+	jQuery( '#enviado' ).removeClass('hide');
+	jQuery( '#enviado h2' ).html(title);
+	jQuery( '#enviado p' ).html(message);
 }
 
 formErrorResponse = function (elem, message) {
