@@ -88,27 +88,13 @@
 
 ---Sucursal Casa Matriz---
 
-[section]
-	[col_12]
-		[breadcrumbs]
-	[/col_12]
-[/section]
-[section]
-	[col_12]
-		[page_title]
-	[/col_12]
-[/section]
-[section]
-	[col_12]
-		[sucursald lat="-33.449024" lng="-70.619043" ]
-	[/col_12]
-[/section]
-[spacer]
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][sucursald lat="-33.4450869" lng="-70.5545969" name="Casa Matriz" number="2" direccion="aqui" telefono="1322" horario1="luasdasd" horario2="asdasdas" foto1="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/foto-2-1.png" foto2="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/foto-2-1.png" foto3="" foto4="" foto5="" foto6=""]
 
 
 ---Sucursales---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_6][sucursal name="Casa_Matriz"][/col_6][col_6][sucursal name="Mall Plaza Tobalaba"][/col_6][/section][section][col_6][sucursal name="Mall Plaza Alameda"][/col_6][col_6][sucursal name="Seminuevos"][/col_6][/section][spacer]
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_6][sucursal name="Casa Matriz" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" foto="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/foto-2-1.png" link="#"][/col_6][col_6][sucursal name="Casa Matrizasas" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" foto="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/foto-2-1.png" link="#"][/col_6][/section][section][col_6][sucursal name="Casa Matriz" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" foto="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/foto-2-1.png" link="#"][/col_6][col_6][sucursal name="Casa Matriz" direccion="Avenida Irarrázaval 1445, Ñuñoa" telefono="(56 2) 2740 3300" foto="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/foto-2-1.png" link="#"][/col_6][/section][spacer]
+
 
 ---Versión---
 
