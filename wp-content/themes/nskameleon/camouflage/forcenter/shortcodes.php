@@ -14,6 +14,12 @@ function add_shortcodes () {
 
 	// Sucursales Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/sucursales.php');
+	
+	// Contacto Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/contacto.php');
+
+	// Mantenciones Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/mantenciones.php');
 
 }
 add_action( 'init', 'add_shortcodes', 1 );
@@ -509,74 +515,6 @@ function draw_color_elem($colorPics){
 
 }
 
-//[mantencion]
-function ns_mantencion_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<div class="cotizador">
-			<div id="step3" class="activ servicio">
-				<div class="selector">
-					<div class="title">
-						<h3>Agendar cita</h3>
-						<span>Todos los campos son obligatorios.</span>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="nombre">Nombre completo:</label>
-								<input name="nombre" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Auto
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fecha">D&iacute;a que desea agendar:</label>
-								<input name="fecha" type="text" id="datepicker" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="rut">RUT:</label>
-								<input name="rut" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="divclear">&nbsp;</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="go3">Agendar<i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'mantencion', 'ns_mantencion_shortcode' );
-
 //[accesorios]
 function ns_accesorios_shortcode( $atts ) {
 ob_start();
@@ -691,14 +629,14 @@ return ob_get_clean();
 }
 add_shortcode( 'accesorios', 'ns_accesorios_shortcode' );
 
-//[iframe src="" scrolling=""]
+//[iframe src="" scrolling="" class=""]
 function ns_iframe( $atts ) {
 	extract( $atts ); 
 	
 	$scrolling = isset($scrolling) ? $scrolling : 'auto';
 	$src = isset($src) ? $src : '#';
 	
-	return '<iframe class="' . $class . '" src="'.$src.'" scrolling="' . $scrolling . '" width="900" height="700">';
+	return '<iframe class="' . $class . '" src="'.$src.'" scrolling="' . $scrolling . '" width="900" height="700"></iframe>';
 
 }
 add_shortcode( 'iframe', 'ns_iframe' );

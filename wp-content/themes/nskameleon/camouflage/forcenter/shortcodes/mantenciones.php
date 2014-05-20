@@ -1,12 +1,12 @@
 <?php
 
-//[servicio]
-function ns_servicio_shortcode( $atts ) {
- 
+//[mantencion]
+function ns_mantencion_shortcode( $atts ) {
+
 	//Servicio Técnico: Date-picker
 	wp_enqueue_script( 'jquery-ui-datepicker' );
 	wp_enqueue_script( 'nsk-date-picker-js', get_template_directory_uri() . '/camouflage/forcenter/js/date-picker.js', array( 'jquery' ), null, true );
-	wp_enqueue_script( 'nsk-sevicio-tecnico-js', get_template_directory_uri() . '/camouflage/forcenter/js/servicio-tecnico.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'nsk-mantenciones-js', get_template_directory_uri() . '/camouflage/forcenter/js/mantenciones.js', array( 'jquery' ), null, true );
 
 	wp_enqueue_script( 'jquery-validation-engine', get_template_directory_uri() . '/camouflage/forcenter/js/jquery.validationEngine.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'jquery-validation-engine-es', get_template_directory_uri() . '/camouflage/forcenter/js/jquery.validationEngine-es.js', array( 'jquery' ), null, true );
@@ -17,16 +17,15 @@ function ns_servicio_shortcode( $atts ) {
 		'post_type' => 'modelo',
 		'orderby' => 'post_title'
 	) );
-	
-	//echo '<pre>',print_r($modelos),'</pre>';
+		
 	ob_start();
 	?> 
-		<form id="servicio-tecnico-form" method="post" accept-charset="utf-8" action="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/form.processor.php" />
+		<form id="mantenciones-form" method="post" accept-charset="utf-8" action="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/form.processor.php" />
 		<?php //CSRF prevention keys ?>
-		<?php wp_nonce_field('servicio-tecnico-form','st-token'); ?>
+		<?php wp_nonce_field('mantenciones-form','mt-token'); ?>
 		
-		<input type="hidden" name="action" value="ServicioTecnico"/>
-		
+		<input type="hidden" name="action" value="Mantenciones"/>
+
 		<div class="cotizador">
 			<div id="step3" class="activ servicio">
 				<div class="selector">
@@ -94,7 +93,9 @@ function ns_servicio_shortcode( $atts ) {
 			
 		</div>
 		</form>
+
+
 	<?php
 return ob_get_clean();
 }
-add_shortcode( 'servicio', 'ns_servicio_shortcode' );
+add_shortcode( 'mantencion', 'ns_mantencion_shortcode' );
