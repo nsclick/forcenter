@@ -493,7 +493,6 @@ add_shortcode( 'cotizador', 'ns_cotizador_shortcode' );
 function ns_box_c1_shortcode( $attrs ){
 	extract($attrs);
 	$img = wp_get_attachment_url( $img_id ); //Image box
-	var_dump($img);
 	$permalink = get_permalink_by_slug( $post_slug ); //Accesorios page
 	//link="" img_url="" img_title=""
 	$atts = array(
