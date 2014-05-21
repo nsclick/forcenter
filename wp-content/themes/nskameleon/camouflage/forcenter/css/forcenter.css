@@ -8,10 +8,9 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 .hide{display:none}
 .mb-on{display:none}
 @media only screen and (max-width: 768px){
-	.mb-no{display:none}
+.mb-no{display:none}
 }
 .hide{display:none!important}
-
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}
@@ -75,9 +74,9 @@ select{}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li a:hover ul.typemenu{display:block}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
-#header #menu ul#nav ul.typemenu{display:none;width:15%;position:absolute;background:#fff;top:27px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
+#header #menu ul#nav ul.typemenu{display:none;width:15%;position:absolute;background:#fff;top:27px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);z-index:300}
 #header #menu ul#nav ul.typemenu li{display:block;width:100%;background:none;color:#444}
-#header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none}
+#header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none;text-align:left}
 #header #menu ul#nav ul.typemenu li a:hover{background:#2850a3;color:#fff}
 #header #menu ul#nav ul.typemenu li a i{position:absolute;right:10px}
 #header #menu ul#nav ul.typemenu ul.typesubmenu{display:none;width:85%;position:absolute;left:147px;top:0;width:833px;background:#fff;height:155px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
@@ -91,9 +90,6 @@ select{}
 #header #menu ul#nav ul.typemenu li:last-of-type{width:100%}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li:first-of-type{width:16.6%}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li:last-of-type{width:16.6%}
-
-
-
 
 /*prueba*/
 #header #menu ul#nav{width:100%;display:block;table-layout:auto}
@@ -153,9 +149,9 @@ select{}
 /* Shotcode Page Title */
 h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Shotcode Page Title */
-/* Grid de elementos: autos nuevos, autos usados y accesorios */
+/* Grid de elementos: autos nuevos y accesorios */
 .showcase ul.cate{display:block;width:100%;border-bottom:1px solid #3359a8}
-.showcase ul.cate li{display:block;float:left}
+.showcase ul.cate li{display:block;float:left;margin-top:3px}
 .showcase ul.cate li a{color:#46484b;display:block;padding:7px 14px;background:#fff}
 .showcase ul.cate li.activ a{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
 .showcase ul.cate li a:hover{box-shadow:inset 0 -4px 0px -2px #46484b;-moz-box-shadow:inset 0 -4px 0px -2px #46484b;-webkit-box-shadow:inset 0 -4px 0px -2px #46484b;-ms-box-shadow:inset 0 -4px 0px -2px #46484b}
@@ -178,18 +174,22 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase .showgrid li{display:block;width:19%;margin:0 0.5% 10px;float:left;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23)}
 .showcase .showgrid li .cont{display:block;padding:5px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative}
 .showcase .showgrid li .cont img{width:100%;height:122px}
-.showcase .showgrid li .cont .name{color:#2850a3;font-size:12px;font-weight:bold;display:block;padding:7px 0}
+.showcase .showgrid li .cont span{display:block;padding:3px 0 0 0}
+.showcase .showgrid li .cont .name{color:#2850a3;font-size:12px;font-weight:bold;display:block;padding:7px 0 0 0}
 .showcase .showgrid li .cont .price{display:block;color:#414042;font-weight:bold}
 .showcase .showgrid li .cont .price:before{content: "Desde "}
 .showcase .showgrid li .cont .botones{background:url(../images/bg-item.png) repeat;position:absolute;height:100%;width:100%;top:0;left:0;display:none}
 .showcase .showgrid li:hover .cont .botones{display:block}
 .showcase .showgrid li .cont .botones a{display:block;width:31%;float:left;padding:5px 20px 5px 2%;background:#000;color:#fff;position:relative;text-align:center}
-.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 4%;background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
-.showcase .showgrid li .cont .botones a.ver{margin:102px 4% 0 2%;background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+.showcase .showgrid li .cont .botones a span{padding:0}
+.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 4%;background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+.showcase .showgrid li .cont .botones a.ver{margin:102px 4% 0 2%;background:#66676a;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
 .showcase .showgrid li .cont .botones a i{position:absolute;top:0;right:0;padding:6px 6px 4px;border-left:1px solid #fff}
-.showcase .showgrid li .cont .botones a.cotizar:hover{background:#e08f00}
-.showcase .showgrid li .cont .botones a.ver:hover{background:#61ab01}
-/* END Grid de elementos: autos nuevos, autos usados y accesorios */
+.showcase .showgrid li .cont .botones a.cotizar:hover{background:#61ab01}
+.showcase .showgrid li .cont .botones a.ver:hover{background:#666666}
+.showcase.accesorios .showgrid li .cont .botones a.ver{background:#6bbd00}
+.showcase.accesorios .showgrid li .cont .botones a.ver:hover{background:#61ab01}
+/* END Grid de elementos: autos nuevos y accesorios */
 /* Cotizador */
 .image_b{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
 .article{background:#fff;border-top:1px solid #2850a3}
@@ -338,7 +338,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Servicio */
 /* Accesorios - toma la base de showcase de autos nuevos */
 .showcase.accesorios .menu{position:relative}
-.showcase.accesorios .menu p{position:absolute;text-align:right;top:0;right:0}
+.showcase.accesorios .menu p{position:absolute;text-align:right;top:-20px;right:0}
 .showcase.accesorios .showgrid li .cont .botones a.ver{float:none;display:inline-block}
 .showcase.accesorios .showgrid li .cont .botones{text-align:right}
 /* END Accesorios */
@@ -347,7 +347,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .sucursal .overlap{width:33%;height:100%;position:absolute;background:rgba(40,80,163,0.7);color:#fff}
 .sucursal .overlap .par{position:absolute;bottom:0;left:10px}
 .sucursal .link{position:absolute;right:20px;bottom:20px}
-.sucursal .link a{background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 5px 10px;display:block}
+.sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 5px 10px;display:block}
 .sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
 .sucursald ul li{display:block;float:left}
@@ -396,6 +396,19 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 #dialog.ui-state-hover span{color:inherit!important}
 .dyp #dialog i{position:absolute;top:0;right:-1px;display:block;padding:18px 26px 19px;color:#fff;background:#2850a3;font-size:36px}
 /* END Desabolladura y Pintura */
+/* Autos usados */
+.iframe{width:100%;height:1000px;overflow-x:hidden!important;background:#fff;border-top:1px solid #2850a3}
+/* END Autos usados*/
+/* Mapa del sitio */
+.mapa_sitio{background:#fff;border-top:1px solid #2850a3;padding:10px}
+.mapa_sitio ul li ul li, .mapa_sitio ul li ul li ul li{margin-left:100px}
+.mapa_sitio h3{padding:0}
+.mapa_sitio ul{padding:5px;font-size:12px}
+.mapa_sitio li{border-left:1px solid #d7dde2}
+.mapa_sitio a{padding:5px 10px;display:block}
+.mapa_sitio b{font-size:16px}
+.mapa_sitio i{font-size:14px}
+/* END Mapa del sitio */
 /* End Main Content */
 
 /* Footer */

@@ -96,3 +96,19 @@ function nsk_the_content_cleaner( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'nsk_the_content_cleaner', 5 );
+
+function get_page_by_slug($page_slug, $output = OBJECT ) { 
+	global $wpdb; 
+	$page = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_name = %s AND post_status = 'publish'", $page_slug ) ); 
+	if ( $page ) 
+		return get_page($page, $output); 
+	return null; 
+}
+
+function get_permalink_by_slug( $page_title, $post_type='page'){
+	$post = get_page_by_slug( $page_title );
+	//var_dump($post);
+	if(!$post)
+		return null;
+	return get_permalink( $post->ID );
+}

@@ -1,15 +1,15 @@
 (function(window, $, undefined) {
 	$(document).ready(function() {
 		
-		$("#servicio-tecnico-form").validationEngine('attach', {promptPosition:"inline", scroll:false});
+		$("#mantenciones-form").validationEngine('attach', {promptPosition:"inline", scroll:false});
 		
 		$('#go3').click(function(e) {
 			e.preventDefault();
 			
-			if( $("#servicio-tecnico-form").validationEngine('validate') ){
+			if( $("#mantenciones-form").validationEngine('validate') ){
 				
-				var queryString = $('#servicio-tecnico-form').formSerialize();
-				var formAction = $('#servicio-tecnico-form').attr( 'action' );
+				var queryString = $('#mantenciones-form').formSerialize();
+				var formAction = $('#mantenciones-form').attr( 'action' );
 				
 				addWaiting($( this ));
 				
