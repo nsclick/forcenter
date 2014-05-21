@@ -21,6 +21,9 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
+		<!--[if IE 7]>
+  			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/forcenter-ie7.css">
+		<![endif]-->
 		<!-- Font-awesome -->
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if IE 7]>
