@@ -35,10 +35,18 @@ class Fc_Logo_Widget extends WP_Widget {
 			<div class="sea">
 				<input type="text" /><button type="submit"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-search.png" alt="Forcenter"/></button>
 			</div>
-			<div class="sel">
-				<select>
-					<option>Tienes seleccionados 0 veh&iacute;culos</option>
-				</select>
+			<div class="sel" id="quick_call">
+				<span>Tienes seleccionados <b>0</b> veh&iacute;culos</span>
+				<div id="quick_cotizador">
+					<div class="auto">
+						<i class="icon-circle"></i>
+						Ford F150 Raptor SVT as as as  as as a
+						<span>$99.999.999</span>
+						<a href="#"><i class="icon-remove-sign"></i></a>
+					</div>
+					<span>Puedes cotizar hasta 3 veh&iacute;culos a la vez.</span>
+					<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+				</div>
 			</div>
 			<a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter"/> Contacto</a>
 		</div>
