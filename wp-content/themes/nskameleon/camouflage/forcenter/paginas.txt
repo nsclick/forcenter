@@ -59,8 +59,8 @@
 	[col_4]
 		[text]Agende su <b>Mantenci&oacute;n Ford</b> a trav&eacute;s de esta p&aacute;gina o ub&iacute;quenos en nuestra sucursal.[/text]
 		[text]Direcci&oacute,n: Avda. Irarr&aacute;zaval 1445, &Ntilde;u&ntilde;oa.[/text]
-		[text]Horario:<br/>Lun - Vier 8:30 a 18:30 hrs. S&aacute;bado 9.00 a 14 hrs.[/text]
 		[quotebox_accesories]
+		[text]Horario:<br/>Lun - Vier 8:30 a 18:30 hrs. S&aacute;bado 9.00 a 14 hrs.[/text]
 	[/col_4]
 	[col_8][article][mantencion][/article][/col_8]
 [/section]
@@ -277,4 +277,15 @@
 
 ---Contacto---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][text]Cont&aacute;ctese con nosotros a trav&eacute;s de este formulario de contacto y nos comunicaremos a la brevedad, o dir&iacute;jase a una de nuestras <a href="/sucursales">sucursales</a>.[/text][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_8][article][contacto][/article][/col_8][/section][spacer]
+[section][col_12][breadcrumbs][/col_12][/section]
+[section][col_12][page_title][/col_12][/section]
+[section][col_12][image_b ID="785"][/col_12][/section]
+[spacer]
+[section]
+	[col_4]
+		[text]Cont&aacute;ctese con nosotros a trav&eacute;s de este formulario de contacto y nos comunicaremos a la brevedad, o dir&iacute;jase a una de nuestras <a href="/sucursales">sucursales</a>.[/text]
+		[quotebox_accesories]
+	[/col_4]
+	[col_8][article][contacto][/article][/col_8]
+[/section]
+[spacer]

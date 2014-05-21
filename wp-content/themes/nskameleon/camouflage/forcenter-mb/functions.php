@@ -34,6 +34,7 @@ function nsk_fc_scripts() {
 		wp_enqueue_script( 'nsk-versiones-js', get_template_directory_uri() . '/camouflage/forcenter-mb/js/versiones.js', array( 'jquery' ), null, true );
 	}
 	
+	wp_enqueue_script( 'nsk-fcmb-common-js', get_template_directory_uri() . '/camouflage/forcenter-mb/js/fcmb-common.js', array( 'jquery' ), null, true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' ); 
