@@ -1,4 +1,18 @@
 <?php
+function add_shortcodes () {
+	// Sucursales Shortcode
+	require_once (THEME_PATH. '/camouflage/forcenter/shortcodes/sucursales.php');
+}
+add_action( 'init', 'add_shortcodes', 1 );
+
+function add_shortcodes () {
+	
+	// Autos nuevos shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php' );
+
+}
+add_action ( 'init', 'add_shortcodes', 1 );
+
 
 //[section]...[/section]
 function ns_section_shortcode( $atts, $content = null ) {
@@ -99,13 +113,13 @@ function ns_box_a_shortcode( $atts ) {
 	ob_start(); 
 	?> 
 		<ul class="menu">
-			<li><a href="autos-nuevos"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="mantenciones"><span>Agende su mantenci&oacute;n</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="servicio-tecnico"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="repuestos"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="desabolladura-y-pintura"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="sucursales"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'autos-nuevos' ) ?>"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'mantenciones' ) ?>"><span>Agende su mantenci&oacute;n</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'servicio-tecnico' ) ?>"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'repuestos' ) ?>"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'desabolladura-y-pintura' ) ?>"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'sucursales' ) ?>"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="<?php echo get_permalink_by_slug( 'ejecutivo' ) ?>"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 		</ul>
 <?php
 return ob_get_clean();
@@ -188,97 +202,6 @@ return ob_get_clean();
 }
 add_shortcode( 'page_title', 'ns_page_title_shortcode' );
 
-//[showcase]
-function ns_showcase_shortcode( $atts ) {
-ob_start();
-?> 
-	<div class="showcase">
-		<div class="section group filter">
-			<div class="col span_12_of_12">
-				<p>Tenemos 13 veh&iacute;culos</p>
-			</div>
-		</div>
-		<ul class="showgrid">
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-		</ul>
-	</div>	
-<?php
-return ob_get_clean();
-}
-add_shortcode( 'showcase', 'ns_showcase_shortcode' );
-
-
 //[image img="" title=""]
 function ns_image_shortcode( $atts ) {
 	extract( $atts );
@@ -294,8 +217,11 @@ add_shortcode( 'image', 'ns_image_shortcode' );
 function ns_image_b_shortcode( $atts ) {
 	extract( $atts );
 	ob_start();
+
+	$img = wp_get_attachment_url( $id );
+	
 	?> 
-		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></div>	
+		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($id); ?>" title="<?php echo get_the_title($id); ?>"/></div>	
 	<?php
 return ob_get_clean();
 }
@@ -675,6 +601,7 @@ function ns_iframe( $atts ) {
 }
 add_shortcode( 'iframe', 'ns_iframe' );
 
+/*
 //[sucursal name=""]
 function ns_sucursal_shortcode( $atts ) {
 	extract( $atts );
@@ -827,7 +754,7 @@ function ns_sucursald_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'sucursald', 'ns_sucursald_shortcode' );
-
+*/
 //[lista title=""]...[/lista]
 function ns_lista_shortcode( $atts, $content = null  ) {
 	extract( $atts );

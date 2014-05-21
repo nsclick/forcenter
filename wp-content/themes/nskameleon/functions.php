@@ -101,7 +101,7 @@ function get_post_by_slug( $slug ) {
 	global $wpdb; 
 	$post = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_name = %s AND post_status = 'publish'", $slug ) ); 
 	if ( $post ) 
-		return get_post($page, OBJECT); 
+		return get_post($post, OBJECT); 
 	return null; 
 }
 
@@ -110,4 +110,10 @@ function get_permalink_by_slug( $slug ){
 	if(!$post)
 		return null;
 	return get_permalink($post->ID);
+}
+
+function debug ($data) {
+	echo '<pre>';
+	print_r ( $data );
+	echo '</pre>';
 }

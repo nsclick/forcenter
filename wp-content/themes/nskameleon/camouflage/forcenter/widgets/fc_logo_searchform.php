@@ -40,7 +40,7 @@ class Fc_Logo_Widget extends WP_Widget {
 					<option>Tienes seleccionados 0 veh&iacute;culos</option>
 				</select>
 			</div>
-			<a href="#"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter"/> Contacto</a>
+			<a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter"/> Contacto</a>
 		</div>
 	</div>
 

@@ -11,7 +11,7 @@
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php wp_title( '| | Forcenter Consesionario Ford', true, 'right' ); ?></title>
+		<title><?php wp_title( '| Forcenter Consesionario Ford', true, 'right' ); ?></title>
 		<meta name="description" content="First NSClick responsive Wordpress theme.">
 		<meta name="keywords" content="responsive, grid, system, web design, nsclick, chile">
 
@@ -43,7 +43,7 @@
 			<div id="header">
 				<div class="content">
 					<div id="back">
-						<a href="#"><i class="icon-chevron-left"></i> Volver</a>
+						<a href="#" class="btn-back"><i class="icon-chevron-left"></i> Volver</a>
 					</div>
 					<div class="logo">
 						<?php /*header-left-sidebar*/ ?>

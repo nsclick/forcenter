@@ -3,12 +3,6 @@
 //[accesorios]
 function ns_accesorios_shortcode( $atts ) {
 
-function debug ($data) {
-	echo '<pre>';
-	print_r ( $data );
-	echo '</pre>';
-}
-
 $car_models = get_posts(
 	array(
 		'post_type'		=> 'modelo',
@@ -24,8 +18,6 @@ $car_accesories = get_posts (
 		'numberposts'	=> -1
 	)
 );
-
-debug ( $car_accesories );
 
 // This allows to identify which models have accesories and which not
 $car_models_ids_with_accesories = array();
