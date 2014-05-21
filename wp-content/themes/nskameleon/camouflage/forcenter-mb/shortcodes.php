@@ -5,6 +5,15 @@ function add_shortcodes () {
 }
 add_action( 'init', 'add_shortcodes', 1 );
 
+function add_shortcodes () {
+	
+	// Autos nuevos shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php' );
+
+}
+add_action ( 'init', 'add_shortcodes', 1 );
+
+
 //[section]...[/section]
 function ns_section_shortcode( $atts, $content = null ) {
 	return '<div class="section group">' . do_shortcode($content) . '</div>' . "\n";
@@ -192,97 +201,6 @@ ob_start();
 return ob_get_clean();
 }
 add_shortcode( 'page_title', 'ns_page_title_shortcode' );
-
-//[showcase]
-function ns_showcase_shortcode( $atts ) {
-ob_start();
-?> 
-	<div class="showcase">
-		<div class="section group filter">
-			<div class="col span_12_of_12">
-				<p>Tenemos 13 veh&iacute;culos</p>
-			</div>
-		</div>
-		<ul class="showgrid">
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-			<li>
-				<div class="cont">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-					<span class="name">Spark</span>
-					<span class="price">$4.130.000</span>
-					<a href="modelo" class="ver">Ver</a>
-				</div>
-			</li>
-		</ul>
-	</div>	
-<?php
-return ob_get_clean();
-}
-add_shortcode( 'showcase', 'ns_showcase_shortcode' );
-
 
 //[image img="" title=""]
 function ns_image_shortcode( $atts ) {
