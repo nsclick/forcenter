@@ -47,8 +47,8 @@ function ns_submenu_autos_shortcode( $atts ) {
 		//echo '<pre>',print_r($models),'</pre>';
 	?>
 	<li>
-		<a href="#" id="tipo1"><?php echo $family->name ?> Ford <i class="icon-chevron-right"></i></a>
-		<ul class="typesubmenu" id="tipo1d">
+		<a href="#"><?php echo $family->name ?> Ford <i class="icon-chevron-right"></i></a>
+		<ul class="typesubmenu">
 			<?php foreach($models as $m): ?>
 			<?php
 				//Loading extra model data
