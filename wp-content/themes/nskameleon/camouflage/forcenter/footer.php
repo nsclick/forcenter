@@ -10,11 +10,11 @@
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav main-nav">
-											<li class="nav-link"><a href="#" class="link">Autos Seminuevos</a></li>
-											<li class="nav-link"><a href="#" class="link">Servicio T&eacute;cnico</a></li>
-											<li class="nav-link"><a href="#" class="link">Sucursales</a></li>
-											<li class="nav-link"><a href="#" class="link">Contacto</a></li>
-											<li class="nav-link"><a href="#" class="link">Mapa del sitio</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'seminuevos' ) ?>" class="link">Autos Seminuevos</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'servicio-tecnico' ) ?>" class="link">Servicio T&eacute;cnico</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'sucursales' ) ?>" class="link">Sucursales</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>" class="link">Contacto</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'mapa-del-sitio' ) ?>" class="link">Mapa del sitio</a></li>
 										</ul>
 									</div>
 								</div>
@@ -69,16 +69,13 @@
 							</div>
 						</div>
 						<div class="col span_4_of_12">
-							<div class="col span_6_of_12">
+							<div class="col span_3_of_12">
 								&nbsp;
 							</div>
-							<div class="col span_6_of_12">
+							<div class="col span_9_of_12">
 								<div class="partners">
 									<div class="partner">
-										<a href="#" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter-trans.png" alt="partner"/></a>
-									</div>
-									<div class="partner">
-										<a href="#" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-trans.png" alt="partner"/></a>
+										<a href="<?php echo network_site_url( '' ) ?>" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-forcenter_bn.png" alt="partner"/></a>
 									</div>
 								</div>
 							</div>

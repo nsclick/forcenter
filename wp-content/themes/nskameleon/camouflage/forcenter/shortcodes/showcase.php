@@ -14,14 +14,16 @@ $car_families = get_terms (
 $car_models = get_posts(
 	array(
 		'post_type'		=> 'modelo',
-		'post_status'	=> 'publish'
+		'post_status'	=> 'publish',
+		'numberposts'	=> -1
 	)
 );
 
 $car_versions = get_posts (
 	array(
 		'post_type'		=> 'version',
-		'post_status'	=> 'publish'	
+		'post_status'	=> 'publish',
+		'numberposts'	=> -1
 	)
 );
 
@@ -30,7 +32,8 @@ $max_price = 0;
 
 foreach ( $car_models as $car_model ) {
 	$car_model_complementarios 	= get_post_meta( $car_model->ID, 'complementarios', true ); 
-	
+	$car_model->permalink 		= get_permalink ( $car_model->ID );
+
 	if ( !is_array ( $car_model_complementarios ) ) {
 		$car_model->price 		= 0;
 		$car_model->description = '';
@@ -43,7 +46,7 @@ foreach ( $car_models as $car_model ) {
 		$thumbnail_id 				= $car_model_complementarios['foto-miniatura'];
 		if ( !empty ( $thumbnail_id ) ) {
 			$thumbnail 				= array();
-			$thumbnail['post'] 		= get_post ( $car_model_complementarios['foto-miniatura'] );
+			$thumbnail['post'] 		= get_post ( $thumbnail_id );
 			$thumbnail['alt']		= get_post_meta ( $thumbnail['post']->ID, '_wp_attachment_image_alt', true );
 			$thumbnail['caption']	= $thumbnail['post']->post_excerpt;
 			$thumbnail['href']		= get_permalink ( $thumbnail['post']->ID );
@@ -93,18 +96,19 @@ ob_start();
 ?>
 	<div class="showcase">
 		<ul class="cate">
-			 <li>
+			 <li class="category-link" data-slug="vehiculos">
 			 	<a href="#todos" class="family-search" data-family="vehiculos">
 			 		<span>Todos</span>
 				</a>
 			</li>
 			<?php foreach ( $car_families as $car_family ): ?>
-				<li>
+				<li class="category-link" data-slug="<?php echo $car_family->slug; ?>">
 					<a class="family-search" href="#<?php echo $car_family->slug; ?>" data-family="<?php echo $car_family->slug; ?>">
 						<span><?php echo $car_family->name; ?></span>
 					</a>
 				</li>
 			<?php endforeach; ?>
+			<div class="divclear">&nbsp;</div>
 		</ul>
 		<div class="section group cotiza">
 			<div class="col span_6_of_12 pt1">
@@ -184,7 +188,7 @@ ob_start();
 								<span>Cotizar</span>
 								<i class="icon-chevron-right"></i>
 							</a>
-							<a href="" class="ver">
+							<a href="<?php echo $car_model->permalink; ?>" class="ver">
 								<span>Ver</span>
 								<i class="icon-chevron-right"></i>
 							</a>

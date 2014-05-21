@@ -43,11 +43,9 @@ function nsk_fc_scripts() {
 	// Showcase
 	wp_register_script( 'nsk-autos-nuevos-js', get_template_directory_uri() . '/camouflage/forcenter/js/autos_nuevos.js', array( 'jquery' ), null, true );
 	
-	
-	//Desabolladura y Pintura
-	wp_enqueue_script('jquery-ui-dialog');
-	wp_enqueue_script( 'nsk-dialog-js', get_template_directory_uri() . '/camouflage/forcenter/js/dialog.js', array( 'jquery' ), null, true );
-	
+	// Showcase
+	wp_register_script( 'nsk-acessories-js', get_template_directory_uri() . '/camouflage/forcenter/js/accesorios.js', array( 'jquery' ), null, true );
+		
 	// Typemenu (submenú del header)
 	wp_enqueue_script( 'nsk-typemenu-js', get_template_directory_uri() . '/camouflage/forcenter/js/typemenu.js', array( 'jquery' ), null, true );
 

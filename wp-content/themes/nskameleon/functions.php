@@ -111,4 +111,3 @@ function get_permalink_by_slug( $slug ){
 		return null;
 	return get_permalink($post->ID);
 }
-
