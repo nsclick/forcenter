@@ -3,6 +3,12 @@
 //[accesorios]
 function ns_accesorios_shortcode( $atts ) {
 
+function debug ($data) {
+	echo '<pre>';
+	print_r ( $data );
+	echo '</pre>';
+}
+
 $car_models = get_posts(
 	array(
 		'post_type'		=> 'modelo',
@@ -10,10 +16,6 @@ $car_models = get_posts(
 		'numberposts'	=> -1
 	)
 );
-
-foreach ( $car_models as $car_model ) {
-	$car_model->post_title_c = trim ( str_replace ( 'Ford', '', $car_model->post_title ) );
-}
 
 $car_accesories = get_posts (
 	array(
@@ -23,6 +25,15 @@ $car_accesories = get_posts (
 	)
 );
 
+debug ( $car_accesories );
+
+// This allows to identify which models have accesories and which not
+$car_models_ids_with_accesories = array();
+
+foreach ( $car_models as $car_model ) {
+	$car_model->post_title_c = trim ( str_replace ( 'Ford', '', $car_model->post_title ) );
+}
+
 foreach ( $car_accesories as $car_accesory ) {
 	$car_related_model_id 		= get_post_meta ( $car_accesory->ID, '_related_model', true );
 	$car_accesory->permalink 	= get_permalink ( $car_accesory->ID );
@@ -30,10 +41,15 @@ foreach ( $car_accesories as $car_accesory ) {
 	foreach ( $car_models as $car_model ) {
 		if ( intval ( $car_model->ID ) == $car_related_model_id ) {
 			$car_accesory->related_model = $car_model;
+
+			if ( !in_array ( intval ( $car_model->ID ), $car_models_ids_with_accesories ) ) {
+				$car_models_ids_with_accesories[] = intval ( $car_model->ID );
+			}
 		}
 	}
 
 	$car_accesory_extra_data = get_post_meta ( $car_accesory->ID, 'datos-extra-accesorios', true );
+
 	if ( !is_array ( $car_accesory_extra_data ) ) {
 		$car_accesory->extra = array();
 		$car_accesory->extra['numero'] 		= '';
@@ -87,7 +103,10 @@ ob_start();
 				 		<span>Todos</span>
 					</a>
 				</li>
-				<?php foreach ( $car_models as $car_model ): ?>
+				<?php foreach ( $car_models as $car_model ):
+					if ( !in_array ( $car_model->ID, $car_models_ids_with_accesories ) )
+						continue;
+				?>
 					<li class="model-link" data-slug="<?php echo $car_model->post_name; ?>">
 						<a class="model-search" href="#<?php echo $car_model->post_name; ?>" data-model="<?php echo $car_model->post_name; ?>">
 							<span><?php echo $car_model->post_title_c; ?></span>
@@ -102,13 +121,16 @@ ob_start();
 		<ul class="showgrid" id="showgrid_wrapper">
 			<?php foreach ( $car_accesories as $car_accesory ): ?>
 				<?php $car_accesory_thumbnail = !empty ( $car_accesory->extra['thumbnail'] ) ? $car_accesory->extra['thumbnail']['src'] : ''; ?>
-				<li class="accesory_box" data-models="accesorios,<?php echo $car_accesory->related_model->post_name; ?>" data-slug="<?php echo $car_accesory->related_model->post_name; ?>">
+				<li class="accesory_box" data-models="accesorios,<?php echo $car_accesory->related_model->post_name; ?>" data-order="<?php echo $car_accesory->menu_order; ?>" data-slug="<?php echo $car_accesory->related_model->post_name; ?>">
 					<div class="cont">
 						<img src="<?php echo $car_accesory_thumbnail; ?>" alt="<?php echo $car_accesory->post_title; ?>" title="<?php echo $car_accesory->post_title; ?>"/>
 						<span class="name"><?php echo $car_accesory->post_title; ?></span>
 						<span class="model"><?php echo $car_accesory->related_model->post_title; ?></span>
 						<span class="number"><?php echo $car_accesory->extra['numero']; ?></span>
-						<span class="versions"><?php echo implode ( $car_accesory->extra['versiones'] ); ?></span>
+						<span class="versions"><?php echo implode ( ' & ', $car_accesory->extra['versiones'] ); ?></span>
+						<?php foreach ( $car_accesory->extra['disponibility'] as $disponibility): ?>
+							<span class="disponibilidad"><?php echo $disponibility; ?></span>
+						<?php endforeach ?>
 						<div class="botones">
 							<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
 						</div>		
