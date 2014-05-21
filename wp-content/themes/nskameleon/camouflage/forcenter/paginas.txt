@@ -43,7 +43,27 @@
 
 ---home---
 
-[section][col_12][rev_slider homeslider][/col_12][/section][section][col_12][showbiz carrouselhome][/col_12][/section][section][col_12][hr][/col_12][/section][section][col_4][box_a link="http://www.rescobar.com" img_url="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" img_title="asdasd"][/col_4][col_4][box_b link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_4][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][/section][section][col_12][hr][/col_12][/section][section][col_4][box_c link="http://www.rescobar.com" title="texto" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_4][box_c link="http://www.rescobar.com" title="texto" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_4][box_c link="http://www.rescobar.com" title="texto" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][/section][spacer]
+[section][col_12][rev_slider homeslider][/col_12][/section]
+[section][col_12][showbiz carrouselhome][/col_12][/section]
+[section][col_12][hr][/col_12][/section]
+[section]
+	[col_4][box_contacto][/col_4]
+	[col_4][box_servicio_tecnico][/col_4]
+	[col_4][quotebox_cars][/col_4]
+[/section]
+[section][col_12][hr][/col_12][/section]
+[section]
+	[col_4]
+		[box_c1 post_slug="compra-inteligente" title="Compra Inteligente" img_id="789"]
+	[/col_4]
+	[col_4]
+		[box_c1 post_slug="seguros" title="Seguros" img_id="790"]
+	[/col_4]
+	[col_4]
+		[box_c1 post_slug="autos-seminuevos" title="Autos Seminuevos" img_id="791"]
+	[/col_4]
+[/section]
+[spacer]
 
 ---Mantenciones---
 
@@ -281,11 +301,11 @@
 [/section]
 [section]
 	[col_4]
-		[box_a link="http://www.rescobar.com" img_url="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" img_title="asdasd"]
+		[box_contacto]
 		[spacer]
-		[box_b link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"]
+		[box_servicio_tecnico]
 		[spacer]
-		[box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"]
+		[quotebox_cars]
 	[/col_4]
 	[col_8]
 		[iframe src="http://www.destacados.cl/fcliente_forcenter.asp" class="iframe" scrolling="auto"]
