@@ -599,3 +599,79 @@ function ns_dyp_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'dyp', 'ns_dyp_shortcode' );
+
+//[cotizador]
+function ns_mapa_sitio_shortcode( $atts ) {
+	ob_start();
+	?> 
+		<div class="mapa_sitio">
+			<div class="section group">
+				<div class="col span_6_of_12">
+					<ul>
+						<li>
+							 <a href="/"><b>Home</b></a>
+						</li>
+						<li>
+							 <a href="#"><b>Autos nuevos</b></a>
+							<ul>
+								<li>
+									 <a href="#"><i>Autos Ford</i></a>
+									<ul>
+										<li><a href="#">Ford Fiesta</a></li>
+										<li><a href="#">Ford Focus</a></li>
+										<li><a href="#">Ford Fusion</a></li>
+										<li><a href="#">Ford Mustang</a></li>
+									</ul>
+								</li>
+								<li>
+									 <a href="#"><i>SUV Ford</i></a>
+									<ul>
+										<li><a href="#">Ford Ecosport</a></li>
+										<li><a href="#">Ford Escape</a></li>
+										<li><a href="#">Ford Explorer</a></li>
+										<li><a href="#">Ford Expedition</a></li>
+									</ul>
+								</li>
+								<li>
+									 <a href="#"><i>Pick up Ford</i></a>
+									<ul>
+										<li><a href="#">Ford Ranger</a></li>
+										<li><a href="#">Ford F-150</a></li>
+										<li><a href="#">Ford F-150 Raptor</a></li>
+									</ul>
+								</li>
+								<li>
+									 <a href="#"><i>Crossover Ford</i></a>
+									<ul>
+										<li><a href="#">Ford Edge</a></li>
+									</ul>
+								</li>
+								<li>
+									 <a href="#"><i>Comerciales Ford</i></a>
+									<ul>
+										<li><a href="#">Ford Econoline</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+				<div class="col span_6_of_12">
+					<ul>
+						<li><a href="#"><b>Autos seminuevos</b></a></li>
+						<li><a href="#"><b>Servicio t&eacute;cnico</b></a></li>
+						<li><a href="#"><b>Mantenciones</b></a></li>
+						<li><a href="#"><b>Sucursales</b></a></li>
+						<li><a href="#"><b>Repuestos</b></a></li>
+						<li><a href="#"><b>Accesorios</b></a></li>
+						<li><a href="#"><b>Desabolladura y pintura</b></a></li>
+						<li><a href="#"><b>Contacto</b></a></li>
+						<li><a href="#"><b>Mapa del sitio</b></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'mapa_sitio', 'ns_mapa_sitio_shortcode' );

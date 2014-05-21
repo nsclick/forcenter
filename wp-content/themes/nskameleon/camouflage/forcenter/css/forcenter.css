@@ -398,6 +398,16 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 /* Autos usados */
 .iframe{width:100%;height:1000px;overflow-x:hidden!important;background:#fff;border-top:1px solid #2850a3}
 /* END Autos usados*/
+/* Mapa del sitio */
+.mapa_sitio{background:#fff;border-top:1px solid #2850a3;padding:10px}
+.mapa_sitio ul li ul li, .mapa_sitio ul li ul li ul li{margin-left:100px}
+.mapa_sitio h3{padding:0}
+.mapa_sitio ul{padding:5px;font-size:12px}
+.mapa_sitio li{border-left:1px solid #d7dde2}
+.mapa_sitio a{padding:5px 10px;display:block}
+.mapa_sitio b{font-size:16px}
+.mapa_sitio i{font-size:14px}
+/* END Mapa del sitio */
 /* End Main Content */
 
 /* Footer */
