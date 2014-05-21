@@ -19,7 +19,18 @@
 
 ---Cotizador---
 
-[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_12][image_b img="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png"][/col_12][/section][spacer][section][col_4][text]Cotice su auto en el siguiente formulario, agregue los autos que desea cotizar mientras navega por nuestro sitio web. En el podr&aacute;s encontrar secciones de autos nuevos y usados. El limite m&aacute;ximo de autos por cotizaci&oacute;n son 3 modelos que pueden variar entre auto nuevo y usado. Ademas podr&aacute;s cotizar un m&aacute;ximo de 3 accesorios Ford.[/text][box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"][/col_4][col_8][article][cotizador][/article][/col_8][/section][spacer]
+[section][col_12][breadcrumbs][/col_12][/section]
+[section][col_12][page_title][/col_12][/section]
+[section][col_12][image_b ID="785"][/col_12][/section]
+[spacer]
+[section]
+	[col_4]
+		[text]Cotice su auto en el siguiente formulario, agregue los autos que desea cotizar mientras navega por nuestro sitio web. En el podr&aacute;s encontrar secciones de autos nuevos y usados. El limite m&aacute;ximo de autos por cotizaci&oacute;n son 3 modelos que pueden variar entre auto nuevo y usado. Ademas podr&aacute;s cotizar un m&aacute;ximo de 3 accesorios Ford.[/text]
+		[quotebox_accesories]
+	[/col_4]
+	[col_8][article][cotizador][/article][/col_8]
+[/section]
+[spacer]
 
 ---Desabolladura y Pintura---
 
@@ -328,5 +339,34 @@
 		[quotebox_accesories]
 	[/col_4]
 	[col_8][article][contacto][/article][/col_8]
+[/section]
+[spacer]
+
+--- Seguros ---
+
+[section][col_12][breadcrumbs][/col_12][/section]
+[section][col_12][page_title][/col_12][/section]
+[section][col_12][image_b ID="785"][/col_12][/section]
+[spacer]
+[section]
+	[col_4]
+		[text]Cont&aacute;ctese con nosotros a trav&eacute;s de este formulario y nos comunicaremos a la brevedad, para ofrecerle la solución de seguros que mas le ajuste.[/text]
+		[quotebox_accesories]
+	[/col_4]
+	[col_8][article][seguros][/article][/col_8]
+[/section]
+[spacer]
+
+--- Compra INteligente
+[section][col_12][breadcrumbs][/col_12][/section]
+[section][col_12][page_title][/col_12][/section]
+[section][col_12][image_b ID="785"][/col_12][/section]
+[spacer]
+[section]
+	[col_4]
+		[text]Cont&aacute;ctese con nosotros a trav&eacute;s de este formulario y nos comunicaremos a la brevedad, para ofrecerle la mejor opción de financiamiento.[/text]
+		[quotebox_accesories]
+	[/col_4]
+	[col_8][article][compra_inteligente][/article][/col_8]
 [/section]
 [spacer]
