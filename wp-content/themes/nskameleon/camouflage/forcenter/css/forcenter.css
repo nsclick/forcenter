@@ -48,13 +48,14 @@ select{}
 #header #toolbar{text-align:right}
 #header #toolbar .toolbar-box{display:inline-block;width:350px}
 #header #toolbar .toolbar-box span{display:block;margin-bottom:10px}
-#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;float:right;display:block;padding:5px 0}
+#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:5px 0}
+#header #toolbar .toolbar-box span a{padding:0}
 #header #toolbar .toolbar-box a img{vertical-align:top}
-#header #toolbar .toolbar-box .sel{width:170px;height:20px;overflow:hidden;background:url(../images/select-bg.png) no-repeat right;border: 1px solid #dbe1e4;display:block;float:right;margin-left:5px}
+#header #toolbar .toolbar-box .sel{width:170px;height:20px;overflow:hidden;background:url(../images/select-bg.png) no-repeat right;display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sel select{background:transparent;width:198px;padding:0px;font-size:11px;line-height:1;border:0;border-radius:0;height:20px;-webkit-appearance:none;font-size:9px}
-#header #toolbar .toolbar-box .sea{display:block;width:100px;border:1px solid #dbe1e4;float:right;margin-left:5px}
+#header #toolbar .toolbar-box .sea{display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sea input{border:1px solid #3056a4;width:76px;height:18px;background:url(../images/search-bg.png) repeat-x top left}
-#header #toolbar .toolbar-box .sea button{border-left:1px solid #dbe1e4}
+#header #toolbar .toolbar-box .sea button{}
 #header #toolbar a.tool{}
 #header #toolbar a.tool:hover{}
 #header #toolbar a.tool i{}
