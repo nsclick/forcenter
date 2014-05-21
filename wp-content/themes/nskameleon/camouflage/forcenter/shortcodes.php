@@ -30,6 +30,12 @@ function add_shortcodes () {
 	// Submenu autos Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/submenu_autos.php');
 
+	// Seguros Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/seguros.php');
+
+	// Seguros Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/compra_inteligente.php');
+
 }
 add_action( 'init', 'add_shortcodes', 1 );
 
