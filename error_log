@@ -253,3 +253,40 @@
 [20-May-2014 15:47:52 UTC] PHP Notice:  Undefined offset: 1 in /home/forcente/forcenter/wp-content/plugins/showbiz/inc_php/framework/functions.class.php on line 984
 [20-May-2014 15:47:52 UTC] PHP Notice:  Undefined offset: 0 in /home/forcente/forcenter/wp-content/plugins/showbiz/inc_php/framework/functions.class.php on line 981
 [20-May-2014 15:47:52 UTC] PHP Notice:  Undefined offset: 1 in /home/forcente/forcenter/wp-content/plugins/showbiz/inc_php/framework/functions.class.php on line 984
+[20-May-2014 21:20:33 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 21:20:33 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 123
+[20-May-2014 21:20:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 128
+[20-May-2014 21:20:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 135
+[20-May-2014 21:20:36 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 21:20:36 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 123
+[20-May-2014 21:20:36 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 128
+[20-May-2014 21:20:36 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 135
+[20-May-2014 21:21:26 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 21:21:26 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 123
+[20-May-2014 21:21:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 128
+[20-May-2014 21:21:26 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 135
+[20-May-2014 22:08:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 177
+[20-May-2014 22:08:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 182
+[20-May-2014 22:32:07 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 22:32:07 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 123
+[20-May-2014 22:32:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 128
+[20-May-2014 22:32:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 135
+[20-May-2014 22:32:44 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 22:32:47 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 22:32:47 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 123
+[20-May-2014 22:32:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 128
+[20-May-2014 22:32:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 135
+[20-May-2014 22:33:04 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[20-May-2014 22:33:04 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, null given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 123
+[20-May-2014 22:33:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 128
+[20-May-2014 22:33:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 135
+[20-May-2014 23:15:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 177
+[20-May-2014 23:15:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 182
+[20-May-2014 23:23:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 177
+[20-May-2014 23:23:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 182
+[20-May-2014 23:43:22 UTC] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 63
+[21-May-2014 00:16:31 UTC] PHP Warning:  number_format() expects parameter 1 to be double, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 63
+[21-May-2014 00:16:31 UTC] PHP Warning:  file() [<a href='function.file'>function.file</a>]: Filename cannot be empty in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 70
+[21-May-2014 00:16:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 71
+[21-May-2014 00:16:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 196
+[21-May-2014 00:16:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/version.php on line 202
