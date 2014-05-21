@@ -65,6 +65,10 @@
 	    	});
 
 	    	RenderCarsBoxes(cars_to_show);
+
+	    	// Highlight link selected
+	    	$('.category-link').removeClass('activ');
+	    	$('.category-link[data-slug=' + category + ']').addClass('activ');
 	    }
 
 	    /**
@@ -103,7 +107,7 @@
 	    function RenderCarsBoxes (cars_slugs) {
 	    	if (!cars_slugs || ( typeof(cars_slugs) != typeof([]) ) )
 	    		return false;
-
+	    	
 	    	$.each(cars_boxes, function(index, car_box) {
 		    	var car_slug 	= $(car_box).attr('data-slug'),
 		    		car_price 	= $(car_box).attr('data-price'),
@@ -115,11 +119,32 @@
 		    		$(car_box).hide();
 		    	}
 	    	});
+
 	    	var sorting_order 		= sorting_el.val(),
 	    		sorted_cars_boxes 	= SortByPrice ( sorting_order );
 
 	    	cars_boxes_wrapper.empty();
 	    	cars_boxes_wrapper.append(sorted_cars_boxes);
+
+	    	/**
+	    	 * Fix: Insert a divclear element every five car_boxes
+	    	 */
+	    	var divclear_counter = 0;
+	    	$('#showgrid_wrapper .divclear').remove();
+	    	$.each(sorted_cars_boxes, function(index, sorted_car_box) {
+	    		if ($(sorted_car_box).css('display') == 'block') {
+	    			divclear_counter++;
+
+	    			// Add a divclear element every five elements showed
+		    		if (divclear_counter % 5 == 0
+		    			&& divclear_counter != (cars_slugs.length) ) {
+		    			$(sorted_car_box).after(divclear.clone());
+		    		}
+	    		}
+
+	    		
+	    	});
+
 	    	cars_boxes_wrapper.append(divclear);
 	    }
 

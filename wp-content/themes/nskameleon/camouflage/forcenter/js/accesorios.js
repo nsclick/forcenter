@@ -15,8 +15,6 @@
 	    function Search ( category ) {
 	    	category 	= category || category_selected;
 
-	    	console.log( category_selected );
-
 	    	var accesories_to_show 	= [];
 	    	$.each(accesories_boxes, function(index, accesory_box) {
 	    		var accesory_slug 	= $(accesory_box).attr('data-slug'),
@@ -46,12 +44,20 @@
 	    	if (!accesories_slugs || ( typeof(accesories_slugs) != typeof([]) ) )
 	    		return false;
 
+	    	var divclear_counter = 0;
 	    	$.each(accesories_boxes, function(index, accesory_box) {
 		    	var accesory_slug 	= $(accesory_box).attr('data-slug'),
 		    		show 			= accesories_slugs.indexOf(accesory_slug);
 
 		    	if (show != -1) {
 		    		$(accesory_box).show();
+		    		divclear_counter++;
+
+		    		// Add a divclear element every five elements showed
+		    		if (divclear_counter % 5 == 0
+		    			&& divclear_counter != (accesories_slugs.length) ) {
+		    			accesories_boxes_wrapper.append(divclear);
+		    		}
 		    	} else {
 		    		$(accesory_box).hide();
 		    	}
@@ -59,6 +65,26 @@
 
 	    	accesories_boxes_wrapper.empty();
 	    	accesories_boxes_wrapper.append(accesories_boxes);
+
+	    	/**
+	    	 * Fix: Insert a divclear element every five car_boxes
+	    	 */
+	    	var divclear_counter = 0;
+	    	$('#showgrid_wrapper .divclear').remove();
+	    	$.each(accesories_boxes, function(index, accesory_box) {
+	    		if ($(accesory_box).css('display') == 'block') {
+	    			divclear_counter++;
+
+	    			// Add a divclear element every five elements showed
+		    		if (divclear_counter % 5 == 0
+		    			&& divclear_counter != (accesories_slugs.length) ) {
+		    			$(accesory_box).after(divclear.clone());
+		    		}
+	    		}
+
+	    		
+	    	});
+
 	    	accesories_boxes_wrapper.append(divclear);
 	    }
 
