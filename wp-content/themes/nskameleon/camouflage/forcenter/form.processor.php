@@ -79,6 +79,52 @@ class ServicioTecnico extends FormProcessor{
 }
 
 
+class Mantenciones extends FormProcessor{
+	
+	function send($data){
+		
+		if(!$this->_postValidation( 'mantenciones-form', 'mt-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		$email = $this->formatEmail($data);
+		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
+			return false;		
+		}
+		
+		$this->result = 'Gracias por comunicarse con FORCENTER.';
+		return true;
+	
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function formatEmail($data) {
+		$body = "DATOS DEL SOLICITANTE:\n";
+		
+		$excluded = array('mt-token', '_wp_http_referer');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$body .= $key . ': ' . $value;
+				$body .= "\n"; 
+			}
+		}
+    
+    $email = 'creyes@nsclick.cl';
+    		 
+    return array(
+      'to'      => $email,
+      'subject' => 'Solicitud de Agendamiento de Mantención',
+      'body'    => $body
+    );
+  }
+  	
+}
+
 /**
  * EmailerFactory
  * @type class
