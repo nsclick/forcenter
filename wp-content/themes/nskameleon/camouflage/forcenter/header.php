@@ -21,9 +21,14 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
-		<!--[if IE 7]>
-  			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/forcenter-ie7.css">
+		<!--[if lt IE 9]>
+  			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/css/forcenter-ie7.css">
 		<![endif]-->
+		<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js/modernizr-custom.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js-webshim/minified/polyfiller.js"></script>
+		<script>
+		     webshims.polyfill();	
+		</script>
 		<!-- Font-awesome -->
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if IE 7]>
