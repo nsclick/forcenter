@@ -142,7 +142,7 @@ function ns_box_b_shortcode( $atts ) {
 	<a href="<?php echo $link ?>" class="box_b">
 		<span class="title"><?php echo $title ?></span>
 		<span class="link"><?php echo $link_text ?></span>
-		<img src="<?php echo $img ?>" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
+		<img src="<?php echo $img ?>" alt="<?php echo strip_tags( $title ) ?>" title="<?php echo strip_tags( $title ) ?>"/>
 	</a>	
 <?php
 return ob_get_clean();
@@ -489,10 +489,51 @@ return ob_get_clean();
 add_shortcode( 'cotizador', 'ns_cotizador_shortcode' );
 
 
+//[box_c1 post_slug="" title="" img_id=""]
+function ns_box_c1_shortcode( $attrs ){
+	extract($attrs);
+	$img = wp_get_attachment_url( $img_id ); //Image box
+	$permalink = get_permalink_by_slug( $post_slug ); //Accesorios page
+	//link="" img_url="" img_title=""
+	$atts = array(
+		'link' => $permalink,
+		'title' => $title,
+		'img_url' => $img,
+	);
+	return ns_box_c_shortcode( $atts );
+}
+add_shortcode( 'box_c1', 'ns_box_c1_shortcode' );
+
+function ns_box_contacto_shortcode(){
+	$img = wp_get_attachment_url( 788 ); //Image box
+	$permalink = get_permalink_by_slug( 'contacto' ); //Accesorios page
+	//link="" img_url="" img_title=""
+	$atts = array(
+		'link' => $permalink,
+		'img_title' => 'Contacto',
+		'img_url' => $img,
+	);
+	return ns_box_a_shortcode( $atts );
+}
+add_shortcode( 'box_contacto', 'ns_box_contacto_shortcode' );
+
+function ns_box_servicio_tecnico_shortcode(){
+	$img = wp_get_attachment_url( 787 ); //Image box
+	$permalink = get_permalink_by_slug( 'servicio-tecnico' ); //Accesorios page
+	//link="" link_text="" title="" img=""
+	$atts = array(
+		'link' => $permalink,
+		'link_text' => 'Ver Más',
+		'title' => 'Servicio <b>Técnico</b>',
+		'img' => $img,
+	);
+	return ns_box_b_shortcode( $atts );
+}
+add_shortcode( 'box_servicio_tecnico', 'ns_box_servicio_tecnico_shortcode' );
 
 function ns_quotebox_accesories_shortcode(){
 	$img = wp_get_attachment_url( 203 ); //Image box
-	$permalink = get_permalink( 131 ); //Accesorios page
+	$permalink = get_permalink_by_slug( 'accesorios' ); //Accesorios page
 	
 	$atts = array(
 		'link' => $permalink,
@@ -504,6 +545,19 @@ function ns_quotebox_accesories_shortcode(){
 }
 add_shortcode( 'quotebox_accesories', 'ns_quotebox_accesories_shortcode' );
 
+function ns_quotebox_cars_shortcode(){
+	$img = wp_get_attachment_url( 203 ); //Image box
+	$permalink = get_permalink_by_slug( 'cotizador' ); //Cotizacion page
+	
+	$atts = array(
+		'link' => $permalink,
+		'link_text' => 'Cotiza ahora',
+		'title' => 'Autos <b>Ford</b>',
+		'img' => $img,
+	);
+	return ns_box_b2_shortcode( $atts );
+}
+add_shortcode( 'quotebox_cars', 'ns_quotebox_cars_shortcode' );
 
 function draw_color_elem($colorPics){
 

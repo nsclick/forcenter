@@ -184,12 +184,12 @@ ob_start();
 						<span class="name"><?php echo $car_model->post_title; ?></span>
 						<span class="price">$<?php echo number_format ( $car_model->price, 0, ',', '.' ); ?></span>
 						<div class="botones">
-							<a href="" class="cotizar">
-								<span>Cotizar</span>
-								<i class="icon-chevron-right"></i>
-							</a>
 							<a href="<?php echo $car_model->permalink; ?>" class="ver">
 								<span>Ver</span>
+								<i class="icon-chevron-right"></i>
+							</a>
+							<a href="" class="cotizar">
+								<span>Cotizar</span>
 								<i class="icon-chevron-right"></i>
 							</a>
 							<div class="divclear">&nbsp;</div>
