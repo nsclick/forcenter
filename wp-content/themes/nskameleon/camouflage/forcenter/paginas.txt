@@ -269,7 +269,28 @@
 [spacer]
 
 --- Autos Seminuevos ---
-[iframe src="http://www.destacados.cl/fcliente_forcenter.asp" class=""]
+[section]
+	[col_12]
+		[breadcrumbs]
+	[/col_12]
+[/section]
+[section]
+	[col_12]
+		[page_title]
+	[/col_12]
+[/section]
+[section]
+	[col_4]
+		[box_a link="http://www.rescobar.com" img_url="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg" img_title="asdasd"]
+		[spacer]
+		[box_b link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"]
+		[spacer]
+		[box_b2 link="http://www.rescobar.com" link_text="ver más" title="hola" img="http://www.holafamilias.com/wp-content/uploads/2010/11/hola-11.jpg"]
+	[/col_4]
+	[col_8]
+		[iframe src="http://www.destacados.cl/fcliente_forcenter.asp" class="iframe" scrolling="auto"]
+	[/col_8]
+[/section]
 
 ---Mapa del sitio---
 
