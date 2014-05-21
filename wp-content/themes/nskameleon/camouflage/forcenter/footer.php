@@ -10,7 +10,7 @@
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav main-nav">
-											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'seminuevos' ) ?>" class="link">Autos Seminuevos</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'autos-seminuevos' ) ?>" class="link">Autos Seminuevos</a></li>
 											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'servicio-tecnico' ) ?>" class="link">Servicio T&eacute;cnico</a></li>
 											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'sucursales' ) ?>" class="link">Sucursales</a></li>
 											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>" class="link">Contacto</a></li>
