@@ -15,12 +15,12 @@
  */
 
 /* Change this value to switch to the correct Env: possible values are:  development, qa, production*/
-define('DB_ENV', 'qa');
+define('DB_ENV', 'development');
 
 // ** MySQL settings - You can get this info from your web host ** //
 switch(DB_ENV){
 	case 'development':
-                define('DB_NAME', 'forcenter2');
+                define('DB_NAME', 'forcenter');
                 define('DB_USER', 'forcenter');
                 define('DB_PASSWORD', 'nsdev');
                 define('DB_HOST', 'localhost');
@@ -90,7 +90,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
