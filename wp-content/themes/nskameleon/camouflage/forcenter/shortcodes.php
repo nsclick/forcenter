@@ -221,7 +221,7 @@ function ns_page_title_shortcode( $atts ) {
 	
 ob_start();
 ?> 
-	<h1 id="page_title"><?php echo get_the_title($post->ID); ?></h1>	
+	<h1 id="page_title" itemprop="name"><?php echo get_the_title($post->ID); ?></h1>	
 <?php
 return ob_get_clean();
 }
