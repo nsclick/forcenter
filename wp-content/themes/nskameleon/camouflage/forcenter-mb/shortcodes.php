@@ -1,14 +1,15 @@
 <?php
-function add_shortcodes () {
-	// Sucursales Shortcode
-	require_once (THEME_PATH. '/camouflage/forcenter/shortcodes/sucursales.php');
-}
-add_action( 'init', 'add_shortcodes', 1 );
 
 function add_shortcodes () {
 	
 	// Autos nuevos shortcode
 	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/showcase.php' );
+
+	// Moodelo shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php' );
+
+	// Version shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php' );
 
 }
 add_action ( 'init', 'add_shortcodes', 1 );
@@ -113,13 +114,13 @@ function ns_box_a_shortcode( $atts ) {
 	ob_start(); 
 	?> 
 		<ul class="menu">
-			<li><a href="<?php echo get_permalink_by_slug( 'autos-nuevos' ) ?>"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="<?php echo get_permalink_by_slug( 'mantenciones' ) ?>"><span>Agende su mantenci&oacute;n</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="<?php echo get_permalink_by_slug( 'servicio-tecnico' ) ?>"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="<?php echo get_permalink_by_slug( 'repuestos' ) ?>"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="<?php echo get_permalink_by_slug( 'desabolladura-y-pintura' ) ?>"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="<?php echo get_permalink_by_slug( 'sucursales' ) ?>"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="<?php echo get_permalink_by_slug( 'ejecutivo' ) ?>"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="autos-nuevos"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="mantenciones"><span>Agende su mantenci&oacute;n</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="servicio-tecnico"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="repuestos"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="desabolladura-y-pintura"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="sucursales"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 		</ul>
 <?php
 return ob_get_clean();
@@ -217,11 +218,8 @@ add_shortcode( 'image', 'ns_image_shortcode' );
 function ns_image_b_shortcode( $atts ) {
 	extract( $atts );
 	ob_start();
-
-	$img = wp_get_attachment_url( $id );
-	
 	?> 
-		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($id); ?>" title="<?php echo get_the_title($id); ?>"/></div>	
+		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></div>	
 	<?php
 return ob_get_clean();
 }
@@ -294,136 +292,6 @@ function ns_cotizador_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'cotizador', 'ns_cotizador_shortcode' );
-
-//[modelo name=""]
-function ns_modelo_shortcode( $atts ) {
-	global $wp_query;
-	
-	extract( $atts );
-	
-	//Get the current post
-	$post = $wp_query->post;
-	//echo '<pre>',print_r( $post ),'</pre>';
-
-	// Getting the gallery images
-	$galleryIDs = get_post_meta( $post->ID, 'model-gallery', true ); 
-	$galleryIDs = explode(',', $galleryIDs[0]['fotos']);
-	$gallery = array();
-
-	foreach($galleryIDs as $id){
-
-		$attachment = get_post( $id );
-		$type = strtolower( $attachment->post_content ); //Interior or Exterior
-		$gallery[$type][] = array(
-			'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-			'caption' => $attachment->post_excerpt,
-			'type' => $type,
-			'href' => get_permalink( $attachment->ID ),
-			'src' => $attachment->guid,
-			'title' => $attachment->post_title
-		);
-
-	}
-
-	// Getting the complementray data
-	$extra = get_post_meta( $post->ID, 'complementarios', true ); 
-	$extra = $extra[0];
-	
-	ob_start();
-	?> 
-		<h1 id="page_title2">Autos Nuevos</h1>
-		<div class="modelo">
-			<div class="head">
-				<div class="banner">
-					<div class="wborder"><img class="main-pic" src="<?php echo $gallery['exterior'][0]['src'] ?>" alt="<?php echo $gallery['exterior'][0]['alt'] ?>" title="<?php echo $gallery['exterior'][0]['title'] ?>"/></div>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<ul class="lista">
-					<!-- un elemento -->
-					<li>
-						<div class="cont">
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-							<span class="name">Spark</span>
-							<span class="price">$4.130.000</span>
-							<a href="../version" class="ver">Ver</a>
-						</div>
-					</li>				
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<li>
-						<div class="cont">
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-							<span class="name">Spark</span>
-							<span class="price">$4.130.000</span>
-							<a href="../version" class="ver">Ver</a>
-						</div>
-					</li>				
-					<!-- fin un elemento -->
-					<!-- un elemento -->
-					<li>
-						<div class="cont">
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/>
-							<span class="name">Spark</span>
-							<span class="price">$4.130.000</span>
-							<a href="../version" class="ver">Ver</a>
-						</div>
-					</li>				
-					<!-- fin un elemento -->
-				</ul>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'modelo', 'ns_modelo_shortcode' );
-
-//[version name=""]
-function ns_version_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<h1 id="page_title2">Autos Nuevos</h1>
-		<div class="version">
-			<div class="head">
-				<div class="section group subhead">
-					<div class="col span_6_of_12 col2">
-						<div class="cont">
-							<h4><?php echo get_the_title($ID); ?></h4>
-						</div>
-					</div>
-					<div class="col span_6_of_12 col3">
-						<div class="cont">
-							Precio <b>$10.490.000</b>
-						</div>
-					</div>
-				</div>
-				<div class="wborder"> 
-					<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>	
-				</div>
-			</div>
-			<div class="contec">
-				<a href="../cotizador" class="cotizar">
-					<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter-mb/images/ico-car.png" alt="Cotizar" title="Cotizar"/>
-					Cotizar
-				</a>
-			</div>
-			<div class="body">
-				<div class="menu">
-					<a><i class="icon-chevron-sign-left"></i></a>
-					<span class="place">Dise&ntilde;o</span>
-					<a><i class="icon-chevron-sign-right"></i></a>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<div class="cont activ" id="cont1">
-					<p>asdasdasdasdas</p>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'version', 'ns_version_shortcode' );
-
-
 
 //[servicio]
 function ns_servicio_shortcode( $atts ) {
@@ -601,7 +469,6 @@ function ns_iframe( $atts ) {
 }
 add_shortcode( 'iframe', 'ns_iframe' );
 
-/*
 //[sucursal name=""]
 function ns_sucursal_shortcode( $atts ) {
 	extract( $atts );
@@ -754,7 +621,7 @@ function ns_sucursald_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'sucursald', 'ns_sucursald_shortcode' );
-*/
+
 //[lista title=""]...[/lista]
 function ns_lista_shortcode( $atts, $content = null  ) {
 	extract( $atts );
