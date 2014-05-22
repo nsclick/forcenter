@@ -15,7 +15,7 @@
  */
 
 /* Change this value to switch to the correct Env: possible values are:  development, qa, production*/
-define('DB_ENV', 'development');
+define('DB_ENV', 'qa');
 
 // ** MySQL settings - You can get this info from your web host ** //
 switch(DB_ENV){
@@ -90,7 +90,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
