@@ -36,11 +36,12 @@ function add_shortcodes () {
 	// Seguros Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/compra_inteligente.php');
 
+	// Home Page Slice sets Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/slice_set.php');
+
 }
 add_action( 'init', 'add_shortcodes', 1 );
 
-
-//[section]...[/section]
 function ns_section_shortcode( $atts, $content = null ) {
 	return '<div class="section group">' . do_shortcode($content) . '</div>' . "\n";
 }
