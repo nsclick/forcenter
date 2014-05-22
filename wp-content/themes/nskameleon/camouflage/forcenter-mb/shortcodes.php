@@ -11,6 +11,8 @@ function add_shortcodes () {
 	// Version shortcode
 	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php' );
 
+	//
+	require_once (THEME_PATH. '/camouflage/forcenter/shortcodes/sucursales.php');
 }
 add_action ( 'init', 'add_shortcodes', 1 );
 
@@ -469,159 +471,6 @@ function ns_iframe( $atts ) {
 }
 add_shortcode( 'iframe', 'ns_iframe' );
 
-//[sucursal name=""]
-function ns_sucursal_shortcode( $atts ) {
-	extract( $atts );
-ob_start();
-?> 
-	<div class="sucursal">
-		<div class="overlap">
-			<h4><?php echo $name ?></h4>
-			<div class="par">
-				<p><b>Direcci&oacute;n:</b><br />Avenida Irarrázaval 1445, Ñuñoa</p>
-				<p>Tel&eacute;fono:<br/>+562 2222 2222</p>
-			</div>
-		</div>
-		<div class="link">
-			<a href="#">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
-		</div>
-		<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
-	</div>	
-<?php
-return ob_get_clean();
-}
-add_shortcode( 'sucursal', 'ns_sucursal_shortcode' );
-
-//[sucursald]
-function ns_sucursald_shortcode( $atts ) {
-	ob_start();
-?> 
-	<div class="sucursald">
-		<ul>
-			<li><a class="activ" id="suc1">Casa Matriz</a></li>
-			<li><a id="suc2">Sucursal 2</a></li>
-			<li><a id="suc3">Sucursal 3</a></li>
-			<li><a id="suc4">Sucursal 4</a></li>
-			<div class="divclear">&nbsp;</div>
-		</ul>
-		<div class="cont activa" id="sucu1">
-			<div class="section group">
-				<div class="col span_7_of_12">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
-				</div>
-				<div class="col span_5_of_12">
-					<h4>Casa Matriz</h4>
-					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
-					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
-					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
-				</div>
-			</div>
-			<div class="galeria">
-				<div class="links">
-					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<div class="show">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
-				</div>
-				<div class="divclear">&nbsp;</div>
-			</div>
-		</div>
-		<div class="cont" id="sucu2">
-			<div class="section group">
-				<div class="col span_7_of_12">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
-				</div>
-				<div class="col span_5_of_12">
-					<h4>Sucursal 2</h4>
-					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
-					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
-					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
-				</div>
-			</div>
-			<div class="galeria">
-				<div class="links">
-					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<div class="show">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
-				</div>
-				<div class="divclear">&nbsp;</div>
-			</div>
-		</div>
-		<div class="cont" id="sucu3">
-			<div class="section group">
-				<div class="col span_7_of_12">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
-				</div>
-				<div class="col span_5_of_12">
-					<h4>Sucursal 3</h4>
-					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
-					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
-					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
-				</div>
-			</div>
-			<div class="galeria">
-				<div class="links">
-					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<div class="show">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
-				</div>
-				<div class="divclear">&nbsp;</div>
-			</div>
-		</div>
-		<div class="cont" id="sucu4">
-			<div class="section group">
-				<div class="col span_7_of_12">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3328.8552478520132!2d-70.6158073!3d-33.4530776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf8f2e4e6d09%3A0xfd8b96ec4c0db5a1!2sIrarr%C3%A1zaval+1445!5e0!3m2!1ses-419!2s!4v1400006076713" width="554" height="380" frameborder="0" style="border:1px solid #d7dde2"></iframe>
-				</div>
-				<div class="col span_5_of_12">
-					<h4>Sucursal 3</h4>
-					<p><b>Direcci&oacute;n:</b>Avenida Irarrázaval 1445, Ñuñoa</p>
-					<p><b>Tel&eacute;fono:</b>(56 2) 2740 3300</p>
-					<p><b>Horario:</b>Lun a Vie: 9:00 a 20:00 hrs.<br />Sáb: 10:00 a 14:00 hrs.</p>
-				</div>
-			</div>
-			<div class="galeria">
-				<div class="links">
-					<a href="#" class="activ"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<a href="#"><span class="activo">&nbsp;</span><span class="hov">&nbsp;</span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<div class="show">
-					<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo $name ?>" title="<?php echo $name ?>"/>
-				</div>
-				<div class="divclear">&nbsp;</div>
-			</div>
-		</div>
-	</div>	
-<?php
-return ob_get_clean();
-}
-add_shortcode( 'sucursald', 'ns_sucursald_shortcode' );
-
 //[lista title=""]...[/lista]
 function ns_lista_shortcode( $atts, $content = null  ) {
 	extract( $atts );
@@ -698,3 +547,57 @@ return ob_get_clean();
 }
 add_shortcode( 'dyp', 'ns_dyp_shortcode' );
 
+function ns_box_contacto_shortcode(){
+	$img = wp_get_attachment_url( 788 ); //Image box
+	$permalink = get_permalink_by_slug( 'contacto' ); //Accesorios page
+	//link="" img_url="" img_title=""
+	$atts = array(
+		'link' => $permalink,
+		'img_title' => 'Contacto',
+		'img_url' => $img,
+	);
+	return ns_box_a_shortcode( $atts );
+}
+add_shortcode( 'box_contacto', 'ns_box_contacto_shortcode' );
+
+function ns_box_servicio_tecnico_shortcode(){
+	$img = wp_get_attachment_url( 787 ); //Image box
+	$permalink = get_permalink_by_slug( 'servicio-tecnico' ); //Accesorios page
+	//link="" link_text="" title="" img=""
+	$atts = array(
+		'link' => $permalink,
+		'link_text' => 'Ver Más',
+		'title' => 'Servicio <b>Técnico</b>',
+		'img' => $img,
+	);
+	return ns_box_b_shortcode( $atts );
+}
+add_shortcode( 'box_servicio_tecnico', 'ns_box_servicio_tecnico_shortcode' );
+
+function ns_quotebox_cars_shortcode(){
+	$img = wp_get_attachment_url( 203 ); //Image box
+	$permalink = get_permalink_by_slug( 'cotizador' ); //Cotizacion page
+	
+	$atts = array(
+		'link' => $permalink,
+		'link_text' => 'Cotiza ahora',
+		'title' => 'Autos <b>Ford</b>',
+		'img' => $img,
+	);
+	return ns_box_b2_shortcode( $atts );
+}
+add_shortcode( 'quotebox_cars', 'ns_quotebox_cars_shortcode' );
+
+function ns_box_c1_shortcode( $attrs ){
+	extract($attrs);
+	$img = wp_get_attachment_url( $img_id ); //Image box
+	$permalink = get_permalink_by_slug( $post_slug ); //Accesorios page
+	//link="" img_url="" img_title=""
+	$atts = array(
+		'link' => $permalink,
+		'title' => $title,
+		'img' => $img,
+	);
+	return ns_box_c_shortcode( $atts );
+}
+add_shortcode( 'box_c1', 'ns_box_c1_shortcode' );

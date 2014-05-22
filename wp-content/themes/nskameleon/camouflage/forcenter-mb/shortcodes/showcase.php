@@ -2,13 +2,7 @@
 
 // [showcase]
 function ns_showcase_shortcode ( $atts ) {
-
-	function debug ( $data ) {
-		echo '<pre>';
-		print_r ( $data );
-		echo '</pre>';
-	}
-
+	
 	$car_models = get_posts(
 		array(
 			'post_type'		=> 'modelo',
