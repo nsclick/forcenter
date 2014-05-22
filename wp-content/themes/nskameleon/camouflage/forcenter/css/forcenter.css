@@ -79,11 +79,11 @@ select{}
 #header #menu ul#nav .divclear{display:none}
 #header #menu ul#nav li{display:table-cell;width:auto;text-align:center;float:none}
 #header #menu ul#nav li a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e;display:block}
-#header #menu ul#nav li a i{font-size:9px;margin-left:1px}
+#header #menu ul#nav li a i{font-size:7px;margin-left:1px}
 #header #menu ul#nav li:first-of-type a{border-left:none}
 #header #menu ul#nav li:last-of-type a{border-right:none}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
-#header #menu ul#nav li a:hover ul.typemenu{display:block}
+#header #menu ul#nav li a:hover ul.typemenu{display:block!important}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
 #header #menu ul#nav ul.typemenu{display:none;width:19%;position:absolute;background:#fff;top:27px;left:0;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);z-index:300}
 #header #menu ul#nav ul.typemenu li{display:block;width:100%;background:none;color:#444}
@@ -406,6 +406,11 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .dyp #dialog span span b{color:#2850a3}
 #dialog.ui-state-hover span{color:inherit!important}
 .dyp #dialog i{position:absolute;top:0;right:-1px;display:block;padding:18px 26px 19px;color:#fff;background:#2850a3;font-size:36px}
+.ui-state-default .ui-icon{background-image:url(../images/ui-icons_FFFFFF_256x240.png)!important}
+.ui-widget-header{border:none!important;background:none!important;position:relative!important}
+.ui-widget-header button.ui-button{background:#2850a3!important;border:none!important;border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important;-ms-border-radius:0!important;top:8px;right:-3px}
+.ui-dialog{border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important;-ms-border-radius:0!important;border:none!important;border-top:1px solid #2850a3!important}
+.ui-widget-overlay{opacity:.6!important;filter:Alpha(Opacity=60)!important}
 /* END Desabolladura y Pintura */
 /* Autos usados */
 .iframe{width:100%;height:1000px;overflow-x:hidden!important;background:#fff;border-top:1px solid #2850a3}
