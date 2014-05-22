@@ -8,6 +8,9 @@ function add_shortcodes () {
 	// Moodelo shortcode
 	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/modelo.php' );
 
+	// Version shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php' );
+
 }
 add_action ( 'init', 'add_shortcodes', 1 );
 
@@ -289,54 +292,6 @@ function ns_cotizador_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'cotizador', 'ns_cotizador_shortcode' );
-
-
-
-//[version name=""]
-function ns_version_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<h1 id="page_title2">Autos Nuevos</h1>
-		<div class="version">
-			<div class="head">
-				<div class="section group subhead">
-					<div class="col span_6_of_12 col2">
-						<div class="cont">
-							<h4><?php echo get_the_title($ID); ?></h4>
-						</div>
-					</div>
-					<div class="col span_6_of_12 col3">
-						<div class="cont">
-							Precio <b>$10.490.000</b>
-						</div>
-					</div>
-				</div>
-				<div class="wborder"> 
-					<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/images/img-cotizador.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/>	
-				</div>
-			</div>
-			<div class="contec">
-				<a href="../cotizador" class="cotizar">
-					<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter-mb/images/ico-car.png" alt="Cotizar" title="Cotizar"/>
-					Cotizar
-				</a>
-			</div>
-			<div class="body">
-				<div class="menu">
-					<a><i class="icon-chevron-sign-left"></i></a>
-					<span class="place">Dise&ntilde;o</span>
-					<a><i class="icon-chevron-sign-right"></i></a>
-					<div class="divclear">&nbsp;</div>
-				</div>
-				<div class="cont activ" id="cont1">
-					<p>asdasdasdasdas</p>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'version', 'ns_version_shortcode' );
 
 //[servicio]
 function ns_servicio_shortcode( $atts ) {
