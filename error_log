@@ -1401,3 +1401,5 @@
 [22-May-2014 20:44:49 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
 [22-May-2014 20:44:56 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
 [22-May-2014 20:45:30 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[22-May-2014 21:59:54 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
+[22-May-2014 22:03:29 UTC] PHP Warning:  extract() expects parameter 1 to be array, string given in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/shortcodes/modelo.php on line 7
