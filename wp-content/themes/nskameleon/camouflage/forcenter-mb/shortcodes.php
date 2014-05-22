@@ -10,9 +10,6 @@ function add_shortcodes () {
 
 	// Version shortcode
 	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php' );
-	
-	// Sucursales Shortcode
-	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/sucursales.php');
 
 	//
 	require_once (THEME_PATH. '/camouflage/forcenter/shortcodes/sucursales.php');
