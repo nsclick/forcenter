@@ -7,7 +7,7 @@
 		
 		$("#dialog-modal").dialog({
 			autoOpen: false,
-			height: 300,
+			height: 400,
 			width: 650,
 			modal: true
 		});
