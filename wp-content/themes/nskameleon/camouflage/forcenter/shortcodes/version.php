@@ -75,10 +75,10 @@ function ns_version_shortcode( $atts ) {
 	
 	ob_start();
 	?> 
-		<div class="version">
+		<div class="version" itemscope itemtype ="http://schema.org/Car" itemref="page_title">
 			<div class="head">
 				<div class="wborder"> 
-					<img src="<?php echo $banner['src'] ?>" alt="<?php echo $banner['alt'] ?>" title="<?php echo $banner['title'] ?>"/>	
+					<img itemprop="image" src="<?php echo $banner['src'] ?>" alt="<?php echo $banner['alt'] ?>" title="<?php echo $banner['title'] ?>"/>	
 				</div>
 				<div class="section group subhead">
 					<div class="col span_6_of_12">
@@ -111,7 +111,7 @@ function ns_version_shortcode( $atts ) {
 					<div class="col span_6_of_12">
 						<div class="col span_6_of_12 col3">
 							<div class="cont">
-								Precio <b>$<?php echo $price ?></b>
+								Precio <b itemprop="price">$<?php echo $price ?></b>
 							</div>
 						</div>
 						<div class="col span_6_of_12 col4">

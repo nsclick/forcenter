@@ -78,7 +78,7 @@ function ns_sucursald_shortcode( $atts ) {
 		<style>
 			.sucursald ul li a#suc<?php echo $posicion_menu ?>{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
 		</style>
-		<ul>
+		<ul class="sucursales">
 			<?php foreach($sucursales_ids as $index => $id): ?>
 			<li><a href="<?php echo get_permalink( $id ) ?>" class="sucursal" id="suc<?php echo ($index + 1)?>"><?php echo get_the_title( $id ) ?></a></li>
 			<?php endforeach; ?>

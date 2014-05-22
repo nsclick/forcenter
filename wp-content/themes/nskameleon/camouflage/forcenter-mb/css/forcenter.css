@@ -68,7 +68,11 @@ h1#page_title{font-size:20px;color:#46484b;padding:10px 0;text-align:center;disp
 #servicio-tecnico h1#page_title,
 #repuestos h1#page_title,
 #desabolladura-y-pintura h1#page_title,
-#sucursales h1#page_title
+#sucursales h1#page_title,
+#sucursal-casa-matriz h1#page_title,
+#sucursal-mall-plaza-tobalaba h1#page_title,
+#sucursal-mall-plaza-alameda h1#page_title,
+#sucursal-seminuevos h1#page_title
 {display:block!important}
 h1#page_title2{font-size:20px;color:#46484b;padding:10px 0;text-align:center}
 /* END Shotcode Page Title */
@@ -202,30 +206,34 @@ h1#page_title2{font-size:20px;color:#46484b;padding:10px 0;text-align:center}
 /* END Accesorios */
 /* Sucursal */
 .sucursal{position:relative;margin-bottom:10px}
-.sucursal .overlap{width:33%;height:100%;position:absolute;background:rgba(40,80,163,0.7);color:#fff}
-.sucursal .overlap .par{position:absolute;bottom:0;left:10px}
-.sucursal .link{position:absolute;right:20px;bottom:20px}
-.sucursal .link a{background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 5px 10px;display:block}
-.sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
+.sucursal .overlap{background:rgba(40,80,163,0.7);color:#fff}
+.sucursal .overlap .par{padding:0 10px}
+.sucursal .link{position:absolute;right:20px;top:20px}
+.sucursal .link a{background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:15px 30px 15px 10px;display:block}
+.sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:16px 6px 13px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
+.sucursald ul.sucursales{display:none}
 .sucursald ul li{display:block;float:left}
 .sucursald ul li a{color:#46484b;display:block;padding:7px 14px;background:#fff;cursor:pointer}
 .sucursald ul li a.activ{font-weight:bold;box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
 .sucursald ul li a:hover{box-shadow:inset 0 -4px 0px -2px #46484b;-moz-box-shadow:inset 0 -4px 0px -2px #46484b;-webkit-box-shadow:inset 0 -4px 0px -2px #46484b;-ms-box-shadow:inset 0 -4px 0px -2px #46484b}
 .sucursald .cont.activa{display:block}
-.sucursald .cont{background:#fff;padding:10px;display:none}
-.sucursald .cont h4{font-size:16px;color:#3359a8}
+.sucursald .cont{background:#fff;padding:10px;display:block}
+.sucursald .cont h4{font-size:16px;color:#3359a8;display:none}
 .sucursald .cont p{display:block;margin:0 0 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2}
 .sucursald .cont p b{display:block}
+.sucursald .cont #mapa{height:250px;width:100%}
+.sucursald .cont .span_5_of_12{float:right;margin:0!important}
+.sucursald .cont .span_7_of_12{float:right;margin:0!important}
 .sucursald .cont .galeria{margin-top:20px}
-.sucursald .cont .galeria .links{float:left;width:40%}
-.sucursald .cont .galeria .links a{display:block;width:48%;margin:0 2% 5px 0;float:left;position:relative;cursor:pointer}
+.sucursald .cont .galeria .links{float:left;width:100%}
+.sucursald .cont .galeria .links a{display:block;width:19%;margin:0 1% 5px 0;float:left;position:relative;cursor:pointer}
 .sucursald .cont .galeria .links a .hov{position:absolute;width:100%;height:100%;background:rgba(255,255,255,0.5);display:block}
 .sucursald .cont .galeria .links a:hover .hov, .sucursald .cont .galeria .links a.activ .hov{display:none}
 .sucursald .cont .galeria .links a .activo{display:none;position:absolute;height:10px;width:100%;background:#3359a8}
 .sucursald .cont .galeria .links a.activ{box-shadow:inset 0 -4px 0px -2px #3359a8;-moz-box-shadow:inset 0 -4px 0px -2px #3359a8;-webkit-box-shadow:inset 0 -4px 0px -2px #3359a8;-ms-box-shadow:inset 0 -4px 0px -2px #3359a8}
 .sucursald .cont .galeria .links a.activ .activo{display:block}
-.sucursald .cont .galeria .show{float:left;width:60%}
+.sucursald .cont .galeria .show{float:left;width:100%}
 .sucursald .cont .galeria .show img{border:1px solid #d7dde2}
 #sucursales .span_6_of_12{width:100%;margin:0}
 /* END Sucursal */

@@ -21,8 +21,8 @@ define('DB_ENV', 'qa');
 switch(DB_ENV){
 	case 'development':
                 define('DB_NAME', 'forcenter');
-                define('DB_USER', 'forcenter');
-                define('DB_PASSWORD', 'nsdev');
+                define('DB_USER', 'root');
+                define('DB_PASSWORD', '');
                 define('DB_HOST', 'localhost');
                 break;
         case 'qa':

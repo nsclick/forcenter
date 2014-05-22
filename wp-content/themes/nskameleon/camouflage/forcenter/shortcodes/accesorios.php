@@ -113,15 +113,15 @@ ob_start();
 		<ul class="showgrid" id="showgrid_wrapper">
 			<?php foreach ( $car_accesories as $car_accesory ): ?>
 				<?php $car_accesory_thumbnail = !empty ( $car_accesory->extra['thumbnail'] ) ? $car_accesory->extra['thumbnail']['src'] : ''; ?>
-				<li class="accesory_box" data-models="accesorios,<?php echo $car_accesory->related_model->post_name; ?>" data-order="<?php echo $car_accesory->menu_order; ?>" data-slug="<?php echo $car_accesory->related_model->post_name; ?>">
+				<li itemscope itemtype="http://schema.org/Product" class="accesory_box" data-models="accesorios,<?php echo $car_accesory->related_model->post_name; ?>" data-order="<?php echo $car_accesory->menu_order; ?>" data-slug="<?php echo $car_accesory->related_model->post_name; ?>">
 					<div class="cont">
-						<img src="<?php echo $car_accesory_thumbnail; ?>" alt="<?php echo $car_accesory->post_title; ?>" title="<?php echo $car_accesory->post_title; ?>"/>
-						<span class="name"><?php echo $car_accesory->post_title; ?></span>
-						<span class="model"><?php echo $car_accesory->related_model->post_title; ?></span>
-						<span class="number"><?php echo $car_accesory->extra['numero']; ?></span>
-						<span class="versions"><?php echo implode ( ' & ', $car_accesory->extra['versiones'] ); ?></span>
+						<img itemprop="image" src="<?php echo $car_accesory_thumbnail; ?>" alt="<?php echo $car_accesory->post_title; ?>" title="<?php echo $car_accesory->post_title; ?>"/>
+						<span itemprop="name" class="name"><?php echo $car_accesory->post_title; ?></span>
+						<span itemprop="model" class="model"><?php echo $car_accesory->related_model->post_title; ?></span>
+						<span itemprop="mpn" class="number"><?php echo $car_accesory->extra['numero']; ?></span>
+						<span itemprop="releaseDate" class="versions"><?php echo implode ( ' & ', $car_accesory->extra['versiones'] ); ?></span>
 						<?php foreach ( $car_accesory->extra['disponibility'] as $disponibility): ?>
-							<span class="disponibilidad"><?php echo $disponibility; ?></span>
+							<span itemprop="availability" class="disponibilidad"><?php echo $disponibility; ?></span>
 						<?php endforeach ?>
 						<div class="botones">
 							<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
