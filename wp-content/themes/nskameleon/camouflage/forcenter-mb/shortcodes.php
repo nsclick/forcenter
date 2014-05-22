@@ -11,8 +11,11 @@ function add_shortcodes () {
 	// Version shortcode
 	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/version.php' );
 
-	//
+	// Sucursales shortcode
 	require_once (THEME_PATH. '/camouflage/forcenter/shortcodes/sucursales.php');
+
+	// Contacto shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/contacto.php' );
 }
 add_action ( 'init', 'add_shortcodes', 1 );
 
@@ -122,7 +125,7 @@ function ns_box_a_shortcode( $atts ) {
 			<li><a href="repuestos"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
 			<li><a href="desabolladura-y-pintura"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
 			<li><a href="sucursales"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="ejecutivo"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="contacto"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 		</ul>
 <?php
 return ob_get_clean();
