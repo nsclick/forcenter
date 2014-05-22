@@ -57,7 +57,6 @@ ob_start();
 ?>
 
 	<h2 id="subt">Autos Nuevos</h1>
-	<h1 id="page_title2"><?php echo $car_version->post_title; ?></h1>
 	<div class="version">
 		<div class="head">
 			<div class="section group subhead">
@@ -78,7 +77,7 @@ ob_start();
 		</div>
 		<div class="contec">
 			<a href="../cotizador" class="cotizar">
-				<img src="http://localhost/forcenter/wp-content/themes/nskameleon/camouflage/forcenter-mb/images/ico-car.png" alt="Cotizar" title="Cotizar"/>
+				<img src="/wp-content/uploads/2014/05/ico-car.png" alt="Cotizar" title="Cotizar"/>
 				<span>Cotizar</span>
 			</a>
 		</div>
