@@ -83,7 +83,7 @@ select{}
 #header #menu ul#nav li:first-of-type a{border-left:none}
 #header #menu ul#nav li:last-of-type a{border-right:none}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
-#header #menu ul#nav li a:hover ul.typemenu{display:block}
+#header #menu ul#nav li a:hover ul.typemenu{display:block!important}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
 #header #menu ul#nav ul.typemenu{display:none;width:19%;position:absolute;background:#fff;top:27px;left:0;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);z-index:300}
 #header #menu ul#nav ul.typemenu li{display:block;width:100%;background:none;color:#444}

@@ -88,7 +88,8 @@ function ns_modelo_shortcode( $atts ) {
 	ob_start();
 ?>
 	
-	<h1 id="page_title2">Autos Nuevos</h1>
+	<h2 id="subt">Autos Nuevos</h1>
+	<h1 id="page_title2"><?php echo $car_version->post_title; ?></h1>
 		<div class="modelo">
 			<div class="head">
 				<div class="banner">

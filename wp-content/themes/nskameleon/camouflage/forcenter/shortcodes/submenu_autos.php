@@ -29,7 +29,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 	ob_start();
 	?>
 	
-<ul class="typemenu">
+<ul class="typemenu" style="display:none">
 	<?php foreach($car_families as $family): ?>
 	<?php
 		//Loading the posts
