@@ -109,8 +109,9 @@ function ns_modelo_shortcode( $atts ) {
 									Desde $<?php echo $price ?>
 								</div>
 								<div class="col span_5_of_12">
-									<a href="#">Cotizar <i class="icon-chevron-right"></i></a>
 									<a href="<?php echo get_permalink($version->ID) ?>">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
+									<a href="#" class="first">Cotizar <i class="icon-chevron-right"></i></a>
+									<div class="divclear">&nbsp;</div>
 								</div>
 							</div>
 						</div>

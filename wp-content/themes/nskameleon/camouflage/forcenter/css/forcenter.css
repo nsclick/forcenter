@@ -48,14 +48,14 @@ select{}
 #header #toolbar{text-align:right}
 #header #toolbar .toolbar-box{display:inline-block;width:350px}
 #header #toolbar .toolbar-box span{display:block;margin-bottom:10px}
-#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:5px 0;text-align:left}
+#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:4px 0;text-align:left}
 #header #toolbar .toolbar-box span a{padding:0;display:block}
 #header #toolbar .toolbar-box a img{vertical-align:top}
 #header #toolbar .toolbar-box .sel{width:170px;height:20px;background:url(../images/select-bg.png) no-repeat right;display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sel span{font-size:9px;padding:5px 0 0 5px;display;block;text-align:left}
 #header #toolbar .toolbar-box .sea{display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sea input{border:1px solid #3056a4;width:74px;height:18px;background:url(../images/search-bg.png) repeat-x top left;font-size:11px;padding-left:2px;color:#444}
-#header #toolbar .toolbar-box .sea button{}
+#header #toolbar .toolbar-box .sea button{width:21px;height:20px;background:url(http://forcenter.nsclick.cl/wp-content/themes/nskameleon/camouflage/forcenter/images/ico-search.png);float:right}
 #header #toolbar a.tool{}
 #header #toolbar a.tool:hover{}
 #header #toolbar a.tool i{}
@@ -85,7 +85,7 @@ select{}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li a:hover ul.typemenu{display:block}
 #header #menu ul#nav li.current-menu-item a{color:#2850a3;background:#fff}
-#header #menu ul#nav ul.typemenu{display:none;width:15%;position:absolute;background:#fff;top:27px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);z-index:300}
+#header #menu ul#nav ul.typemenu{display:none;width:15%;position:absolute;background:#fff;top:27px;left:0;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);z-index:300}
 #header #menu ul#nav ul.typemenu li{display:block;width:100%;background:none;color:#444}
 #header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none;text-align:left}
 #header #menu ul#nav ul.typemenu li a:hover{background:#2850a3;color:#fff}
@@ -272,8 +272,8 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .lista .li .span_5_of_12{font-weight:bold;padding:11px 0 0 0;font-size:12px}
 .modelo .lista .li .span_2_of_12{font-style:italic;padding:11px 0 0 0}
 .modelo .lista .li .span_5_of_12:last-of-type{text-align:right;padding:0}
-.modelo .lista .li .span_5_of_12 a{color:#fff;font-size:14px;display:inline-block;background:url(../images/bg-tab-blue-center.png);font-style:italic;padding:9px 49px 9px 15px;position:relative}
-.modelo .lista .li .span_5_of_12 a:first-of-type{background:url(../images/bg-btn-verde-s.png);margin-right:10px}
+.modelo .lista .li .span_5_of_12 a{color:#fff;font-size:14px;display:block;background:url(../images/bg-tab-blue-center.png);font-style:italic;padding:9px 49px 9px 15px;position:relative;float:right}
+.modelo .lista .li .span_5_of_12 a.first{background:url(../images/bg-btn-verde-s.png);margin-right:10px}
 .modelo .lista .li .span_5_of_12 a i{position:absolute;top:0;padding:10px 12px;right:0;border-left:1px solid #fff}
 .modelo .lista .sign{position:relative}
 .modelo .lista .sign span{display:block;font-size:19px;height:50px;background:#2850a3;color:#fff;padding:4px 0 0 40px;margin:0 0 0 -30px;width:125px;position:absolute}

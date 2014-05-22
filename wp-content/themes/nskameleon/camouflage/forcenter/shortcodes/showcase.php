@@ -162,10 +162,10 @@ ob_start();
 		</div>
 		<div class="section group filter">
 			<div class="col span_6_of_12">
-				<p>&nbsp;</p>
+				<p style="text-align:left">Tenemos <b>6</b> disponibles.</p>
 			</div>
 			<div class="col span_6_of_12">
-				<p>
+				<p style="text-align:right">
 					<label for="orden">Ordenar:</label>
 					<select name="sorting" id="sorting">
 						<option value="min-max" selected>De menor a mayor precio</option>

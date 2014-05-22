@@ -1,2 +1,9 @@
 /* Menú header */
 #header #menu ul#nav li a i{display:none}
+#header #menu ul#nav li#menu-item-148{width:15.5%}
+#header #toolbar .toolbar-box .sea{width:104px}
+#header #toolbar .toolbar-box .sea input{float:left}
+#header #toolbar .toolbar-box .sea button{float:right}
+.filter p{text-align:right}
+.showcase .showgrid li{background-color:#f3f4f9;background-image:url(../images/bg-slice-auto-down.png)!important;background-position:bottom!important;background-repeat:repeat-x!important;}
+.modelo .lista .li .span_5_of_12 a{font-size:12px}
