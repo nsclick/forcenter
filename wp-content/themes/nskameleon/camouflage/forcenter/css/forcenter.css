@@ -48,13 +48,14 @@ select{}
 #header #toolbar{text-align:right}
 #header #toolbar .toolbar-box{display:inline-block;width:350px}
 #header #toolbar .toolbar-box span{display:block;margin-bottom:10px}
-#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:4px 0;text-align:left}
+#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:2px 0;text-align:left;float:right}
+#header #toolbar .toolbar-box span a{float:none}
 #header #toolbar .toolbar-box span a{padding:0;display:block}
 #header #toolbar .toolbar-box a img{vertical-align:top}
 #header #toolbar .toolbar-box .sel{width:170px;height:20px;background:url(../images/select-bg.png) no-repeat right;display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sel span{font-size:9px;padding:5px 0 0 5px;display;block;text-align:left}
 #header #toolbar .toolbar-box .sea{display:block;float:right;margin-left:5px}
-#header #toolbar .toolbar-box .sea input{border:1px solid #3056a4;width:74px;height:18px;background:url(../images/search-bg.png) repeat-x top left;font-size:11px;padding-left:2px;color:#444}
+#header #toolbar .toolbar-box .sea input{border:1px solid #3056a4;width:62px;height:18px;background:url(../images/search-bg.png) repeat-x top left;font-size:11px;padding-left:2px;color:#444}
 #header #toolbar .toolbar-box .sea button{width:21px;height:20px;background:url(http://forcenter.nsclick.cl/wp-content/themes/nskameleon/camouflage/forcenter/images/ico-search.png);float:right}
 #header #toolbar a.tool{}
 #header #toolbar a.tool:hover{}
@@ -90,7 +91,7 @@ select{}
 #header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none;text-align:left}
 #header #menu ul#nav ul.typemenu li a:hover{background:#2850a3;color:#fff}
 #header #menu ul#nav ul.typemenu li a i{position:absolute;right:10px}
-#header #menu ul#nav ul.typemenu ul.typesubmenu{display:none;width:85%;position:absolute;left:186px;top:0;width:794px;background:#fff;height:124px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
+#header #menu ul#nav ul.typemenu ul.typesubmenu{display:none;width:85%;position:absolute;left:186px;top:0;width:794px;background:#fff;min-height:124px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
 #header #menu ul#nav ul.typemenu li:hover ul.typesubmenu{display:block}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li{display:block;width:20%;float:left;text-align:center;background:none}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li a{padding:3px 3px 5px 3px;display:block;font-size:10px;background:none;color:#444;border:none;text-align:center}
@@ -264,7 +265,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .head .banner .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:612px;float:left}
 .modelo .head .banner .wborder img{margin:1px 0 0 1px;width:610px;height:360px}
 .modelo .head .banner .text{float:left;padding-left:20px}
-.modelo .head .banner .text p{background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png);background-position:top, bottom;background-repeat:repeat-x;padding:15px 20px;height:330px;border:1px solid #aaa;border-top:1px solid #2850a3;box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:306px}
+.modelo .head .banner .text p{background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png);background-position:top, bottom;background-repeat:repeat-x;padding:15px 20px;min-height:330px;border:1px solid #aaa;border-top:1px solid #2850a3;box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:306px;text-align:justify;line-height:20px}
 .modelo .head .images{margin:20px 0;padding:15px 20px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #aaa}
 .modelo .lista{border:1px solid #aaa;border-top:1px solid #2850a3;padding:15px;background:#fff;margin-bottom:20px}
 .modelo .lista .li{background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;margin-bottom:10px}
@@ -299,7 +300,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .version .head .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
 .version .head .subhead{margin-top:10px}
 .version .head .subhead .col.col1, .version .head .subhead .col.col2, .version .head .subhead .col.col3{background-color:#fff;background-image:url(../images/bg-deg.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);color:#666971;height:40px;padding:10px 0}
-.version .head .subhead .col.col1{font-size:20px;font-style:italic;font-weight:bold}
+.version .head .subhead .col.col1{font-size:18px;font-style:italic;font-weight:bold}
 .version .head .subhead .col .cont{padding:0 10px}
 .version .head .subhead .col.col1 a{display:block;position:relative;padding:2px 0 1px 40px}
 .version .head .subhead .col.col1 b{font-size:14px;display:block;margin-bottom:3px}
@@ -355,9 +356,11 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Accesorios */
 /* Sucursal */
 .sucursal{position:relative;margin-bottom:10px}
-.sucursal .overlap{width:33%;height:100%;position:absolute;background:rgba(40,80,163,0.7);color:#fff}
-.sucursal .overlap .par{position:absolute;bottom:0;left:10px}
-.sucursal .link{position:absolute;right:20px;bottom:20px}
+.sucursal .overlap{width:100%;height:35%;position:absolute;background:rgba(40,80,163,0.7);color:#fff;bottom:0}
+.sucursal .overlap h4{font-size:12px}
+.sucursal .overlap .par{padding:0 100px 0 0}
+.sucursal .overlap .par p{padding:0 10px 5px}
+.sucursal .link{position:absolute;right:10px;bottom:10px}
 .sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 5px 10px;display:block}
 .sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}

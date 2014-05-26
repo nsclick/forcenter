@@ -9,6 +9,18 @@ function ns_seguros_shortcode( $atts ) {
 			<div id="step3" class="activ servicio">
 				<div class="selector">
 					<div class="title">
+						<h3>Caracter&iacute;sticas de los seguros.</h3>
+					</div>
+					<div class="section group">
+						<div align="center" class="col span_4_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros1.png" alt="Chilena Consolidada" title="Chilena Consolidada"/></div>
+						<div align="center" class="col span_4_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros2.png" alt="RSA" title="RSA"/></div>
+						<div align="center" class="col span_4_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="BCI" title="BCI"/></div>
+					</div>
+				</div>
+			</div>
+			<div id="step3" class="activ servicio">
+				<div class="selector">
+					<div class="title">
 						<h3>Ingrese sus datos</h3>
 						<span>Todos los campos son obligatorios.</span>
 					</div>

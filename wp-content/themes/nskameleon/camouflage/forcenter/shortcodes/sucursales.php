@@ -11,7 +11,7 @@ function ns_sucursal_shortcode( $atts ) {
 			<h4><?php echo $name ?></h4>
 			<div class="par">
 				<p><b>Direcci&oacute;n:</b><br /><?php echo $direccion ?></p>
-				<p>Tel&eacute;fono:<br/><?php echo $telefono ?></p>
+				<p><b>Tel&eacute;fono:</b> <?php echo $telefono ?></p>
 			</div>
 		</div>
 		<div class="link">
