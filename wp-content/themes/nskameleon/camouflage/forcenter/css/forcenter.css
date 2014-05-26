@@ -356,12 +356,12 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Accesorios */
 /* Sucursal */
 .sucursal{position:relative;margin-bottom:10px}
-.sucursal .overlap{width:100%;height:35%;position:absolute;background:rgba(40,80,163,0.7);color:#fff;bottom:0}
+.sucursal .overlap{width:100%;height:100px;position:relative;background:rgba(40,80,163,1);color:#fff;bottom:0}
 .sucursal .overlap h4{font-size:12px}
 .sucursal .overlap .par{padding:0 100px 0 0}
 .sucursal .overlap .par p{padding:0 10px 5px}
-.sucursal .link{position:absolute;right:10px;bottom:10px}
-.sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 5px 10px;display:block}
+.sucursal .link{position:absolute;right:10px;bottom:10px;z-index:99}
+.sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 6px 10px;display:block}
 .sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
 .sucursald ul li{display:block;float:left}
