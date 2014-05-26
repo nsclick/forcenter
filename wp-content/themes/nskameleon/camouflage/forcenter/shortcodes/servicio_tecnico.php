@@ -15,6 +15,7 @@ function ns_servicio_shortcode( $atts ) {
 
 	$modelos = get_posts( array(
 		'post_type' => 'modelo',
+		'posts_per_page'   => -1,
 		'orderby' => 'post_title'
 	) );
 	
@@ -63,7 +64,7 @@ function ns_servicio_shortcode( $atts ) {
 							</div>
 							<div class="select" style="float:right">
 								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
+								<textarea name="comentarios" placeholder="Comentenos el horario que mas le acomoda"></textarea>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<!-- <div class="select">

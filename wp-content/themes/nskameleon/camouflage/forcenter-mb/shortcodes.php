@@ -120,12 +120,12 @@ function ns_box_a_shortcode( $atts ) {
 	?> 
 		<ul class="menu">
 			<li><a href="autos-nuevos"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="mantenciones"><span>Agende su mantenci&oacute;n</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="mantenciones"><span>Mantenciones</span> <i class="icon-chevron-right arrow"></i></a></li>
 			<li><a href="servicio-tecnico"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="repuestos"><span>Cotice su repuesto</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="desabolladura-y-pintura"><span>Desabolladura y pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="repuestos"><span>Repuestos</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="desabolladura-y-pintura"><span>Desabolladura y Pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
 			<li><a href="sucursales"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="tel:+56225860644"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 		</ul>
 <?php
 return ob_get_clean();
@@ -223,8 +223,11 @@ add_shortcode( 'image', 'ns_image_shortcode' );
 function ns_image_b_shortcode( $atts ) {
 	extract( $atts );
 	ob_start();
+
+	$img = wp_get_attachment_url( $id );
+	
 	?> 
-		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></div>	
+		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($id); ?>" title="<?php echo get_the_title($id); ?>"/></div>	
 	<?php
 return ob_get_clean();
 }

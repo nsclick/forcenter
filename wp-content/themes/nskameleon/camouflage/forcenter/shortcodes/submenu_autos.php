@@ -35,6 +35,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 		//Loading the posts
 		$models = get_posts(array(
 			'post_type' => 'modelo',
+			'posts_per_page'   => -1,
 			'tax_query' => array(
 				array(
 					'taxonomy' => $family->taxonomy,
@@ -42,8 +43,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 					'terms' => $family->term_id
 				)
 			)
-		)
-		);
+		));
 		//echo '<pre>',print_r($models),'</pre>';
 	?>
 	<li>
