@@ -102,7 +102,7 @@ function ns_modelo_shortcode( $atts ) {
 							<div class="cont">
 								<img src="<?php echo $car_model_thumbnail; ?>" alt="<?php echo $car_version->post_title; ?>" title="<?php echo $car_version->post_title; ?>"/>
 								<span class="name"><?php echo $car_version->post_title; ?></span>
-								<span class="price">$<?php echo $car_version->price; ?></span>
+								<span class="price">$<?php echo number_format( $car_version->price, 0, ',', '.'); ?></span>
 								<a href="<?php echo get_permalink ( $car_version->ID ); ?>" class="ver">Ver</a>
 							</div>
 						</li>	

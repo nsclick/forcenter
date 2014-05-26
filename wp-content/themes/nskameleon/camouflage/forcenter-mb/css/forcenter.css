@@ -107,7 +107,7 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 .version .head .subhead .col.col2 .cont h4{padding:0;font-size:16px}
 .version .head .subhead .col.col3{display:block;width:49.8%;text-align:right;background:url(../images/bg-blue.png) top center repeat-x;color:#fff;margin:0;width:40%}
 .version .head .subhead .col.col3 .cont{display:block;text-align:right}
-.version .head .subhead .col.col3 b{font-size:24px;display:block;font-style:italic}
+.version .head .subhead .col.col3 b{font-size:18px;display:block;font-style:italic}
 .version .body{margin:20px 0 0 0}
 .version .body .menu{border:1px solid #fff;text-align:center;margin-bottom:10px}
 .version .body .menu i{display:block;background:#2850a3;color:#fff;font-size:16px;padding:10px 0;width:10%;float:left}
@@ -209,8 +209,8 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 .sucursal{position:relative;margin-bottom:10px}
 .sucursal .overlap{background:rgba(40,80,163,0.7);color:#fff}
 .sucursal .overlap .par{padding:0 10px}
-.sucursal .link{position:absolute;right:20px;top:20px}
-.sucursal .link a{background:#ef9e0e;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:15px 30px 15px 10px;display:block}
+.sucursal .link{position:absolute;right:20px;bottom:20px}
+.sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:15px 30px 15px 10px;display:block}
 .sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:16px 6px 13px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
 .sucursald ul.sucursales{display:none}
@@ -253,6 +253,9 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 /* Footer */
 #footer a{font-size:12px;display:block;text-align:center;padding:10px 0}
 /* End Footer */
+
+/* FIX FOR PRESENTATION: REMOVE LATER */
+#repuestos .image_b,#mantenciones .image_b,#servicio-tecnico .image_b,#desabolladura-y-pintura .image_b {display:none;}
 
 /* END CSS For Base Theme */
 /* Ricardo Escobar */

@@ -4,7 +4,7 @@
 function ns_modelo_shortcode( $atts ) {
 	global $wp_query;
 	
-	extract( $atts );
+	//extract( $atts );
 	
 	//Get the current post
 	$post = $wp_query->post;
