@@ -7,6 +7,10 @@ function ns_sucursal_shortcode( $atts ) {
 	ob_start();
 ?> 
 	<div class="sucursal">
+		<img src="<?php echo wp_get_attachment_url( $fotoid ); ?> " alt="<?php echo get_post_meta( $fotoid, '_wp_attachment_image_alt', true ) ?>" title="<?php echo $name ?>"/>
+		<div class="link">
+			<a href="<?php echo get_permalink( $postid ) ?>">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
+		</div>
 		<div class="overlap">
 			<h4><?php echo $name ?></h4>
 			<div class="par">
@@ -14,10 +18,6 @@ function ns_sucursal_shortcode( $atts ) {
 				<p><b>Tel&eacute;fono:</b> <?php echo $telefono ?></p>
 			</div>
 		</div>
-		<div class="link">
-			<a href="<?php echo get_permalink( $postid ) ?>">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
-		</div>
-		<img src="<?php echo wp_get_attachment_url( $fotoid ); ?> " alt="<?php echo get_post_meta( $fotoid, '_wp_attachment_image_alt', true ) ?>" title="<?php echo $name ?>"/>
 	</div>	
 <?php
 	return ob_get_clean();
