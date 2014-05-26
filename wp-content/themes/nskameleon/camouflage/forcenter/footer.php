@@ -76,6 +76,10 @@
 								<div class="partners">
 									<div class="partner">
 										<a href="<?php echo network_site_url( '' ) ?>" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-forcenter_bn.png" alt="partner"/></a>
+										<br /><br />
+										<fb:share-button href="<?php echo get_permalink(); ?>" width="18" type="button"></fb:share-button> &nbsp;&nbsp;
+										<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-count="none">Twittear</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 									</div>
 								</div>
 							</div>
