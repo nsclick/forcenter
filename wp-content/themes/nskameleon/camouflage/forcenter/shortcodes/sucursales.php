@@ -46,7 +46,9 @@ function ns_sucursald_shortcode( $atts ) {
 		'post_type' => 'attachment',
 		'numberposts' => -1,
 		'post_status' => null,
-		'post_parent' => $post->ID
+		'post_parent' => $post->ID,
+		'orderby'		=> 'menu_order',
+		'order'            => 'ASC'
 	);
 
 	$attachments = get_posts( $args );
