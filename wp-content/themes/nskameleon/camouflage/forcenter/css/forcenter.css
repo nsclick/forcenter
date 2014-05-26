@@ -265,7 +265,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .head .banner .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:612px;float:left}
 .modelo .head .banner .wborder img{margin:1px 0 0 1px;width:610px;height:360px}
 .modelo .head .banner .text{float:left;padding-left:20px}
-.modelo .head .banner .text p{background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png);background-position:top, bottom;background-repeat:repeat-x;padding:15px 20px;height:330px;border:1px solid #aaa;border-top:1px solid #2850a3;box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:306px}
+.modelo .head .banner .text p{background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png);background-position:top, bottom;background-repeat:repeat-x;padding:15px 20px;min-height:330px;border:1px solid #aaa;border-top:1px solid #2850a3;box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:306px;text-align:justify;line-height:20px}
 .modelo .head .images{margin:20px 0;padding:15px 20px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #aaa}
 .modelo .lista{border:1px solid #aaa;border-top:1px solid #2850a3;padding:15px;background:#fff;margin-bottom:20px}
 .modelo .lista .li{background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;margin-bottom:10px}
@@ -300,7 +300,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .version .head .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
 .version .head .subhead{margin-top:10px}
 .version .head .subhead .col.col1, .version .head .subhead .col.col2, .version .head .subhead .col.col3{background-color:#fff;background-image:url(../images/bg-deg.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);color:#666971;height:40px;padding:10px 0}
-.version .head .subhead .col.col1{font-size:20px;font-style:italic;font-weight:bold}
+.version .head .subhead .col.col1{font-size:18px;font-style:italic;font-weight:bold}
 .version .head .subhead .col .cont{padding:0 10px}
 .version .head .subhead .col.col1 a{display:block;position:relative;padding:2px 0 1px 40px}
 .version .head .subhead .col.col1 b{font-size:14px;display:block;margin-bottom:3px}
