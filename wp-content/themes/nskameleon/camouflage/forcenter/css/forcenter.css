@@ -91,7 +91,7 @@ select{}
 #header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none;text-align:left}
 #header #menu ul#nav ul.typemenu li a:hover{background:#2850a3;color:#fff}
 #header #menu ul#nav ul.typemenu li a i{position:absolute;right:10px}
-#header #menu ul#nav ul.typemenu ul.typesubmenu{display:none;width:85%;position:absolute;left:186px;top:0;width:794px;background:#fff;height:124px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
+#header #menu ul#nav ul.typemenu ul.typesubmenu{display:none;width:85%;position:absolute;left:186px;top:0;width:794px;background:#fff;min-height:124px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
 #header #menu ul#nav ul.typemenu li:hover ul.typesubmenu{display:block}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li{display:block;width:20%;float:left;text-align:center;background:none}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li a{padding:3px 3px 5px 3px;display:block;font-size:10px;background:none;color:#444;border:none;text-align:center}
