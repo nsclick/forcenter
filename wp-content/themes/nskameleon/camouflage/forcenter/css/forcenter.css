@@ -64,6 +64,7 @@ select{}
 #header #toolbar #quick_call{position:relative}
 #header #toolbar #quick_cotizador{display:none;position:absolute;top:100%;background:#fff;padding:5px;z-index:400;width:250px;right:0;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
 #header #toolbar #quick_cotizador span{display:inline-block;margin:0}
+#header #toolbar #quick_cotizador .auto span#auto_cant,#header #toolbar #quick_cotizador .auto span#accesorio_cant{display:inline-block}
 #header #toolbar #quick_cotizador a.cotizar{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position: relative;color:#fff;padding:5px 30px 5px 10px;display:inline-block}
 #header #toolbar #quick_cotizador a.cotizar i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 #header #toolbar #quick_cotizador .auto{text-align:left;font-size:11px;font-weight:bold;margin-bottom:5px;border-bottom:1px solid #d8d6d6;position:relative;padding:0 25px 5px 15px;line-height:13px}
@@ -356,7 +357,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Accesorios */
 /* Sucursal */
 .sucursal{position:relative;margin-bottom:10px}
-.sucursal .overlap{width:100%;height:100px;position:relative;background:rgba(40,80,163,1);color:#fff;bottom:0}
+.sucursal .overlap{width:100%;height:110px;position:relative;background:rgba(40,80,163,1);color:#fff;bottom:0}
 .sucursal .overlap h4{font-size:12px}
 .sucursal .overlap .par{padding:0 100px 0 0}
 .sucursal .overlap .par p{padding:0 10px 5px}
