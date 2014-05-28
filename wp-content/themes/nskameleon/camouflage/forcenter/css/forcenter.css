@@ -139,9 +139,9 @@ select{}
 #main-content .showbiz .overflowholder ul li{width:174px!important;height:170px!important;padding:3px;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;border:1px solid #fff;margin-right:5px}
 #main-content #showbiz_carrouselhome_1 .mediaholder{border:none;padding:0;background:none}
 #main-content #showbiz_carrouselhome_1 .mediaholder img{width:174px;height:122px}
-#main-content .showbiz h4{color:#2850a3;padding:10px 3px 5px;font-size:14px;}
-#main-content .showbiz h4:before{content: "Ford ";font-weight:normal;color:#2850a3}
-#main-content .showbiz h4 b{font-weight:bold}
+#main-content .showbiz h4,#main-content .showbiz h2{color:#2850a3;padding:10px 3px 5px;font-size:14px;}
+#main-content .showbiz h4:before,#main-content .showbiz h2:before{content: "Ford ";font-weight:normal;color:#2850a3}
+#main-content .showbiz h4 b,#main-content .showbiz h2 b{font-weight:bold}
 #main-content .showbiz .sprice{color:#46484b;font-weight:bold;font-size:12px;padding:0 3px}
 #main-content .showbiz .sprice:before{content: "Desde ";font-weight:normal;color:#46484b;font-style:italic}
 #main-content .showbiz .overflowholder ul li:hover{background-color:#fff;background-image:url(../images/bg-slice-auto-up2.png),url(../images/bg-slice-auto-down2.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important}
@@ -296,6 +296,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .tabla .lista .row .cell i{font-size:16px}
 .modelo .tabla .lista .row .cell i.icon-remove-sign{color:#e23a1c}
 .modelo .tabla .lista .row .cell i.icon-ok-sign{color:#35a81e}
+.modelo .lista .li .span_5_of_12 h2{font-size:12px;padding:0}
 /* END Modelos */
 /* Version */
 .version .head .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
@@ -343,6 +344,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .version .body .cont .tabla table thead td:last-of-type{background:#2850a3;color:#fff}
 .version .body .cont .tabla table thead td{font-size:14px;font-weight:bold}
 .version .body .cont .tabla table td i{font-size:16px}
+.thumb-pic{cursor:pointer}
 /* END Version */
 /* Servicio - se reutiliza #step3 de cotizador */
 #step3.servicio{margin-top:10px}

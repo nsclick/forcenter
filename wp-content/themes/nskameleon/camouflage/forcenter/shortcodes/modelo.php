@@ -103,7 +103,7 @@ function ns_modelo_shortcode( $atts ) {
 						<div class="col span_10_of_12">
 							<div class="section group li">
 								<div class="col span_5_of_12">
-									<?php echo $version->post_title ?>
+									<h2><?php echo $version->post_title ?></h2>
 								</div>
 								<div class="col span_2_of_12">
 									Desde $<?php echo $price ?>

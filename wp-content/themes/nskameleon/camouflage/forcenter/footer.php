@@ -10,59 +10,59 @@
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav main-nav">
-											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'autos-seminuevos' ) ?>" class="link">Autos Seminuevos</a></li>
-											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'servicio-tecnico' ) ?>" class="link">Servicio T&eacute;cnico</a></li>
-											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'sucursales' ) ?>" class="link">Sucursales</a></li>
-											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>" class="link">Contacto</a></li>
-											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'mapa-del-sitio' ) ?>" class="link">Mapa del sitio</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'autos-seminuevos' ) ?>" class="link" rel="subsection">Autos Seminuevos</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'servicio-tecnico' ) ?>" class="link" rel="subsection">Servicio T&eacute;cnico</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'sucursales' ) ?>" class="link" rel="subsection">Sucursales</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>" class="link" rel="subsection">Contacto</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'mapa-del-sitio' ) ?>" class="link" rel="subsection">Mapa del sitio</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
-											<li class="nav-link"><a href="#" class="link">Autos Ford</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Fiesta</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Focus</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Fusi&oacute;n</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Mustang</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Autos Ford</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Fiesta</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Focus</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Fusi&oacute;n</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Mustang</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
-											<li class="nav-link"><a href="#" class="link">Suv Ford</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford EcoSport</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Escape</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Explorer</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Expedition</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Suv Ford</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford EcoSport</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Escape</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Explorer</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Expedition</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
-											<li class="nav-link"><a href="#" class="link">Pick up Ford</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Ranger</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford F-150</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford F-150 Raptor</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Pick up Ford</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Ranger</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford F-150</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford F-150 Raptor</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
-											<li class="nav-link"><a href="#" class="link">Crossover Ford</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Edge</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Crossover Ford</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Edge</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
-											<li class="nav-link"><a href="#" class="link">Comerciales Ford</a></li>
-											<li class="nav-link"><a href="#" class="link">Ford Econoline</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Comerciales Ford</a></li>
+											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Econoline</a></li>
 										</ul>
 									</div>
 								</div>
@@ -92,7 +92,6 @@
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
