@@ -64,3 +64,9 @@ add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' );
  * Loading the widgets*/
  require_once (ACTIVE_CAMOUFLAGE_PATH . '/widgets.php');
 
+
+add_action('init', 'nsk_fc_init');
+
+function nsk_fc_init() {
+    add_post_type_support( 'attachment', 'page-attributes' );
+}

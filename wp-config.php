@@ -21,8 +21,8 @@ define('DB_ENV', 'development');
 switch(DB_ENV){
 	case 'development':
                 define('DB_NAME', 'forcenter');
-                define('DB_USER', 'root');
-                define('DB_PASSWORD', '');
+                define('DB_USER', 'forcenter');
+                define('DB_PASSWORD', 'nsdev');
                 define('DB_HOST', 'localhost');
                 break;
         case 'qa':
@@ -90,7 +90,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 

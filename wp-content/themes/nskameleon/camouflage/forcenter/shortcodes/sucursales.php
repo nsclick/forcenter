@@ -18,6 +18,12 @@ function ns_sucursal_shortcode( $atts ) {
 				<p><b>Tel&eacute;fono:</b> <?php echo $telefono ?></p>
 			</div>
 		</div>
+		<div class="link">
+			<a href="<?php echo get_permalink( $postid ) ?>">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
+		</div>
+		<a href="<?php echo get_permalink( $postid ) ?>">
+			<img src="<?php echo wp_get_attachment_url( $fotoid ); ?> " alt="<?php echo get_post_meta( $fotoid, '_wp_attachment_image_alt', true ) ?>" title="<?php echo $name ?>"/>
+		</a>
 	</div>	
 <?php
 	return ob_get_clean();
@@ -44,7 +50,9 @@ function ns_sucursald_shortcode( $atts ) {
 		'post_type' => 'attachment',
 		'numberposts' => -1,
 		'post_status' => null,
-		'post_parent' => $post->ID
+		'post_parent' => $post->ID,
+		'orderby'		=> 'menu_order',
+		'order'            => 'ASC'
 	);
 
 	$attachments = get_posts( $args );
