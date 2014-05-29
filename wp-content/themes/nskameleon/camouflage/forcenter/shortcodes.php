@@ -39,6 +39,9 @@ function add_shortcodes () {
 	// Home Page Slice sets Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/slice_set.php');
 
+	// Cotizador Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/cotizador.php');
+
 }
 add_action( 'init', 'add_shortcodes', 1 );
 
@@ -194,24 +197,14 @@ function ns_breadcrumbs_shortcode( $atts ) {
 	global $wp_query;
 	$post = $wp_query->post;
 	
-	$middle = '';
-	if($post->post_type == 'version'){
-		$modelID = get_post_meta( $post->ID, '_related_model', true);
-		$middle = '<li><a href="'. get_permalink($modelID) .'">'. get_the_title($modelID) .'</a></li>';
-	}
+//	extract( $atts );
 
-	$pos = stripos($post->post_name, 'sucursal');
-	if ($pos !== false) {
-		$middle = '<li><a href="'. get_permalink_by_slug('sucursales') .'">Sucursales</a></li>';
-	}
-	
 	ob_start();
 
 ?> 
-	<div id="breadcrumbs" itemprop="breadcrumb">
+	<div id="breadcrumbs">
 		<ul>Est&aacute;s en:
-			<li><a href="/">Inicio</a></li>
-			<?php echo $middle ?>
+			<li><a href="#">Inicio</a></li>
 			<li><a href="#"><?php echo get_the_title($post->ID); ?></a></li>
 		</ul>
 	</div>		
@@ -276,235 +269,6 @@ function ns_article_shortcode( $atts, $content = null ) {
 	return '<div class="article">' . do_shortcode($content) . '</div>' . "\n";
 }
 add_shortcode( 'article', 'ns_article_shortcode' );
-
-//[cotizador]
-function ns_cotizador_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<div class="cotizador">
-			<div class="tab tab1 activ">01. Seleccione<span class="tail">&nbsp;</span></div>
-			<div class="tab tab2"><span class="head">&nbsp;</span>01. Financiamiento<span class="tail">&nbsp;</span></div>
-			<div class="tab tab3"><span class="head">&nbsp;</span>01. Ingrese sus datos</div>
-			<div class="divclear">&nbsp;</div>
-			<div id="step1" class="activ">
-				<div class="selector">
-					<div class="title">
-						<h3>Seleccione Auto(s)</h3>
-					</div>
-					<div class="producto">
-						<div class="img">
-							<div class="name">Ford Focus Sedan SE MT</div>
-							<div class="price">$14.000.000</div>
-							<!-- La idea es que aquí el ALT y TITLE sean el nombre del auto -->
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="auto" title="auto"/></div>
-						<div class="details">
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Ford Focus Sedan
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="version">Versi&oacute;n:</label>
-								<select name="version">
-									<option>
-										SE MT
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="option"><a href="#"><i class="icon-plus"></i> Agregar a la lista</a></div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-					<div class="producto">
-						<div class="img">
-							<div class="name">Ford Focus Sedan SE MT</div>
-							<div class="price">$14.000.000</div>
-							<!-- La idea es que aquí el ALT y TITLE sean el nombre del auto -->
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="auto" title="auto"/></div>
-						<div class="details">
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Ford Focus Sedan
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="version">Versi&oacute;n:</label>
-								<select name="version">
-									<option>
-										SE MT
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="option"><a href="#"><i class="icon-remove"></i> Quitar de la lista</a></div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-					<div class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 veh&iacute;culos.</div>
-				</div>
-				<div class="selector">
-					<div class="title">
-						<h3>Seleccione Accesorio(s)</h3>
-					</div>
-					<div class="producto">
-						<div class="img">
-							<div class="name">Ford Focus Sedan SE MT</div>
-							<div class="price">$14.000.000</div>
-							<!-- La idea es que aquí el ALT y TITLE sean el nombre del auto -->
-							<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="auto" title="auto"/></div>
-						<div class="details">
-							<div class="select">
-								<label for="modelo">Modelo:</label>
-								<select name="modelo">
-									<option>
-										Ford Focus Sedan
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="version">Versi&oacute;n:</label>
-								<select name="version">
-									<option>
-										SE MT
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="option"><a href="#"><i class="icon-plus"></i> Agregar a la lista</a></div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-					<div class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 accesorios.</div>
-				</div>
-				<div class="link">
-					<button id="go1">Paso 02: Financiamiento <i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
-			<div id="step2">
-				<div class="selector">
-					<div class="title">
-						<h3>¿C&oacute;mo pagar&aacute;?</h3>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="pie">Pie:</label>
-								<input name="pie" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="cuotas">Cuotas:</label>
-								<select name="cuotas">
-									<option>
-										12
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="back2"><i class="icon-chevron-left"></i> Volver al paso 1</button>
-					<button id="go2">Paso 03: Ingrese sus datos <i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
-			<div id="step3">
-				<div class="selector">
-					<div class="title">
-						<h3>Complete el formulario</h3>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="rut">RUT:</label>
-								<input name="rut" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="nombres">Nombres:</label>
-								<input name="nombres" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="paterno">Apellido Paterno:</label>
-								<input name="paterno" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="materno">Apellido Materno:</label>
-								<input name="materno" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="movil">Celular:</label>
-								<input name="movil" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text" />
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="comuna">Comuna:</label>
-								<select name="comuna">
-									<option>
-										12
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							<div class="select">
-								<label for="donde">D&oacute;nde nos conoci&oacute;:</label>
-								<select name="donde">
-									<option>
-										12
-									</option>
-								</select>
-								<div class="divclear">&nbsp;</div>
-							</div>
-							
-							<div class="divclear">&nbsp;</div>
-						</div>
-						<div class="divclear">&nbsp;</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="back3"><i class="icon-chevron-left"></i> Volver al paso 2</button>
-					<button id="go3">Solicitar Cotizaci&oacute;n <i class="icon-chevron-right"></i></button>
-					<div class="divclear">&nbsp;</div>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'cotizador', 'ns_cotizador_shortcode' );
-
 
 //[box_c1 post_slug="" title="" img_id=""]
 function ns_box_c1_shortcode( $attrs ){
@@ -746,26 +510,3 @@ function ns_mapa_sitio_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'mapa_sitio', 'ns_mapa_sitio_shortcode' );
-
-//[resultados]
-function ns_resultados_shortcode( $atts ) {	
-	ob_start();
-	?> 
-		<div class="resultados">
-			<h2>Se han encontrado <b>X</b> resultados con <b>texto</b></h2>
-			<div class="result">
-				<div class="section group">
-					<div class="col span_3_of_12">
-						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="" title=""></a>
-					</div>
-					<div class="col span_9_of_12">
-						<a href="#"><h3>T&iacute;tulo del resultado</h3></a>
-						<p><a href="#">Vestibulum ut leo urna. Etiam adipiscing enim lectus, et dignissim odio sagittis blandit. In hac habitasse platea dictumst. Maecenas sit amet diam tortor. Integer sed quam orci. Ut commodo sit amet turpis vitae tristique...</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'resultados', 'ns_resultados_shortcode' );

@@ -115,7 +115,7 @@ function ns_version_shortcode( $atts ) {
 							</div>
 						</div>
 						<div class="col span_6_of_12 col4">
-							<a href="#">Cotiza AHORA <i class="icon-chevron-right"></i></a>
+							<a href="#" class="quoting_link" data-quoting-redirect="true" data-quoting-id="<?php echo $post->ID; ?>" data-quoting-type="Car">Cotiza AHORA <i class="icon-chevron-right"></i></a>
 						</div>
 					</div>
 				</div>
