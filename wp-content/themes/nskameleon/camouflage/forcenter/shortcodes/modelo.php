@@ -103,14 +103,14 @@ function ns_modelo_shortcode( $atts ) {
 						<div class="col span_10_of_12">
 							<div class="section group li">
 								<div class="col span_5_of_12">
-									<h2><?php echo $version->post_title ?></h2>
+									<?php echo $version->post_title ?>
 								</div>
 								<div class="col span_2_of_12">
 									Desde $<?php echo $price ?>
 								</div>
 								<div class="col span_5_of_12">
 									<a href="<?php echo get_permalink($version->ID) ?>">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-									<a href="#" class="first">Cotizar <i class="icon-chevron-right"></i></a>
+									<a href="#" class="first quoting_link" data-quoting-id="<?php echo $version->ID; ?>" data-quoting-type="Car" data-quoting-redirect="true">Cotizar <i class="icon-chevron-right"></i></a>
 									<div class="divclear">&nbsp;</div>
 								</div>
 							</div>
