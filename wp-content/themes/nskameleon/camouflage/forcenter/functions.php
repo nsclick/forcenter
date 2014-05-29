@@ -20,15 +20,22 @@ function nsk_fc_scripts() {
 	
 	//Slider para showcases: autos nuevos, autos usados, accesorios
 	wp_enqueue_script('jquery-ui-slider');
-	
+
 	wp_enqueue_style( 'nsk-jquery-ui-styles', get_template_directory_uri() . '/camouflage/forcenter/css/jquery-ui.css', array(), null, 'all' );
 	
 	//Common JS script
 	wp_enqueue_script( 'nsk-fc-common-js', get_template_directory_uri() . '/camouflage/forcenter/js/common-fs.js', array( 'jquery' ), null, true );
 	
+	// Quoting system
+	wp_register_script ( 'nsk-quoting', get_template_directory_uri() . '/camouflage/forcenter/js/quoting.sys.js', array( 'jquery' ), null, true );
+	wp_localize_script ( 'nsk-quoting', 'nsk_quoting_data', array(
+		'cotizador_page'	=> get_permalink_by_slug ( 'cotizador' ),
+		'ajax_url'			=> admin_url( 'admin-ajax.php' )
+	));
+	wp_enqueue_script ( 'nsk-quoting' );
 	
 	//Cotizador y repuestos
-	wp_enqueue_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
+	wp_register_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
 		
 	//Model post type scripts
 	if( $post->post_type == 'modelo' ){
@@ -63,6 +70,11 @@ add_action( 'wp_enqueue_scripts', 'nsk_fc_scripts' );
 /*
  * Loading the widgets*/
  require_once (ACTIVE_CAMOUFLAGE_PATH . '/widgets.php');
+
+ /**
+  * Quoting Handler
+  */
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/quoting.php' );
 
 
 add_action('init', 'nsk_fc_init');

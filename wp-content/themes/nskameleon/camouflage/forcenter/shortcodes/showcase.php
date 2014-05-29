@@ -3,6 +3,10 @@
 //[showcase]
 function ns_showcase_shortcode( $atts ) {
 
+// Scripts
+wp_enqueue_script ( 'jquery-ui-dialog' );
+wp_enqueue_script ( '' );
+
 $car_families = get_terms (
 	'familia',
 	array(
@@ -33,6 +37,7 @@ $max_price = 0;
 foreach ( $car_models as $car_model ) {
 	$car_model_complementarios 	= get_post_meta( $car_model->ID, 'complementarios', true ); 
 	$car_model->permalink 		= get_permalink ( $car_model->ID );
+	$car_model->versions 		= get_related_versions( $car_model->ID );
 
 	if ( !is_array ( $car_model_complementarios ) ) {
 		$car_model->price 		= 0;
@@ -188,7 +193,7 @@ ob_start();
 								<span>Ver</span>
 								<i class="icon-chevron-right"></i>
 							</a>
-							<a href="" class="cotizar">
+							<a href="#" data-model-id="<?php echo $car_model->ID ?>" class="open_modal cotizar">
 								<span>Cotizar</span>
 								<i class="icon-chevron-right"></i>
 							</a>
@@ -199,7 +204,44 @@ ob_start();
 			<?php endforeach; ?>
 			<div class="divclear">&nbsp;</div>
 		</ul>
-	</div>	
+	</div>
+
+<?php foreach ( $car_models as $car_model ): ?>
+	<!-- Model Versions Modal -->
+	<div id="model_modal_<?php echo $car_model->ID; ?>" class="model-modal lista" style="display:none;">
+		<h2><?php echo $car_model->post_title; ?></h2>
+		
+		<div class="sign">
+			<span><b>Versiones</b>Disponibles</span>
+		</div>
+
+		<?php foreach ( $car_model->versions as $car_model_version ): ?>
+			<div class="section group">
+				<div class="col span_2_of_12">
+					&nbsp;
+				</div>
+				<div class="col span_10_of_12">
+					<div class="section group li">
+						<div class="col span_5_of_12">
+							<?php echo $car_model_version->post_title ?>
+						</div>
+						<div class="col span_2_of_12">
+							Desde $<?php echo $price ?>
+						</div>
+						<div class="col span_5_of_12">
+							<a href="<?php echo get_permalink($car_model_version->ID) ?>">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
+							<a href="#" class="first quoting_link" data-quoting-id="<?php echo $car_model_version->ID; ?>" data-quoting-type="Car" data-quoting-redirect="true">Cotizar <i class="icon-chevron-right"></i></a>
+							<div class="divclear">&nbsp;</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	<!--/ Model Versions Modal -->
+
+<?php endforeach; ?>
+
 <?php
 return ob_get_clean();
 }

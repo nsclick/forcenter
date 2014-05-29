@@ -4,7 +4,3 @@
 		
 	});
 })(window, jQuery);
-
-formSuccessResponse = function (elem, message) {
-	alert(message);
-	}

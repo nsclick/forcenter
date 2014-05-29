@@ -110,7 +110,7 @@ function ns_modelo_shortcode( $atts ) {
 								</div>
 								<div class="col span_5_of_12">
 									<a href="<?php echo get_permalink($version->ID) ?>">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>
-									<a href="#" class="first">Cotizar <i class="icon-chevron-right"></i></a>
+									<a href="#" class="first quoting_link" data-quoting-id="<?php echo $version->ID; ?>" data-quoting-type="Car" data-quoting-redirect="true">Cotizar <i class="icon-chevron-right"></i></a>
 									<div class="divclear">&nbsp;</div>
 								</div>
 							</div>

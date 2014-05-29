@@ -3,19 +3,7 @@
 //[image img="" title=""]
 function ns_submenu_autos_shortcode( $atts ) {
 	//extract( $atts );
-	/*
-	 * (
-            [term_id] => 7
-            [name] => Comerciales
-            [slug] => comerciales
-            [term_group] => 0
-            [term_taxonomy_id] => 7
-            [taxonomy] => familia
-            [description] => 
-            [parent] => 4
-            [count] => 0
-        )
- */
+
 	//Loading families
 	$car_families = get_terms (
 		'familia',
@@ -36,6 +24,8 @@ function ns_submenu_autos_shortcode( $atts ) {
 		$models = get_posts(array(
 			'post_type' => 'modelo',
 			'posts_per_page'   => -1,
+			'orderby'          => 'post_title',
+			'order'            => 'ASC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => $family->taxonomy,
@@ -62,7 +52,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 				$thumb_post = get_post ( $thumbnail_id );
 				$thumb_alt = get_post_meta ( $thumbnail_id, '_wp_attachment_image_alt', true );
 			?>
-			<li><a href="<?php echo $m->permalink ?>"><img src="<?php echo $thumb_post->guid ?>" alt="<?php echo $thumb_alt ?>" title="<?php echo $thumb_post->post_title ?>"/><h4><?php echo $m->post_title ?></h4>Desde $<?php echo $m->price?></a></li>
+			<li><a rel="subsection" href="<?php echo $m->permalink ?>"><img src="<?php echo $thumb_post->guid ?>" alt="<?php echo $thumb_alt ?>" title="<?php echo $thumb_post->post_title ?>"/><h4><?php echo $m->post_title ?></h4>Desde $<?php echo $m->price?></a></li>
 			<?php endforeach; ?>
 			<div class="divclear">&nbsp;</div>
 		</ul>
