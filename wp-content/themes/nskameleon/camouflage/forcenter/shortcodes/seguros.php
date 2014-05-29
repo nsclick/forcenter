@@ -24,22 +24,27 @@ function ns_seguros_shortcode( $atts ) {
 						<h3>Caracter&iacute;sticas de los seguros.</h3>
 					</div>
 					<div class="section group seguros">
-						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros1.png" alt="Chilena Consolidada" title="Chilena Consolidada"/>
-						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros2.png" alt="RSA" title="RSA"/>
-						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="BCI" title="BCI"/>
-						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="Forum" title="Forum"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros-chilena.jpg" alt="Chilena Consolidada" title="Chilena Consolidada"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros-rsa.jpg" alt="RSA" title="RSA"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros-bci.jpg" alt="BCI" title="BCI"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros-consorcio.jpg" alt="Consorcio" title="Consorcio"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros-magallanes.jpg" alt="Magallanes" title="Magallanes"/>
 					</div>
 					<div class="spacer">&nbsp;</div>
 					<div class="section group seguros">
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
-						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Mateiales</b></span></div>
+						<div class="featurec"><span class="feature"><b>Robo de Accesorios</b></span></div>
+						<div class="featurec"><span class="feature"><b>Robo, Hurto o Uso no Autorizado</b></span></div>
+						<div class="featurec"><span class="feature"><b>Resp. Civil Da&ntilde;o Emergente</b></span></div>
+						<div class="featurec"><span class="feature"><b>Resp. Civil Da&ntilde;o Moral</b></span></div>
+						<div class="featurec"><span class="feature"><b>Resp. Civil Lucro Cesante</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Materiales a Consecuencia de Actos Maliciosos</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Materiales a Consecuencia de Huelga y Terrorismo</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Materiales a Consecuencia de Sismo</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Materiales a Consecuencia de Granizo</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Materiales a Consecuencia de Riesgo de la Naturaleza</b></span></div>
+						<div class="featurec"><span class="feature"><b>Da&ntilde;os Materiales Causados por la Propia Carga</b></span></div>
+						<div class="featurec"><span class="feature"><b>Auto de Reemplazo</b></span></div>
 					</div>
 				</div>
 			</div>
