@@ -64,6 +64,7 @@ select{}
 #header #toolbar #quick_call{position:relative}
 #header #toolbar #quick_cotizador{display:none;position:absolute;top:100%;background:#fff;padding:5px;z-index:400;width:250px;right:0;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
 #header #toolbar #quick_cotizador span{display:inline-block;margin:0}
+#header #toolbar #quick_cotizador .auto span#auto_cant,#header #toolbar #quick_cotizador .auto span#accesorio_cant{display:inline-block}
 #header #toolbar #quick_cotizador a.cotizar{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position: relative;color:#fff;padding:5px 30px 5px 10px;display:inline-block}
 #header #toolbar #quick_cotizador a.cotizar i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 #header #toolbar #quick_cotizador .auto{text-align:left;font-size:11px;font-weight:bold;margin-bottom:5px;border-bottom:1px solid #d8d6d6;position:relative;padding:0 25px 5px 15px;line-height:13px}
@@ -138,9 +139,9 @@ select{}
 #main-content .showbiz .overflowholder ul li{width:174px!important;height:170px!important;padding:3px;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;border:1px solid #fff;margin-right:5px}
 #main-content #showbiz_carrouselhome_1 .mediaholder{border:none;padding:0;background:none}
 #main-content #showbiz_carrouselhome_1 .mediaholder img{width:174px;height:122px}
-#main-content .showbiz h4{color:#2850a3;padding:10px 3px 5px;font-size:14px;}
-#main-content .showbiz h4:before{content: "Ford ";font-weight:normal;color:#2850a3}
-#main-content .showbiz h4 b{font-weight:bold}
+#main-content .showbiz h4,#main-content .showbiz h2{color:#2850a3;padding:10px 3px 5px;font-size:14px;}
+#main-content .showbiz h4:before,#main-content .showbiz h2:before{content: "Ford ";font-weight:normal;color:#2850a3}
+#main-content .showbiz h4 b,#main-content .showbiz h2 b{font-weight:bold}
 #main-content .showbiz .sprice{color:#46484b;font-weight:bold;font-size:12px;padding:0 3px}
 #main-content .showbiz .sprice:before{content: "Desde ";font-weight:normal;color:#46484b;font-style:italic}
 #main-content .showbiz .overflowholder ul li:hover{background-color:#fff;background-image:url(../images/bg-slice-auto-up2.png),url(../images/bg-slice-auto-down2.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important}
@@ -295,6 +296,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .tabla .lista .row .cell i{font-size:16px}
 .modelo .tabla .lista .row .cell i.icon-remove-sign{color:#e23a1c}
 .modelo .tabla .lista .row .cell i.icon-ok-sign{color:#35a81e}
+.modelo .lista .li .span_5_of_12 h2{font-size:12px;padding:0}
 /* END Modelos */
 /* Version */
 .version .head .wborder{-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);padding:1px 1px 0 1px}
@@ -342,6 +344,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .version .body .cont .tabla table thead td:last-of-type{background:#2850a3;color:#fff}
 .version .body .cont .tabla table thead td{font-size:14px;font-weight:bold}
 .version .body .cont .tabla table td i{font-size:16px}
+.thumb-pic{cursor:pointer}
 /* END Version */
 /* Servicio - se reutiliza #step3 de cotizador */
 #step3.servicio{margin-top:10px}
@@ -356,7 +359,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 /* END Accesorios */
 /* Sucursal */
 .sucursal{position:relative;margin-bottom:10px}
-.sucursal .overlap{width:100%;height:100px;position:relative;background:rgba(40,80,163,1);color:#fff;bottom:0}
+.sucursal .overlap{width:100%;height:110px;position:relative;background:rgba(40,80,163,1);color:#fff;bottom:0}
 .sucursal .overlap h4{font-size:12px}
 .sucursal .overlap .par{padding:0 100px 0 0}
 .sucursal .overlap .par p{padding:0 10px 5px}
@@ -428,6 +431,15 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .mapa_sitio b{font-size:16px}
 .mapa_sitio i{font-size:14px}
 /* END Mapa del sitio */
+/* Resultados de búsqueda */
+.resultados{padding:0 0 10px}
+.resultados h2{font-weight:normal;font-size:12px}
+.resultados .result{margin:0 10px 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;min-height:24px}
+.resultados .result:last-of-type{margin:0 10px}
+.resultados .result h3{padding:0 0 10px;font-size:12px}
+.resultados .result:hover{border:1px solid #bbb}
+.resultados .result:hover a{color:#333}
+/* END Resultados de búsqueda */
 /* End Main Content */
 
 /* Footer */

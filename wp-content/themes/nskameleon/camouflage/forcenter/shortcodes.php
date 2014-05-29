@@ -746,3 +746,26 @@ function ns_mapa_sitio_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'mapa_sitio', 'ns_mapa_sitio_shortcode' );
+
+//[resultados]
+function ns_resultados_shortcode( $atts ) {	
+	ob_start();
+	?> 
+		<div class="resultados">
+			<h2>Se han encontrado <b>X</b> resultados con <b>texto</b></h2>
+			<div class="result">
+				<div class="section group">
+					<div class="col span_3_of_12">
+						<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="" title=""></a>
+					</div>
+					<div class="col span_9_of_12">
+						<a href="#"><h3>T&iacute;tulo del resultado</h3></a>
+						<p><a href="#">Vestibulum ut leo urna. Etiam adipiscing enim lectus, et dignissim odio sagittis blandit. In hac habitasse platea dictumst. Maecenas sit amet diam tortor. Integer sed quam orci. Ut commodo sit amet turpis vitae tristique...</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php
+return ob_get_clean();
+}
+add_shortcode( 'resultados', 'ns_resultados_shortcode' );

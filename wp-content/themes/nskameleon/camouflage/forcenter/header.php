@@ -7,6 +7,7 @@
 <html class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
 	<!--<![endif]-->
 	<head>
+		<meta http-equiv="Content-Language" content="es">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

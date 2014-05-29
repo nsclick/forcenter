@@ -62,7 +62,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 				$thumb_post = get_post ( $thumbnail_id );
 				$thumb_alt = get_post_meta ( $thumbnail_id, '_wp_attachment_image_alt', true );
 			?>
-			<li><a href="<?php echo $m->permalink ?>"><img src="<?php echo $thumb_post->guid ?>" alt="<?php echo $thumb_alt ?>" title="<?php echo $thumb_post->post_title ?>"/><h4><?php echo $m->post_title ?></h4>Desde $<?php echo $m->price?></a></li>
+			<li><a rel="subsection" href="<?php echo $m->permalink ?>"><img src="<?php echo $thumb_post->guid ?>" alt="<?php echo $thumb_alt ?>" title="<?php echo $thumb_post->post_title ?>"/><h4><?php echo $m->post_title ?></h4>Desde $<?php echo $m->price?></a></li>
 			<?php endforeach; ?>
 			<div class="divclear">&nbsp;</div>
 		</ul>
