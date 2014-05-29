@@ -360,41 +360,7 @@ class Repuestos extends FormProcessor{
 		
 		$bind = $this->mapData($data);
 		
-		//var_dump($bind);
-		//die();
-		$this->result = $pmhapi->cotizacion_seccion_repuestos($bind);		
-
- /*  [rp-token] => aad8b17432
-    [_wp_http_referer] => /repuestos/
-   -- [modelo] => Ford Econoline
-   -- [nomodelo] => 
-   -- [codigo_vin] => ewerwr
-    -- [tipo] => Carroceria
-    -- [comentario] => Pruebas
-    [rut] => 24571694-K
-    [nombres] => Cesar
-    [apellido_paterno] => Juarez
-    [apellido_materno] => Morales
-    [celular] => 51236828
-    [correo_electronico] => cesar.cesarreyes@gmail.com
-    [comuna] => Cerro Navia
-    [donde_nos_conocio] => Google
- 
- 'modelo' => $data['seccion_repuestos_modelo'],
-										   -- 'tipo_vehiculo' => $data['tipo_vehiculo'],
-										   -- 'codigo_vin' => $data['codigo_vin'],
-										   -- 'tipo' => $data['tipo'],
-										   -- 'comentario' => $data['comentarios'],
-										   -- 'rut' => $data['rut'],
-										   --'nombres' => $data['nombres'],
-										   'apellido_paterno' => $data['apellido_paterno'],
-										   'apellido_materno' => $data['apellido_paterno'],
-										   'telefono_casa' => $data['telefono'],
-										   'celular' => $data['celular'],
-										   'correo_electronico' => $data['email'],
-										   'comuna' => $data['comuna'],
-										   'donde_nos_conocio' => $data['donde']
-										      */
+		$this->result = $pmhapi->cotizacion_seccion_repuestos($bind);
 										      
 		if(!$this->result){
 			$this->errorMsg = 'Error en el regisro al CRM, Informe de este error al webmaster';

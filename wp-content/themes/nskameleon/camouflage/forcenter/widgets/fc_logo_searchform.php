@@ -33,7 +33,11 @@ class Fc_Logo_Widget extends WP_Widget {
 		<div class="toolbar-box">
 			<span><a href="<?php echo network_site_url( '' ) ?>"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350.png" alt="Forcenter"/></a></span>
 			<div class="sea">
-				<input type="text" /><button type="submit">&nbsp;</button>
+			<form id="buscar-form" method="post" accept-charset="utf-8" action="<?php echo network_site_url( '' ) ?>/buscar" />
+			<?php //CSRF prevention keys ?>
+			<?php wp_nonce_field('buscar-form','bs-token'); ?>
+				<input type="text" name="q" value="<?php echo isset($_POST['q']) ? $_POST['q'] : ''  ?>"/><button type="submit">&nbsp;</button>
+			</form>
 			</div>
 			<div class="sel" id="quick_call">
 				<span>Tienes seleccionados <b>0</b> veh&iacute;culos</span>
