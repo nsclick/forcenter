@@ -3,19 +3,7 @@
 //[image img="" title=""]
 function ns_submenu_autos_shortcode( $atts ) {
 	//extract( $atts );
-	/*
-	 * (
-            [term_id] => 7
-            [name] => Comerciales
-            [slug] => comerciales
-            [term_group] => 0
-            [term_taxonomy_id] => 7
-            [taxonomy] => familia
-            [description] => 
-            [parent] => 4
-            [count] => 0
-        )
- */
+
 	//Loading families
 	$car_families = get_terms (
 		'familia',
@@ -36,6 +24,8 @@ function ns_submenu_autos_shortcode( $atts ) {
 		$models = get_posts(array(
 			'post_type' => 'modelo',
 			'posts_per_page'   => -1,
+			'orderby'          => 'post_title',
+			'order'            => 'ASC',
 			'tax_query' => array(
 				array(
 					'taxonomy' => $family->taxonomy,

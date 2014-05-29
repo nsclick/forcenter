@@ -318,7 +318,7 @@ function ns_servicio_shortcode( $atts ) {
 		</div>
 		<div id="home">
 			<ul class="menu">
-				<li><a href="tel:+56225860644"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+				<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 			</ul>
 		</div>	
 	<?php
@@ -343,7 +343,7 @@ function ns_mantencion_shortcode( $atts ) {
 		</div>
 		<div id="home">
 			<ul class="menu">
-				<li><a href="tel:+56225860644"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+				<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 			</ul>
 		</div>	
 	<?php
@@ -517,11 +517,6 @@ function ns_repuestos_shortcode( $atts ) {
 				</ul>
 			</div>
 		</div>
-		<div id="home">
-			<ul class="menu">
-				<li><a href="tel:+56225860644"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
-			</ul>
-		</div>		
 	<?php
 return ob_get_clean();
 }
@@ -545,7 +540,7 @@ function ns_dyp_shortcode( $atts ) {
 		</div>
 		<div id="home">
 			<ul class="menu">
-				<li><a href="tel:+56225860644"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+				<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 			</ul>
 		</div>
 	<?php
