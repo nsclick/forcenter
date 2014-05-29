@@ -431,6 +431,15 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .mapa_sitio b{font-size:16px}
 .mapa_sitio i{font-size:14px}
 /* END Mapa del sitio */
+/* Resultados de búsqueda */
+.resultados{padding:0 0 10px}
+.resultados h2{font-weight:normal;font-size:12px}
+.resultados .result{margin:0 10px 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;min-height:24px}
+.resultados .result:last-of-type{margin:0 10px}
+.resultados .result h3{padding:0 0 10px;font-size:12px}
+.resultados .result:hover{border:1px solid #bbb}
+.resultados .result:hover a{color:#333}
+/* END Resultados de búsqueda */
 /* End Main Content */
 
 /* Footer */

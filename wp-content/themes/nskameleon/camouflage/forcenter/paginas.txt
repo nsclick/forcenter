@@ -370,3 +370,8 @@
 	[col_8][article][compra_inteligente][/article][/col_8]
 [/section]
 [spacer]
+
+
+--- Resultados de búsqueda ---
+
+[section][col_12][breadcrumbs][/col_12][/section][section][col_12][page_title][/col_12][/section][section][col_4][box_contacto][spacer][box_servicio_tecnico][spacer][quotebox_cars][/col_4][col_8][article][resultados][/article][/col_8][/section][spacer]
