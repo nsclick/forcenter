@@ -24,7 +24,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 		$models = get_posts(array(
 			'post_type' => 'modelo',
 			'posts_per_page'   => -1,
-			'orderby'          => 'post_title',
+			'orderby'          => 'menu_order',
 			'order'            => 'ASC',
 			'tax_query' => array(
 				array(

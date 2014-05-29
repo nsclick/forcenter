@@ -403,16 +403,37 @@ add_shortcode( 'elemento', 'ns_elemento_shortcode' );
 //[dyp]
 function ns_dyp_shortcode( $atts ) {
 
+	$post = get_post_by_slug( 'sucursal-desabolladura-y-pintura' );
 	//Desabolladura y Pintura
 	wp_enqueue_script('jquery-ui-dialog');
 	wp_enqueue_script( 'nsk-dialog-js', get_template_directory_uri() . '/camouflage/forcenter/js/dialog.js', array( 'jquery' ), null, true );
 	
+	$args = array(
+		'post_type' => 'attachment',
+		'numberposts' => -1,
+		'post_status' => null,
+		'post_parent' => $post->ID,
+		'orderby'		=> 'menu_order',
+		'order'            => 'ASC'
+	);
+
+	$attachments = get_posts( $args );
+
+	$attachment = $attachments[0];
+	$thumb = array(
+				'id' => $attachment->ID,
+				'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+				'caption' => $attachment->post_excerpt,
+				'src' => wp_get_attachment_url( $attachment->ID ),
+				'title' => $attachment->post_title
+			);
 	ob_start();
 	?> 
 		<div class="dyp">
 			<div class="section group">
 				<div class="col span_6_of_12">
-					<p><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/foto-2-1.png" alt="<?php echo get_the_title($ID); ?>" title="<?php echo get_the_title($ID); ?>"/></p>
+					
+					<p><img src="<?php echo $thumb['src'] ?>" alt="<?php echo $thumb['alt'] ?>" title="<?php echo $thumb['title'] ?>"/></p>
 				</div>
 				<div class="col span_6_of_12">
 					<p>Taller Desabolladura y Pintura<br /><br />
