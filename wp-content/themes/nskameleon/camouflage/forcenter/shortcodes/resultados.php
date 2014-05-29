@@ -7,7 +7,6 @@ function ns_resultados_shortcode( $atts ) {
 	
 	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM wp_posts WHERE post_type IN ('version', 'accesorio') AND post_status='publish' AND post_title LIKE '%s' ORDER BY post_title", $q ) );
 	
-	//debug( $results );
 	ob_start();
 	?>
 		<div class="resultados">
@@ -25,6 +24,8 @@ function ns_resultados_shortcode( $atts ) {
 					$link = get_permalink($post->ID);
 					$body = '<a href="' . $link . '">'. substr ( $extra['descripcion'] , 0 , 250 ) . '</a>';
 				} else {
+					$model_id = get_post_meta ( $post->ID, '_related_model', true );
+					$model = get_post( $model_id );
 					$extra = get_post_meta ( $post->ID, 'datos-extra-accesorios', true );
 					$extra = $extra[0];
 					//debug($extra);
@@ -45,7 +46,7 @@ function ns_resultados_shortcode( $atts ) {
 						<a href="<?php echo $link ?>"><img src="<?php echo $thumb_src; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>"></a>
 					</div>
 					<div class="col span_9_of_12">
-						<a href="<?php echo $link ?>"><h3><?php echo $post->post_title ?></h3></a>
+						<a href="<?php echo $link ?>"><h3><?php echo $post->post_title ?> para <?php echo $model->post_title ?></h3></a>
 						<p><?php echo $body ?></p>
 					</div>
 				</div>

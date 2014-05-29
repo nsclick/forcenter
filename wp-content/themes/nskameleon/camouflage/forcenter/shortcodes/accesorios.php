@@ -7,7 +7,9 @@ $car_models = get_posts(
 	array(
 		'post_type'		=> 'modelo',
 		'post_status'	=> 'publish',
-		'numberposts'	=> -1
+		'numberposts'	=> -1,
+		'orderby'          => 'menu_order',
+		'order'            => 'ASC',
 	)
 );
 
