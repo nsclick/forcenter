@@ -23,38 +23,23 @@ function ns_seguros_shortcode( $atts ) {
 					<div class="title">
 						<h3>Caracter&iacute;sticas de los seguros.</h3>
 					</div>
-					<div class="section group">
-						<div align="center" class="col span_3_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros1.png" alt="Chilena Consolidada" title="Chilena Consolidada"/></div>
-						<div align="center" class="col span_3_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros2.png" alt="RSA" title="RSA"/></div>
-						<div align="center" class="col span_3_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="BCI" title="BCI"/></div>
-						<div align="center" class="col span_3_of_12"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="Forum" title="Forum"/></div>
+					<div class="section group seguros">
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros1.png" alt="Chilena Consolidada" title="Chilena Consolidada"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros2.png" alt="RSA" title="RSA"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="BCI" title="BCI"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/seguros3.png" alt="Forum" title="Forum"/>
 					</div>
-					<div class="section group">
-						<div align="center" class="col span_12_of_12">&nbsp;</div>
-					</div>
-					<div class="section group">
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-					</div>
-					<div class="section group">
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-					</div>
-					<div class="section group">
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-					</div>
-					<div class="section group">
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
-						<div align="center" class="col span_3_of_12">Feature</div>
+					<div class="spacer">&nbsp;</div>
+					<div class="section group seguros">
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
+						<div class="featurec"><span class="feature"><b>Feature</b></span></div>
 					</div>
 				</div>
 			</div>
