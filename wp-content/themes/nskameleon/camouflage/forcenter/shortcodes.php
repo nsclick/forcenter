@@ -194,14 +194,24 @@ function ns_breadcrumbs_shortcode( $atts ) {
 	global $wp_query;
 	$post = $wp_query->post;
 	
-//	extract( $atts );
+	$middle = '';
+	if($post->post_type == 'version'){
+		$modelID = get_post_meta( $post->ID, '_related_model', true);
+		$middle = '<li><a href="'. get_permalink($modelID) .'">'. get_the_title($modelID) .'</a></li>';
+	}
 
+	$pos = stripos($post->post_name, 'sucursal');
+	if ($pos !== false) {
+		$middle = '<li><a href="'. get_permalink_by_slug('sucursales') .'">Sucursales</a></li>';
+	}
+	
 	ob_start();
 
 ?> 
-	<div id="breadcrumbs">
+	<div id="breadcrumbs" itemprop="breadcrumb">
 		<ul>Est&aacute;s en:
-			<li><a href="#">Inicio</a></li>
+			<li><a href="/">Inicio</a></li>
+			<?php echo $middle ?>
 			<li><a href="#"><?php echo get_the_title($post->ID); ?></a></li>
 		</ul>
 	</div>		

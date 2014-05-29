@@ -125,6 +125,325 @@ class Mantenciones extends FormProcessor{
   	
 }
 
+class Seguros extends FormProcessor{
+	
+	function send($data){
+		
+		if(!$this->_postValidation( 'seguros-form', 'sg-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		$email = $this->formatEmail($data);
+		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
+			return false;		
+		}
+		
+		$this->result = 'Gracias por comunicarse con FORCENTER.';
+		return true;
+	
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function formatEmail($data) {
+		$body = "DATOS DEL SOLICITANTE:\n";
+		
+		$excluded = array('sg-token', '_wp_http_referer');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$body .= $key . ': ' . $value;
+				$body .= "\n"; 
+			}
+		}
+    
+    $email = 'creyes@nsclick.cl';
+    		 
+    return array(
+      'to'      => $email,
+      'subject' => 'Solicitud de Cotización de seguro',
+      'body'    => $body
+    );
+  }
+  	
+}
+
+class CompraInteligente extends FormProcessor{
+	
+	function send($data){
+		
+		if(!$this->_postValidation( 'compra-inteligente-form', 'ci-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		$email = $this->formatEmail($data);
+		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
+			return false;		
+		}
+		
+		$this->result = 'Gracias por comunicarse con FORCENTER.';
+		return true;
+	
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function formatEmail($data) {
+		$body = "DATOS DEL SOLICITANTE:\n";
+		
+		$excluded = array('ci-token', '_wp_http_referer');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$body .= $key . ': ' . $value;
+				$body .= "\n"; 
+			}
+		}
+    
+		$email = 'creyes@nsclick.cl';
+    		 
+		return array(
+			'to'      => $email,
+			'subject' => 'Solicitud de Información Compra Inteligente',
+			'body'    => $body
+		);
+	}
+  	
+}
+
+
+/*
+ * Sent to CRM 
+ * 
+ * */
+class Contacto extends FormProcessor{
+	
+	private $type = 'email';
+	
+	function send($data){
+				
+		if(!$this->_postValidation( 'contacto-form', 'co-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		require_once ('vendor/pmh/includes/apipmh/index.php');
+		
+		$bind = $this->mapData($data);
+		
+		switch( $data['servicio'] ){
+			case 'ventas@forcenter.cl':
+				$this->result = $pmhapi->cotizacion_contacto_autos_nuevos($bind);
+				break;
+			case 'repuestos@forcenter.cl':
+				$this->result = $pmhapi->cotizacion_contacto_repuestos($bind);
+				break;
+			case 'accesorios@forcenter.cl':
+				$this->result = $pmhapi->cotizacion_contacto_accesorios($bind);
+				break;
+			default:
+				$email = $this->formatEmail($bind);
+				if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+					$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
+					return false;		
+				}
+				$this->result = 'Gracias por comunicarse con FORCENTER.';
+				return true;
+		}
+		
+		
+		$this->type = 'crm';
+		if(!$this->result){
+			$this->errorMsg = 'Error en el regisro al CRM, Revise los IDs de las Versiones';
+			return false;
+		}
+
+		if(!$this->result->result){
+			$this->errorMsg = $this->result->mensaje;
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public function getResult(){
+		if($this->type == 'email')
+			return json_encode( array('state' => 'ok', 'msg' => $this->result, 'type' => 'email' ) );
+		
+		$seller = array(
+			'name'  	=> $this->result->asignado->nombre_completo,
+			'phone' 	=> $this->result->asignado->telefono,
+			'cellular' 	=> $this->result->asignado->celular,
+			'email' 	=> $this->result->asignado->email,
+			'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->asignado->foto
+		);
+		
+		return json_encode( array('state' => 'ok', 'seller' => $seller, 'type' => 'crm' ) );
+		
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function mapData($data) {
+		$body = "DATOS DEL SOLICITANTE:\n";
+		
+		$bind = array();
+		$excluded = array('co-token', '_wp_http_referer', 'servicio', 'modelo', 'version');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$bind[$key] = $value;
+			}
+		}
+		
+		$bind['telefono_casa'] = '';
+		
+		if(isset($data['version'])){
+			//Get the CRM version ID
+			$customFields = get_post_meta( $data['version'], 'version-data', true ); 
+			$customFields = $customFields[0];
+			$bind['vehiculo_id'] = $customFields['id-crm'];
+		}
+			
+		return $bind;
+	}
+
+	/**
+	* formatEmail
+	*/
+	public function formatEmail($data) {
+		$body = "DATOS DEL SOLICITANTE:\n";
+				
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$body .= $key . ': ' . $value;
+				$body .= "\n"; 
+			}
+		}
+    
+		$email = 'creyes@nsclick.cl';
+    		 
+		return array(
+			'to'      => $email,
+			'subject' => 'Solicitud de Contacto',
+			'body'    => $body
+		);
+	}
+  
+}
+
+
+
+
+
+/*
+ * Sent to CRM 
+ * 
+ * */
+class Repuestos extends FormProcessor{
+	
+	function send($data){
+				
+		if(!$this->_postValidation( 'repuestos-form', 'rp-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		require_once ('vendor/pmh/includes/apipmh/index.php');
+		
+		$bind = $this->mapData($data);
+		
+		//var_dump($bind);
+		//die();
+		$this->result = $pmhapi->cotizacion_seccion_repuestos($bind);		
+
+ /*  [rp-token] => aad8b17432
+    [_wp_http_referer] => /repuestos/
+   -- [modelo] => Ford Econoline
+   -- [nomodelo] => 
+   -- [codigo_vin] => ewerwr
+    -- [tipo] => Carroceria
+    -- [comentario] => Pruebas
+    [rut] => 24571694-K
+    [nombres] => Cesar
+    [apellido_paterno] => Juarez
+    [apellido_materno] => Morales
+    [celular] => 51236828
+    [correo_electronico] => cesar.cesarreyes@gmail.com
+    [comuna] => Cerro Navia
+    [donde_nos_conocio] => Google
+ 
+ 'modelo' => $data['seccion_repuestos_modelo'],
+										   -- 'tipo_vehiculo' => $data['tipo_vehiculo'],
+										   -- 'codigo_vin' => $data['codigo_vin'],
+										   -- 'tipo' => $data['tipo'],
+										   -- 'comentario' => $data['comentarios'],
+										   -- 'rut' => $data['rut'],
+										   --'nombres' => $data['nombres'],
+										   'apellido_paterno' => $data['apellido_paterno'],
+										   'apellido_materno' => $data['apellido_paterno'],
+										   'telefono_casa' => $data['telefono'],
+										   'celular' => $data['celular'],
+										   'correo_electronico' => $data['email'],
+										   'comuna' => $data['comuna'],
+										   'donde_nos_conocio' => $data['donde']
+										      */
+										      
+		if(!$this->result){
+			$this->errorMsg = 'Error en el regisro al CRM, Informe de este error al webmaster';
+			return false;
+		}
+
+		if(!$this->result->result){
+			$this->errorMsg = $this->result->mensaje;
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public function getResult(){
+		
+		$seller = array(
+			'name'  	=> $this->result->asignado->nombre_completo,
+			'phone' 	=> $this->result->asignado->telefono,
+			'cellular' 	=> $this->result->asignado->celular,
+			'email' 	=> $this->result->asignado->email,
+			'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->asignado->foto
+		);
+		
+		return json_encode( array('state' => 'ok', 'seller' => $seller) );
+		
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function mapData($data) {
+		$bind = array();
+		$excluded = array('rp-token', '_wp_http_referer', 'nomodelo', 'modelo');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$bind[$key] = $value;
+			}
+		}
+		$bind['modelo'] = $data['modelo'] ? $data['modelo'] : $data['nomodelo'];
+		$bind['tipo_vehiculo'] = $data['modelo'] ? 'moderno' : 'antiguo';
+		
+		$bind['telefono_casa'] = $data['celular'];
+		
+		return $bind;
+	}
+}
+
 /**
  * EmailerFactory
  * @type class

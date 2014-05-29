@@ -2,9 +2,46 @@
 
 //[contacto]
 function ns_contacto_shortcode( $atts ) {
+	wp_enqueue_script( 'nsk-contacto-js', get_template_directory_uri() . '/camouflage/forcenter/js/contacto.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'nsk-modelo-version-js', get_template_directory_uri() . '/camouflage/forcenter/js/modelo-version.js', array( 'jquery' ), null, true );
+
+	wp_enqueue_script( 'jquery-validation-engine', get_template_directory_uri() . '/camouflage/forcenter/js/jquery.validationEngine.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'jquery-validation-engine-es', get_template_directory_uri() . '/camouflage/forcenter/js/jquery.validationEngine-es.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'jquery-rut', get_template_directory_uri() . '/camouflage/forcenter/js/jquery.Rut.js', array( 'jquery' ), null, true );	
+	wp_enqueue_script( 'jquery-form', get_template_directory_uri() . '/camouflage/forcenter/js/jquery.form.min.js', array( 'jquery' ), null, true );	
+
+	$modelos = get_posts( array(
+		'post_type' => 'modelo',
+		'posts_per_page'   => -1,
+		'orderby' => 'post_title'
+	) );
+	
+	// get Versions by model
+	$versions = get_posts (
+		array(
+			'post_type'		=> 'version',
+			'post_status'	=> 'publish',
+			'numberposts'	=> -1
+		)
+	);
+	
+	$models = array();
+	foreach ( $versions as $v ) {
+		$_related_model = get_post_meta ( $v->ID, '_related_model', true );
+		$models[ $_related_model ][ $v->ID ] = $v->post_title;
+	}
+	
 	ob_start();
 	?> 
-		<form method="post" accept-charset="utf-8" action="" />
+		<script>
+			var versions = jQuery.parseJSON('<?php echo json_encode( $models ) ?>');
+		</script>
+		<form id="contacto-form" method="post" accept-charset="utf-8" action="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/form.processor.php" />
+		<?php //CSRF prevention keys ?>
+		<?php wp_nonce_field('contacto-form','co-token'); ?>
+
+		<input type="hidden" name="action" value="Contacto"/>
+		
 		<div class="cotizador">
 			<div id="step3" class="activ servicio">
 				<div class="selector">
@@ -15,33 +52,39 @@ function ns_contacto_shortcode( $atts ) {
 					<div class="producto">
 						<div class="details">
 							<div class="select">
+								<label for="rut">RUT:</label>
+								<input name="rut" type="text" class="validate[required,rut]" placeholder="Ej: 12345678-K"/>
+								<div class="divclear">&nbsp;</div>
+							</div>
+							
+							<div class="select">
 								<label for="nombres">Nombres:</label>
-								<input name="nombres" type="text" />
+								<input class="validate[required]" name="nombres" type="text" />
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
-								<label for="paterno">Apellido paterno:</label>
-								<input name="paterno" type="text"/>
+								<label for="apellido_paterno">Apellido paterno:</label>
+								<input class="validate[required]" name="apellido_paterno" type="text"/>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
-								<label for="materno">Apellido materno:</label>
-								<input name="materno" type="text"/>
+								<label for="apellido_materno">Apellido materno:</label>
+								<input class="validate[required]" name="apellido_materno" type="text"/>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text"/>
+								<label for="celular">Teléfono o Celular:</label>
+								<input class="validate[required]" name="celular" type="text"/>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text"/>
+								<label for="correo_electronico">E-mail:</label>
+								<input class="validate[required,custom[email]]" name="correo_electronico" type="text"/>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="comuna">Comuna:</label>
-								<select name="comuna">	
+								<select class="validate[required]" name="comuna">	
 									<option selected="selected" value="">Seleccione una comuna</option>
 									<option value="Regiones">Otras Regiones</option>
 									<option value="Cerrillos">Cerrillos</option>
@@ -100,8 +143,8 @@ function ns_contacto_shortcode( $atts ) {
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
-								<label for="donde">D&oacute;nde nos conoci&oacute;:</label>
-								<select name="donde">
+								<label for="donde_nos_conocio">D&oacute;nde nos conoci&oacute;:</label>
+								<select class="validate[required]" name="donde_nos_conocio">
 									<option selected="selected" value="">Seleccione una opción</option>
 									<option value="Las Ultimas Noticias">Las Ultimas Noticias</option>
 									<option value="Google">Google</option>
@@ -113,13 +156,13 @@ function ns_contacto_shortcode( $atts ) {
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select" style="float:right">
-								<label for="comentarios">Comentarios:</label>
-								<textarea name="comentarios"></textarea>
+								<label for="comentario">Comentarios:</label>
+								<textarea name="comentario"></textarea>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="servicio">Servicio:</label>
-								<select name="servicio">
+								<select class="validate[required]" name="servicio">
 									<option value="">Seleccione</option>
 									<option value="ventas@forcenter.cl">Ventas</option>
 									<option value="usados@forcenter.cl">Usados</option>
@@ -135,21 +178,41 @@ function ns_contacto_shortcode( $atts ) {
 								</select>
 								<div class="divclear">&nbsp;</div>
 							</div>
+
+
+							<div class="select hide hidable">
+								<label for="modelo">Modelo:</label>
+								<select name="modelo" class="">
+									<option value="">Seleccione Modelo</option>
+									<?php foreach($modelos as $p): ?>
+									<option value="<?php echo $p->ID ?>"><?php echo $p->post_title ?></option>
+									<?php endforeach;?>
+								</select>
+								<div class="divclear">&nbsp;</div>
+							</div>
+
+							<div class="select hide hidable">
+								<label for="version">Versión:</label>
+								<select name="version" class=""></select>
+								<div class="divclear">&nbsp;</div>
+							</div>
 							
 							<div class="divclear">&nbsp;</div>
 						</div>
 						<div class="divclear">&nbsp;</div>
 					</div>
 				</div>
-				<div id="enviado" class="hide">
-					<h2>Su mensaje ha sido enviado.</h2>
-					<p>Nos comunicaremos a la brevedad.</p>
-				</div>
 				<div class="link">
 					<button id="go3">Enviar<i class="icon-chevron-right"></i></button>
 					<div class="divclear">&nbsp;</div>
 				</div>
 			</div>
+
+			<div id="enviado" class="hide">
+				<h2>Su mensaje ha sido enviado.</h2>
+				<p>Nos comunicaremos a la brevedad.</p>
+			</div>
+
 		</div>
 		</form>
 	<?php

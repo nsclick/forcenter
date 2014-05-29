@@ -28,7 +28,7 @@ function nsk_fc_scripts() {
 	
 	
 	//Cotizador y repuestos
-	wp_enqueue_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
+	//wp_enqueue_script( 'nsk-cotizador-js', get_template_directory_uri() . '/camouflage/forcenter/js/cotizador.js', array( 'jquery' ), null, true );
 		
 	//Model post type scripts
 	if( $post->post_type == 'modelo' ){

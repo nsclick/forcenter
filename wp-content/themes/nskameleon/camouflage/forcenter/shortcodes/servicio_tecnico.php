@@ -54,12 +54,12 @@ function ns_servicio_shortcode( $atts ) {
 							</div>
 							<div class="select">
 								<label for="email">E-mail:</label>
-								<input name="email" type="text" class="validate[required]" />
+								<input name="email" type="text" class="validate[required,custom[email]]" />
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="fecha">D&iacute;a que desea agendar:</label>
-								<input name="fecha" type="text" id="datepicker" class="validate[required]"/>
+								<input name="fecha" type="text" id="datepicker" class="validate[required] datepicker"/>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select" style="float:right">

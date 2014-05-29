@@ -38,7 +38,7 @@ function ns_mantencion_shortcode( $atts ) {
 						<div class="details">
 							<div class="select">
 								<label for="nombre">Nombre completo:</label>
-								<input class="validate[required]" name="nombre" type="text" />
+								<input j name="nombre" type="text" />
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
@@ -53,12 +53,12 @@ function ns_mantencion_shortcode( $atts ) {
 							</div>
 							<div class="select">
 								<label for="email">E-mail:</label>
-								<input name="email" type="text" class="validate[required]" />
+								<input class="validate[required,custom[email]]" name="email" type="text" />
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">
 								<label for="fecha">D&iacute;a que desea agendar:</label>
-								<input name="fecha" type="text" id="datepicker" class="validate[required]"/>
+								<input name="fecha" type="text" id="datepicker" class="validate[required] datepicker"/>
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select" style="float:right">
