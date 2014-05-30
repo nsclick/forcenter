@@ -1,23 +1,72 @@
 (function(window, $, data, undefined) {
 	$(document).ready(function() {
 		/**
+		 * Validation
+		 */
+		var form = $("#cotizador-form");
+		form.validationEngine('attach', {promptPosition:"inline", scroll:false});
+
+		/**
 		 * Steps Handling
 		 */
-		var gotos 	= $('.goto'),
-			steps 	= $('.step'),
-			tabs	= $('.tab');
+		var gotos 		= $('.goto'),
+			steps 		= $('.step'),
+			tabs		= $('.tab'),
+			currentTab	= 'step1'; // First by default
 
 		gotos.click(function(ev) {
 			ev.preventDefault();
 
 			var stepToGo 	= $(this).attr('data-go-to'),
 				stepToGoEl	= $('#' + stepToGo),
-				tabToACtive	= $('#tab_' + stepToGo);
+				tabToACtive	= $('#tab_' + stepToGo),
+				valid 		= true;
 
-			steps.removeClass('activ');
-			tabs.removeClass('activ');
-			stepToGoEl.addClass('activ');
-			tabToACtive.addClass('activ');
+			/**
+			 * Steps Validation
+			 */
+			switch (currentTab) {
+				case 'step1':
+					$.each(form.find('select.version'), function(index, versionInput) {
+						if ($(versionInput).validationEngine('validate'))
+							valid = false;
+					});
+
+					$.each(form.find('select.accesorio'), function(index, accesorioInput) {
+						if ($(accesorioInput).validationEngine('validate'))
+							valid = false;
+					});
+
+					break;
+				case 'step2':
+					if (
+						$('#pie').validationEngine('validate')
+						|| $('#cuotas').validationEngine('validate')
+					)
+						valid = false;
+
+					break;
+				// case 'step3':
+					// $.each(stepToGoEl.find('input'), function(inputEl) {
+					// 	if ($(inputEl).validationEngine('validate'))
+					// 		valid = false;
+					// });
+
+					// $.each(stepToGoEl.find('select'), function(selectEl) {
+					// 	if ($(selectEl).validationEngine('validate'))
+					// 		valid = false;
+					// });
+					break;
+			}
+
+			// Only if current tab fields are valids
+			if (valid) {
+				steps.removeClass('activ');
+				tabs.removeClass('activ');
+				stepToGoEl.addClass('activ');
+				tabToACtive.addClass('activ');
+				currentTab = stepToGo;
+			}
 		});
 
 		/**
@@ -354,14 +403,6 @@
 			});
 
 		/**
-		 * Validation
-		 */
-		var form = $("#cotizador-form");
-		form.validationEngine('attach', {promptPosition:"inline", scroll:false});
-
-		// Here are more code missing
-
-		/**
 		 * Sending
 		 */
 		var submitBtn 	= $('#go3'),
@@ -370,7 +411,7 @@
 
 		submitBtn.click(function(ev) {
 			ev.preventDefault();
-
+			
 			if (form.validationEngine('validate')) {
 				var queryString = form.formSerialize(),
 					formAction 	= form.attr('action');

@@ -191,12 +191,12 @@ function ns_cotizador_shortcode( $atts ) {
 					<div class="details">
 						<div class="select">
 							<label for="pie">Pie:</label>
-							<input name="pie" type="text" class="validate[required]" />
+							<input id="pie" name="pie" type="text" class="validate[required]" />
 							<div class="divclear">&nbsp;</div>
 						</div>
 						<div class="select">
 							<label for="cuotas">Cuotas:</label>
-							<select name="cuotas" class="validate[required]">
+							<select id="cuotas" name="cuotas" class="validate[required]">
 								<?php for($i=1; $i<= 60; $i++): ?>
 								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 								<?php endfor; ?>
@@ -372,12 +372,12 @@ function ns_cotizador_shortcode( $atts ) {
 		<div class="details">
 			<div class="select">
 				<label for="modelo">Modelo:</label>
-				<select name="car_models[]" class="modelo"></select>
+				<select name="car_models[]" class="modelo validate[required]"></select>
 				<div class="divclear">&nbsp;</div>
 			</div>
 			<div class="select">
 				<label for="version">Versi&oacute;n:</label>
-				<select name="car_version[]" class="version"></select>
+				<select name="car_version[]" class="version validate[required]"></select>
 				<div class="divclear">&nbsp;</div>
 			</div>
 		</div>
@@ -396,12 +396,12 @@ function ns_cotizador_shortcode( $atts ) {
 		<div class="details">
 			<div class="select">
 				<label for="modelo">Modelo:</label>
-				<select name="accesory_models[]" class="modelo"></select>
+				<select name="accesory_models[]" class="modelo validate[required]"></select>
 				<div class="divclear">&nbsp;</div>
 			</div>
 			<div class="select">
 				<label for="version">Accesorio:</label>
-				<select name="accesories[]" class="accesorio"></select>
+				<select name="accesories[]" class="accesorio validate[required]"></select>
 				<div class="divclear">&nbsp;</div>
 			</div>
 		</div>
