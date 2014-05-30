@@ -195,7 +195,7 @@
 	    $.each(modals, function(index, modal) {
 	    	$(modal).dialog({
 				autoOpen: false,
-				width: 650,
+				width: 1020,
 				modal: true
 			});
 	    });
