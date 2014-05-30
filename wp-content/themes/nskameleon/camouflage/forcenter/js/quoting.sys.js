@@ -6,7 +6,9 @@ $(document).ready(function() {
 		topQuotingAccesoryQtyEl		= $('#accesorio_cant'),
 		topQuotingCarCleanEl		= $('#cotizador_limpiar_autos'),
 		topQuotingAccesoryCleanEl	= $('#cotizador_limpiar_accesorios'),
-		topQuotingBox				= $('#quick_cotizador');
+		topQuotingBox				= $('#quick_cotizador'),
+		carsLimit					= 3,
+		accesoriesLimit				= 3;
 
 	/**
 	 * Quoting
@@ -30,6 +32,22 @@ $(document).ready(function() {
 		if (!this.products.hasOwnProperty(product.postId)) {
 			this.products[product.postId] = product;
 			
+			// Limit product counters
+			switch (product.type) {
+				case 'Car':
+					if (this.counters.Car >= carsLimit) {
+						alert('Ha alcanzado el límite de autos cotizados.');
+						return false;
+					}
+					break;
+				case 'Accesory':
+					if (this.counters.Accesory >= accesoriesLimit) {
+						alert('Ha alcanzado el límite de accesorios cotizados.');
+						return false;
+					}
+					break;
+			}
+
 			// Update Top Quoting Box
 			return this.updateTopBox();
 		}

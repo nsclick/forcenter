@@ -534,3 +534,10 @@ function ns_mapa_sitio_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'mapa_sitio', 'ns_mapa_sitio_shortcode' );
+
+function ns_home ( $atts ) {
+	wp_enqueue_script ( 'jquery-ui-dialog' );
+	wp_enqueue_script ( 'nsk-home', get_template_directory_uri() . '/camouflage/forcenter/js/home.js', array( 'jquery' ), null, true );
+}
+
+add_shortcode ( 'home', 'ns_home' );
