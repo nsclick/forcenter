@@ -247,8 +247,8 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .cotizador .link button#back2 i, .cotizador .link button#back3 i{left:0;border-right:1px solid #fff}
 .cotizador #step2 .selector .producto{float:none;width:100%;margin:0}
 .cotizador #step2 .selector .producto .details,.cotizador #step3 .selector .producto .details{float:none;width:100%;margin:0;padding:0}
-.cotizador .selector .producto .details .select input{width:66%;display:block;float:left;border:1px solid #5a9dd3;color:##666971;padding:1px 1%}
-.cotizador .selector .producto .details .select textarea{width:66%;display:block;float:left;border:1px solid #5a9dd3;color:#666971;padding:2px 1%;height:74px}
+.cotizador .selector .producto .details .select input{width:66%;display:block;float:left;border:1px solid #5a9dd3;color:#666971;padding:2px 1%;font-size:11px}
+.cotizador .selector .producto .details .select textarea{width:66%;display:block;float:left;border:1px solid #5a9dd3;color:#666971;padding:2px 1%;height:74px;font-family:'Open Sans','sans-serif'!important;font-size:11px}
 .cotizador #step3 .selector .producto{float:none;width:102%;margin:0}
 .cotizador #step3 .selector .producto .details .select{margin:0 16px 10px 0;width:44%;float:left}
 .cotizador #step3 .selector .producto .details .select label{padding-top:0}
