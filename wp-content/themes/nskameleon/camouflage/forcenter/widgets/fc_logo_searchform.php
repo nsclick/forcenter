@@ -36,7 +36,7 @@ class Fc_Logo_Widget extends WP_Widget {
 				<form id="buscar-form" method="post" accept-charset="utf-8" action="<?php echo network_site_url( '' ) ?>/buscar" >
 					<?php //CSRF prevention keys ?>
 					<?php wp_nonce_field('buscar-form','bs-token'); ?>
-					<i	nput type="text" name="q" value="<?php echo isset($_POST['q']) ? $_POST['q'] : ''  ?>"/><button type="submit">&nbsp;</button>
+					<input type="text" name="q" value="<?php echo isset($_POST['q']) ? $_POST['q'] : ''  ?>"/><button type="submit">&nbsp;</button>
 				</form>
 			</div>
 			<div class="sel" id="quick_call">
