@@ -191,12 +191,12 @@ function ns_cotizador_shortcode( $atts ) {
 					<div class="details">
 						<div class="select">
 							<label for="pie">Pie:</label>
-							<input id="pie" name="pie" type="text" class="validate[required]" />
+							<input id="pie" name="monto_pie" type="text" class="validate[required]" />
 							<div class="divclear">&nbsp;</div>
 						</div>
 						<div class="select">
 							<label for="cuotas">Cuotas:</label>
-							<select id="cuotas" name="cuotas" class="validate[required]">
+							<select id="cuotas" name="numero_cuotas" class="validate[required]">
 								<?php for($i=1; $i<= 60; $i++): ?>
 								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 								<?php endfor; ?>
@@ -350,10 +350,7 @@ function ns_cotizador_shortcode( $atts ) {
 	</div>
 
 	<!-- Success Message -->
-	<div id="msg_box" class="hide">
-		<h2>Su mensaje ha sido enviado.</h2>
-		<p>Nhideos comunicaremos a la brevedad.</p>
-	</div>
+	<div id="enviado" class="hide"></div>
 	<!--/ Success Message -->
 
 </form>
