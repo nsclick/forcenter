@@ -33,23 +33,27 @@ class Fc_Logo_Widget extends WP_Widget {
 		<div class="toolbar-box">
 			<span><a href="<?php echo network_site_url( '' ) ?>"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350.png" alt="Forcenter"/></a></span>
 			<div class="sea">
-			<form id="buscar-form" method="post" accept-charset="utf-8" action="<?php echo network_site_url( '' ) ?>/buscar" />
-			<?php //CSRF prevention keys ?>
-			<?php wp_nonce_field('buscar-form','bs-token'); ?>
-				<input type="text" name="q" value="<?php echo isset($_POST['q']) ? $_POST['q'] : ''  ?>"/><button type="submit">&nbsp;</button>
-			</form>
+				<form id="buscar-form" method="post" accept-charset="utf-8" action="<?php echo network_site_url( '' ) ?>/buscar" >
+					<?php //CSRF prevention keys ?>
+					<?php wp_nonce_field('buscar-form','bs-token'); ?>
+					<input type="text" name="q" value="<?php echo isset($_POST['q']) ? $_POST['q'] : ''  ?>"/><button type="submit">&nbsp;</button>
+				</form>
 			</div>
 			<div class="sel" id="quick_call">
-				<span>Tienes seleccionados <b>0</b> veh&iacute;culos</span>
+				<span id="cotizador_btn">Tienes seleccionados <b id="cotizador_cant">0</b> Productos</span>
 				<div id="quick_cotizador">
 					<div class="auto">
 						<i class="icon-circle"></i>
-						Ford F150 Raptor SVT as as as  as as a
-						<span>$99.999.999</span>
-						<a href="#"><i class="icon-remove-sign"></i></a>
+						<span id="auto_cant">0</span> Autos Seleccionados
+						<a href="#" id="cotizador_limpiar_autos"><i class="icon-remove-sign"></i></a>
 					</div>
-					<span>Puedes cotizar hasta 3 veh&iacute;culos a la vez.</span>
-					<a href="#" class="cotizar">Cotizar <i class="icon-chevron-right"></i></a>
+					<div class="auto">
+						<i class="icon-circle"></i>
+						<span id="accesorio_cant">0</span> Accesorios Seleccionados
+						<a href="#" id="cotizador_limpiar_accesorios"><i class="icon-remove-sign"></i></a>
+					</div>
+					<span>Ver detalle de productos seleccionados.</span>
+					<a href="<?php echo get_permalink_by_slug ( 'cotizador' ); ?>" class="cotizar">Cotizar ahora<i class="icon-chevron-right"></i></a>
 				</div>
 			</div>
 			<a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter"/> Contacto</a>

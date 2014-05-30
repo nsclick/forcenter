@@ -339,10 +339,6 @@ class Contacto extends FormProcessor{
   
 }
 
-
-
-
-
 /*
  * Sent to CRM 
  * 
@@ -406,6 +402,115 @@ class Repuestos extends FormProcessor{
 		
 		$bind['telefono_casa'] = $data['celular'];
 		
+		return $bind;
+	}
+}
+
+/*
+ * Sent to CRM 
+ * 
+ * */
+class Cotizacion extends FormProcessor{
+	
+	private $result_a = null;
+	private $result_v = null;
+	
+	function send($data){
+		
+		if(!$this->_postValidation( 'coticacion-form', 'ct-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		require_once ('vendor/pmh/includes/apipmh/index.php');
+
+		$bind = $this->mapData($data);
+		
+		if(count($bind['accesorios_id'])){
+			$bind_a = $bind;
+			unset($bind_a['version']);
+			$bind_a['cantidad'] = 1;
+			$bind_a['comentario'] = 'Solicitud desde cotizador del sitio web';			
+			$this->result_a = $pmhapi->cotizacion_seccion_accesorios($bind_a);
+		}
+		if( count(  $bind['version'] ) ) {
+			$bind_v = $bind;
+			unset($bind_v['accesorios_id']);	
+			$bind_v['observacion'] = 'Solicitud desde cotizador del sitio web';
+			$this->result_v = $pmhapi->cotizacion_seccion_autos_nuevos($bind_v);
+		}
+									      
+		if(!$this->result_a && !$this->result_v){
+			$this->errorMsg = 'Error en el regisro al CRM, Informe de este error al webmaster';
+			return false;
+		}
+
+		if(!$this->result_a->result && !$this->result_v->result){
+			$this->errorMsg = $this->result->mensaje;
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public function getResult(){
+		$seller_a = $seller_v = NULL;
+		
+		if( $this->result_a ){
+			$seller_a = array(
+				'name'  	=> $this->result_a->asignado->nombre_completo,
+				'phone' 	=> $this->result_a->asignado->telefono,
+				'cellular' 	=> $this->result_a->asignado->celular,
+				'email' 	=> $this->result_a->asignado->email,
+				'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->result_a->foto
+			);
+		}
+
+		if( $this->result_v ){
+			$seller_v = array(
+				'name'  	=> $this->result_v->asignado->nombre_completo,
+				'phone' 	=> $this->result_v->asignado->telefono,
+				'cellular' 	=> $this->result_v->asignado->celular,
+				'email' 	=> $this->result_v->asignado->email,
+				'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->result_v->foto
+			);
+		}
+		
+		return json_encode( array('state' => 'ok', 'seller_a' => $seller_a, 'seller_v' => $seller_v) );
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function mapData($data) {
+		$bind = array();
+		$excluded = array('ct-token', '_wp_http_referer', 'car_models', 'car_version', 'accesory_models', 'accesories');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$bind[$key] = $value;
+			}
+		}
+		
+		//Get the ids
+		$versions = $accesories = array();
+		$ids = array();
+		foreach ($data['car_version'] as $id) {
+			$customFields 	= get_post_meta( $id, 'version-data', true );
+			$customFields 	= $customFields[0];
+			$versions[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+		}
+
+		foreach ($data['accesories'] as $id) {
+			$customFields 	= get_post_meta ( $id, 'datos-extra-accesorios', true );
+			$customFields 	= $customFields[0];
+			$accesories[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+		}
+		
+		$bind['telefono_casa'] 	= $data['celular'];
+		$bind['version'] 		= $versions;
+		$bind['accesorios_id'] 	= $accesories;
+	
 		return $bind;
 	}
 }

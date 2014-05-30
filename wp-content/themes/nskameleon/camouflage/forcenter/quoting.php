@@ -21,6 +21,7 @@ function ns_end_session() {
  * Ajax Quote Handling
  */
 add_action ( 'wp_ajax_ns_quote', 'ns_ajax_quoting' );
+add_action ( 'wp_ajax_nopriv_ns_quote', 'ns_ajax_quoting' );
 
 function ns_ajax_quoting ( ) {
 	global $wpdb;
