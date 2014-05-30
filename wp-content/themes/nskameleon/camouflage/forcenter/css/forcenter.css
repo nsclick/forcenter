@@ -268,19 +268,19 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .head .banner .text{float:left;padding-left:20px}
 .modelo .head .banner .text p{background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png);background-position:top, bottom;background-repeat:repeat-x;padding:15px 20px;min-height:330px;border:1px solid #aaa;border-top:1px solid #2850a3;box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);width:306px;text-align:justify;line-height:20px}
 .modelo .head .images{margin:20px 0;padding:15px 20px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #aaa}
-.modelo .lista{border:1px solid #aaa;border-top:1px solid #2850a3;padding:15px;background:#fff;margin-bottom:20px}
-.modelo .lista .li{background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;margin-bottom:10px}
-.modelo .lista .section:last-of-type .li{margin:0}
-.modelo .lista .li .span_5_of_12{font-weight:bold;padding:11px 0 0 0;font-size:12px}
-.modelo .lista .li .span_2_of_12{font-style:italic;padding:11px 0 0 0}
-.modelo .lista .li .span_5_of_12:last-of-type{text-align:right;padding:0}
-.modelo .lista .li .span_5_of_12 a{color:#fff;font-size:14px;display:block;background:url(../images/bg-tab-blue-center.png);font-style:italic;padding:9px 49px 9px 15px;position:relative;float:right}
-.modelo .lista .li .span_5_of_12 a.first{background:url(../images/bg-btn-verde-s.png);margin-right:10px}
-.modelo .lista .li .span_5_of_12 a i{position:absolute;top:0;padding:10px 12px;right:0;border-left:1px solid #fff}
-.modelo .lista .sign{position:relative}
-.modelo .lista .sign span{display:block;font-size:19px;height:50px;background:#2850a3;color:#fff;padding:4px 0 0 40px;margin:0 0 0 -30px;width:125px;position:absolute}
-.modelo .lista .sign span:after{width:0;height:0;border-top:27px solid transparent;border-bottom:27px solid transparent;border-left:15px solid #2850a3;position:absolute;content:"";top:0px;right:-15px}
-.modelo .lista .sign span b{display:block;font-size:22px}
+.modelo .lista,.ui-dialog .lista{border:1px solid #aaa;border-top:1px solid #2850a3;padding:15px;background:#fff;margin-bottom:20px}
+.modelo .lista .li,.ui-dialog .lista .li{background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2;margin-bottom:10px}
+.modelo .lista .section:last-of-type .li,.ui-dialog .lista .section:last-of-type .li{margin:0}
+.modelo .lista .li .span_5_of_12,.ui-dialog .lista .li .span_5_of_12{font-weight:bold;padding:11px 0 0 0;font-size:12px}
+.modelo .lista .li .span_2_of_12,.ui-dialog .lista .li .span_2_of_12{font-style:italic;padding:11px 0 0 0}
+.modelo .lista .li .span_5_of_12:last-of-type,.ui-dialog .lista .li .span_5_of_12:last-of-type{text-align:right;padding:0}
+.modelo .lista .li .span_5_of_12 a,.ui-dialog .lista .li .span_5_of_12 a{color:#fff;font-size:14px;display:block;background:url(../images/bg-tab-blue-center.png);font-style:italic;padding:9px 49px 9px 15px;position:relative;float:right;outline-color:transparent}
+.modelo .lista .li .span_5_of_12 a.first,.ui-dialog .lista .li .span_5_of_12 a.first{background:url(../images/bg-btn-verde-s.png);margin-right:10px}
+.modelo .lista .li .span_5_of_12 a i,.ui-dialog .lista .li .span_5_of_12 a i{position:absolute;top:0;padding:10px 12px;right:0;border-left:1px solid #fff}
+.modelo .lista .sign,.ui-dialog .lista .sign{position:relative}
+.modelo .lista .sign span,.ui-dialog .lista .sign span{display:block;font-size:19px;height:50px;background:#2850a3;color:#fff;padding:4px 0 0 40px;margin:0 0 0 -30px;width:125px;position:absolute}
+.modelo .lista .sign span:after,.ui-dialog .lista .sign span:after{width:0;height:0;border-top:27px solid transparent;border-bottom:27px solid transparent;border-left:15px solid #2850a3;position:absolute;content:"";top:0px;right:-15px}
+.modelo .lista .sign span b,.ui-dialog .lista .sign span b{display:block;font-size:22px}
 .modelo .tabla{}
 .modelo .tabla .menu{border-bottom:1px solid #2850a3}
 .modelo .tabla .menu ul li{float:left;display:block}
