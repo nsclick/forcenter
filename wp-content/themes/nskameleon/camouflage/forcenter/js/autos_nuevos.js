@@ -12,9 +12,10 @@
 			cats_search_el 		= $('.family-search'),
 			category_selected	= 'vehiculos',
 			categories 			= data.families,
-			divclear			= $('<div class="divclear">&nbsp;</div>');
+			divclear			= $('<div class="divclear">&nbsp;</div>'),
+			modals 				= $('.model-modal'),
+			open_modals			= $('.open_modal');
 
-		console.log(data);
 		/**
 		 * Price Slider
 		 */
@@ -186,7 +187,25 @@
 	    sorting_el.on('change', function() {
 	    	var order = $(this).val();
 	    	Search();
-	    })
+	    });
+
+	    /**
+	     * Models Modals Handling
+	     */
+	    $.each(modals, function(index, modal) {
+	    	$(modal).dialog({
+				autoOpen: false,
+				width: 650,
+				modal: true
+			});
+	    });
+	    
+	    $(document.body).delegate('.open_modal', 'click', function(ev) {
+	    	ev.preventDefault();
+
+	    	var modelId = $(this).attr('data-model-id');
+	    	$('#model_modal_' + modelId).dialog('open');
+	    });
 
 	    /**
 		 * Initialization
