@@ -52,16 +52,16 @@ $(document).ready(function() {
 	Quoting.updateTopBox = function() {
 		var self = this;
 		
-		return this.saveProducts()
-			.done(function(r) {
-				if (r.success) {
+		// return this.saveProducts()
+		// 	.done(function(r) {
+				// if (r.success) {
 					self.updateCounters();
 					topQuotingCarQtyEl.text(self.counters.Car);
 					topQuotingAccesoryQtyEl.text(self.counters.Accesory);
 					topQuotingTotalQtyEl.text(self.counters.Accesory + self.counters.Car);
-				}
-			});
-
+				// }
+			// });
+		return this;
 	};
 
 	Quoting.updateCounters = function() {
@@ -79,6 +79,8 @@ $(document).ready(function() {
 					break;
 			}
 		});
+
+		return this;
 	};
 
 	Quoting.cleanByType = function(type) {
@@ -195,17 +197,17 @@ $(document).ready(function() {
 	 			product = new Car(productId);
 	 			break;
 	 		case 'Accesory':
-	 			product = new Accesory(postId);
+	 			product = new Accesory(productId);
 	 			break;
 	 	}
 
 	 	Quoting.addProduct(product)
-	 		.done(function(r) {
+	 		.saveProducts(function(r) {
 	 			
 	 		});
 
 	 	if (redirect == 'true' || redirect == true) {
-	 		// location.href = data.cotizador_page;
+	 		location.href = data.cotizador_page;
 	 	}
 	 });
 

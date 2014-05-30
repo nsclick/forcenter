@@ -1,20 +1,23 @@
 (function(window, $, data, undefined) {
 	$(document).ready(function() {
-		console.log(data);
 		/**
 		 * Steps Handling
 		 */
 		var gotos 	= $('.goto'),
-			steps 	= $('.step');
+			steps 	= $('.step'),
+			tabs	= $('.tab');
 
 		gotos.click(function(ev) {
 			ev.preventDefault();
 
 			var stepToGo 	= $(this).attr('data-go-to'),
-				stepToGoEl	= $('#' + stepToGo);
+				stepToGoEl	= $('#' + stepToGo),
+				tabToACtive	= $('#tab_' + stepToGo);
 
-			$(steps).removeClass('activ');
+			steps.removeClass('activ');
+			tabs.removeClass('activ');
 			stepToGoEl.addClass('activ');
+			tabToACtive.addClass('activ');
 		});
 
 		/**
@@ -120,33 +123,240 @@
 		/**
 		 * Cloning Boxes Handling
 		 */
-		var addCarBtn 		= $('#add_car'),
-			addAccesoryBtn	= $('#add_accesory'),
-			cars			= [],
-			accesories		= [];
+		var addCarBtn 			= $('#add_car'),
+			addAccesoryBtn		= $('#add_accesory'),
+			carsWrapper			= $('#cars_wrapper'),
+			carBox				= $($('.producto.car')[0]),
+			carsCount			= 0,
+			carsLimit			= 3,
+			accesoriesWrapper	= $('#accesories_wrapper'),
+			accesoryBox			= $($('.producto.accesory')[0]),
+			accesoriesLimit		= 3,
+			accesoriesCount		= 0;
 
 		addCarBtn.click(function(ev) {
 			ev.preventDefault();
 
-
+			addCarBox();
 		});
+
+		/**
+		 * AddCarBox
+		 */
+		function addCarBox(version) {
+			if (carsCount == carsLimit) {
+				return false;
+			}
+
+			var clonedCarBox 			= carBox.clone(true,true),
+				removeClonedCarBoxBtn	= clonedCarBox.find('.remove'),
+				imgEl					= clonedCarBox.find('img'),
+				nameEl					= clonedCarBox.find('.name'),
+				priceEl					= clonedCarBox.find('.price'),
+				modelSelectEl			= clonedCarBox.find('select.modelo'),
+				versionSelectEl			= clonedCarBox.find('select.version');
+
+			modelSelectEl.on('change', function() {
+				var modelSelectedId = $(this).val();
+				
+				if (modelSelectedId == '') {
+					versionSelectEl.empty();
+					return false;
+				}
+
+				$.each(data.models, function(index, model) {
+					var modelId 	= model.ID;
+					
+					if (modelId == parseInt(modelSelectedId)) {
+						nameEl.text(model.post_title);
+						imgEl.attr('src', model.thumbnail.src);
+						priceEl.text('');
+					}
+
+				});
+			});
+
+			var car;
+			versionSelectEl.on('change', function() {
+				var versionSelectedId = $(this).val();
+
+				if (versionSelectedId == '') {
+					return false;
+				}
+
+				
+				$.each(data.versions, function(index, version) {
+					if (version.ID == parseInt(versionSelectedId)) {
+						nameEl.text(version.post_title);
+						priceEl.text('$' + version.price);
+						imgEl.attr('alt', version.post_title)
+							.attr('title', version.post_title);
+
+						// Add to quoting.sys
+						if (!!car) {
+							nsQ.Quoting.removeProduct(car);
+						}
+						car = new nsQ.Car(version.ID);
+						nsQ.Quoting.addProduct(car);
+						nsQ.Quoting.saveProducts();
+					}
+				});
+
+			});
+
+			// Remove
+			removeClonedCarBoxBtn.click(function(ev) {
+				ev.preventDefault();
+
+				clonedCarBox.remove();
+				carsCount--;
+
+				// Remove from quoting.sys
+				if (car) {
+					nsQ.Quoting.removeProduct(car);
+					nsQ.Quoting.saveProducts();
+				}
+			});
+
+			clonedCarBox.appendTo(carsWrapper);
+			ModelVersionSelectPopulator(modelSelectEl, versionSelectEl, data.models);
+
+			carsCount++;
+
+			// Session Car
+			if (!!version) {
+				modelSelectEl.val( (version.related_model.ID).toString() )
+					.trigger('change');
+
+				versionSelectEl.val( (version.ID).toString() )
+					.trigger('change');
+
+				nameEl.text(version.post_title);
+				priceEl.text('$' + version.price);
+				imgEl.attr('src', version.related_model.thumbnail.src)
+					.attr('alt', version.post_title)
+					.attr('title', version.post_title);
+			}
+		}
 
 		addAccesoryBtn.click(function(ev) {
 			ev.preventDefault();
 
-
+			addAccesoryBox();
 		});
 
 		/**
-		 * Test
+		 * AddAccesoryBox
 		 */
-		var modelSelectEl 		= $('#model_1'),
-			modelSelectEl2		= $('#model_2'),
-			versionSelectEl		= $('#version_1'),
-			accesorySelectEl	= $('#accesory_1');
+		function addAccesoryBox(accesory) {
+			if (accesoriesCount == accesoriesLimit) {
+				return false;
+			}
 
-		new ModelVersionSelectPopulator(modelSelectEl, versionSelectEl, data.models);
-		new ModelAccesorySelectPopulator(modelSelectEl2, accesorySelectEl, data.models);
+			var clonedAccesoryBox 			= accesoryBox.clone(),
+				removeClonedAccesoryBoxBtn	= clonedAccesoryBox.find('.remove'),
+				imgEl						= clonedAccesoryBox.find('img'),
+				nameEl						= clonedAccesoryBox.find('.name'),
+				modelSelectEl				= clonedAccesoryBox.find('select.modelo'),
+				accesorySelectEl 			= clonedAccesoryBox.find('select.accesorio');
+
+			var accProd;
+			accesorySelectEl.on('change', function() {
+				var accesorySelectedId = $(this).val();
+
+				if (accesorySelectedId == '') {
+					return false;
+				}
+
+				$.each(data.accesories, function(index, accesory) {
+					if (accesory.ID == parseInt(accesorySelectedId)) {
+						nameEl.text(accesory.post_title);
+						imgEl.attr('src', accesory.extra.thumbnail.src)
+							.attr('alt', accesory.post_title)
+							.attr('title', accesory.post_title);
+
+						// Add to quoting.sys
+						if (!!accProd) {
+							nsQ.Quoting.removeProduct(accProd);
+						}
+						accProd = new nsQ.Accesory(accesory.ID);
+						nsQ.Quoting.addProduct(accProd);
+						nsQ.Quoting.saveProducts();
+					}
+				});
+
+			});
+
+			// Remove
+			removeClonedAccesoryBoxBtn.click(function(ev) {
+				ev.preventDefault();
+
+				clonedAccesoryBox.remove();
+				accesoriesCount--;
+
+				// Remove from quoting.sys
+				if (!!accProd) {
+					nsQ.Quoting.removeProduct(accProd);
+					nsQ.Quoting.saveProducts();
+				}
+			});
+
+			clonedAccesoryBox.appendTo(accesoriesWrapper);
+			ModelAccesorySelectPopulator(modelSelectEl, accesorySelectEl, data.models);
+
+			accesoriesCount++;
+
+			// Session Car
+			if (!!accesory) {
+				modelSelectEl.val( (accesory.related_model.ID).toString() )
+					.trigger('change');
+
+				accesorySelectEl.val( (accesory.ID).toString() )
+					.trigger('change');
+
+				nameEl.text(accesory.post_title);
+				imgEl.attr('src', accesory.extra.thumbnail.src)
+					.attr('alt', accesory.post_title)
+					.attr('title', accesory.post_title);
+			}
+		}
+
+		/**
+		 * Request Products in Session and fill forms
+		 */
+		nsQ.Quoting.requestProducts()
+			.done(function(r) {
+				if (r.success) {
+					$.each(r.products, function(productId, product) {
+						
+						switch (product.type) {
+							case 'Car':
+								$.each(data.versions, function(index, version) {
+									if (version.ID == productId) {
+
+										// Fill form with version
+										addCarBox(version);
+
+									}
+								});
+								break;
+							case 'Accesory':
+								$.each(data.accesories, function(index, accesory) {
+									if (accesory.ID == productId) {
+										addAccesoryBox(accesory);
+									}
+								});
+								break;
+						}
+					});
+
+				}
+			});
+
+		/**
+		 * Validation
+		 */
+		$("#cotizador-form").validationEngine('attach', {promptPosition:"inline", scroll:false});
 
 	});
 })(window, jQuery, ns_cotizador_data);

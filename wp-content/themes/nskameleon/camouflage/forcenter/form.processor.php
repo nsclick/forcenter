@@ -406,6 +406,73 @@ class Repuestos extends FormProcessor{
 	}
 }
 
+/*
+ * Sent to CRM 
+ * 
+ * */
+class Cotizador extends FormProcessor{
+	
+	function send($data){
+				
+		// if(!$this->_postValidation( 'cotizador-form', 'rp-token' ) ){
+		// 	$this->errorMsg = 'Sorry, your nonce did not verify.';
+		// 	return false;
+		// }
+		
+		// require_once ('vendor/pmh/includes/apipmh/index.php');
+		
+		// $bind = $this->mapData($data);
+		
+		// $this->result = $pmhapi->cotizacion_seccion_repuestos($bind);
+										      
+		// if(!$this->result){
+		// 	$this->errorMsg = 'Error en el regisro al CRM, Informe de este error al webmaster';
+		// 	return false;
+		// }
+
+		// if(!$this->result->result){
+		// 	$this->errorMsg = $this->result->mensaje;
+		// 	return false;
+		// }
+		
+		return true;
+	}
+	
+	public function getResult(){
+		
+		// $seller = array(
+		// 	'name'  	=> $this->result->asignado->nombre_completo,
+		// 	'phone' 	=> $this->result->asignado->telefono,
+		// 	'cellular' 	=> $this->result->asignado->celular,
+		// 	'email' 	=> $this->result->asignado->email,
+		// 	'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->asignado->foto
+		// );
+		
+		return json_encode( array('state' => 'ok', 'data' => $this->result) );
+		
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function mapData($data) {
+		$bind = array();
+		$excluded = array('rp-token', '_wp_http_referer', 'nomodelo', 'modelo');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$bind[$key] = $value;
+			}
+		}
+		$bind['modelo'] = $data['modelo'] ? $data['modelo'] : $data['nomodelo'];
+		$bind['tipo_vehiculo'] = $data['modelo'] ? 'moderno' : 'antiguo';
+		
+		$bind['telefono_casa'] = $data['celular'];
+		
+		return $bind;
+	}
+}
+
 
 /*
  * Sent to CRM 
