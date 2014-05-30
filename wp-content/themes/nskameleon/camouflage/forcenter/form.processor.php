@@ -484,23 +484,31 @@ class Cotizacion extends FormProcessor{
 		
 		//Get the ids
 		$versions = $accesories = array();
-		$ids = explode($data['ids']);
+		$ids = array();
+		foreach ($data['car_version'] as $c_v) {
+			$ids[] = $c_v;
+		}
+
+		foreach ($data['accesories'] as $a) {
+			$ids[] = $a;
+		}
+		
 		foreach($ids as $id){
 			$post = get_post($id);
 			if($post->post_type == 'version'){
-				$customFields = get_post_meta( $id, 'version-data', true ); 
-				$customFields = $customFields[0];
-				$versions[] = $customFields['id-crm'];
+				$customFields 	= get_post_meta( $id, 'version-data', true ); 
+				$customFields 	= $customFields[0];
+				$versions[] 	= $customFields['id-crm'];
 			} else {
-				$customFields = get_post_meta ( $id, 'datos-extra-accesorios', true );
-				$customFields = $customFields[0];
-				$accesories[] = $customFields['numero'];
+				$customFields 	= get_post_meta ( $id, 'datos-extra-accesorios', true );
+				$customFields 	= $customFields[0];
+				$accesories[] 	= $customFields['numero'];
 			}
 		}
 		
-		$bind['telefono_casa'] = $data['celular'];
-		$bind['version'] = $versions;
-		$bind['accesorios_id'] = $accesories;
+		$bind['telefono_casa'] 	= $data['celular'];
+		$bind['version'] 		= $versions;
+		$bind['accesorios_id'] 	= $accesories;
 	
 		return $bind;
 	}
