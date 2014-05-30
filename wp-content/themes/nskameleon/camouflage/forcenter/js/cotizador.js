@@ -356,7 +356,60 @@
 		/**
 		 * Validation
 		 */
-		$("#cotizador-form").validationEngine('attach', {promptPosition:"inline", scroll:false});
+		var form = $("#cotizador-form");
+		form.validationEngine('attach', {promptPosition:"inline", scroll:false});
+
+		// Here are more code missing
+
+		/**
+		 * Sending
+		 */
+		var submitBtn 	= $('#go3'),
+			formWrapper	= $('#cotizador'),
+			msgBox		= $('#msg_box');
+
+		submitBtn.click(function(ev) {
+			ev.preventDefault();
+
+			if (form.validationEngine('validate')) {
+				var queryString = form.formSerialize(),
+					formAction 	= form.attr('action');
+
+				addWaiting(submitBtn);
+
+				$.ajax(
+					formAction,
+					// settings
+					{
+						data: queryString,
+						type: 'POST',
+						dataType: 'json'
+					}
+				)
+				.done(function(r) {
+					
+					if (!r.state || r.state == 'error') {
+						removeWaiting(submitBtn);
+						formErrorResponse(true, r.msg);
+						return false;
+					}
+
+					formWrapper.hide();
+					msgBox.empty();
+					msgBox.removeClass('hide');
+					msgBox.append( '<h2>Su solicitud ha sido enviada con &eacute;xito</h2>' );
+					msgBox.append( '<h3>Su solicitud ha sido asignada.</h3>' );
+					msgBox.append( '<img src=" ' + r.seller.pic + ' " title="Foto ejecutivo asignado">' );
+					msgBox.append( '<p>' + r.seller.name + '</p>');
+					msgBox.append( '<p>Tel&eacute;fono: ' + r.seller.phone + '</p>');
+					msgBox.append( '<p>Celular: ' + r.seller.cellular + '</p>');
+					msgBox.append( '<p>Email: ' + r.seller.email + '</p>');				
+					return true;
+
+				});
+
+			}
+		});
 
 	});
 })(window, jQuery, ns_cotizador_data);

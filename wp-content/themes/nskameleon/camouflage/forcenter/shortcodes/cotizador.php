@@ -333,8 +333,8 @@ function ns_cotizador_shortcode( $atts ) {
 				</div>
 			</div>
 			
-			<?php wp_nonce_field('cotizador-form','rp-token'); ?>
-			<input type="hidden" name="action" value="Cotizador"/>
+			<?php wp_nonce_field('coticacion-form','ct-token'); ?>
+			<input type="hidden" name="action" value="Cotizacion"/>
 
 			<!-- Buttons -->
 			<div class="link">
@@ -348,6 +348,14 @@ function ns_cotizador_shortcode( $atts ) {
 		<!--/ Step 3: Personal Data -->
 
 	</div>
+
+	<!-- Success Message -->
+	<div id="msg_box" class="hide">
+		<h2>Su mensaje ha sido enviado.</h2>
+		<p>Nhideos comunicaremos a la brevedad.</p>
+	</div>
+	<!--/ Success Message -->
+
 </form>
 <!--/ Form -->
 
