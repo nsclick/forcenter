@@ -12,9 +12,10 @@
 			cats_search_el 		= $('.family-search'),
 			category_selected	= 'vehiculos',
 			categories 			= data.families,
-			divclear			= $('<div class="divclear">&nbsp;</div>');
+			divclear			= $('<div class="divclear">&nbsp;</div>'),
+			modals 				= $('.model-modal'),
+			open_modals			= $('.open_modal');
 
-		console.log(data);
 		/**
 		 * Price Slider
 		 */
@@ -186,7 +187,25 @@
 	    sorting_el.on('change', function() {
 	    	var order = $(this).val();
 	    	Search();
-	    })
+	    });
+
+	    /**
+	     * Models Modals Handling
+	     */
+	    $.each(modals, function(index, modal) {
+	    	$(modal).dialog({
+				autoOpen: false,
+				width: 1020,
+				modal: true
+			});
+	    });
+	    
+	    $(document.body).delegate('.open_modal', 'click', function(ev) {
+	    	ev.preventDefault();
+
+	    	var modelId = $(this).attr('data-model-id');
+	    	$('#model_modal_' + modelId).dialog('open');
+	    });
 
 	    /**
 		 * Initialization
@@ -208,6 +227,55 @@
 
 		// Initial search&sorting
 		Search();
+
+
+		/**
+		 * Modal&Version Selects Handling
+		 */
+		var modelSelectEl 	= $('#modelo'),
+			versionSelectEl	= $('#version'),
+			quotingBtn		= $('#cotizar');
+
+		modelSelectEl.on('change', function() {
+			var modelSelectedId = $(this).val();
+			
+			if (modelSelectedId == '') {
+				versionSelectEl.empty();
+				return false;
+			}
+
+			$.each(data.models, function(index, model) {
+				var modelId 	= model.ID;
+				
+				if (modelId == parseInt(modelSelectedId)) {
+					var versions = model.versions;
+					
+					versionSelectEl.empty();
+					var emptySelectVersionOption = $('<option value="">Seleccione una versi&oacute;n</option>');
+					versionSelectEl.append(emptySelectVersionOption);
+
+					$.each(versions, function(index, version) {
+						var option = $('<option>')
+							.attr('value', version.ID)
+							.text(version.post_title);
+
+						versionSelectEl.append(option);
+					});
+				}
+
+			});
+
+		});
+
+		versionSelectEl.on('change', function() {
+			var versionSelectedId = $(this).val();
+
+			if (versionSelectedId == '')
+				return false;
+
+			quotingBtn.attr('data-quoting-id', versionSelectedId);
+		});
+
 
 	});
 })(window, jQuery, nsk_autos_nuevos);

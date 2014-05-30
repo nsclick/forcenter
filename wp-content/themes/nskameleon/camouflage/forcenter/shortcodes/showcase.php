@@ -123,7 +123,7 @@ ob_start();
 							<label for="modelo">Modelo</label>
 							<select name="modelo" id="modelo">
 								<?php foreach ( $car_models as $car_model ): ?>
-									<option ><?php echo $car_model->post_title; ?></option>
+									<option value="<?php echo $car_model->ID; ?>"><?php echo $car_model->post_title; ?></option>
 								<?php endforeach; ?>
 							</select>
 						</div>
@@ -137,7 +137,7 @@ ob_start();
 					<div class="col span_4_of_12">
 						<div class="cont"> 
 							<label for="cotiz">&nbsp;</label>
-							<a href="#" class="btn">Cotizar <i class="icon-chevron-right"></i></a>
+							<a id="cotizar" href="#" class="btn quoting_link" data-quoting-id="" data-quoting-redirect="true" data-quoting-type="Car">Cotizar <i class="icon-chevron-right"></i></a>
 						</div>
 					</div>
 				</div>

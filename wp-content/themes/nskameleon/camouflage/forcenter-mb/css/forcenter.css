@@ -46,7 +46,7 @@ select{}
 /* NO MB*/
 #home .rev_slider_wrapper,#home  #rev_slider_1_1_wrapper,#home  #showbiz_carrouselhome_1,#home .hr,#home .box_c,#home .box_b,#home .box_b2,#home #back{display:none!important}
 #home .span_4_of_12{width:100%;margin:0;float:none}
-#home ul.menu li{display:table;vertical-align:middle;margin-bottom:10px;border:1px solid #fff;color:#46484b;font-style:italic;font-weight:bold;background:url(../images/bg-categorias.png) top repeat-x #fff;font-size:16px;width:100%}
+#home ul.menu li{display:table;vertical-align:middle;margin-bottom:10px;border:1px solid #fff;color:#46484b;font-style:italic;font-weight:bold;background:url(../images/bg-categorias.png) top repeat-x #fff;font-size:16px;width:100%;position:relative}
 #home ul.menu li a{display:table-cell;vertical-align:middle;position:relative;padding:8px 15px}
 #home ul.menu li a i.arrow{color:#2850a3;display:block;position:absolute;top:0;right:0;border-left:1px solid #fff;padding:8px 10px}
 #home ul.menu li:last-of-type{margin-top:20px}

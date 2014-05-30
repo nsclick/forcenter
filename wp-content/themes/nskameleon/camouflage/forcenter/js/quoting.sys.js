@@ -6,7 +6,9 @@ $(document).ready(function() {
 		topQuotingAccesoryQtyEl		= $('#accesorio_cant'),
 		topQuotingCarCleanEl		= $('#cotizador_limpiar_autos'),
 		topQuotingAccesoryCleanEl	= $('#cotizador_limpiar_accesorios'),
-		topQuotingBox				= $('#quick_cotizador');
+		topQuotingBox				= $('#quick_cotizador'),
+		carsLimit					= 3,
+		accesoriesLimit				= 3;
 
 	/**
 	 * Quoting
@@ -30,6 +32,22 @@ $(document).ready(function() {
 		if (!this.products.hasOwnProperty(product.postId)) {
 			this.products[product.postId] = product;
 			
+			// Limit product counters
+			switch (product.type) {
+				case 'Car':
+					if (this.counters.Car >= carsLimit) {
+						alert('Ha alcanzado el límite de autos cotizados.');
+						return false;
+					}
+					break;
+				case 'Accesory':
+					if (this.counters.Accesory >= accesoriesLimit) {
+						alert('Ha alcanzado el límite de accesorios cotizados.');
+						return false;
+					}
+					break;
+			}
+
 			// Update Top Quoting Box
 			return this.updateTopBox();
 		}
@@ -52,16 +70,16 @@ $(document).ready(function() {
 	Quoting.updateTopBox = function() {
 		var self = this;
 		
-		return this.saveProducts()
-			.done(function(r) {
-				if (r.success) {
+		// return this.saveProducts()
+		// 	.done(function(r) {
+				// if (r.success) {
 					self.updateCounters();
 					topQuotingCarQtyEl.text(self.counters.Car);
 					topQuotingAccesoryQtyEl.text(self.counters.Accesory);
 					topQuotingTotalQtyEl.text(self.counters.Accesory + self.counters.Car);
-				}
-			});
-
+				// }
+			// });
+		return this;
 	};
 
 	Quoting.updateCounters = function() {
@@ -79,6 +97,8 @@ $(document).ready(function() {
 					break;
 			}
 		});
+
+		return this;
 	};
 
 	Quoting.cleanByType = function(type) {
@@ -87,6 +107,8 @@ $(document).ready(function() {
 			if (product.type == type)
 				self.removeProduct(product);
 		});
+
+		this.saveProducts();
 	};
 
 	Quoting.cleanCars = function() {
@@ -188,6 +210,9 @@ $(document).ready(function() {
 	 	var productId 	= $(this).attr('data-quoting-id'),
 	 		productType	= $(this).attr('data-quoting-type'),
 	 		redirect	= $(this).attr('data-quoting-redirect');
+	 	
+	 	if (!parseInt(productId))
+	 		return false;
 
 	 	var product;
 	 	switch(productType) {
@@ -195,18 +220,18 @@ $(document).ready(function() {
 	 			product = new Car(productId);
 	 			break;
 	 		case 'Accesory':
-	 			product = new Accesory(postId);
+	 			product = new Accesory(productId);
 	 			break;
 	 	}
 
-	 	Quoting.addProduct(product)
+	 	Quoting.addProduct(product);
+	 	Quoting.saveProducts()
 	 		.done(function(r) {
-	 			
+	 			if (redirect == 'true' || redirect == true) {
+			 		location.href = data.cotizador_page;
+			 	}
 	 		});
 
-	 	if (redirect == 'true' || redirect == true) {
-	 		// location.href = data.cotizador_page;
-	 	}
 	 });
 
 	/**
