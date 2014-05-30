@@ -89,6 +89,8 @@ $(document).ready(function() {
 			if (product.type == type)
 				self.removeProduct(product);
 		});
+
+		this.saveProducts();
 	};
 
 	Quoting.cleanCars = function() {
@@ -190,6 +192,9 @@ $(document).ready(function() {
 	 	var productId 	= $(this).attr('data-quoting-id'),
 	 		productType	= $(this).attr('data-quoting-type'),
 	 		redirect	= $(this).attr('data-quoting-redirect');
+	 	
+	 	if (!parseInt(productId))
+	 		return false;
 
 	 	var product;
 	 	switch(productType) {
@@ -201,14 +206,14 @@ $(document).ready(function() {
 	 			break;
 	 	}
 
-	 	Quoting.addProduct(product)
-	 		.saveProducts(function(r) {
-	 			
+	 	Quoting.addProduct(product);
+	 	Quoting.saveProducts()
+	 		.done(function(r) {
+	 			if (redirect == 'true' || redirect == true) {
+			 		location.href = data.cotizador_page;
+			 	}
 	 		});
 
-	 	if (redirect == 'true' || redirect == true) {
-	 		location.href = data.cotizador_page;
-	 	}
 	 });
 
 	/**

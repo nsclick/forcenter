@@ -411,7 +411,7 @@
 
 		submitBtn.click(function(ev) {
 			ev.preventDefault();
-			
+
 			if (form.validationEngine('validate')) {
 				var queryString = form.formSerialize(),
 					formAction 	= form.attr('action');

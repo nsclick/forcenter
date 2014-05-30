@@ -126,7 +126,7 @@ ob_start();
 							<span itemprop="availability" class="disponibilidad"><?php echo $disponibility; ?></span>
 						<?php endforeach ?>
 						<div class="botones">
-							<a href="#" class="ver">Cotizar <i class="icon-chevron-right"></i></a>
+							<a href="#" class="ver quoting_link" data-quoting-id="<?php echo $car_accesory->ID; ?>" data-quoting-type="Accesory" data-quoting-redirect="true">Cotizar <i class="icon-chevron-right"></i></a>
 						</div>		
 					</div>
 				</li>
