@@ -339,10 +339,6 @@ class Contacto extends FormProcessor{
   
 }
 
-
-
-
-
 /*
  * Sent to CRM 
  * 
@@ -406,6 +402,107 @@ class Repuestos extends FormProcessor{
 		
 		$bind['telefono_casa'] = $data['celular'];
 		
+		return $bind;
+	}
+}
+
+
+/*
+ * Sent to CRM 
+ * 
+ * */
+class Cotizacion extends FormProcessor{
+	
+	function send($data){
+				
+		if(!$this->_postValidation( 'coticacion-form', 'ct-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		require_once ('vendor/pmh/includes/apipmh/index.php');
+		
+		$bind = $this->mapData($data);
+		
+		if(count($bind['accesorios_id']){
+			$bind_a = $bind;
+			unset($bind_a['version']);
+			$this->result_a = $pmhapi->cotizacion_seccion_accesorios($bind_a);
+		}
+		if(count($bind['version']){
+			$bind_v = $bind;
+			unset($bind_v['accesorios_id']);			
+			$this->result_a = $pmhapi->cotizacion_seccion_autos_nuevos($bind_v);
+		}
+								      
+		if(!$this->result_a && $this->result_v){
+			$this->errorMsg = 'Error en el regisro al CRM, Informe de este error al webmaster';
+			return false;
+		}
+
+		if(!$this->result_a->result && $this->result_v->result){
+			$this->errorMsg = $this->result->mensaje;
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public function getResult(){
+		
+		$seller_a = array(
+			'name'  	=> $this->result_a->asignado->nombre_completo,
+			'phone' 	=> $this->result_a->asignado->telefono,
+			'cellular' 	=> $this->result_a->asignado->celular,
+			'email' 	=> $this->result_a->asignado->email,
+			'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->result_a->foto
+		);
+
+		$seller_v = array(
+			'name'  	=> $this->result_v->asignado->nombre_completo,
+			'phone' 	=> $this->result_v->asignado->telefono,
+			'cellular' 	=> $this->result_v->asignado->celular,
+			'email' 	=> $this->result_v->asignado->email,
+			'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->result_v->foto
+		);
+		
+		return json_encode( array('state' => 'ok', 'seller_a' => $seller, 'seller_v' => $seller_v) );
+		
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function mapData($data) {
+		$bind = array();
+		$excluded = array('ct-token', '_wp_http_referer', 'ids');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$bind[$key] = $value;
+			}
+		}
+		
+		//Get the ids
+		$versions = $accesories = array();
+		$ids = explode($data['ids']);
+		foreach($ids as $id){
+			$post = get_post($id);
+			if($post->post_type == 'version'){
+				$customFields = get_post_meta( $id, 'version-data', true ); 
+				$customFields = $customFields[0];
+				$versions[] = $customFields['id-crm'];
+			} else {
+				$customFields = get_post_meta ( $id, 'datos-extra-accesorios', true );
+				$customFields = $customFields[0];
+				$accesories[] = $customFields['numero'];
+			}
+		}
+		
+		$bind['telefono_casa'] = $data['celular'];
+		$bind['version'] = $versions;
+		$bind['accesorios_id'] = $accesories;
+	
 		return $bind;
 	}
 }

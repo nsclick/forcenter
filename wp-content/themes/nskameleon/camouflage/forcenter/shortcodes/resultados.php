@@ -14,6 +14,7 @@ function ns_resultados_shortcode( $atts ) {
 			<?php foreach ( $posts as $post ): ?>
 			<?php
 				
+				$quoting_data = '';
 				if($post->post_type == 'version'){
 					$model_id = get_post_meta ( $post->ID, '_related_model', true );
 					//debug($model_id);
@@ -31,8 +32,9 @@ function ns_resultados_shortcode( $atts ) {
 					//debug($extra);
 					$thumb_post = get_post($extra['foto']);
 					
+					$quoting_data = 'class="quoting_link" data-quoting-id="'. $post->ID .'" data-quoting-type="Accesory" data-quoting-redirect="false"';
 					$link = '#';
-					$body = '<a href="' . $link . '"><b>Cotizar Ahora!</b></a>';
+					$body = '<a ' . $quoting_data . ' href="' . $link . '"><b>Cotizar Ahora!</b></a>';
 				}
 
 				$thumb_src = $thumb_post->guid;
@@ -43,10 +45,10 @@ function ns_resultados_shortcode( $atts ) {
 			<div class="result">
 				<div class="section group">
 					<div class="col span_3_of_12">
-						<a href="<?php echo $link ?>"><img src="<?php echo $thumb_src; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>"></a>
+						<a <?php echo $quoting_data ?> href="<?php echo $link ?>"><img src="<?php echo $thumb_src; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>"></a>
 					</div>
 					<div class="col span_9_of_12">
-						<a href="<?php echo $link ?>"><h3><?php echo $post->post_title ?> para <?php echo $model->post_title ?></h3></a>
+						<a <?php echo $quoting_data ?> href="<?php echo $link ?>"><h3><?php echo $post->post_title ?> para <?php echo $model->post_title ?></h3></a>
 						<p><?php echo $body ?></p>
 					</div>
 				</div>
