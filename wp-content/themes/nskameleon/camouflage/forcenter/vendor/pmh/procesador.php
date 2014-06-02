@@ -34,7 +34,6 @@ class formProcesor{
 										   'comuna' => $data['comuna'],
 										   'donde_nos_conocio' => $data['donde']);
 				$result = $pmhapi->cotizacion_seccion_autos_nuevos($datos_integracion);
-				var_dump($result);
 				if($result->result):
 					/** TODO: datos del ejecutivo asignado a la cotización
 					*	Nombre Ejecutivo: $result->asignado->nombre_completo
