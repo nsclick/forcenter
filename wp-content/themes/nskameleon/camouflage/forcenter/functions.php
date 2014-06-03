@@ -82,3 +82,31 @@ add_action('init', 'nsk_fc_init');
 function nsk_fc_init() {
     add_post_type_support( 'attachment', 'page-attributes' );
 }
+
+
+/**
+* Add (custom field) content to the post's content before WP SEO Analysis.
+*
+* @param string $content The content of a posts content-field.
+*
+* @return string The original content plus the value of the postmeta with meta_key '_yoast_postmeta_example'.
+*/
+function yst_custom_content_analysis( $content ) {
+	global $post;
+	
+	if($post->post_type == 'version'){
+		$customFields = get_post_meta( $post->ID, 'version-data', true ); 
+		$customFields = $customFields[0];
+		$content = ' Diseño: ' . $customFields['diseno'] . '<br/> Motor: ' . $customFields['motor'] . '<br/> Diseño: ' . $customFields['diseno'] . '<br/> Seguridad: ' . $customFields['seguridad'];
+	}
+	
+	if($post->post_type == 'modelo'){
+		$extra = get_post_meta( $post->ID, 'complementarios', true ); 
+		$extra = $extra[0];
+		$content = $extra['descripcion'];	
+	}
+    
+    return $content;
+}
+ 
+add_filter( 'wpseo_pre_analysis_post_content', 'yst_custom_content_analysis' );
