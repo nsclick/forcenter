@@ -406,9 +406,9 @@
 		 * Sending
 		 */
 		var submitBtn 	= $('#go3'),
-			formWrapper	= $('.cotizador'),
-			msgBox		= $('#enviado');
-			
+			formWrapper	= $('#cotizador'),
+			msgBox		= $('#msg_box');
+
 		submitBtn.click(function(ev) {
 			ev.preventDefault();
 
@@ -435,29 +435,20 @@
 						return false;
 					}
 
+					// Clean cars previously loaded
+					nsQ.Quoting.cleanCars();
+					nsQ.Quoting.cleanAccesories();
+
 					formWrapper.hide();
 					msgBox.empty();
 					msgBox.removeClass('hide');
 					msgBox.append( '<h2>Su solicitud ha sido enviada con &eacute;xito</h2>' );
-
-					if(r.seller_v){
-						msgBox.append( '<h3>Su solicitud de cotización de vehículo ha sido asignada a:</h3>' );
-						msgBox.append( '<img src=" ' + r.seller_v.pic + ' " title="Foto ejecutivo asignado">' );
-						msgBox.append( '<p>' + r.seller_v.name + '</p>');
-						msgBox.append( '<p>Tel&eacute;fono: ' + r.seller_v.phone + '</p>');
-						msgBox.append( '<p>Celular: ' + r.seller_v.cellular + '</p>');
-						msgBox.append( '<p>Email: ' + r.seller_v.email + '</p>');				
-						
-					}
-					
-					if(r.seller_a){
-						msgBox.append( '<h3>Su solicitud de cotización de accesorio ha sido asignada a:</h3>' );
-						msgBox.append( '<img src=" ' + r.seller_a.pic + ' " title="Foto ejecutivo asignado">' );
-						msgBox.append( '<p>' + r.seller_a.name + '</p>');
-						msgBox.append( '<p>Tel&eacute;fono: ' + r.seller_a.phone + '</p>');
-						msgBox.append( '<p>Celular: ' + r.seller_a.cellular + '</p>');
-						msgBox.append( '<p>Email: ' + r.seller_a.email + '</p>');
-					}
+					msgBox.append( '<h3>Su solicitud ha sido asignada.</h3>' );
+					msgBox.append( '<img src=" ' + r.seller.pic + ' " title="Foto ejecutivo asignado">' );
+					msgBox.append( '<p>' + r.seller.name + '</p>');
+					msgBox.append( '<p>Tel&eacute;fono: ' + r.seller.phone + '</p>');
+					msgBox.append( '<p>Celular: ' + r.seller.cellular + '</p>');
+					msgBox.append( '<p>Email: ' + r.seller.email + '</p>');				
 					return true;
 
 				});
