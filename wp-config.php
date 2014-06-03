@@ -15,7 +15,7 @@
  */
 
 /* Change this value to switch to the correct Env: possible values are:  development, qa, production*/
-define('DB_ENV', 'qa');
+define('DB_ENV', 'development');
 
 // ** MySQL settings - You can get this info from your web host ** //
 switch(DB_ENV){
