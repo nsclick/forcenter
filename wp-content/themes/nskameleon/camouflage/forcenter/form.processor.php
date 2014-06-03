@@ -495,18 +495,21 @@ class Cotizacion extends FormProcessor{
 		//Get the ids
 		$versions = $accesories = array();
 		$ids = array();
-		foreach ($data['car_version'] as $id) {
-			$customFields 	= get_post_meta( $id, 'version-data', true );
-			$customFields 	= $customFields[0];
-			$versions[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
-		}
-
-		foreach ($data['accesories'] as $id) {
-			$customFields 	= get_post_meta ( $id, 'datos-extra-accesorios', true );
-			$customFields 	= $customFields[0];
-			$accesories[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+		if(is_array($data['car_version'])){
+			foreach ($data['car_version'] as $id) {
+				$customFields 	= get_post_meta( $id, 'version-data', true );
+				$customFields 	= $customFields[0];
+				$versions[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+			}
 		}
 		
+		if(is_array($data['accesories'])){
+			foreach ($data['accesories'] as $id) {
+				$customFields 	= get_post_meta ( $id, 'datos-extra-accesorios', true );
+				$customFields 	= $customFields[0];
+				$accesories[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+			}
+		}
 		$bind['telefono_casa'] 	= $data['celular'];
 		$bind['version'] 		= $versions;
 		$bind['accesorios_id'] 	= $accesories;
