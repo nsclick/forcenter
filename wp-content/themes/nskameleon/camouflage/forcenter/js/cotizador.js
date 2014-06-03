@@ -408,7 +408,7 @@
 		var submitBtn 	= $('#go3'),
 			formWrapper	= $('.cotizador'),
 			msgBox		= $('#enviado');
-			
+
 		submitBtn.click(function(ev) {
 			ev.preventDefault();
 
@@ -434,7 +434,7 @@
 						formErrorResponse(true, r.msg);
 						return false;
 					}
-
+										
 					formWrapper.hide();
 					msgBox.empty();
 					msgBox.removeClass('hide');
@@ -458,7 +458,13 @@
 						msgBox.append( '<p>Celular: ' + r.seller_a.cellular + '</p>');
 						msgBox.append( '<p>Email: ' + r.seller_a.email + '</p>');
 					}
+
+					// Clean cars previously loaded
+					nsQ.Quoting.cleanCars();
+					nsQ.Quoting.cleanAccesories();
+					
 					return true;
+
 
 				});
 
