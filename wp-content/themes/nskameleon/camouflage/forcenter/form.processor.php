@@ -309,7 +309,7 @@ class Contacto extends FormProcessor{
 			//Get the CRM version ID
 			$customFields = get_post_meta( $data['version'], 'version-data', true ); 
 			$customFields = $customFields[0];
-			$bind['vehiculo_id'] = $customFields['id-crm'];
+			$bind['version_id'] = $customFields['id-crm'];
 		}
 			
 		return $bind;
