@@ -462,7 +462,7 @@ class Cotizacion extends FormProcessor{
 				'phone' 	=> $this->result_a->asignado->telefono,
 				'cellular' 	=> $this->result_a->asignado->celular,
 				'email' 	=> $this->result_a->asignado->email,
-				'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->result_a->foto
+				'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result_a->asignado->foto
 			);
 		}
 
@@ -472,7 +472,7 @@ class Cotizacion extends FormProcessor{
 				'phone' 	=> $this->result_v->asignado->telefono,
 				'cellular' 	=> $this->result_v->asignado->celular,
 				'email' 	=> $this->result_v->asignado->email,
-				'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result->result_v->foto
+				'pic' 		=> get_template_directory_uri() . '/camouflage/forcenter/vendor/pmh/includes/fotos/' . $this->result_v->asignado->foto
 			);
 		}
 		
