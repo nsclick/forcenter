@@ -422,22 +422,26 @@ class Cotizacion extends FormProcessor{
 			return false;
 		}
 		
-		require_once ('vendor/pmh/includes/apipmh/index.php');
-
+		require_once ('vendor/pmh/includes/apipmh/core/Api.php');
+		$pmhapi = new Api();
+		
 		$bind = $this->mapData($data);
 		
-		if(count($bind['accesorios_id'])){
-			$bind_a = $bind;
-			unset($bind_a['version']);
-			$bind_a['cantidad'] = 1;
-			$bind_a['comentario'] = 'Solicitud desde cotizador del sitio web';			
-			$this->result_a = $pmhapi->cotizacion_seccion_accesorios($bind_a);
-		}
-		if( count(  $bind['version'] ) ) {
+		if( count( $bind['version'] ) ) {
 			$bind_v = $bind;
 			unset($bind_v['accesorios_id']);	
 			$bind_v['observacion'] = 'Solicitud desde cotizador del sitio web';
 			$this->result_v = $pmhapi->cotizacion_seccion_autos_nuevos($bind_v);
+		}
+		
+		if(count($bind['accesorios_id'])){
+			$bind_a = $bind;
+			unset($bind_a['version'], $bind_a['monto_pie'], $bind_a['numero_cuotas']);
+			for( $x=0; $x < count($bind['accesorios_id']); $x++  ){
+				$bind_a['cantidad'][] = 1;
+			}
+			$bind_a['comentario'] = 'Solicitud desde cotizador del sitio web';
+			$this->result_a = $pmhapi->cotizacion_seccion_accesorios($bind_a);
 		}
 									      
 		if(!$this->result_a && !$this->result_v){
@@ -499,7 +503,9 @@ class Cotizacion extends FormProcessor{
 			foreach ($data['car_version'] as $id) {
 				$customFields 	= get_post_meta( $id, 'version-data', true );
 				$customFields 	= $customFields[0];
-				$versions[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+				if($customFields['id-crm']){
+					$versions[]     = $customFields['id-crm'];
+				}
 			}
 		}
 		
@@ -507,7 +513,9 @@ class Cotizacion extends FormProcessor{
 			foreach ($data['accesories'] as $id) {
 				$customFields 	= get_post_meta ( $id, 'datos-extra-accesorios', true );
 				$customFields 	= $customFields[0];
-				$accesories[] 	= $customFields['id-crm'] ? $customFields['id-crm'] : 26;
+				if( $customFields['id-crm'] ){
+					$accesories[]   = $customFields['id-crm'];
+				}
 			}
 		}
 		$bind['telefono_casa'] 	= $data['celular'];
