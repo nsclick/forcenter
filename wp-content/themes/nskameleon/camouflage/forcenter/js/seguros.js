@@ -21,6 +21,8 @@
 						return false;
 					}
 					
+					nsclick.fn.formtrack('/seguros/exito');
+					
 					formSuccessResponse( $("#step3"), 'Su solicitud ha sido enviada con éxito', 'Gracias por contactarnos' );
 					return true;
 				}, "json"); 

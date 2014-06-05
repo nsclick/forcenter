@@ -436,6 +436,9 @@
 					}
 										
 					formWrapper.hide();
+					
+					nsclick.fn.formtrack('/cotizador/exito');
+					
 					msgBox.empty();
 					msgBox.removeClass('hide');
 					msgBox.append( '<h2>Su solicitud ha sido enviada con &eacute;xito</h2>' );
