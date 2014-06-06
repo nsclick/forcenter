@@ -143,9 +143,14 @@ function ns_cotizador_shortcode( $atts ) {
 	ob_start();
 ?> 
 
+<div id="loader" class="cargador">
+	<span class="loader"></span>
+	<p>Cargando cotizador...</p>
+</div>
+
 <!-- Form -->
-<form id="cotizador-form" method="post" accept-charset="utf-8" action="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/form.processor.php" />
-	
+<form style="display:none;" id="cotizador-form" method="post" accept-charset="utf-8" action="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/form.processor.php" />
+
 	<div class="cotizador">
 		<div id="tab_step1" class="tab tab1 activ">01. Seleccione<span class="tail">&nbsp;</span></div>
 		<div id="tab_step2" class="tab tab2"><span class="head">&nbsp;</span>01. Financiamiento<span class="tail">&nbsp;</span></div>

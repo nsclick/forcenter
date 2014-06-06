@@ -3,7 +3,9 @@
 		/**
 		 * Global Variables
 		 */
-		var addCarBtn 			= $('#add_car'),
+		var loaderEl			= $('#loader'),
+			form 				= $("#cotizador-form"),
+			addCarBtn 			= $('#add_car'),
 			addAccesoryBtn		= $('#add_accesory'),
 			carsWrapper			= $('#cars_wrapper'),
 			carBox				= $($('.producto.car')[0]),
@@ -19,7 +21,6 @@
 		/**
 		 * Validation
 		 */
-		var form = $("#cotizador-form");
 		form.validationEngine('attach', {promptPosition:"inline", scroll:false});
 
 		/**
@@ -440,6 +441,9 @@
 					});
 
 				}
+
+				loaderEl.hide();
+				form.show();
 			});
 
 		/**
