@@ -176,10 +176,12 @@
 			addAccesoryBtn		= $('#add_accesory'),
 			carsWrapper			= $('#cars_wrapper'),
 			carBox				= $($('.producto.car')[0]),
+			carsDisclaimer		= $('#cars_disclaimer'),
 			carsCount			= 0,
 			carsLimit			= 3,
 			accesoriesWrapper	= $('#accesories_wrapper'),
 			accesoryBox			= $($('.producto.accesory')[0]),
+			accesoriesDisclaimer= $('#accesories_disclaimer'),
 			accesoriesLimit		= 3,
 			accesoriesCount		= 0;
 
@@ -187,6 +189,13 @@
 			ev.preventDefault();
 
 			addCarBox();
+
+			if (carsCount >= carsLimit) {
+				addCarBtn.hide();
+
+				$.data(carsDisclaimer, 'text', carsDisclaimer.text());
+				carsDisclaimer.text('Ya alcanzó el máximo de vehículos a cotizar');
+			}
 		});
 
 		/**
@@ -260,6 +269,13 @@
 				clonedCarBox.remove();
 				carsCount--;
 
+				if (carsCount < carsLimit) {
+					addCarBtn.show();
+
+					var originalText = $.data(carsDisclaimer, 'text');
+					carsDisclaimer.text(originalText);
+				}
+
 				// Remove from quoting.sys
 				if (car) {
 					nsQ.Quoting.removeProduct(car);
@@ -292,6 +308,13 @@
 			ev.preventDefault();
 
 			addAccesoryBox();
+
+			if (accesoriesCount >= accesoriesLimit) {
+				addAccesoryBtn.hide();
+
+				$.data(accesoriesDisclaimer, 'text', accesoriesDisclaimer.text());
+				accesoriesDisclaimer.text('Ya alcanzó el máximo de accesorios a cotizar');
+			}
 		});
 
 		/**
@@ -342,6 +365,13 @@
 
 				clonedAccesoryBox.remove();
 				accesoriesCount--;
+
+				if (accesoriesCount < accesoriesLimit) {
+					addAccesoryBtn.show();
+
+					var originalText = $.data(accesoriesDisclaimer, 'text');
+					accesoriesDisclaimer.text(originalText);
+				}
 
 				// Remove from quoting.sys
 				if (!!accProd) {

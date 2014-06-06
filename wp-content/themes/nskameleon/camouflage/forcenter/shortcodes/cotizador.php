@@ -162,7 +162,7 @@ function ns_cotizador_shortcode( $atts ) {
 				<div id="cars_wrapper"></div>
 
 				<div id="add_car" class="option"><a href="#"><i class="icon-plus"></i> Agregar a la lista</a></div>
-				<div class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 veh&iacute;culos.</div>
+				<div id="cars_disclaimer" class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 veh&iacute;culos.</div>
 			</div>
 			<div class="selector">
 				<div class="title">
@@ -172,7 +172,7 @@ function ns_cotizador_shortcode( $atts ) {
 				<div id="accesories_wrapper"></div>
 				
 				<div id="add_accesory" class="option"><a href="#"><i class="icon-plus"></i> Agregar a la lista</a></div>
-				<div class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 accesorios.</div>
+				<div id="accesories_disclaimer" class="disclaimer">Puede cotizar hasta un m&aacute;ximo de 3 accesorios.</div>
 			</div>
 			<div class="link">
 				<button id="go1" class="goto" data-go-to="step2">Paso 02: Financiamiento <i class="icon-chevron-right"></i></button>
