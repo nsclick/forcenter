@@ -1,6 +1,22 @@
 (function(window, $, data, undefined) {
 	$(document).ready(function() {
 		/**
+		 * Global Variables
+		 */
+		var addCarBtn 			= $('#add_car'),
+			addAccesoryBtn		= $('#add_accesory'),
+			carsWrapper			= $('#cars_wrapper'),
+			carBox				= $($('.producto.car')[0]),
+			carsDisclaimer		= $('#cars_disclaimer'),
+			carsCount			= 0,
+			carsLimit			= 3,
+			accesoriesWrapper	= $('#accesories_wrapper'),
+			accesoryBox			= $($('.producto.accesory')[0]),
+			accesoriesDisclaimer= $('#accesories_disclaimer'),
+			accesoriesLimit		= 3,
+			accesoriesCount		= 0;
+
+		/**
 		 * Validation
 		 */
 		var form = $("#cotizador-form");
@@ -36,6 +52,10 @@
 						if ($(accesorioInput).validationEngine('validate'))
 							valid = false;
 					});
+
+					if (carsCount <= 0 && accesoriesCount <= 0) {
+						valid = false;
+					}
 
 					break;
 				case 'step2':
@@ -172,37 +192,18 @@
 		/**
 		 * Cloning Boxes Handling
 		 */
-		var addCarBtn 			= $('#add_car'),
-			addAccesoryBtn		= $('#add_accesory'),
-			carsWrapper			= $('#cars_wrapper'),
-			carBox				= $($('.producto.car')[0]),
-			carsDisclaimer		= $('#cars_disclaimer'),
-			carsCount			= 0,
-			carsLimit			= 3,
-			accesoriesWrapper	= $('#accesories_wrapper'),
-			accesoryBox			= $($('.producto.accesory')[0]),
-			accesoriesDisclaimer= $('#accesories_disclaimer'),
-			accesoriesLimit		= 3,
-			accesoriesCount		= 0;
 
 		addCarBtn.click(function(ev) {
 			ev.preventDefault();
 
 			addCarBox();
-
-			if (carsCount >= carsLimit) {
-				addCarBtn.hide();
-
-				$.data(carsDisclaimer, 'text', carsDisclaimer.text());
-				carsDisclaimer.text('Ya alcanzó el máximo de vehículos a cotizar');
-			}
 		});
 
 		/**
 		 * AddCarBox
 		 */
 		function addCarBox(version) {
-			if (carsCount == carsLimit) {
+			if (carsCount >= carsLimit) {
 				return false;
 			}
 
@@ -302,26 +303,26 @@
 					.attr('alt', version.post_title)
 					.attr('title', version.post_title);
 			}
+
+			if (carsCount >= carsLimit) {
+				addCarBtn.hide();
+
+				$.data(carsDisclaimer, 'text', carsDisclaimer.text());
+				carsDisclaimer.text('Ya alcanzó el máximo de vehículos a cotizar');
+			}
 		}
 
 		addAccesoryBtn.click(function(ev) {
 			ev.preventDefault();
 
 			addAccesoryBox();
-
-			if (accesoriesCount >= accesoriesLimit) {
-				addAccesoryBtn.hide();
-
-				$.data(accesoriesDisclaimer, 'text', accesoriesDisclaimer.text());
-				accesoriesDisclaimer.text('Ya alcanzó el máximo de accesorios a cotizar');
-			}
 		});
 
 		/**
 		 * AddAccesoryBox
 		 */
 		function addAccesoryBox(accesory) {
-			if (accesoriesCount == accesoriesLimit) {
+			if (accesoriesCount >= accesoriesLimit) {
 				return false;
 			}
 
@@ -397,6 +398,13 @@
 				imgEl.attr('src', accesory.extra.thumbnail.src)
 					.attr('alt', accesory.post_title)
 					.attr('title', accesory.post_title);
+			}
+
+			if (accesoriesCount >= accesoriesLimit) {
+				addAccesoryBtn.hide();
+
+				$.data(accesoriesDisclaimer, 'text', accesoriesDisclaimer.text());
+				accesoriesDisclaimer.text('Ya alcanzó el máximo de accesorios a cotizar');
 			}
 		}
 

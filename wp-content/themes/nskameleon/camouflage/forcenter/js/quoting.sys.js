@@ -33,20 +33,20 @@ $(document).ready(function() {
 			this.products[product.postId] = product;
 			
 			// Limit product counters
-			switch (product.type) {
-				case 'Car':
-					if (this.counters.Car >= carsLimit) {
-						alert('Ha alcanzado el límite de autos cotizados.');
-						return false;
-					}
-					break;
-				case 'Accesory':
-					if (this.counters.Accesory >= accesoriesLimit) {
-						alert('Ha alcanzado el límite de accesorios cotizados.');
-						return false;
-					}
-					break;
-			}
+			// switch (product.type) {
+			// 	case 'Car':
+			// 		if (this.counters.Car >= carsLimit) {
+			// 			alert('Ha alcanzado el límite de autos cotizados.');
+			// 			return false;
+			// 		}
+			// 		break;
+			// 	case 'Accesory':
+			// 		if (this.counters.Accesory >= accesoriesLimit) {
+			// 			alert('Ha alcanzado el límite de accesorios cotizados.');
+			// 			return false;
+			// 		}
+			// 		break;
+			// }
 
 			// Update Top Quoting Box
 			return this.updateTopBox();
@@ -217,9 +217,17 @@ $(document).ready(function() {
 	 	var product;
 	 	switch(productType) {
 	 		case 'Car':
+	 			if (Quoting.counters.Car >= carsLimit) {
+	 				alert('Ha alcanzado el límite de autos cotizados.');
+	 				return false;
+	 			}
 	 			product = new Car(productId);
 	 			break;
 	 		case 'Accesory':
+	 			if (Quoting.counters.Accesory >= accesoriesLimit) {
+	 				alert('Ha alcanzado el límite de accesorios cotizados.');
+	 				return false;
+	 			}
 	 			product = new Accesory(productId);
 	 			break;
 	 	}
