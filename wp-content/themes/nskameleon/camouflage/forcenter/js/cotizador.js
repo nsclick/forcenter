@@ -59,11 +59,13 @@
 
 					break;
 				case 'step2':
-					if (
-						$('#pie').validationEngine('validate')
-						|| $('#cuotas').validationEngine('validate')
-					)
-						valid = false;
+					if (stepToGo == 'step3') { // Validate only if going forward
+						if (
+							$('#pie').validationEngine('validate')
+							|| $('#cuotas').validationEngine('validate')
+						)
+							valid = false;
+					}
 
 					break;
 				// case 'step3':
