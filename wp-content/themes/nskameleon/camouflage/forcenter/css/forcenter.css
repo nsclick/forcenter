@@ -11,6 +11,7 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 .mb-no{display:none}
 }
 .hide{display:none!important}
+.ui-dialog{z-index:1200!important}
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}
@@ -81,8 +82,8 @@ select{}
 #header #menu ul#nav .divclear{display:none}
 #header #menu ul#nav li{display:table-cell;width:auto;text-align:center;float:none}
 #header #menu ul#nav li a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e;display:block}
-#header #menu ul#nav li a i{font-size:7px;margin-left:1px;position:absolute;left:96px;top:11px}
-#header #menu ul#nav li:first-of-type a{border-left:none;padding:8px 0px 7px}
+#header #menu ul#nav li a i{font-size:7px;margin-left:1px}
+#header #menu ul#nav li:first-of-type a{border-left:none;padding:8px 0px 8px}
 #header #menu ul#nav li:last-of-type a{border-right:none}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li a:hover ul.typemenu{display:block!important}
