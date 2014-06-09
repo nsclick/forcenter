@@ -481,13 +481,13 @@
 										
 					formWrapper.hide();
 					
-					nsclick.fn.formtrack('/cotizador/exito');
 					
 					msgBox.empty();
 					msgBox.removeClass('hide');
 					msgBox.append( '<h2>Su solicitud ha sido enviada con &eacute;xito</h2>' );
 
 					if(r.seller_v){
+						nsclick.fn.formtrack('/cotizador/enviado-gracias');
 						msgBox.append( '<h3>Su solicitud de cotización de vehículo ha sido asignada a:</h3>' );
 						msgBox.append( '<img src=" ' + r.seller_v.pic + ' " title="Foto ejecutivo asignado">' );
 						msgBox.append( '<p>' + r.seller_v.name + '</p>');
@@ -498,6 +498,7 @@
 					}
 					
 					if(r.seller_a){
+						nsclick.fn.formtrack('/accesorio/enviado-gracias');
 						msgBox.append( '<h3>Su solicitud de cotización de accesorio ha sido asignada a:</h3>' );
 						msgBox.append( '<img src=" ' + r.seller_a.pic + ' " title="Foto ejecutivo asignado">' );
 						msgBox.append( '<p>' + r.seller_a.name + '</p>');

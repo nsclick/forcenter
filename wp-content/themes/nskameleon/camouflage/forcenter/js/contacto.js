@@ -26,7 +26,7 @@
 						return true;
 					}
 					
-					nsclick.fn.formtrack('/contacto/exito');
+					nsclick.fn.formtrack('/contacto/contacto-gracias-enviado');
 					
 					var msgBox = $( '#enviado' );
 

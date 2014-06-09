@@ -21,7 +21,7 @@
 						return false;
 					}
 					
-					nsclick.fn.formtrack('/compra-inteligente/exito');
+					nsclick.fn.formtrack('/compra-inteligente/compra-inteligente-gracias-enviado');
 					
 					formSuccessResponse( $("#step3"), 'Su solicitud ha sido enviada con éxito', 'Gracias por contactarnos' );
 					return true;
