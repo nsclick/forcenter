@@ -22,6 +22,7 @@
 					}
 					
 					nsclick.fn.formtrack('/mantenciones/mantenciones-gracias-enviado');
+
 					formSuccessResponse( $("#step3"), 'Su solicitud ha sido enviada con éxito', 'Gracias por contactarnos' );
 					return true;
 				}, "json"); 

@@ -216,6 +216,12 @@ ob_start();
 		</div>
 
 		<?php foreach ( $car_model->versions as $car_model_version ): ?>
+			<?php
+				$customFields 	= get_post_meta( $car_model_version->ID, 'version-data', true ); 
+				$customFields 	= $customFields[0];
+				$price 			= number_format($customFields['precio'], 0, ',', '.');
+			?>
+
 			<div class="section group">
 				<div class="col span_2_of_12">
 					&nbsp;
@@ -226,7 +232,7 @@ ob_start();
 							<?php echo $car_model_version->post_title ?>
 						</div>
 						<div class="col span_2_of_12">
-							Desde $<?php echo $price ?>
+							Desde $ <?php echo $price ?>
 						</div>
 						<div class="col span_5_of_12">
 							<a href="<?php echo get_permalink($car_model_version->ID) ?>">Ver esta versi&oacute;n <i class="icon-chevron-right"></i></a>

@@ -1,9 +1,26 @@
 (function(window, $, data, undefined) {
 	$(document).ready(function() {
 		/**
+		 * Global Variables
+		 */
+		var loaderEl			= $('#loader'),
+			form 				= $("#cotizador-form"),
+			addCarBtn 			= $('#add_car'),
+			addAccesoryBtn		= $('#add_accesory'),
+			carsWrapper			= $('#cars_wrapper'),
+			carBox				= $($('.producto.car')[0]),
+			carsDisclaimer		= $('#cars_disclaimer'),
+			carsCount			= 0,
+			carsLimit			= 3,
+			accesoriesWrapper	= $('#accesories_wrapper'),
+			accesoryBox			= $($('.producto.accesory')[0]),
+			accesoriesDisclaimer= $('#accesories_disclaimer'),
+			accesoriesLimit		= 3,
+			accesoriesCount		= 0;
+
+		/**
 		 * Validation
 		 */
-		var form = $("#cotizador-form");
 		form.validationEngine('attach', {promptPosition:"inline", scroll:false});
 
 		/**
@@ -37,13 +54,19 @@
 							valid = false;
 					});
 
+					if (carsCount <= 0 && accesoriesCount <= 0) {
+						valid = false;
+					}
+
 					break;
 				case 'step2':
-					if (
-						$('#pie').validationEngine('validate')
-						|| $('#cuotas').validationEngine('validate')
-					)
-						valid = false;
+					if (stepToGo == 'step3') { // Validate only if going forward
+						if (
+							$('#pie').validationEngine('validate')
+							|| $('#cuotas').validationEngine('validate')
+						)
+							valid = false;
+					}
 
 					break;
 				// case 'step3':
@@ -172,16 +195,6 @@
 		/**
 		 * Cloning Boxes Handling
 		 */
-		var addCarBtn 			= $('#add_car'),
-			addAccesoryBtn		= $('#add_accesory'),
-			carsWrapper			= $('#cars_wrapper'),
-			carBox				= $($('.producto.car')[0]),
-			carsCount			= 0,
-			carsLimit			= 3,
-			accesoriesWrapper	= $('#accesories_wrapper'),
-			accesoryBox			= $($('.producto.accesory')[0]),
-			accesoriesLimit		= 3,
-			accesoriesCount		= 0;
 
 		addCarBtn.click(function(ev) {
 			ev.preventDefault();
@@ -193,7 +206,7 @@
 		 * AddCarBox
 		 */
 		function addCarBox(version) {
-			if (carsCount == carsLimit) {
+			if (carsCount >= carsLimit) {
 				return false;
 			}
 
@@ -260,6 +273,13 @@
 				clonedCarBox.remove();
 				carsCount--;
 
+				if (carsCount < carsLimit) {
+					addCarBtn.show();
+
+					var originalText = $.data(carsDisclaimer, 'text');
+					carsDisclaimer.text(originalText);
+				}
+
 				// Remove from quoting.sys
 				if (car) {
 					nsQ.Quoting.removeProduct(car);
@@ -286,6 +306,13 @@
 					.attr('alt', version.post_title)
 					.attr('title', version.post_title);
 			}
+
+			if (carsCount >= carsLimit) {
+				addCarBtn.hide();
+
+				$.data(carsDisclaimer, 'text', carsDisclaimer.text());
+				carsDisclaimer.text('Ya alcanzó el máximo de vehículos a cotizar');
+			}
 		}
 
 		addAccesoryBtn.click(function(ev) {
@@ -298,7 +325,7 @@
 		 * AddAccesoryBox
 		 */
 		function addAccesoryBox(accesory) {
-			if (accesoriesCount == accesoriesLimit) {
+			if (accesoriesCount >= accesoriesLimit) {
 				return false;
 			}
 
@@ -343,6 +370,13 @@
 				clonedAccesoryBox.remove();
 				accesoriesCount--;
 
+				if (accesoriesCount < accesoriesLimit) {
+					addAccesoryBtn.show();
+
+					var originalText = $.data(accesoriesDisclaimer, 'text');
+					accesoriesDisclaimer.text(originalText);
+				}
+
 				// Remove from quoting.sys
 				if (!!accProd) {
 					nsQ.Quoting.removeProduct(accProd);
@@ -367,6 +401,13 @@
 				imgEl.attr('src', accesory.extra.thumbnail.src)
 					.attr('alt', accesory.post_title)
 					.attr('title', accesory.post_title);
+			}
+
+			if (accesoriesCount >= accesoriesLimit) {
+				addAccesoryBtn.hide();
+
+				$.data(accesoriesDisclaimer, 'text', accesoriesDisclaimer.text());
+				accesoriesDisclaimer.text('Ya alcanzó el máximo de accesorios a cotizar');
 			}
 		}
 
@@ -400,6 +441,9 @@
 					});
 
 				}
+
+				loaderEl.hide();
+				form.show();
 			});
 
 		/**
@@ -436,7 +480,6 @@
 					}
 										
 					formWrapper.hide();
-					
 					
 					
 					msgBox.empty();
