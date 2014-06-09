@@ -1,4 +1,8 @@
 <?php
+include_once 'Funcion.php';
+include_once 'Config.php';
+require_once 'class.inputfilter.php';
+    
 class Api extends Config{
     
     function __construct(){
@@ -10,8 +14,8 @@ class Api extends Config{
     }
     
 	public function consultar($query, $vista){
-		define('PROXY_SERVER', $this->system_url.$vista);
-		$url = parse_url(PROXY_SERVER);
+		$server = $this->system_url.$vista;
+		$url = parse_url($server);
 		$curl_headers['referer'] = 'Referer: '.$this->referer_url;
 		$curl_headers['user-agent'] = 'User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)';
 		$curl_headers['accept'] = 'Accept: text/plain';
@@ -19,7 +23,7 @@ class Api extends Config{
 		$curl_headers['accept-encoding:'] = 'Accept-Encoding: <identity>';
 		$curl_headers['accept-charset:'] = 'Accept-Charset: utf-8';
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, PROXY_SERVER);
+		curl_setopt($ch, CURLOPT_URL, $server);
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $curl_headers);
 		curl_setopt($ch, CURLOPT_HEADER, 1);

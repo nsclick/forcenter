@@ -26,6 +26,8 @@
 						return true;
 					}
 					
+					nsclick.fn.formtrack('/contacto/exito');
+					
 					var msgBox = $( '#enviado' );
 
 					$("#step3").hide();
