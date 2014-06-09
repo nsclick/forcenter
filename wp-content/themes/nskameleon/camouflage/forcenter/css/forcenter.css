@@ -1,7 +1,7 @@
-/* NSkamelon Responsive Wordpress theme by NSclick */
+ /* NSkamelon Responsive Wordpress theme by NSclick */
 /* CSS For Base Theme */
 
-body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11px;font-family:'Open Sans','sans-serif'!important}
+body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11px;font-family:Tahoma, Arial, Verdana!important}
 *,#wrapper{}
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
 .content{width:980px}
@@ -81,8 +81,8 @@ select{}
 #header #menu ul#nav .divclear{display:none}
 #header #menu ul#nav li{display:table-cell;width:auto;text-align:center;float:none}
 #header #menu ul#nav li a{background:#2850a3;color:#fff;text-transform:uppercase;padding:8px 0;border-right:1px solid#4a73c8;border-left:1px solid #11347e;display:block}
-#header #menu ul#nav li a i{font-size:7px;margin-left:1px}
-#header #menu ul#nav li:first-of-type a{border-left:none}
+#header #menu ul#nav li a i{font-size:7px;margin-left:1px;position:absolute;left:96px;top:11px}
+#header #menu ul#nav li:first-of-type a{border-left:none;padding:8px 0px 7px}
 #header #menu ul#nav li:last-of-type a{border-right:none}
 #header #menu ul#nav li a:hover{color:#2850a3;background:#fff}
 #header #menu ul#nav li a:hover ul.typemenu{display:block!important}
@@ -91,7 +91,7 @@ select{}
 #header #menu ul#nav ul.typemenu li{display:block;width:100%;background:none;color:#444}
 #header #menu ul#nav ul.typemenu li a{display:block;padding:10px 10px;background:none;color:#444;border:none;text-align:left}
 #header #menu ul#nav ul.typemenu li a:hover{background:#2850a3;color:#fff}
-#header #menu ul#nav ul.typemenu li a i{position:absolute;right:10px}
+#header #menu ul#nav ul.typemenu li a i{position:absolute;right:10px;top:auto;left:auto}
 #header #menu ul#nav ul.typemenu ul.typesubmenu{display:none;width:85%;position:absolute;left:186px;top:0;width:794px;background:#fff;min-height:124px;-webkit-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);-moz-box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3);box-shadow:0px 2px 2px 0px rgba(0,0,0,0.3)}
 #header #menu ul#nav ul.typemenu li:hover ul.typesubmenu{display:block}
 #header #menu ul#nav ul.typemenu ul.typesubmenu li{display:block;width:20%;float:left;text-align:center;background:none}
@@ -185,7 +185,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase .filter p{padding:10px}
 .showcase .showgrid{display:block;width:99%;padding:10px 0.5% 0;background:#fff}
 .showcase .showgrid li{display:block;width:19%;margin:0 0.5% 10px;float:left;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png),url(../images/bg-slice-auto-down.png)!important;background-position:top, bottom!important;background-repeat:repeat-x!important;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23)}
-.showcase .showgrid li .cont{display:block;padding:5px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative}
+.showcase .showgrid li .cont{display:block;padding:5px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;min-height:210px}
 .showcase .showgrid li .cont img{width:100%;height:122px}
 .showcase .showgrid li .cont span{display:block;padding:3px 0 0 0}
 .showcase .showgrid li .cont .name{color:#2850a3;font-size:12px;font-weight:bold;display:block;padding:7px 0 0 0}
@@ -294,8 +294,8 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .modelo .tabla .lista .row:last-of-type{border-bottom:1px solid #d7dde2}
 .modelo .tabla .lista .row .cell{display:table-cell;width:auto;text-align:center;float:none;border:1px solid #d7dde2;border-bottom:none;border-right:none;padding:5px}
 .modelo .tabla .lista .row .cell i{font-size:16px}
-.modelo .tabla .lista .row .cell i.icon-remove-sign{color:#e23a1c}
-.modelo .tabla .lista .row .cell i.icon-ok-sign{color:#35a81e}
+i.icon-remove-sign{color:#e23a1c}
+i.icon-ok-sign{color:#35a81e}
 .modelo .lista .li .span_5_of_12 h2{font-size:12px;padding:0}
 /* END Modelos */
 /* Version */
@@ -311,7 +311,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .version .head .subhead .col.col3{display:table}
 .version .head .subhead .col.col3 .cont{display:table-cell;vertical-align:middle}
 .version .head .subhead .col.col3 b{font-size:30px}
-.version .head .subhead .col.col4{height:60px;padding:0;display:table}
+.version .head .subhead .col.col4{height:60px;padding:0;display:table;position:relative}
 .version .head .subhead .col.col4 a{background:url(../images/bg-btn-verde64.png);color:#fff;display:block;height:60px;position:relative;display:table-cell;vertical-align:middle;font-size:18px;font-weight:bold;font-style:italic;padding:0 64px 0 10px;text-align:center}
 .version .head .subhead .col.col4 a i{font-size:23px;position:absolute;top:0;right:0;height:22px;border-left:1px solid #fff;padding:19px}
 .version .body{margin:20px 0 0 0}

@@ -44,6 +44,9 @@ function add_shortcodes () {
 
 	// Cotizador Shortcode
 	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/cotizador.php');
+	
+	// Mapa del sitio Shortcode
+	require_once (ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/mapa_sitio.php');
 
 }
 add_action( 'init', 'add_shortcodes', 1 );
@@ -200,15 +203,35 @@ function ns_breadcrumbs_shortcode( $atts ) {
 	global $wp_query;
 	$post = $wp_query->post;
 	
+	$pieces = array();
 //	extract( $atts );
+	
+	if($post->post_type == 'modelo'){
+		$pieces[] = '<li><a href="' . get_permalink_by_slug('autos-nuevos') . '">Autos Nuevos</a></li>';
+	}
 
+	if($post->post_type == 'version'){
+		$modelID = get_post_meta( $post->ID, '_related_model', true);
+		$model = get_post($modelID);
+		
+		$pieces[] = '<li><a href="' . get_permalink_by_slug('autos-nuevos') . '">Autos Nuevos</a></li>';
+		$pieces[] = '<li><a href="' . get_permalink($modelID) . '">' . $model->post_title . '</a></li>';
+	}
+
+	if(stristr($post->post_name, 'sucursal-') !== FALSE) {
+		$pieces[] = '<li><a href="' . get_permalink_by_slug('sucursales') . '">Sucursales</a></li>';
+	}
+	
 	ob_start();
 
 ?> 
 	<div id="breadcrumbs">
 		<ul>Est&aacute;s en:
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#"><?php echo get_the_title($post->ID); ?></a></li>
+			<li><a href="/">Inicio</a></li>
+			<?php foreach($pieces as $p): ?>
+			<?php echo $p ?>
+			<?php endforeach; ?>
+			<li><a href="<?php echo get_permalink($post->ID) ?>"><?php echo get_the_title($post->ID); ?></a></li>
 		</ul>
 	</div>		
 <?php
@@ -289,7 +312,7 @@ function ns_box_c1_shortcode( $attrs ){
 add_shortcode( 'box_c1', 'ns_box_c1_shortcode' );
 
 function ns_box_contacto_shortcode(){
-	$img = wp_get_attachment_url( 788 ); //Image box
+	$img = wp_get_attachment_url( 859 ); //Image box
 	$permalink = get_permalink_by_slug( 'contacto' ); //Accesorios page
 	//link="" img_url="" img_title=""
 	$atts = array(
@@ -316,7 +339,7 @@ function ns_box_servicio_tecnico_shortcode(){
 add_shortcode( 'box_servicio_tecnico', 'ns_box_servicio_tecnico_shortcode' );
 
 function ns_quotebox_accesories_shortcode(){
-	$img = wp_get_attachment_url( 203 ); //Image box
+	$img = wp_get_attachment_url( 858 ); //Image box
 	$permalink = get_permalink_by_slug( 'accesorios' ); //Accesorios page
 	
 	$atts = array(
@@ -458,82 +481,6 @@ function ns_dyp_shortcode( $atts ) {
 return ob_get_clean();
 }
 add_shortcode( 'dyp', 'ns_dyp_shortcode' );
-
-//[cotizador]
-function ns_mapa_sitio_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<div class="mapa_sitio">
-			<div class="section group">
-				<div class="col span_6_of_12">
-					<ul>
-						<li>
-							 <a href="/"><b>Home</b></a>
-						</li>
-						<li>
-							 <a href="#"><b>Autos nuevos</b></a>
-							<ul>
-								<li>
-									 <a href="#"><i>Autos Ford</i></a>
-									<ul>
-										<li><a href="#">Ford Fiesta</a></li>
-										<li><a href="#">Ford Focus</a></li>
-										<li><a href="#">Ford Fusion</a></li>
-										<li><a href="#">Ford Mustang</a></li>
-									</ul>
-								</li>
-								<li>
-									 <a href="#"><i>SUV Ford</i></a>
-									<ul>
-										<li><a href="#">Ford Ecosport</a></li>
-										<li><a href="#">Ford Escape</a></li>
-										<li><a href="#">Ford Explorer</a></li>
-										<li><a href="#">Ford Expedition</a></li>
-									</ul>
-								</li>
-								<li>
-									 <a href="#"><i>Pick up Ford</i></a>
-									<ul>
-										<li><a href="#">Ford Ranger</a></li>
-										<li><a href="#">Ford F-150</a></li>
-										<li><a href="#">Ford F-150 Raptor</a></li>
-									</ul>
-								</li>
-								<li>
-									 <a href="#"><i>Crossover Ford</i></a>
-									<ul>
-										<li><a href="#">Ford Edge</a></li>
-									</ul>
-								</li>
-								<li>
-									 <a href="#"><i>Comerciales Ford</i></a>
-									<ul>
-										<li><a href="#">Ford Econoline</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						</ul>
-				</div>
-				<div class="col span_6_of_12">
-					<ul>
-						<li><a href="#"><b>Autos seminuevos</b></a></li>
-						<li><a href="#"><b>Servicio t&eacute;cnico</b></a></li>
-						<li><a href="#"><b>Mantenciones</b></a></li>
-						<li><a href="#"><b>Sucursales</b></a></li>
-						<li><a href="#"><b>Repuestos</b></a></li>
-						<li><a href="#"><b>Accesorios</b></a></li>
-						<li><a href="#"><b>Desabolladura y pintura</b></a></li>
-						<li><a href="#"><b>Contacto</b></a></li>
-						<li><a href="#"><b>Mapa del sitio</b></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'mapa_sitio', 'ns_mapa_sitio_shortcode' );
 
 function ns_home ( $atts ) {
 	wp_enqueue_script ( 'jquery-ui-dialog' );

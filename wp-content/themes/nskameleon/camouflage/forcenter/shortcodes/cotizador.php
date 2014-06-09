@@ -148,8 +148,8 @@ function ns_cotizador_shortcode( $atts ) {
 	
 	<div class="cotizador">
 		<div id="tab_step1" class="tab tab1 activ">01. Seleccione<span class="tail">&nbsp;</span></div>
-		<div id="tab_step2" class="tab tab2"><span class="head">&nbsp;</span>01. Financiamiento<span class="tail">&nbsp;</span></div>
-		<div id="tab_step3" class="tab tab3"><span class="head">&nbsp;</span>01. Ingrese sus datos</div>
+		<div id="tab_step2" class="tab tab2"><span class="head">&nbsp;</span>02. Financiamiento<span class="tail">&nbsp;</span></div>
+		<div id="tab_step3" class="tab tab3"><span class="head">&nbsp;</span>03. Ingrese sus datos</div>
 		<div class="divclear">&nbsp;</div>
 		
 		<!-- Step 1: Products -->

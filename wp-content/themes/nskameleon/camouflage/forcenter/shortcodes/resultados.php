@@ -5,7 +5,7 @@ function ns_resultados_shortcode( $atts ) {
 	//debug($_POST);
 	$q = '%' .$_POST['q']. '%';
 	
-	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM wp_posts WHERE post_type IN ('version', 'accesorio') AND post_status='publish' AND post_title LIKE '%s' ORDER BY post_title", $q ) );
+	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM wp_posts WHERE post_type = 'version' AND post_status='publish' AND post_title LIKE '%s' ORDER BY post_title", $q ) );
 	
 	ob_start();
 	?>

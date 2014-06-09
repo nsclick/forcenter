@@ -75,7 +75,7 @@
 						return false;
 					}
 					
-					nsclick.fn.formtrack('/repuestos/exito');
+					nsclick.fn.formtrack('/repuestos/repuestos-gracias-enviado');
 					
 					var msgBox = $( '#enviado' );
 
