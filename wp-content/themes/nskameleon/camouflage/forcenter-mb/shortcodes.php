@@ -602,3 +602,6 @@ function ns_box_c1_shortcode( $attrs ){
 	return ns_box_c_shortcode( $atts );
 }
 add_shortcode( 'box_c1', 'ns_box_c1_shortcode' );
+
+function ns_home ( $atts ) {}
+add_shortcode ( 'home', 'ns_home' );

@@ -1,5 +1,15 @@
 <?php
 /* NSkameleon by NSclick */
+
+	//Loading families
+	$car_families = get_terms (
+		'familia',
+		array(
+			'hide_empty' 	=> false,
+			'child_of'		=> 4
+		)
+	);
+	
 ?>
 			<div id="footer">
 				<div class="content">
@@ -7,7 +17,7 @@
 					<div class="section group">
 						<div class="col span_8_of_12">
 							<div class="section group">
-								<div class="col span_2_of_12">
+								<div class="col span_3_of_12">
 									<div class="submenu">
 										<ul class="subnav main-nav">
 											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'autos-seminuevos' ) ?>" class="link" rel="subsection">Autos Seminuevos</a></li>
@@ -18,18 +28,39 @@
 										</ul>
 									</div>
 								</div>
+								
+								
+								<!-- Submenu de autos -->
+								<?php foreach($car_families as $family): ?>
+								<?php
+									//Loading the posts
+									$models = get_posts(array(
+										'post_type' => 'modelo',
+										'posts_per_page'   => -1,
+										'orderby'          => 'menu_order',
+										'order'            => 'ASC',
+										'tax_query' => array(
+											array(
+												'taxonomy' => $family->taxonomy,
+												'field' => 'term_id',
+												'terms' => $family->term_id
+											)
+										)
+									));
+									//echo '<pre>',print_r($models),'</pre>';
+								?>
 								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
-											<li class="nav-link"><a href="#" class="link" rel="subsection">Autos Ford</a></li>
-											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Fiesta</a></li>
-											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Focus</a></li>
-											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Fusi&oacute;n</a></li>
-											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Mustang</a></li>
+											<li class="nav-link"><a href="<?php echo get_permalink_by_slug('autos-nuevos') . '#' . $family->slug ?>" class="link" rel="subsection"><?php echo $family->name ?> Ford</a></li>
+											<?php foreach($models as $m): ?>
+											<li class="nav-link"><a href="<?php echo get_permalink($m->ID) ?>" class="link" rel="subsection"><?php echo $m->post_title ?></a></li>
+											<?php endforeach; ?>
 										</ul>
 									</div>
 								</div>
-								<div class="col span_2_of_12">
+								<?php endforeach; ?>
+							<!-- <div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav">
 											<li class="nav-link"><a href="#" class="link" rel="subsection">Suv Ford</a></li>
@@ -65,9 +96,10 @@
 											<li class="nav-link"><a href="#" class="link" rel="subsection">Ford Econoline</a></li>
 										</ul>
 									</div>
-								</div>
+								</div>-->
 							</div>
 						</div>
+						<!-- END Sbmenu -->
 						<div class="col span_4_of_12">
 							<div class="col span_3_of_12">
 								&nbsp;
