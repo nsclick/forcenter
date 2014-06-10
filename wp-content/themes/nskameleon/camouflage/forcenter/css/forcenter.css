@@ -372,7 +372,7 @@ i.icon-ok-sign{color:#35a81e}
 .sucursal .overlap .par{padding:0 100px 0 0}
 .sucursal .overlap .par p{padding:0 10px 5px}
 .sucursal .link{position:absolute;right:10px;bottom:10px;z-index:99}
-.sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 6px 10px;display:block}
+.sucursal .link a{background:#6bbd00;position:relative;color:#fff;padding:5px 30px 5px 10px;display:block;border:1px solid #fff}
 .sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
 .sucursald ul li{display:block;float:left}
