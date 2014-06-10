@@ -122,6 +122,7 @@ ob_start();
 						<div class="cont"> 
 							<label for="modelo">Modelo</label>
 							<select name="modelo" id="modelo">
+								<option value="">Seleccione Modelo</option>
 								<?php foreach ( $car_models as $car_model ): ?>
 									<option value="<?php echo $car_model->ID; ?>"><?php echo $car_model->post_title; ?></option>
 								<?php endforeach; ?>
