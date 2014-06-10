@@ -459,6 +459,7 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 
 /* Footer */
 #footer{background:url(../images/footer-bg.png) repeat-y center top #fff}
+#footer .content .col.span_2_of_12{width:18.4%}
 #footer .content{background:#aca9a9;border-top:1px solid #616060}
 #footer .submenu{padding:0} 
 #footer .submenu ul.subnav{}
