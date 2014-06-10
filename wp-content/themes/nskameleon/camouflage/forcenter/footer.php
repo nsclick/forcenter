@@ -17,7 +17,7 @@
 					<div class="section group">
 						<div class="col span_8_of_12">
 							<div class="section group">
-								<div class="col span_3_of_12">
+								<div class="col span_2_of_12">
 									<div class="submenu">
 										<ul class="subnav main-nav">
 											<li class="nav-link"><a href="<?php echo get_permalink_by_slug( 'autos-seminuevos' ) ?>" class="link" rel="subsection">Autos Seminuevos</a></li>
