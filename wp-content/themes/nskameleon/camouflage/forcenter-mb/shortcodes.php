@@ -16,6 +16,9 @@ function add_shortcodes () {
 
 	// Contacto shortcode
 	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/contacto.php' );
+
+	// Cotizador shortcode
+	require_once ( ACTIVE_CAMOUFLAGE_PATH . '/shortcodes/cotizador.php' );
 }
 add_action ( 'init', 'add_shortcodes', 1 );
 
@@ -244,62 +247,6 @@ function ns_article_shortcode( $atts, $content = null ) {
 	return '<div class="article">' . do_shortcode($content) . '</div>' . "\n";
 }
 add_shortcode( 'article', 'ns_article_shortcode' );
-
-//[cotizador]
-function ns_cotizador_shortcode( $atts ) {
-	ob_start();
-	?> 
-		<div class="showcase">
-			<ul class="showgrid">
-				<li>
-					<div class="cont">
-						<img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box2-b.png" alt="Nombre-auto" title="Nombre-auto"/>
-						<span class="name">Spark</span>
-						<span class="price">$4.130.000</span>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="cotizador">
-			<div id="step3">
-				<div class="selector">
-					<div class="title">
-						<h3>Complete el formulario</h3>
-					</div>
-					<div class="producto">
-						<div class="details">
-							<div class="select">
-								<label for="nombres">Nombres:</label>
-								<input name="nombres" type="text" />
-							</div>
-							<div class="select">
-								<label for="paterno">Apellido Paterno:</label>
-								<input name="paterno" type="text" />
-							</div>
-							<div class="select">
-								<label for="materno">Apellido Materno:</label>
-								<input name="materno" type="text" />
-							</div>
-							<div class="select">
-								<label for="fono">Tel&eacute;fono:</label>
-								<input name="fono" type="text" />
-							</div>
-							<div class="select">
-								<label for="email">E-mail:</label>
-								<input name="email" type="text" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="link">
-					<button id="go3">Solicitar Cotizaci&oacute;n <i class="icon-chevron-right"></i></button>
-				</div>
-			</div>
-		</div>	
-	<?php
-return ob_get_clean();
-}
-add_shortcode( 'cotizador', 'ns_cotizador_shortcode' );
 
 //[servicio]
 function ns_servicio_shortcode( $atts ) {
@@ -605,3 +552,6 @@ add_shortcode( 'box_c1', 'ns_box_c1_shortcode' );
 
 function ns_home ( $atts ) {}
 add_shortcode ( 'home', 'ns_home' );
+
+function ns_quotebox_accesories_shortcode(){}
+add_shortcode( 'quotebox_accesories', 'ns_quotebox_accesories_shortcode' );

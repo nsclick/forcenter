@@ -5,6 +5,7 @@ body{background:#d8d6d6;font-size:11px;font-family:'Open Sans','sans-serif'!impo
 *,#wrapper{}
 /* width of the content div for all areas, you can make them different by setting the width on each area .content: #header, #main-content, #footer */
 .content{background:none!important}
+.hide{display:none}
 #main-content{padding:0 10px}
 
 /* General Styles */
@@ -140,6 +141,11 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 .cotizador .link button i{position:absolute;top:0;padding:10px 12px}
 .cotizador .link button#go3{padding:9px 49px 9px 15px;display:inline-block}
 .cotizador .link button#go3 i{right:0;border-left:1px solid #fff}
+.cotizador .link button#go3.deactiv{background:#999}
+.cotizador .link button#go3.deactiv span:first-of-type{display:none}
+.cotizador .link button#go3.deactiv span:last-of-type{display:inline}
+.cotizador .link button#go3.deactiv i{display:none}
+#enviado{text-align:center;padding:50px 0}
 /* END Cotizador */
 /* Mantenciones */
 #mantenciones #main-content .content .span_4_of_12,#mantenciones #main-content .content .span_8_of_12{width:100%;margin:0;float:none}

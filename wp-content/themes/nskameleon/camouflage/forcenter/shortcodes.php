@@ -312,7 +312,7 @@ function ns_box_c1_shortcode( $attrs ){
 add_shortcode( 'box_c1', 'ns_box_c1_shortcode' );
 
 function ns_box_contacto_shortcode(){
-	$img = wp_get_attachment_url( 859 ); //Image box
+	$img = wp_get_attachment_url( 871 ); //Image box
 	$permalink = get_permalink_by_slug( 'contacto' ); //Accesorios page
 	//link="" img_url="" img_title=""
 	$atts = array(
@@ -459,11 +459,13 @@ function ns_dyp_shortcode( $atts ) {
 					<p><img src="<?php echo $thumb['src'] ?>" alt="<?php echo $thumb['alt'] ?>" title="<?php echo $thumb['title'] ?>"/></p>
 				</div>
 				<div class="col span_6_of_12">
-					<p>Taller Desabolladura y Pintura<br /><br />
+					<p><b>Taller Desabolladura y Pintura</b><br /><br />
 						<b>Direcci&oacute;n:</b><br />
 						Quilín #2504<br /><br />
 						<b>Horario:</b><br />
-						Lun a Vie: 8:30 a 18:30 hrs.
+						Lun a Vie: 8:30 a 18:30 hrs.<br /><br />
+						<b>Teléfono:</b><br />
+						 (56 2) 2740 3308
 					</p>
 				</div>
 			</div>
