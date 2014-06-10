@@ -20,8 +20,9 @@ function ns_compra_inteligente_shortcode( $atts ) {
 		<div class="cotizador">
 			<h2>¿Qu&eacute; es Compra Inteligente?</h2>
 			<p>La Compra Inteligente es un sistema de financiamiento que puede ser a 24 ó a 36 meses, para las personas que deseen renovar su vehículo cada 2 ó 3 años, aprovechando siempre de disfrutar la mejor vida útil de su automóvil.</p>
-			<p>Con la Compra Inteligente puedes disfrutar de múltiples beneficios:COMODIDAD: De disfrutar un auto nuevo cada 2 ó 3 años:</p>
+			<p>Con la Compra Inteligente puedes disfrutar de múltiples beneficios:</p>
 			<ul>
+				<li><b>Comodidad:</b>De disfrutar un auto nuevo cada 2 ó 3 años.</li>
 				<li><b>Seguridad:</b> De contar con un Valor Futuro Mínimo Garantizado para su auto al cabo de los dos o tres años, eliminando así los riesgos y las incomodidades de la reventa.</li>
 				<li><b>Ahorro:</b> Por mantener el automóvil durante el mejor período de su vida útil, minimizando los gastos de mantención y reparaciones, beneficiándote de la garantía del fabricante.</li>
 				<li><b>Propiedad:</b> El vehículo queda a tu nombre desde el primer día.</li>
