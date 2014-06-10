@@ -12,6 +12,7 @@ body{background:url(../images/main-bg.png) repeat-y center top #fff;font-size:11
 }
 .hide{display:none!important}
 .ui-dialog{z-index:1200!important}
+#twitter-widget-0{padding:1px 0 0 0}
 
 /* General Styles */
 h1, h2, h3, h4, h5, h6{}
@@ -69,7 +70,7 @@ select{}
 #header #toolbar #quick_cotizador a.cotizar{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position: relative;color:#fff;padding:5px 30px 5px 10px;display:inline-block}
 #header #toolbar #quick_cotizador a.cotizar i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 #header #toolbar #quick_cotizador .auto{text-align:left;font-size:11px;font-weight:bold;margin-bottom:5px;border-bottom:1px solid #d8d6d6;position:relative;padding:0 25px 5px 15px;line-height:13px}
-#header #toolbar #quick_cotizador .auto i{display:block;padding:3px;position:absolute;top:0;left:0;font-size:8px;color:#d8d6d6}
+#header #toolbar #quick_cotizador .auto i{display:block;padding:3px;position:absolute;top:4px;left:0;font-size:8px;color:#d8d6d6}
 #header #toolbar #quick_cotizador .auto span{font-size:10px;font-weight:normal;display:block;padding:5px 0 0}
 #header #toolbar #quick_cotizador .auto a{display:block;padding:3px;position:absolute;top:0;right:0}
 #header #toolbar #quick_cotizador .auto a i{display:inline;padding:0;position:relative;top:auto;right:auto;color:#e23a1c;font-size:16px}
@@ -197,8 +198,10 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase .showgrid li:hover .cont .botones{display:block}
 .showcase .showgrid li .cont .botones a{display:block;width:31%;float:left;padding:5px 20px 5px 2%;background:#000;color:#fff;position:relative;text-align:center}
 .showcase .showgrid li .cont .botones a span{padding:0}
-.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 4%;background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
-.showcase .showgrid li .cont .botones a.ver{margin:102px 4% 0 2%;background:#66676a;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}
+/*.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 4%;background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}*/
+/*.showcase .showgrid li .cont .botones a.ver{margin:102px 4% 0 2%;background:#66676a;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}*/
+.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 3%;background:#6bbd00;border:1px solid #fff}
+.showcase .showgrid li .cont .botones a.ver{margin:102px 3% 0 2%;background:#66676a;border:1px solid #fff}
 .showcase .showgrid li .cont .botones a i{position:absolute;top:0;right:0;padding:6px 6px 4px;border-left:1px solid #fff}
 .showcase .showgrid li .cont .botones a.cotizar:hover{background:#61ab01}
 .showcase .showgrid li .cont .botones a.ver:hover{background:#666666}
@@ -243,7 +246,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .cotizador .link{text-align:right;padding:10px 0}
 .cotizador .link button{color:#fff;font-size:14px;display:inline-block;position:relative;background:url(../images/bg-tab-blue-center.png);font-style:italic}
 .cotizador .link button i{position:absolute;top:0;padding:10px 12px}
-.cotizador .link button#go1, .cotizador .link button#go2, .cotizador .link button#go3, .cotizador .link button#done{padding:9px 49px 9px 15px;float:right}
+.cotizador .link button#go1, .cotizador .link button#go2, .cotizador .link button#go3, .cotizador .link button#done{padding:8px 49px 7px 15px;float:right}
 .cotizador .link button#go1 i, .cotizador .link button#go2 i, .cotizador .link button#go3 i, .cotizador .link button#done i{right:0;border-left:1px solid #fff}
 .cotizador .link button#back2, .cotizador .link button#back3{padding:9px 15px 9px 49px;float:left}
 .cotizador .link button#back2 i, .cotizador .link button#back3 i{left:0;border-right:1px solid #fff}
@@ -260,6 +263,9 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .cotizador .link button#go3.deactiv span:first-of-type{display:none}
 .cotizador .link button#go3.deactiv span:last-of-type{display:inline}
 .cotizador .link button#go3.deactiv i{display:none}
+.cotizador h2{padding:10px 0;font-size:16px}
+.cotizador ul{}
+.cotizador li{padding:0 0 10px 10px;line-height:16px}
 .formErrorContent{position:absolute;top:25px;right:5px;text-align:right;background:#e39c09;color:#111;padding:5px;border-radius:5px}
 .formErrorContent:before{content:url(../images/alert-arrow.png);position:absolute;top:-10px;right:10px}
 #enviado{text-align:center;padding:50px 0}
@@ -366,7 +372,7 @@ i.icon-ok-sign{color:#35a81e}
 .sucursal .overlap .par{padding:0 100px 0 0}
 .sucursal .overlap .par p{padding:0 10px 5px}
 .sucursal .link{position:absolute;right:10px;bottom:10px;z-index:99}
-.sucursal .link a{background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;color:#fff;padding:5px 30px 6px 10px;display:block}
+.sucursal .link a{background:#6bbd00;position:relative;color:#fff;padding:5px 30px 5px 10px;display:block;border:1px solid #fff}
 .sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
 .sucursald ul li{display:block;float:left}
@@ -400,7 +406,7 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .cotizador.repuestos #step1 .selector .producto .details .select,.cotizador.repuestos #step2 .selector .producto .details .select{margin:0 16px 10px 0;width:44%;float:left}
 .cotizador.repuestos #step1 .selector .producto .details .select label,.cotizador.repuestos #step2 .selector .producto .details .select label{padding-top:0}
 .cotizador.repuestos .tab{width:42%}
-.cotizador.repuestos .tab.tab1 .tail{left:44.3%}
+.cotizador.repuestos .tab.tab1 .tail{left:44.2%}
 .cotizador.repuestos .tab.tab2 .head{left:47.1%}
 .cotizador.repuestos .tab.tab2 .tail{left:93.6%;background:url(../images/bg-tab-grey-right.png) right top}
 .cotizador.repuestos .tab.tab2.activ .tail{background:url(../images/bg-tab-blue-right.png) right top}
@@ -453,6 +459,7 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 
 /* Footer */
 #footer{background:url(../images/footer-bg.png) repeat-y center top #fff}
+#footer .content .col.span_2_of_12{width:18.4%}
 #footer .content{background:#aca9a9;border-top:1px solid #616060}
 #footer .submenu{padding:0} 
 #footer .submenu ul.subnav{}

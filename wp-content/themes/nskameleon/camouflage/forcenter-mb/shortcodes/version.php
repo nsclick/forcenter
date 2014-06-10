@@ -76,7 +76,7 @@ ob_start();
 			</div>
 		</div>
 		<div class="contec">
-			<a href="../cotizador" class="cotizar">
+			<a href="<?php echo add_query_arg( 'v', base64_encode($car_version->ID * 4), get_permalink_by_slug( 'cotizador' ) ); ?>" class="cotizar">
 				<img src="/wp-content/uploads/2014/05/ico-car.png" alt="Cotizar" title="Cotizar"/>
 				<span>Cotizar</span>
 			</a>
