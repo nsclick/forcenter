@@ -13,7 +13,7 @@ function ns_slice_set( $atts ) {
 	
 	$attachment = get_post( $extra['foto-miniatura'] );
 	
-	$price = number_format($extra['precio-desde'], 0, ',', '.');
+	$price = $extra['precio-desde'] ? number_format($extra['precio-desde'], 0, ',', '.') : '';
 	//debug($extra);
 	ob_start();
 	?>

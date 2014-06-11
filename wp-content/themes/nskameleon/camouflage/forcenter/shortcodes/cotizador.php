@@ -41,12 +41,12 @@ function ns_cotizador_shortcode( $atts ) {
 		$car_model->accesories 		= isset($car_accesories_indexed[$car_model->ID]) ? $car_accesories_indexed[$car_model->ID] : array();
 		
 		if ( !is_array ( $car_model_complementarios ) ) {
-			$car_model->price 		= 0;
+			$car_model->price 		= '';
 			$car_model->description = '';
 			$car_model->thumbnail 	= '';
 		} else {
 			$car_model_complementarios 	= $car_model_complementarios[0];
-			$car_model->price 			= intval ( $car_model_complementarios['precio-desde'] );
+			$car_model->price 			= $car_model_complementarios['precio-desde'] ? $car_model_complementarios['precio-desde'] : '';
 			$car_model->description 	= $car_model_complementarios['descripcion'];
 
 			$thumbnail_id 				= $car_model_complementarios['foto-miniatura'];
@@ -79,7 +79,7 @@ function ns_cotizador_shortcode( $atts ) {
 		$customFields 				= get_post_meta( $car_version->ID, 'version-data', true ); 
 		$customFields 				= $customFields[0];
 		$car_version->customFields 	= $customFields;
-		$car_version->price 		= number_format( $customFields['precio'], 0, ',', '.' );
+		$car_version->price 		= ($customFields['precio']) ? number_format( $customFields['precio'], 0, ',', '.' ) : '';
 	}
 	
 	//debug($car_versions);

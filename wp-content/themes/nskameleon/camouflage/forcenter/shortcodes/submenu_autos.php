@@ -46,8 +46,7 @@ function ns_submenu_autos_shortcode( $atts ) {
 				$car_model_complementarios = $car_model_complementarios[0];
 				//echo '<pre>',print_r($car_model_complementarios),'</pre>';
 				$m->permalink 		= get_permalink ( $m->ID );
-				$m->price 			= intval ( $car_model_complementarios['precio-desde'] );
-				$m->price  = number_format($m->price , 0, ',', '.');
+				$m->price 			=  ($car_model_complementarios['precio-desde']) ? number_format($car_model_complementarios['precio-desde'] , 0, ',', '.') : '';
 				$thumbnail_id 				= $car_model_complementarios['foto-miniatura'];
 				$thumb_post = get_post ( $thumbnail_id );
 				$thumb_alt = get_post_meta ( $thumbnail_id, '_wp_attachment_image_alt', true );
