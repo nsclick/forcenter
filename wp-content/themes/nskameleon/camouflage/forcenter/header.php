@@ -26,10 +26,17 @@
   			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/css/forcenter-ie7.css">
 		<![endif]-->
 		<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js/modernizr-custom.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js-webshim/minified/polyfiller.js"></script>
+		
+		<!--[if lt IE 9]>
+  			<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js-webshim/minified/polyfiller.js"></script>
+		<![endif]-->
+		
+		<!--[if lt IE 9]>
 		<script>
 		     webshims.polyfill();	
 		</script>
+		<![endif]-->
+		
 		<!-- Font-awesome -->
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if IE 7]>
