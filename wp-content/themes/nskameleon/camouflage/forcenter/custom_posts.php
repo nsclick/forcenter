@@ -273,6 +273,18 @@ function get_models(){
 	return $models;
 }
 
+function get_all_versions(){
+	global $wpdb;
+	$versions = $wpdb->get_results( "SELECT p.*,m.meta_value as model FROM wp_posts p, wp_postmeta m  where p.post_type='version' AND p.post_status='publish' AND p.ID=m.post_id AND m.meta_key='_related_model'", OBJECT );	
+	return $versions;
+}
+
+function get_all_accesories(){
+	global $wpdb;
+	$versions = $wpdb->get_results( "SELECT p.*,m.meta_value as model FROM wp_posts p, wp_postmeta m  where p.post_type='accesorio' AND p.post_status='publish' AND p.ID=m.post_id AND m.meta_key='_related_model'", OBJECT );	
+	return $versions;
+}
+
 function get_related_versions($modelID){
 	global $wpdb;
 	$versions = $wpdb->get_results( "SELECT p.* FROM wp_posts p, wp_postmeta m  where p.post_type='version' AND p.post_status='publish' AND p.ID=m.post_id AND m.meta_key='_related_model' AND m.meta_value='$modelID'", OBJECT );	
