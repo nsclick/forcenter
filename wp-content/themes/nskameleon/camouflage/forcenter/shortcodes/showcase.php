@@ -45,7 +45,7 @@ foreach ( $car_models as $car_model ) {
 		$car_model->thumbnail 	= '';
 	} else {
 		$car_model_complementarios 	= $car_model_complementarios[0];
-		$car_model->price 			= intval ( $car_model_complementarios['precio-desde'] );
+		$car_model->price 			= $car_model_complementarios['precio-desde'];
 		$car_model->description 	= $car_model_complementarios['descripcion'];
 
 		$thumbnail_id 				= $car_model_complementarios['foto-miniatura'];
