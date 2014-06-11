@@ -3,91 +3,95 @@
 //[accesorios]
 function ns_accesorios_shortcode( $atts ) {
 
-$car_models = get_posts(
-	array(
-		'post_type'		=> 'modelo',
-		'post_status'	=> 'publish',
-		'numberposts'	=> -1,
-		'orderby'          => 'menu_order',
-		'order'            => 'ASC',
-	)
-);
+	$car_models = get_posts(
+		array(
+			'post_type'		=> 'modelo',
+			'post_status'	=> 'publish',
+			'numberposts'	=> -1,
+			'orderby'          => 'menu_order',
+			'order'            => 'ASC',
+		)
+	);
 
-$car_accesories = get_posts (
-	array(
-		'post_type'		=> 'accesorio',
-		'post_status'	=> 'publish',
-		'numberposts'	=> -1
-	)
-);
+	$car_accesories = get_posts (
+		array(
+			'post_type'		=> 'accesorio',
+			'post_status'	=> 'publish',
+			'numberposts'	=> -1
+		)
+	);
 
-// This allows to identify which models have accesories and which not
-$car_models_ids_with_accesories = array();
-
-foreach ( $car_models as $car_model ) {
-	$car_model->post_title_c = trim ( str_replace ( 'Ford', '', $car_model->post_title ) );
-}
-
-foreach ( $car_accesories as $car_accesory ) {
-	$car_related_model_id 		= get_post_meta ( $car_accesory->ID, '_related_model', true );
-	$car_accesory->permalink 	= get_permalink ( $car_accesory->ID );
+	// This allows to identify which models have accesories and which not
+	$car_models_ids_with_accesories = array();
 
 	foreach ( $car_models as $car_model ) {
-		if ( intval ( $car_model->ID ) == $car_related_model_id ) {
-			$car_accesory->related_model = $car_model;
+		$car_model->post_title_c = trim ( str_replace ( 'Ford', '', $car_model->post_title ) );
+	}
 
-			if ( !in_array ( intval ( $car_model->ID ), $car_models_ids_with_accesories ) ) {
-				$car_models_ids_with_accesories[] = intval ( $car_model->ID );
+	foreach ( $car_accesories as $car_accesory ) {
+		$car_related_model_id 		= get_post_meta ( $car_accesory->ID, '_related_model', true );
+		$car_accesory->permalink 	= get_permalink ( $car_accesory->ID );
+
+		foreach ( $car_models as $car_model ) {
+			if ( intval ( $car_model->ID ) == $car_related_model_id ) {
+				$car_accesory->related_model = $car_model;
+
+				if ( !in_array ( intval ( $car_model->ID ), $car_models_ids_with_accesories ) ) {
+					$car_models_ids_with_accesories[] = intval ( $car_model->ID );
+				}
 			}
 		}
+
+		$car_accesory_extra_data = get_post_meta ( $car_accesory->ID, 'datos-extra-accesorios', true );
+
+		if ( !is_array ( $car_accesory_extra_data ) ) {
+			$car_accesory->extra = array();
+			$car_accesory->extra['numero'] 		= '';
+			$car_accesory->extra['versiones'] 		= '';
+			$car_accesory->extra['thumbnail'] 		= '';
+			$car_accesory->extra['disponibility'] 	= '';
+		} else {
+			$car_accesory_extra_data 				= $car_accesory_extra_data[0];
+			$car_accesory->extra = array();
+			$car_accesory->extra['numero'] 			= $car_accesory_extra_data['numero'];
+			$car_accesory->extra['versiones'] 		= explode ( ',', $car_accesory_extra_data['versiones'] );
+			$car_accesory->extra['disponibility'] 	= explode ( ',', $car_accesory_extra_data['disponibilidad'] );
+			// Clean white spaces
+			foreach ( $car_accesory->extra['versiones'] as &$car_extra_version ) {
+				$car_extra_version = trim ( $car_extra_version );
+			}
+			foreach ( $car_accesory->extra['disponibility'] as &$car_extra_disponibilty ) {
+				$car_extra_disponibilty = trim ( $car_extra_disponibilty );
+			}
+
+			$thumbnail_id = $car_accesory_extra_data['foto'];
+			if ( !empty ( $thumbnail_id ) ) {
+				$thumbnail 				= array();
+				$thumbnail['post'] 		= get_post ( $thumbnail_id );
+				$thumbnail['alt']		= get_post_meta ( $thumbnail['post']->ID, '_wp_attachment_image_alt', true );
+				$thumbnail['caption']	= $thumbnail['post']->post_excerpt;
+				$thumbnail['href']		= get_permalink ( $thumbnail['post']->ID );
+				$thumbnail['src']		= $thumbnail['post']->guid;
+				$thumbnail['title']		= $thumbnail['post']->post_title;
+
+				$car_accesory->extra['thumbnail'] 	= $thumbnail;
+			}
+		}
+
 	}
 
-	$car_accesory_extra_data = get_post_meta ( $car_accesory->ID, 'datos-extra-accesorios', true );
+	$js_data = array(
+		'models'		=> $car_models,
+		'accesories'	=> $car_accesories
+	);
+	wp_localize_script ( 'nsk-acessories-js', 'nsk_accesories', $js_data );
+	wp_enqueue_script( 'nsk-acessories-js' );
 
-	if ( !is_array ( $car_accesory_extra_data ) ) {
-		$car_accesory->extra = array();
-		$car_accesory->extra['numero'] 		= '';
-		$car_accesory->extra['versiones'] 		= '';
-		$car_accesory->extra['thumbnail'] 		= '';
-		$car_accesory->extra['disponibility'] 	= '';
-	} else {
-		$car_accesory_extra_data 				= $car_accesory_extra_data[0];
-		$car_accesory->extra = array();
-		$car_accesory->extra['numero'] 			= $car_accesory_extra_data['numero'];
-		$car_accesory->extra['versiones'] 		= split ( ',', $car_accesory_extra_data['versiones'] );
-		$car_accesory->extra['disponibility'] 	= split ( ',', $car_accesory_extra_data['disponibilidad'] );
-		// Clean white spaces
-		foreach ( $car_accesory->extra['versiones'] as &$car_extra_version ) {
-			$car_extra_version = trim ( $car_extra_version );
-		}
-		foreach ( $car_accesory->extra['disponibility'] as &$car_extra_disponibilty ) {
-			$car_extra_disponibilty = trim ( $car_extra_disponibilty );
-		}
+	wp_enqueue_script('jquery-ui-dialog');
+	wp_enqueue_script( 'nsk-dialog-js', get_template_directory_uri() . '/camouflage/forcenter/js/dialog.js', array( 'jquery' ), null, true );
 
-		$thumbnail_id = $car_accesory_extra_data['foto'];
-		if ( !empty ( $thumbnail_id ) ) {
-			$thumbnail 				= array();
-			$thumbnail['post'] 		= get_post ( $thumbnail_id );
-			$thumbnail['alt']		= get_post_meta ( $thumbnail['post']->ID, '_wp_attachment_image_alt', true );
-			$thumbnail['caption']	= $thumbnail['post']->post_excerpt;
-			$thumbnail['href']		= get_permalink ( $thumbnail['post']->ID );
-			$thumbnail['src']		= $thumbnail['post']->guid;
-			$thumbnail['title']		= $thumbnail['post']->post_title;
 
-			$car_accesory->extra['thumbnail'] 	= $thumbnail;
-		}
-	}
-
-}
-
-$js_data = array(
-	'models'		=> $car_models,
-	'accesories'	=> $car_accesories
-);
-wp_localize_script ( 'nsk-acessories-js', 'nsk_accesories', $js_data );
-wp_enqueue_script( 'nsk-acessories-js' );
-
-ob_start();
+	ob_start();
 ?> 
 	<div class="showcase accesorios">
 		<div class="menu">
@@ -133,7 +137,15 @@ ob_start();
 			<?php endforeach; ?>
 			<div class="divclear">&nbsp;</div>
 		</ul>
-	</div>	
+	</div>
+
+	<div id="dialog-message" title="Operación exitosa">
+		<p>
+			<span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+			Su accesorio ha sido agregado al cotizador con éxito.
+		</p>
+	</div>
+		
 <?php
 return ob_get_clean();
 }

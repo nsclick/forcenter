@@ -11,6 +11,21 @@
 			width: 650,
 			modal: true
 		});
+
+
+		$( "#dialog-message" ).dialog({
+			modal: true,
+			autoOpen: false,
+			closeOnEscape: true,
+			resizable: false,
+			draggable: false,
+			buttons: {
+				Cerrar: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		});
+		
 		
 		
 	});

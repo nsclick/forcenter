@@ -2,12 +2,11 @@
 
 include('../../../../../wp-load.php');
 
-
-
 class FormProcessor {
 	
 	protected $errorMsg = '';
 	protected $result = '';
+	protected $defaultFrom = 'From: forcenter.cl <internet@forcenter.cl>';
 	
 	protected function _postValidation($contextID, $field){
 		if ( ! isset( $_POST[$field] )  || ! wp_verify_nonce( $_POST[$field], $contextID ) ) {
@@ -17,9 +16,9 @@ class FormProcessor {
 		return true;
 	}
 	
-	protected function sendEmail($to, $subject, $message){
-		//return true;
-		return wp_mail( $to, $subject, $message );
+	protected function sendEmail($to, $subject, $message, $headers=NULL){
+		$headers[] = $this->defaultFrom;
+		return wp_mail( $to, $subject, $message, $headers);
 	}
 	
 	public function getError(){
@@ -34,6 +33,10 @@ class FormProcessor {
 
 class ServicioTecnico extends FormProcessor{
 	
+	private $to = 'reservas@forcenter.cl';
+	private $headers = array('Cc: cvera@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: jmarin@forcenter.cl', 'Cc: fgili@forcenter.cl', 'Cc: develop@nsclick.cl');
+	private $subject = 'Solicitud de Agendamiento Servicio Técnico';
+	
 	function send($data){
 		
 		if(!$this->_postValidation( 'servicio-tecnico-form', 'st-token' ) ){
@@ -42,7 +45,7 @@ class ServicioTecnico extends FormProcessor{
 		}
 		
 		$email = $this->formatEmail($data);
-		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+		if(!$this->sendEmail($this->to, $this->subject, $email, $this->headers)){
 			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
 			return false;		
 		}
@@ -66,20 +69,18 @@ class ServicioTecnico extends FormProcessor{
 				$body .= "\n"; 
 			}
 		}
-    
-    $email = 'creyes@nsclick.cl';
-    		 
-    return array(
-      'to'      => $email,
-      'subject' => 'Solicitud de Agendamiento Servicio Técnico',
-      'body'    => $body
-    );
-  }
+		return $body;
+	}
   	
 }
 
-
 class Mantenciones extends FormProcessor{
+
+	private $to = 'reservas@forcenter.cl';
+	private $headers = array('Cc: cvera@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: cperez@forcenter.cl', 'Cc: fgili@forcenter.cl', 'Cc: develop@nsclick.cl');
+//	private $to = 'creyes@nsclick.cl';
+//	private $headers = array('Cc: cesar.cesarreyes@gmail.com');
+	private $subject = 'Solicitud de Agendamiento Mantenciones';
 	
 	function send($data){
 		
@@ -89,7 +90,7 @@ class Mantenciones extends FormProcessor{
 		}
 		
 		$email = $this->formatEmail($data);
-		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+		if(!$this->sendEmail($this->to, $this->subject, $email, $this->headers)){
 			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
 			return false;		
 		}
@@ -114,19 +115,20 @@ class Mantenciones extends FormProcessor{
 			}
 		}
     
-    $email = 'creyes@nsclick.cl';
-    		 
-    return array(
-      'to'      => $email,
-      'subject' => 'Solicitud de Agendamiento de Mantención',
-      'body'    => $body
-    );
-  }
+		return $body;
+	}
   	
 }
 
+
 class Seguros extends FormProcessor{
-	
+
+	private $to = 'internet@forcenter.cl';
+	private $headers = array('Cc: gleiva@forcenter.cl', 'Cc: marketing@forcenter.cl', 'Cc: develop@nsclick.cl');
+//	private $to = 'creyes@nsclick.cl';
+//	private $headers = array('Cc: cesar.cesarreyes@gmail.com');
+	private $subject = 'Solicitud de Cotización de Seguro';
+		
 	function send($data){
 		
 		if(!$this->_postValidation( 'seguros-form', 'sg-token' ) ){
@@ -135,7 +137,7 @@ class Seguros extends FormProcessor{
 		}
 		
 		$email = $this->formatEmail($data);
-		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+		if(!$this->sendEmail($this->to, $this->subject, $email, $this->headers)){
 			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
 			return false;		
 		}
@@ -159,20 +161,20 @@ class Seguros extends FormProcessor{
 				$body .= "\n"; 
 			}
 		}
-    
-    $email = 'creyes@nsclick.cl';
-    		 
-    return array(
-      'to'      => $email,
-      'subject' => 'Solicitud de Cotización de seguro',
-      'body'    => $body
-    );
-  }
+        		 
+		return $body;
+	}
   	
 }
 
 class CompraInteligente extends FormProcessor{
 	
+	private $to = 'internet@forcenter.cl';
+	private $headers = array('Cc: gleiva@forcenter.cl', 'Cc: marketing@forcenter.cl', 'Cc: develop@nsclick.cl');
+//	private $to = 'creyes@nsclick.cl';
+//	private $headers = array('Cc: cesar.cesarreyes@gmail.com');
+	private $subject = 'Solicitud de información de compra inteligente';
+
 	function send($data){
 		
 		if(!$this->_postValidation( 'compra-inteligente-form', 'ci-token' ) ){
@@ -181,7 +183,7 @@ class CompraInteligente extends FormProcessor{
 		}
 		
 		$email = $this->formatEmail($data);
-		if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+		if(!$this->sendEmail($this->to, $this->subject, $email, $this->headers)){
 			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
 			return false;		
 		}
@@ -206,13 +208,7 @@ class CompraInteligente extends FormProcessor{
 			}
 		}
     
-		$email = 'creyes@nsclick.cl';
-    		 
-		return array(
-			'to'      => $email,
-			'subject' => 'Solicitud de Información Compra Inteligente',
-			'body'    => $body
-		);
+		return $body;
 	}
   	
 }
@@ -225,6 +221,11 @@ class CompraInteligente extends FormProcessor{
 class Contacto extends FormProcessor{
 	
 	private $type = 'email';
+	
+//	private $headers = array('Cc: cvera@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: cperez@forcenter.cl', 'Cc: fgili@forcenter.cl', 'Cc: develop@nsclick.cl');
+	private $headers = array('Cc: gleiva@forcenter.cl', 'Cc: marketing@forcenter.cl', 'Cc: develop@nsclick.cl');
+	private $subject = 'Solicitud de Contacto';
+
 	
 	function send($data){
 				
@@ -249,7 +250,7 @@ class Contacto extends FormProcessor{
 				break;
 			default:
 				$email = $this->formatEmail($bind);
-				if(!$this->sendEmail($email['to'], $email['subject'], $email['body'])){
+				if(!$this->sendEmail($data['servicio'], $this->subject, $email, $this->headers)){
 					$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
 					return false;		
 				}
@@ -320,21 +321,13 @@ class Contacto extends FormProcessor{
 	*/
 	public function formatEmail($data) {
 		$body = "DATOS DEL SOLICITANTE:\n";
-				
+		
 		foreach ($data AS $key => $value) {
-			if(!in_array($key , $excluded)){
-				$body .= $key . ': ' . $value;
-				$body .= "\n"; 
-			}
+			$body .= $key . ': ' . $value;
+			$body .= "\n"; 
 		}
-    
-		$email = 'creyes@nsclick.cl';
     		 
-		return array(
-			'to'      => $email,
-			'subject' => 'Solicitud de Contacto',
-			'body'    => $body
-		);
+		return $body;
 	}
   
 }
@@ -525,6 +518,54 @@ class Cotizacion extends FormProcessor{
 		return $bind;
 	}
 }
+
+class DyP extends FormProcessor{
+
+	private $to = 'dyp@forcenter.cl';
+	private $headers = array('Cc: rpinto@forcenter.cl', 'Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', 'Cc: develop@nsclick.cl');
+//	private $to = 'creyes@nsclick.cl';
+//	private $headers = array('Cc: cesar.cesarreyes@gmail.com');
+	private $subject = 'Solicitud de Agendamiento Desabolladura y Pintura';
+	
+	function send($data){
+		
+		if(!$this->_postValidation( 'dyp-form', 'dp-token' ) ){
+			$this->errorMsg = 'Sorry, your nonce did not verify.';
+			return false;
+		}
+		
+		$email = $this->formatEmail($data);
+		if(!$this->sendEmail($this->to, $this->subject, $email, $this->headers)){
+			$this->errorMsg = 'Lo sentimos, hubo un error al enviar la comunicación.';
+			return false;		
+		}
+		
+		$this->result = 'Gracias por comunicarse con FORCENTER.';
+		return true;
+	
+	}
+	
+	/**
+	* formatEmail
+	*/
+	public function formatEmail($data) {
+		$body = "DATOS DEL SOLICITANTE:\n";
+		
+		$excluded = array('dp-token', '_wp_http_referer');
+		
+		foreach ($data AS $key => $value) {
+			if(!in_array($key , $excluded)){
+				$body .= $key . ': ' . $value;
+				$body .= "\n"; 
+			}
+		}
+    		 
+		return $body;
+	}
+}
+
+
+
 
 /**
  * EmailerFactory

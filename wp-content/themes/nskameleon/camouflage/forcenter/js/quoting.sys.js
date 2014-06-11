@@ -228,6 +228,13 @@ $(document).ready(function() {
 	 				alert('Ha alcanzado el límite de accesorios cotizados.');
 	 				return false;
 	 			}
+	 			
+	 			$("#dialog-message").dialog("open");
+	 			
+	 			setTimeout(function(){
+					$( "#dialog-message" ).dialog( "close" );
+				},1500);
+	 			
 	 			product = new Accesory(productId);
 	 			break;
 	 	}
