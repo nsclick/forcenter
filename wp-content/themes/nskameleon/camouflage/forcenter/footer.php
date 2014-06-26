@@ -120,7 +120,13 @@
 						<div class="col span_12_of_12">
 							<div class="copyright">
 								<p><b>&copy; 2014 Forcenter todos los derechos reservados.</b><br />
-								Forcenter se reserva el derecho a modificar, valores,cuotas y especificaciones t&eacute;cnicas sin previo aviso.</p>
+								Forcenter se reserva el derecho a modificar, valores,cuotas y especificaciones t&eacute;cnicas sin previo aviso.
+								<?php if (is_front_page()) { ?>
+									<br />Conozca a <b>Forcenter</b>, Concesionario Ford líder en la venta de autos nuevos, SUV, Pick Up, Camionetas y Crossover.
+									<br />Además en nuestro servicio técnico de primer nivel, realizamos la mantención automotriz a su vehículo con los más altos estándares de calidad y repuestos originales Ford.
+									<br />En Concesionario Forcenter podrá encontrar autos seminuevos Ford al mejor precio, calidad y garantía. Cotice su auto usado y llévelo al mejor precio. 
+								<?php } ?>
+								</p>
 							</div>
 						</div>
 					</div>

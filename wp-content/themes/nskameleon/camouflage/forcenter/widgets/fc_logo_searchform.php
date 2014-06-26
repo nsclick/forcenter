@@ -40,7 +40,7 @@ class Fc_Logo_Widget extends WP_Widget {
 				</form>
 			</div>
 			<div class="sel" id="quick_call">
-				<span id="cotizador_btn">Tienes seleccionados <b id="cotizador_cant">0</b> Productos</span>
+				<span id="cotizador_btn">Tiene seleccionados <b id="cotizador_cant">0</b> productos</span>
 				<div id="quick_cotizador">
 					<div class="auto">
 						<i class="icon-circle"></i>

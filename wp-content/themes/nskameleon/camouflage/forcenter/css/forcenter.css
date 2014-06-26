@@ -361,7 +361,7 @@ i.icon-ok-sign{color:#35a81e}
 /* END Servicio */
 /* Accesorios - toma la base de showcase de autos nuevos */
 .showcase.accesorios .menu{position:relative}
-.showcase.accesorios .menu p{position:absolute;text-align:right;top:-20px;right:0}
+.showcase.accesorios .menu p{position:absolute;text-align:right;top:0px;right:0}
 .showcase.accesorios .showgrid li .cont .botones a.ver{float:none;display:inline-block}
 .showcase.accesorios .showgrid li .cont .botones{text-align:right}
 /* END Accesorios */
@@ -373,7 +373,7 @@ i.icon-ok-sign{color:#35a81e}
 .sucursal .overlap .par p{padding:0 10px 5px}
 .sucursal .link{position:absolute;right:10px;bottom:10px;z-index:99}
 .sucursal .link a{background:#6bbd00;position:relative;color:#fff;padding:5px 30px 5px 10px;display:block;border:1px solid #fff}
-.sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 4px}
+.sucursal .link a i{position:absolute;right:0;top:0;border-left:1px solid #fff;padding:6px 6px 3px}
 .sucursald ul{display:block;width:100%;border-bottom:1px solid #3359a8}
 .sucursald ul li{display:block;float:left}
 .sucursald ul li a{color:#46484b;display:block;padding:7px 14px;background:#fff;cursor:pointer}
@@ -455,6 +455,9 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .seguros .feature{display:table;width:100%;height:50px}
 .seguros .feature b{display:table-cell;vertical-align:middle;height:50px;width:100%;line-height:16px}
 /* END Seguros */
+/* arreglos whitelabel */
+.caja{font-size:13px;line-height:18px;padding:10px 0 20px 0}
+/* End arreglos whitelabel */
 /* End Main Content */
 
 /* Footer */

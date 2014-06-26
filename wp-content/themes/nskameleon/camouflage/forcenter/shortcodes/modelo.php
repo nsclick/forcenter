@@ -82,7 +82,7 @@ function ns_modelo_shortcode( $atts ) {
 						$customFields = get_post_meta( $version->ID, 'version-data', true ); 
 						$customFields = $customFields[0];
 						//Price
-						$price = number_format($customFields['precio'], 0, ',', '.');
+						$price = $customFields['precio'] ? number_format($customFields['precio'], 0, ',', '.') : '';
 						//Getting the features
 						$filePath = get_attached_file($customFields['carateristicas-tecnicas']);
 						$fileRows = file($filePath);

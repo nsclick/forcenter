@@ -48,7 +48,7 @@ function ns_resultados_shortcode( $atts ) {
 						<a <?php echo $quoting_data ?> href="<?php echo $link ?>"><img src="<?php echo $thumb_src; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>"></a>
 					</div>
 					<div class="col span_9_of_12">
-						<a <?php echo $quoting_data ?> href="<?php echo $link ?>"><h3><?php echo $post->post_title ?> para <?php echo $model->post_title ?></h3></a>
+						<a <?php echo $quoting_data ?> href="<?php echo $link ?>"><h3><?php echo $post->post_title ?> <?php echo $model->post_title ?></h3></a>
 						<p><?php echo $body ?></p>
 					</div>
 				</div>

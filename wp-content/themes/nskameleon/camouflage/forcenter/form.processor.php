@@ -79,7 +79,7 @@ class Mantenciones extends FormProcessor{
 	private $to = 'reservas@forcenter.cl';
 	private $headers = array('Cc: cvera@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: cperez@forcenter.cl', 'Cc: fgili@forcenter.cl', 'Cc: develop@nsclick.cl');
 //	private $to = 'creyes@nsclick.cl';
-//	private $headers = array('Cc: cesar.cesarreyes@gmail.com');
+//	private $headers = array('Cc: cesar.cesarreyes@gmail.com', 'Cc: develop@nsclick.cl');
 	private $subject = 'Solicitud de Agendamiento Mantenciones';
 	
 	function send($data){
@@ -522,9 +522,10 @@ class Cotizacion extends FormProcessor{
 class DyP extends FormProcessor{
 
 	private $to = 'dyp@forcenter.cl';
-	private $headers = array('Cc: rpinto@forcenter.cl', 'Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', 'Cc: develop@nsclick.cl');
+	private $headers = array('Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', 'Cc: rpinto@forcenter.cl', 'Cc: develop@nsclick.cl');
+//	private $headers = array('Cc: rpinto@forcenter.cl', 'Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', 'Cc: develop@nsclick.cl');
 //	private $to = 'creyes@nsclick.cl';
-//	private $headers = array('Cc: cesar.cesarreyes@gmail.com');
+//	private $headers = array('Cc: cesar.cesarreyes@gmail.com', 'Cc: develop@nsclick.cl');
 	private $subject = 'Solicitud de Agendamiento Desabolladura y Pintura';
 	
 	function send($data){

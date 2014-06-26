@@ -60,7 +60,7 @@ function ns_version_shortcode( $atts ) {
 	);
 	
 	//Formatting the price
-	$price = number_format($customFields['precio'], 0, ',', '.');
+	$price = $customFields['precio'] ? number_format($customFields['precio'], 0, ',', '.') : '';
 	
 	//Get the related versions
 	$relatedVersions = get_related_versions($modelID);

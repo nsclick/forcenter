@@ -346,7 +346,7 @@ function ns_quotebox_accesories_shortcode(){
 	
 	$atts = array(
 		'link' => $permalink,
-		'link_text' => 'Cotiza ahora',
+		'link_text' => 'Cotizar ahora',
 		'title' => 'Accesorios <b>Ford</b>',
 		'img' => $img,
 	);
@@ -360,7 +360,7 @@ function ns_quotebox_cars_shortcode(){
 	
 	$atts = array(
 		'link' => $permalink,
-		'link_text' => 'Cotiza ahora',
+		'link_text' => 'Cotizar ahora',
 		'title' => 'Autos <b>Ford</b>',
 		'img' => $img,
 	);
@@ -431,3 +431,10 @@ function ns_home ( $atts ) {
 }
 
 add_shortcode ( 'home', 'ns_home' );
+
+
+//[caja]...[/caja]
+function ns_caja_shortcode( $atts, $content = null ) {
+	return '<div class="caja">' . do_shortcode($content) . '</caja>' . "\n";
+}
+add_shortcode( 'caja', 'ns_caja_shortcode' );

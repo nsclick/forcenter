@@ -10,3 +10,4 @@
 [03-Jun-2014 16:57:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/form.processor.php on line 498
 [03-Jun-2014 22:33:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/form.processor.php on line 504
 [03-Jun-2014 22:34:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/form.processor.php on line 504
+[25-Jun-2014 13:53:45 America/Denver] PHP Fatal error:  Cannot redeclare DyP::$headers in /home/forcente/forcenter/wp-content/themes/nskameleon/camouflage/forcenter/form.processor.php on line 528

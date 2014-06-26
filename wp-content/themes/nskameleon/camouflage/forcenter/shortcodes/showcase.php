@@ -188,7 +188,7 @@ ob_start();
 					<div class="cont">
 						<img src="<?php echo $car_model_thumbnail; ?>" alt="<?php echo $car_model->post_title; ?>" title="<?php echo $car_model->post_title; ?>" />
 						<span class="name"><?php echo $car_model->post_title; ?></span>
-						<span class="price">$<?php echo number_format ( $car_model->price, 0, ',', '.' ); ?></span>
+						<span class="price">$<?php echo $car_model->price ? number_format ( $car_model->price, 0, ',', '.' ) : ''; ?></span>
 						<div class="botones">
 							<a href="<?php echo $car_model->permalink; ?>" class="ver">
 								<span>Ver</span>
@@ -220,7 +220,7 @@ ob_start();
 			<?php
 				$customFields 	= get_post_meta( $car_model_version->ID, 'version-data', true ); 
 				$customFields 	= $customFields[0];
-				$price 			= number_format($customFields['precio'], 0, ',', '.');
+				$price 			= $customFields['precio'] ? number_format($customFields['precio'], 0, ',', '.') : '';
 			?>
 
 			<div class="section group">
