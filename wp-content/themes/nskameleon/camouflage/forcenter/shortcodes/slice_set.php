@@ -34,8 +34,26 @@ function ns_slice_set( $atts ) {
 	<div class="sign">
 		<span><b>Versiones</b>Disponibles</span>
 	</div>
-	<?php $post->versions = get_related_versions ( $post->ID ); ?>
+	<?php 
+		$relatedVersions = get_related_versions ( $post->ID );
+
+		//Sorting Versions By price
+		foreach ( $relatedVersions as &$relatedVersion ) {
+			$customFields = get_post_meta( $relatedVersion->ID, 'version-data', true ); 
+			$customFields = $customFields[0];
+			$price = $customFields['precio'] ? price_from_string_to_int ( $customFields['precio'] ) : 0;
+			$relatedVersion->price = $price;
+		}
+		usort ( $relatedVersions, 'sort_cars_by_price' );
+		$post->versions = $relatedVersions;
+
+	?>
 	<?php foreach ( $post->versions as $car_model_version ): ?>
+		<?php
+			$customFields 	= get_post_meta( $car_model_version->ID, 'version-data', true ); 
+			$customFields 	= $customFields[0];
+			$price 			= $customFields['precio'] ? number_format($customFields['precio'], 0, ',', '.') : '';
+		?>
 		<div class="section group">
 			<div class="col span_2_of_12">
 				&nbsp;

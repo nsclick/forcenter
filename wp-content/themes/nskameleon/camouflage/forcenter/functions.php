@@ -110,3 +110,16 @@ function yst_custom_content_analysis( $content ) {
 }
  
 add_filter( 'wpseo_pre_analysis_post_content', 'yst_custom_content_analysis' );
+
+// Sort cars by price
+function sort_cars_by_price ($a, $b) {
+    if ($a->price == $b->price)
+        return 0;
+
+    return ($a->price < $b->price) ? -1 : 1;
+}
+
+// Convert prices
+function price_from_string_to_int ( $price ) {
+	return intval ( str_replace ( array ( '$', '.', ',' ), '', $price ) );
+}

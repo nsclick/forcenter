@@ -5,7 +5,6 @@ function ns_showcase_shortcode( $atts ) {
 
 // Scripts
 wp_enqueue_script ( 'jquery-ui-dialog' );
-wp_enqueue_script ( '' );
 
 $car_families = get_terms (
 	'familia',
@@ -37,8 +36,18 @@ $max_price = 0;
 foreach ( $car_models as $car_model ) {
 	$car_model_complementarios 	= get_post_meta( $car_model->ID, 'complementarios', true ); 
 	$car_model->permalink 		= get_permalink ( $car_model->ID );
-	$car_model->versions 		= get_related_versions( $car_model->ID );
-
+	$relatedVersions 		= get_related_versions( $car_model->ID );
+	
+	//Sorting Versions By price
+	foreach ( $relatedVersions as &$relatedVersion ) {
+		$customFields = get_post_meta( $relatedVersion->ID, 'version-data', true ); 
+		$customFields = $customFields[0];
+		$price = $customFields['precio'] ? price_from_string_to_int ( $customFields['precio'] ) : 0;
+		$relatedVersion->price = $price;
+	}
+	usort ( $relatedVersions, 'sort_cars_by_price' );
+	$car_model->versions = $relatedVersions;
+	
 	if ( !is_array ( $car_model_complementarios ) ) {
 		$car_model->price 		= 0;
 		$car_model->description = '';
@@ -168,7 +177,7 @@ ob_start();
 		</div>
 		<div class="section group filter">
 			<div class="col span_6_of_12">
-				<p style="text-align:left">Tenemos <b>6</b> disponibles.</p>
+				<p style="text-align:left">Tenemos <b><span id="available-cars">0</span></b> disponibles.</p>
 			</div>
 			<div class="col span_6_of_12">
 				<p style="text-align:right">

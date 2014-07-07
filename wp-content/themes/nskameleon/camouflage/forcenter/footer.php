@@ -107,7 +107,7 @@
 							<div class="col span_9_of_12">
 								<div class="partners">
 									<div class="partner">
-										<a href="<?php echo network_site_url( '' ) ?>" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-forcenter_bn.png" alt="partner"/></a>
+										<a href="<?php echo network_site_url( '' ) ?>" class="partner-logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford-forcenter_bn.png" alt="Forcenter" title="Forcenter"/></a>
 										<br /><br />
 										<fb:share-button href="<?php echo get_permalink(); ?>" width="18" type="button"></fb:share-button> &nbsp;&nbsp;
 										<a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-count="none">Twittear</a>
@@ -120,7 +120,7 @@
 						<div class="col span_12_of_12">
 							<div class="copyright">
 								<p><b>&copy; 2014 Forcenter todos los derechos reservados.</b><br />
-								Forcenter se reserva el derecho a modificar, valores,cuotas y especificaciones t&eacute;cnicas sin previo aviso.
+								Forcenter se reserva el derecho a modificar, valores, cuotas y especificaciones t&eacute;cnicas sin previo aviso.
 								<?php if (is_front_page()) { ?>
 									<br />Conozca a <b>Forcenter</b>, Concesionario Ford líder en la venta de autos nuevos, SUV, Pick Up, Camionetas y Crossover.
 									<br />Además en nuestro servicio técnico de primer nivel, realizamos la mantención automotriz a su vehículo con los más altos estándares de calidad y repuestos originales Ford.

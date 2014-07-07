@@ -31,7 +31,7 @@ class Fc_Logo_Widget extends WP_Widget {
 
 	<div id="toolbar">
 		<div class="toolbar-box">
-			<span><a href="<?php echo network_site_url( '' ) ?>"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350.png" alt="Forcenter"/></a></span>
+			<span><a href="<?php echo network_site_url( '' ) ?>"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350.png" alt="Forcenter" title="Forcenter"/></a></span>
 			<div class="sea">
 				<form id="buscar-form" method="post" accept-charset="utf-8" action="<?php echo network_site_url( '' ) ?>/buscar" >
 					<?php //CSRF prevention keys ?>
@@ -56,8 +56,8 @@ class Fc_Logo_Widget extends WP_Widget {
 					<a href="<?php echo get_permalink_by_slug ( 'cotizador' ); ?>" class="cotizar">Cotizar ahora<i class="icon-chevron-right"></i></a>
 				</div>
 			</div>
-			<a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter"/> Contacto</a>
-			<a href="/"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-home.png" alt="Forcenter"/></a>
+			<a href="<?php echo get_permalink_by_slug( 'contacto' ) ?>"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-mail.png" alt="Forcenter" title="Forcenter" /> Contacto</a>
+			<a href="/"><img style="vertical-align:middle" src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/ico-home.png" alt="Forcenter" title="Forcenter"/></a>
 		</div>
 	</div>
 

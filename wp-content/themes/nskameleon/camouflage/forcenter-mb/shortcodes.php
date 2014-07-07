@@ -122,13 +122,13 @@ function ns_box_a_shortcode( $atts ) {
 	ob_start(); 
 	?> 
 		<ul class="menu">
-			<li><a href="autos-nuevos"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="mantenciones"><span>Mantenciones</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="servicio-tecnico"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="repuestos"><span>Repuestos</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="desabolladura-y-pintura"><span>Desabolladura y Pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="sucursales"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
-			<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="autos-nuevos" rel="subsection"><span>Autos Nuevos</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="mantenciones" rel="subsection"><span>Mantenciones</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="servicio-tecnico" rel="subsection"><span>Servicio T&eacute;cnico</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="repuestos" rel="subsection"><span>Repuestos</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="desabolladura-y-pintura" rel="subsection"><span>Desabolladura y Pintura</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="sucursales" rel="subsection"><span>Sucursales</span> <i class="icon-chevron-right arrow"></i></a></li>
+			<li><a href="tel:+56227403309"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 		</ul>
 <?php
 return ob_get_clean();
@@ -230,7 +230,7 @@ function ns_image_b_shortcode( $atts ) {
 	$img = wp_get_attachment_url( $id );
 	
 	?> 
-		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($id); ?>" title="<?php echo get_the_title($id); ?>"/></div>	
+		<div id="image_b_<?php echo $id; ?>" class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($post->ID); ?>" title="<?php echo get_the_title($post->ID); ?>"/></div>	
 	<?php
 return ob_get_clean();
 }
@@ -265,7 +265,7 @@ function ns_servicio_shortcode( $atts ) {
 		</div>
 		<div id="home">
 			<ul class="menu">
-				<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+				<li><a href="tel:+56227403309"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 			</ul>
 		</div>	
 	<?php
@@ -290,7 +290,7 @@ function ns_mantencion_shortcode( $atts ) {
 		</div>
 		<div id="home">
 			<ul class="menu">
-				<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+				<li><a href="tel:+56227403309"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 			</ul>
 		</div>	
 	<?php
@@ -487,7 +487,7 @@ function ns_dyp_shortcode( $atts ) {
 		</div>
 		<div id="home">
 			<ul class="menu">
-				<li><a href="tel:+56227403300"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
+				<li><a href="tel:+56227403309"><i class="icon-phone"></i> <span>Contacta a un ejecutivo</span> <i class="icon-chevron-right arrow"></i></a></li>
 			</ul>
 		</div>
 	<?php

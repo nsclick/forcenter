@@ -7,7 +7,7 @@ function ns_sucursal_shortcode( $atts ) {
 	ob_start();
 ?> 
 	<div class="sucursal">
-		<a href="<?php echo get_permalink( $postid ) ?>" rel="subsection"><img src="<?php echo wp_get_attachment_url( $fotoid ); ?> " alt="<?php echo get_post_meta( $fotoid, '_wp_attachment_image_alt', true ) ?>" title="<?php echo $name ?>"/></a>
+		<a href="<?php echo get_permalink( $postid ) ?>" rel="subsection"><img src="<?php echo wp_get_attachment_url( $fotoid ); ?> " alt="<?php echo $name ?>" title="<?php echo $name ?>"/></a>
 		<div class="link">
 			<a href="<?php echo get_permalink( $postid ) ?>">Ver M&aacute;s <i class="icon-chevron-right"></i></a>
 		</div>
@@ -95,7 +95,7 @@ function ns_sucursald_shortcode( $atts ) {
 					<div id="mapa"></div>
 				</div>
 				<div class="col span_5_of_12">
-					<h4><?php echo get_the_title(); ?></h4>
+					<h2><?php echo get_the_title(); ?></h2>
 					<p><b>Direcci&oacute;n:</b><?php echo $direccion ?></p>
 					<p><b>Tel&eacute;fono:</b><?php echo $telefono ?></p>
 					<p><b>Horario:</b><?php echo $horario1 ?><br /><?php echo $horario2 ?></p>

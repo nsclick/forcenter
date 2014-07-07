@@ -47,7 +47,7 @@
 					</div>
 					<div class="logo">
 						<?php /*header-left-sidebar*/ ?>
-							<a href="<?php echo get_site_url(); ?>/" id="logo"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter-mb/images/logo-ford-forcenter.png" alt="Ford"/> </a>
+							<a href="<?php echo get_site_url(); ?>/" id="logo" ><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter-mb/images/logo-ford-forcenter.png" alt="Forcenter" title="Forcenter"/> </a>
 						<?php /*Place the forcenter logo here*/ ?>
 					</div>
 				</div>

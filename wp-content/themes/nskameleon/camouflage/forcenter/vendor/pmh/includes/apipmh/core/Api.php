@@ -21,7 +21,7 @@ class Api extends Config{
 		$curl_headers['accept'] = 'Accept: text/plain';
 		$curl_headers['accept-Language'] = 'Accept-Language: es-CL';
 		$curl_headers['accept-encoding:'] = 'Accept-Encoding: <identity>';
-		$curl_headers['accept-charset:'] = 'Accept-Charset: utf-8';
+		$curl_headers['accept-charset:'] = 'Accept-Charset: UTF-8';
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $server);
 		curl_setopt($ch, CURLOPT_POST, 1);
@@ -35,6 +35,8 @@ class Api extends Config{
 		$result = curl_exec($ch);
 		curl_close($ch);
         $datos = explode('text/html', $result, 2);
+        $datos[1] = str_replace(array('; charset','=UTF-8','Connection: close'),'',$datos[1]);
+        //echo'<pre>';print_r($datos[1]);echo'</pre>';die();
 		return $datos[1];
 	}
     

@@ -148,7 +148,7 @@ add_shortcode( 'spacer', 'ns_spacer_shortcode' );
 //[box_a link="" img_url="" img_title=""]
 function ns_box_a_shortcode( $atts ) {
 	extract( $atts ); 
-	return '<a href="'.$link.'" class="box_a"><img src="'.$img_url.'" alt="'.$img_title.'" title="'.$img_title.'"/></a>';
+	return '<a href="'.$link.'" class="box_a" rel="subsection"><img src="'.$img_url.'" alt="'.$img_title.'" title="'.$img_title.'"/></a>';
 }
 add_shortcode( 'box_a', 'ns_box_a_shortcode' );
 
@@ -157,7 +157,7 @@ function ns_box_b_shortcode( $atts ) {
 	extract( $atts );
 	ob_start();
 ?> 
-	<a href="<?php echo $link ?>" class="box_b">
+	<a href="<?php echo $link ?>" class="box_b" rel="subsection">
 		<span class="title"><?php echo $title ?></span>
 		<span class="link"><?php echo $link_text ?></span>
 		<img src="<?php echo $img ?>" alt="<?php echo strip_tags( $title ) ?>" title="<?php echo strip_tags( $title ) ?>"/>
@@ -172,7 +172,7 @@ function ns_box_b2_shortcode( $atts ) {
 extract( $atts );
 ob_start();
 ?> 
-	<a href="<?php echo $link ?>" class="box_b">
+	<a href="<?php echo $link ?>" class="box_b" rel="subsection">
 		<span class="title"><?php echo $title ?></span>
 		<span class="link2"><?php echo $link_text ?></span>
 		<img src="<?php echo $img ?>" alt="<?php echo strip_tags($title) ?>" title="<?php echo strip_tags($title) ?>"/>
@@ -188,7 +188,7 @@ extract( $atts );
 ob_start();
 ?> 
 	<div class="box_c">
-		<a href="<?php echo $link ?>" class="title">
+		<a href="<?php echo $link ?>" class="title" rel="subsection">
 			<span><?php echo $title ?></span>
 			<span><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/box_arrow.png" alt="<?php echo $title ?>" title="<?php echo $title ?>"/></span>
 		</a>
@@ -209,26 +209,26 @@ function ns_breadcrumbs_shortcode( $atts ) {
 //	extract( $atts );
 	
 	if($post->post_type == 'modelo'){
-		$pieces[] = '<li><a href="' . get_permalink_by_slug('autos-nuevos') . '">Autos Nuevos</a></li>';
+		$pieces[] = '<li><a href="' . get_permalink_by_slug('autos-nuevos') . '"  rel="subsection">Autos Nuevos</a></li>';
 	}
 
 	if($post->post_type == 'version'){
 		$modelID = get_post_meta( $post->ID, '_related_model', true);
 		$model = get_post($modelID);
 		
-		$pieces[] = '<li><a href="' . get_permalink_by_slug('autos-nuevos') . '">Autos Nuevos</a></li>';
-		$pieces[] = '<li><a href="' . get_permalink($modelID) . '">' . $model->post_title . '</a></li>';
+		$pieces[] = '<li><a href="' . get_permalink_by_slug('autos-nuevos') . '"  rel="subsection">Autos Nuevos</a></li>';
+		$pieces[] = '<li><a href="' . get_permalink($modelID) . '"  rel="subsection">' . $model->post_title . '</a></li>';
 	}
 
 	if(stristr($post->post_name, 'sucursal-') !== FALSE) {
-		$pieces[] = '<li><a href="' . get_permalink_by_slug('sucursales') . '">Sucursales</a></li>';
+		$pieces[] = '<li><a href="' . get_permalink_by_slug('sucursales') . '"  rel="subsection">Sucursales</a></li>';
 	}
 	
 	ob_start();
 
 ?> 
 	<div id="breadcrumbs">
-		<ul>Est&aacute;s en:
+		<ul>Est&aacute; en:
 			<li><a href="/">Inicio</a></li>
 			<?php foreach($pieces as $p): ?>
 			<?php echo $p ?>
@@ -280,7 +280,7 @@ function ns_image_b_shortcode( $atts ) {
 	$img = wp_get_attachment_url( $id );
 	
 	?> 
-		<div class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($id); ?>" title="<?php echo get_the_title($id); ?>"/></div>	
+		<div id="image_b_<?php echo $id; ?>" class="image_b"><img src="<?php echo $img ?>" alt="<?php echo get_the_title($post->ID); ?>" title="<?php echo get_the_title($post->ID); ?>"/></div>	
 	<?php
 return ob_get_clean();
 }
@@ -382,6 +382,7 @@ function draw_color_elem($colorPics){
 		<?php endforeach; ?>
 		<div class="divclear">&nbsp;</div>
 		</ul>
+		<div class="divclear">&nbsp;</div>
 	</div>	
 	<?php
 

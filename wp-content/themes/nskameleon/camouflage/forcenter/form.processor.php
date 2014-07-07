@@ -225,7 +225,6 @@ class Contacto extends FormProcessor{
 //	private $headers = array('Cc: cvera@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: cperez@forcenter.cl', 'Cc: fgili@forcenter.cl', 'Cc: develop@nsclick.cl');
 	private $headers = array('Cc: gleiva@forcenter.cl', 'Cc: marketing@forcenter.cl', 'Cc: develop@nsclick.cl');
 	private $subject = 'Solicitud de Contacto';
-
 	
 	function send($data){
 				
@@ -257,7 +256,6 @@ class Contacto extends FormProcessor{
 				$this->result = 'Gracias por comunicarse con FORCENTER.';
 				return true;
 		}
-		
 		
 		$this->type = 'crm';
 		if(!$this->result){
@@ -436,12 +434,12 @@ class Cotizacion extends FormProcessor{
 			$bind_a['comentario'] = 'Solicitud desde cotizador del sitio web';
 			$this->result_a = $pmhapi->cotizacion_seccion_accesorios($bind_a);
 		}
-									      
+						      
 		if(!$this->result_a && !$this->result_v){
 			$this->errorMsg = 'Error en el regisro al CRM, Informe de este error al webmaster';
 			return false;
 		}
-
+		
 		if(!$this->result_a->result && !$this->result_v->result){
 			$this->errorMsg = $this->result->mensaje;
 			return false;
@@ -473,7 +471,7 @@ class Cotizacion extends FormProcessor{
 			);
 		}
 		
-		return json_encode( array('state' => 'ok', 'seller_a' => $seller_a, 'seller_v' => $seller_v) );
+		return json_encode( array( 'state' => 'ok', 'seller_a' => $seller_a, 'seller_v' => $seller_v ) );
 	}
 	
 	/**
@@ -522,7 +520,7 @@ class Cotizacion extends FormProcessor{
 class DyP extends FormProcessor{
 
 	private $to = 'dyp@forcenter.cl';
-	private $headers = array('Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', 'Cc: rpinto@forcenter.cl', 'Cc: develop@nsclick.cl');
+	private $headers = array('Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', /*'Cc: rpinto@forcenter.cl',*/ 'Cc: develop@nsclick.cl');
 //	private $headers = array('Cc: rpinto@forcenter.cl', 'Cc: lmoreno@forcenter.cl', 'Cc: ainostroza@forcenter.cl', 'Cc: develop@nsclick.cl');
 //	private $to = 'creyes@nsclick.cl';
 //	private $headers = array('Cc: cesar.cesarreyes@gmail.com', 'Cc: develop@nsclick.cl');

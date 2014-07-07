@@ -71,10 +71,9 @@ function ns_mapa_sitio_shortcode( $atts ) {
 							</ul>
 						</li>
 						
-						<li><a href="<?php echo get_permalink_by_slug('respuestos') ?>"><b>Repuestos</b></a></li>
+						<li><a href="<?php echo get_permalink_by_slug('repuestos') ?>"><b>Repuestos</b></a></li>
 						<li><a href="<?php echo get_permalink_by_slug('accesorios') ?>"><b>Accesorios</b></a></li>
 						<li><a href="<?php echo get_permalink_by_slug('desabolladura-y-pintura') ?>"><b>Desabolladura y pintura</b></a></li>
-						<li><a href="<?php echo get_permalink_by_slug('contacto') ?>"><b>Contacto</b></a></li>
 						<li><a href="<?php echo get_permalink_by_slug('compra-inteligente') ?>"><b>Compra inteligente</b></a></li>
 						<li><a href="<?php echo get_permalink_by_slug('seguros') ?>"><b>Seguros</b></a></li>
 						<li><a href="<?php echo get_permalink_by_slug('contacto') ?>"><b>Contacto</b></a></li>

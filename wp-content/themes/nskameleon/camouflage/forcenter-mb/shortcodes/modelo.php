@@ -6,7 +6,20 @@ function ns_modelo_shortcode( $atts ) {
 
 	global $wp_query;
 	$post = $car_model = $wp_query->post;
+	
+	// Convert prices
+	function price_from_string_to_int ( $price ) {
+		return intval ( str_replace ( array ( '$', '.', ',' ), array ( '', '', '' ), $price ) );
+	}
+	
+	// Sort cars by price
+	function sort_cars_by_price ($a, $b) {
+	    if ($a->price == $b->price)
+	        return 0;
 
+	    return ($a->price < $b->price) ? -1 : 1;
+	}
+	
 	// Getting the gallery images
 	$galleryIDs = get_post_meta( $post->ID, 'model-gallery', true ); 
 	$galleryIDs = explode(',', $galleryIDs[0]['fotos']);
@@ -84,12 +97,19 @@ function ns_modelo_shortcode( $atts ) {
 			$car_model_versions[] = $car_version;
 		}
 	}
+	
+	foreach ( $car_model_versions as &$car_model_version ) {
+		$price = $car_model_version->price ? price_from_string_to_int ( $car_model_version->price ) : 0;
+		$car_model_version->price = $price;
+	}
+	
+	usort ( $car_model_versions, 'sort_cars_by_price' );
 
 	ob_start();
 ?>
 	
 	<h2 id="subt">Autos Nuevos</h1>
-	<h1 id="page_title2"><?php echo $car_version->post_title; ?></h1>
+	<h1 id="page_title2"><?php echo $post->post_title; ?></h1>
 		<div class="modelo">
 			<div class="head">
 				<div class="banner">
@@ -102,7 +122,7 @@ function ns_modelo_shortcode( $atts ) {
 							<div class="cont">
 								<img src="<?php echo $car_model_thumbnail; ?>" alt="<?php echo $car_version->post_title; ?>" title="<?php echo $car_version->post_title; ?>"/>
 								<span class="name"><?php echo $car_version->post_title; ?></span>
-								<span class="price">$<?php echo number_format( $car_version->price, 0, ',', '.'); ?></span>
+								<span class="price">Desde $<?php echo $car_version->price > 0 ? number_format( $car_version->price, 0, ',', '.') : ''; ?></span>
 								<a href="<?php echo get_permalink ( $car_version->ID ); ?>" class="ver">Ver</a>
 							</div>
 						</li>	

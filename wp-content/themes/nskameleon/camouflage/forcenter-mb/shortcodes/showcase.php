@@ -65,8 +65,8 @@ ob_start();
 				<li>
 					<div class="cont">
 						<img src="<?php echo $car_model_thumbnail; ?>" alt="<?php echo $car_model->post_title; ?>" title="<?php echo $car_model->post_title; ?>"/>
-						<span class="name"><?php echo $car_model->post_title; ?></span>
-						<span class="price">$<?php echo number_format ( $car_model->price, 0, ',', '.' ); ?></span>
+						<span class="name"><h2><?php echo $car_model->post_title; ?></h2></span>
+						<span class="price">Desde $<?php echo $car_model->price > 0 ? number_format ( $car_model->price, 0, ',', '.' ) : ''; ?></span>
 						<a href="<?php echo $car_model->permalink; ?>" class="ver">Ver</a>
 					</div>
 				</li>

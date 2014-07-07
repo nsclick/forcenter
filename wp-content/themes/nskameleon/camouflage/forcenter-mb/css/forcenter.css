@@ -76,15 +76,15 @@ h1#page_title{font-size:20px;color:#46484b;padding:10px 0;text-align:center;disp
 #sucursal-seminuevos h1#page_title
 {display:block!important}
 h1#page_title2{font-size:20px;color:#46484b;padding:10px 0;text-align:center}
-h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
+h2#subt{font-size:16px;text-align:center;padding:10px 0}
 /* END Shotcode Page Title */
 /* Grid de elementos: autos nuevos, autos usados y accesorios */
 .showcase .showgrid li{display:block;margin:0 0 10px;background-color:#fff;background-image:url(../images/bg-slice-auto-up.png)!important;background-position:top!important;background-repeat:repeat-x!important;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23)}
 .showcase .showgrid li .cont{display:block;padding:5px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);position:relative;height:50px}
 .showcase .showgrid li .cont img{width:72px;height:50px;float:left;margin-right:7px}
-.showcase .showgrid li .cont .name{color:#2850a3;font-size:12px;font-weight:bold;display:block;padding:3px 0 3px 10px}
+.showcase .showgrid li .cont .name,.showcase .showgrid li .cont .name h2{color:#2850a3;font-size:12px!important;font-weight:bold!important;display:block!important;padding:3px 0 3px 10px!important}
 .showcase .showgrid li .cont .price{display:block;color:#414042;font-weight:bold;font-size:12px}
-.showcase .showgrid li .cont .price:before{content: "Desde ";font-weight:normal}
+/*.showcase .showgrid li .cont .price:before{content: "Desde ";font-weight:normal}*/
 .showcase .showgrid li .cont a{display:block;position:absolute;top:0;right:0;color:#fff;background:url(../images/bg-blue.png) 0 -1px repeat-x;padding:22px 17px;font-size:16px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(40,80,163,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(40,80,163,1);box-shadow:inset 0px 0px 0px 1px rgba(40,80,163,1)}
 /* END Grid de elementos: autos nuevos, autos usados y accesorios */
 /* Modelos */
@@ -96,7 +96,7 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 .modelo .lista li .cont img{width:72px;height:50px;float:left;margin-right:7px}
 .modelo .lista li .cont .name{color:#2850a3;font-size:12px;font-weight:bold;display:block;padding:3px 0 3px 10px}
 .modelo .lista li .cont .price{display:block;color:#414042;font-weight:bold;font-size:12px}
-.modelo .lista li .cont .price:before{content: "Desde ";font-weight:normal}
+/*.modelo .lista li .cont .price:before{content: "Desde ";font-weight:normal}*/
 .modelo .lista li .cont a{display:block;position:absolute;top:0;right:0;color:#fff;background:url(../images/bg-blue.png) 0 -1px repeat-x;padding:22px 17px;font-size:16px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(40,80,163,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(40,80,163,1);box-shadow:inset 0px 0px 0px 1px rgba(40,80,163,1)}
 /* END Modelos */
 /* Version */
@@ -105,7 +105,7 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 .version .head .subhead .col .cont{padding:0 10px}
 .version .head .subhead .col.col2{display:block;margin:0}
 .version .head .subhead .col.col2 .cont{display:table-cell;vertical-align:middle}
-.version .head .subhead .col.col2 .cont h4{padding:0;font-size:16px}
+.version .head .subhead .col.col2 .cont h4,.version .head .subhead .col.col2 .cont h1{padding:0!important;font-size:16px!important}
 .version .head .subhead .col.col3{display:block;width:49.8%;text-align:right;background:url(../images/bg-blue.png) top center repeat-x;color:#fff;margin:0;width:40%}
 .version .head .subhead .col.col3 .cont{display:block;text-align:right}
 .version .head .subhead .col.col3 b{font-size:18px;display:block;font-style:italic}
@@ -213,6 +213,7 @@ h2#subt{font-size:16px;text-align:center;padding:10px 0 0}
 /* END Accesorios */
 /* Sucursal */
 .sucursal{position:relative;margin-bottom:10px}
+.sucursal h2{font-size:16px!important}
 .sucursal .overlap{background:rgba(40,80,163,0.7);color:#fff}
 .sucursal .overlap .par{padding:0 10px}
 .sucursal .link{position:absolute;right:20px;bottom:20px}

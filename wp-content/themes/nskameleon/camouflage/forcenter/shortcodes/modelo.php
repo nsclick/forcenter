@@ -37,6 +37,15 @@ function ns_modelo_shortcode( $atts ) {
 	//Get the related versions
 	$relatedVersions = get_related_versions($post->ID);
 	
+	foreach ( $relatedVersions as &$relatedVersion ) {
+		$customFields = get_post_meta( $relatedVersion->ID, 'version-data', true ); 
+		$customFields = $customFields[0];
+		$price = $customFields['precio'] ? price_from_string_to_int ( $customFields['precio'] ) : 0;
+		$relatedVersion->price = $price;
+	}
+	
+	usort ( $relatedVersions, 'sort_cars_by_price' );
+	
 	ob_start();
 	?> 
 		<div class="modelo">

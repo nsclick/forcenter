@@ -23,19 +23,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
 		<!--[if lt IE 9]>
-  			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/css/forcenter-ie7.css">
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/css/forcenter-ie7.css">
 		<![endif]-->
 		<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js/modernizr-custom.js"></script>
 		
-		<!--[if lt IE 9]>
-  			<script src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/js-webshim/minified/polyfiller.js"></script>
-		<![endif]-->
 		
-		<!--[if lt IE 9]>
-		<script>
-		     webshims.polyfill();	
-		</script>
-		<![endif]-->
 		
 		<!-- Font-awesome -->
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
@@ -44,6 +36,9 @@
 		<![endif]-->
 	</head>
 	<body>
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/css/forcenter-ie7.css">
+		<![endif]-->
 		<!-- test facebook -->
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -63,11 +58,11 @@
 						<div class="col span_6_of_12">
 							<?php if(is_front_page()): ?>
 							<div id="logo-container">
-								<a href="<?php echo get_site_url(); ?>/" id="logo"><h1><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="logo"/></h1></a>
+								<a href="<?php echo get_site_url(); ?>/" id="logo"><h1><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="Forcenter" title="Forcenter"/></h1></a>
 							</div>
 							<?php else: ?>
 							<div id="logo-container">
-								<a href="<?php echo get_site_url(); ?>/" id="logo"> <img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="logo"/> </a>
+								<a href="<?php echo get_site_url(); ?>/" id="logo"> <img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="Forcenter" title="Forcenter"/> </a>
 							</div>
 							<?php endif; ?>
 						</div>

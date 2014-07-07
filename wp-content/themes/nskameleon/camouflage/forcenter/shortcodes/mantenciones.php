@@ -38,7 +38,7 @@ function ns_mantencion_shortcode( $atts ) {
 						<div class="details">
 							<div class="select">
 								<label for="nombre">Nombre completo:</label>
-								<input j name="nombre" type="text" />
+								<input class="validate[required]" name="nombre" type="text" />
 								<div class="divclear">&nbsp;</div>
 							</div>
 							<div class="select">

@@ -21,10 +21,10 @@
 						return false;
 					}
 					
-					if(data.type == 'email'){
-						formSuccessResponse( $("#step3"), 'Su solicitud ha sido enviada con éxito', 'Gracias por contactarnos' );
-						return true;
-					}
+//					if(data.state == 'ok'){
+//						formSuccessResponse( $("#step3"), 'Su solicitud ha sido enviada con éxito', 'Gracias por contactarnos' );
+//						return true;
+//					}
 					
 					nsclick.fn.formtrack('/cotizador/enviado-mobile-gracias');
 					
@@ -34,12 +34,16 @@
 					msgBox.empty();
 					msgBox.removeClass('hide');
 					msgBox.append( '<h2>Su solicitud ha sido enviada con éxito</h2>' );
-					msgBox.append( '<h3>Su solicitud ha sido asignada.</h3>' );
-					msgBox.append( '<img src=" ' + data.seller.pic + ' " title="Foto ejecutivo asignado">' );
-					msgBox.append( '<p>' + data.seller.name + '</p>');
-					msgBox.append( '<p>Teléfono: ' + data.seller.phone + '</p>');
-					msgBox.append( '<p>Celular: ' + data.seller.cellular + '</p>');
-					msgBox.append( '<p>Email: ' + data.seller.email + '</p>');				
+					msgBox.append( '<h3>Su solicitud de cotización de vehículo ha sido asignada a:</h3>' );
+					msgBox.append( '<img src=" ' + data.seller_v.pic + ' " title="Foto ejecutivo asignado">' );
+					msgBox.append( '<p>' + data.seller_v.name + '</p>');
+					msgBox.append( '<p>Teléfono: ' + data.seller_v.phone + '</p>');
+					msgBox.append( '<p>Celular: ' + data.seller_v.cellular + '</p>');
+					msgBox.append( '<p>Email: ' + data.seller_v.email + '</p>');
+					
+					$('.showcase').hide();
+					$('.image_b').hide();
+					$($($('p')[0]).parent()).hide();
 					return true;
 					
 				}, "json"); 

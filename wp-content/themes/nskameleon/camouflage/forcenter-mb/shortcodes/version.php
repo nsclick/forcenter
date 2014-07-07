@@ -49,7 +49,7 @@ function ns_version_shortcode( $atts ) {
 	}
 
 	//Formatting the price
-	$car_version_price = number_format($car_version_data['precio'], 0, ',', '.');
+	$car_version_price = $car_version_data['precio'] > 0 ? number_format($car_version_data['precio'], 0, ',', '.') : $car_version_data['precio'];
 
 	// Add script
 	wp_enqueue_script ( 'nsk-versions-js' );
@@ -62,12 +62,12 @@ ob_start();
 			<div class="section group subhead">
 				<div class="col span_6_of_12 col2">
 					<div class="cont">
-						<h4><?php echo $car_version->post_title; ?></h4>
+						<h1><?php echo $car_version->post_title; ?></h1>
 					</div>
 				</div>
 				<div class="col span_6_of_12 col3">
 					<div class="cont">
-						Precio <b>$<?php echo $car_version_price; ?></b>
+						Precio Desde <b>$<?php echo $car_version_price > 0 ? $car_version_price : ''; ?></b>
 					</div>
 				</div>
 			</div>

@@ -196,13 +196,13 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .showcase .showgrid li .cont .price:before{content: "Desde "}
 .showcase .showgrid li .cont .botones{background:url(../images/bg-item.png) repeat;position:absolute;height:100%;width:100%;top:0;left:0;display:none}
 .showcase .showgrid li:hover .cont .botones{display:block}
-.showcase .showgrid li .cont .botones a{display:block;width:31%;float:left;padding:5px 20px 5px 2%;background:#000;color:#fff;position:relative;text-align:center}
+.showcase .showgrid li .cont .botones a{display:block;width:31%;float:left;padding:4px 20px 5px 2%;background:#000;color:#fff;position:relative;text-align:center}
 .showcase .showgrid li .cont .botones a span{padding:0}
 /*.showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 4%;background:#6bbd00;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}*/
 /*.showcase .showgrid li .cont .botones a.ver{margin:102px 4% 0 2%;background:#66676a;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1)}*/
 .showcase .showgrid li .cont .botones a.cotizar{margin:102px 2% 0 3%;background:#6bbd00;border:1px solid #fff}
 .showcase .showgrid li .cont .botones a.ver{margin:102px 3% 0 2%;background:#66676a;border:1px solid #fff}
-.showcase .showgrid li .cont .botones a i{position:absolute;top:0;right:0;padding:6px 6px 4px;border-left:1px solid #fff}
+.showcase .showgrid li .cont .botones a i{position:absolute;top:0;right:0;padding:5px 6px 4px;border-left:1px solid #fff}
 .showcase .showgrid li .cont .botones a.cotizar:hover{background:#61ab01}
 .showcase .showgrid li .cont .botones a.ver:hover{background:#666666}
 .showcase.accesorios .showgrid li .cont .botones a.ver{background:#6bbd00}
@@ -221,7 +221,7 @@ h1#page_title{font-size:20px;color:#2850a3;padding:10px 0}
 .cotizador .tab.tab2 .head{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-left.png) left top;position:absolute;top:10px;left:31.6%}
 .cotizador .tab.tab2 .tail{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-right2.png) right top;position:absolute;top:10px;left:62.6%}
 .cotizador .tab.tab3{background:url(../images/bg-tab-grey-right.png) right top;margin:0 0 10px 4.5%;padding:9px 2% 0 0}
-.cotizador .tab.tab3 .head{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-left.png) left top;position:absolute;top:10px;left:65.5%}
+.cotizador .tab.tab3 .head{display:block;height:32px;width:5.8%;background:url(../images/bg-tab-corner-grey-left.png) left top;position:absolute;top:10px;left:65.6%}
 .cotizador .tab.tab1.activ{background:url(../images/bg-tab-blue-left.png) left top;color:#fff}
 .cotizador .tab.tab1.activ .tail{background:url(../images/bg-tab-corner-blue-right.png) right top}
 .cotizador .tab.tab2.activ{background:url(../images/bg-tab-blue-center.png);color:#fff}
@@ -381,7 +381,7 @@ i.icon-ok-sign{color:#35a81e}
 .sucursald ul li a:hover{box-shadow:inset 0 -4px 0px -2px #46484b;-moz-box-shadow:inset 0 -4px 0px -2px #46484b;-webkit-box-shadow:inset 0 -4px 0px -2px #46484b;-ms-box-shadow:inset 0 -4px 0px -2px #46484b}
 .sucursald .cont{background:#fff;padding:10px}
 .sucursald .cont #mapa{height:280px;border:1px solid #d7dde2}
-.sucursald .cont h4{font-size:16px;color:#3359a8;padding:0 0 10px}
+.sucursald .cont h4, .sucursald .cont h2{font-size:16px;color:#3359a8;padding:0 0 10px}
 .sucursald .cont p{display:block;margin:0 0 10px;background-color:#fff;background-image:url(../images/bg-selector.png);background-position:top;background-repeat:repeat-x;-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);-moz-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);box-shadow:1px 1px 2px 0px rgba(0,0,0,0.23);padding:10px;-webkit-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);-moz-box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,1);border:1px solid #d7dde2}
 .sucursald .cont p b{display:block}
 .sucursald .cont .galeria{margin-top:20px}
@@ -436,7 +436,7 @@ ul.lista li i{position:absolute;top:0;left:0;color:#2850a3;padding:10px 5px}
 .mapa_sitio ul{padding:5px;font-size:12px}
 .mapa_sitio li{border-left:1px solid #d7dde2}
 .mapa_sitio a{padding:5px 10px;display:block}
-.mapa_sitio b{font-size:16px}
+.mapa_sitio b{font-size:14px}
 .mapa_sitio i{font-size:14px}
 /* END Mapa del sitio */
 /* Resultados de búsqueda */

@@ -65,6 +65,7 @@
 
 	    	});
 
+			$('#available-cars').html(cars_to_show.length);
 	    	RenderCarsBoxes(cars_to_show);
 
 	    	// Highlight link selected

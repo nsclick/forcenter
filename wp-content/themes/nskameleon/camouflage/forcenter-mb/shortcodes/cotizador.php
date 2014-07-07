@@ -42,10 +42,10 @@ function ns_cotizador_shortcode( $atts ) {
 
 		<form id="contacto-form" method="post" accept-charset="utf-8" action="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/form.processor.php" />
 		<?php //CSRF prevention keys ?>
-		<?php wp_nonce_field('contacto-form','co-token'); ?>
-
-		<input type="hidden" name="action" value="Contacto"/>
-
+		
+		<?php wp_nonce_field('coticacion-form','ct-token'); ?>
+		<input type="hidden" name="action" value="Cotizacion"/>
+		
 		<div class="cotizador">
 			<div id="step3">
 				<div class="selector">
@@ -141,13 +141,13 @@ function ns_cotizador_shortcode( $atts ) {
 							<div class="select">
 								<label for="donde_nos_conocio">D&oacute;nde nos conoci&oacute;:</label>
 								<select class="validate[required]" name="donde_nos_conocio">
-									<option selected="selected" value="">Seleccione una opción</option>
+									<option selected="selected" value="">Seleccione una opci&oacute;n</option>
 									<option value="Las Ultimas Noticias">Las Ultimas Noticias</option>
 									<option value="Google">Google</option>
 									<option value="Referido">Referido</option>
 									<option value="Volante">Volante</option>
 									<option value="Radio">Radio</option>
-									<option value="Television">Televisión</option>
+									<option value="Television">Televisi&oacute;n</option>
 								</select>
 							</div>
 							
@@ -165,10 +165,12 @@ function ns_cotizador_shortcode( $atts ) {
 			</div>
 			
 		</div>
-		<input type="hidden" name="comentario" value="Solicitud de cotización desde móvil"/>	
-		<input type="hidden" name="servicio" value="ventas@forcenter.cl"/>	
-		<input type="hidden" name="modelo" value="00"/>	
+		<input type="hidden" name="servicio" value="ventas@forcenter.cl"/>
 		<input type="hidden" name="version" value="<?php echo $version ?>"/>	
+		
+		<input type="hidden" name="monto_pie" value="0"/>
+		<input type="hidden" name="numero_cuotas" value="0"/>
+		<input type="hidden" name="car_version[]" value="<?php echo $version ?>"/>
 		</form>	
 	<?php
 return ob_get_clean();
