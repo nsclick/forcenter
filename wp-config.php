@@ -15,7 +15,7 @@
  */
 
 /* Change this value to switch to the correct Env: possible values are:  development, qa, production*/
-define('DB_ENV', 'qa');
+define('DB_ENV', 'production');
 
 // ** MySQL settings - You can get this info from your web host ** //
 switch(DB_ENV){
@@ -32,10 +32,10 @@ switch(DB_ENV){
                 define('DB_HOST', 'localhost');
                 break;
         case 'production':
-                define('DB_NAME', 'chevrole_site');
-                define('DB_USER', 'chevrole_site');
-                define('DB_PASSWORD', 'Egh1DALZ0bxW');
-                define('DB_HOST', 'localhost');
+                define('DB_NAME', 'forcenter_web');
+                define('DB_USER', 'forcenter2011');
+                define('DB_PASSWORD', 'mark4321');
+                define('DB_HOST', 'mysql.forcenter.cl');
                 break;
 }
 

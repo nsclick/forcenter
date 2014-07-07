@@ -1,2 +1,9 @@
 User-agent: *
 Disallow: /
+
+http://forcenter.cl/sitemap_index.xml
+http://forcenter.cl/page-sitemap.xml
+http://forcenter.cl/modelo-sitemap.xml
+http://forcenter.cl/version-sitemap.xml
+http://forcenter.cl/accesorio-sitemap.xml
+http://forcenter.cl/familia-sitemap.xml

@@ -70,7 +70,8 @@ function ns_version_shortcode( $atts ) {
 	$fileRows = file($filePath);
 	foreach($fileRows as $row){
 		$rcRow = explode("\t", $row);
-		$techSpecs[trim(ucwords ( mb_strtolower ($rcRow[0], 'UTF-8') ))][ucwords ( mb_strtolower ( trim($rcRow[1], 'UTF-8') ) )] = trim($rcRow[2]);
+		//$techSpecs[trim(ucwords ( mb_strtolower ($rcRow[0], 'UTF-8') ))][ucwords ( mb_strtolower ( trim($rcRow[1], 'UTF-8') ) )] = trim($rcRow[2]);
+		$techSpecs[trim(ucwords ( strtolower ($rcRow[0]) ))][ucwords ( strtolower ( trim($rcRow[1]) ) )] = trim($rcRow[2]);
 	}
 	
 	ob_start();
