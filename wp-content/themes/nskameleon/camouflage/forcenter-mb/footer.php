@@ -1,9 +1,13 @@
 <?php
 /* NSkameleon by NSclick */
 ?>
+
+<?php
+$site_url = network_site_url( '/?force_desktop=1' );
+?>
 		<div id="footer">
 			
-			<a class="link-switch-der" href="http://www.forcenter.cl/?force_desktop=1">Versión Escritorio</a>
+			<a class="link-switch-der" href="<?php echo $site_url ?>">Versión de Escritorio</a>
 			
 			<!-- <a href="#">Ir a versi&oacute;n de Escritorio</a> -->
 			<div class="copyright">

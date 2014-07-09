@@ -500,7 +500,7 @@ class Cotizacion extends FormProcessor{
 			}
 		}
 		
-		if(is_array($data['accesories'])){
+		if(isset($data['accesories']) && is_array($data['accesories'])){
 			foreach ($data['accesories'] as $id) {
 				$customFields 	= get_post_meta ( $id, 'datos-extra-accesorios', true );
 				$customFields 	= $customFields[0];
