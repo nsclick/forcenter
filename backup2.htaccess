@@ -1,0 +1,262 @@
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-focus$ http://www.forcenter.cl/modelo/ford-focus/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-mustang$ http://www.forcenter.cl/modelo/ford-mustang/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fiesta$ http://www.forcenter.cl/modelo/ford-fiesta/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fusion$ http://www.forcenter.cl/modelo/ford-fusion/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-ecosport$ http://www.forcenter.cl/modelo/ford-ecosport/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-escape$ http://www.forcenter.cl/menu/autos-nuevos-ford/suv/ford-escape [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-explorer$ http://www.forcenter.cl/modelo/ford-explorer/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-expedition$ http://www.forcenter.cl/modelo/ford-expedition/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up/ford-ranger$ http://www.forcenter.cl/modelo/ford-ranger/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up/ford-f-150$ http://www.forcenter.cl/modelo/ford-f150/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up/ford-f-150-raptor$ http://www.forcenter.cl/modelo/ford-f150-raptor/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/crossover/ford-edge$ http://www.forcenter.cl/modelo/ford-edge/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-focus/ford-focus-sedan$ http://www.forcenter.cl/modelo/ford-focus-sedan/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-focus/ford-focus-hb$ http://www.forcenter.cl/modelo/ford-focus/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-mustang/ford-mustang-5$ http://www.forcenter.cl/modelo/ford-mustang/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-ecosport/ford-ecosport-se-16-mt$ http://www.forcenter.cl/modelo/ford-ecosport/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-escape/ford-escape-s-25l-4x2$ http://www.forcenter.cl/modelo/ford-escape/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-explorer/new-ford-explorer$ http://www.forcenter.cl/modelo/ford-explorer/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv/ford-expedition/ford-expedition$ http://www.forcenter.cl/modelo/ford-expedition/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up/ford-ranger/new-ford-ranger$ http://www.forcenter.cl/modelo/ford-ranger/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up/ford-f-150/ford-f-150-4x2-recab$ http://www.forcenter.cl/modelo/ford-f150/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/crossover/ford-edge/ford-edge-sel-4x2$ http://www.forcenter.cl/modelo/ford-edge/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fiesta/ford-fiesta-hb-5-door-se$ http://www.forcenter.cl/modelo/ford-fiesta/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fiesta/ford-fiesta-sedan$ http://www.forcenter.cl/modelo/ford-fiesta-sedan/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fiesta/ford-fiesta-hatch-5-door-titanium$ http://www.forcenter.cl/version/ford-fiesta-titanium/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up/ford-f-150-raptor/ford-f-150-Raptor$ http://www.forcenter.cl/modelo/ford-f150-raptor/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/vehiculos-comerciales-ford/ford-econoline/ford-econoline-xl$ http://www.forcenter.cl/version/ford-econoline-xl/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/vehiculos-comerciales-ford/ford-econoline/ford-econoline-xlt$ http://www.forcenter.cl/version/ford-econoline-xlt/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fusion/ford-fusion-se-25l-at$ http://www.forcenter.cl/version/fusion-se-2-5l-at/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-fusion/ford-fusion-se-20l-ecoboost$ http://www.forcenter.cl/version/fusion-se-2-0l-ecoboost/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/seminuevos$ http://www.forcenter.cl/autos-seminuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/servicio-tecnico-ford$ http://www.forcenter.cl/servicio-tecnico/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/servicio-tecnico-ford/casa-matriz$ http://www.forcenter.cl/sucursal-casa-matriz/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/mantenciones-ford$ http://www.forcenter.cl/mantenciones/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/sucursales$ http://www.forcenter.cl/sucursales [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/sucursales/casa-matriz$ http://www.forcenter.cl/sucursal-casa-matriz/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/sucursales/sucursal-mall-plaza-tobalaba$ http://www.forcenter.cl/sucursal-mall-plaza-tobalaba/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/sucursales/sucursal-mall-plaza-alameda$ http://www.forcenter.cl/sucursal-mall-plaza-alameda/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/sucursales/seminuevos$ http://www.forcenter.cl/sucursal-seminuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/desabolladura-y-pintura/formulario-casa-matriz$ http://www.forcenter.cl/sucursal-desabolladura-y-pintura/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/repuestos-ford$ http://www.forcenter.cl/repuestos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/accesorios-ford$ http://www.forcenter.cl/accesorios/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/accesorios-ford/formulario-seccion-accesorios$ http://www.forcenter.cl/accesorios/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/desabolladura-y-pintura$ http://www.forcenter.cl/desabolladura-y-pintura/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/contacto$ http://www.forcenter.cl/contacto/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/seguros$ http://www.forcenter.cl/seguros/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/compra-inteligente$ http://www.forcenter.cl/compra-inteligente/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule cotizaciones/formulario-de-cotizacion$ http://www.forcenter.cl/cotizador/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule forcenter/novedades$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule forcenter/mapa-del-sitio$ http://www.forcenter.cl/mapa-del-sitio/ [R=301,NC,L]
+
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/suv$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/pick-up$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/crossover$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/vehiculos-comerciales-ford$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPressRewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford$ http://www.forcenter.cl/autos-nuevos/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos$ http://www.forcenter.cl/autos-nuevos/#autos [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-focus$ http://www.forcenter.cl/modelo/ford-focus/ [R=301,NC,L]
+
+RewriteCond %{HTTP_HOST} ^forcenter.cl [OR]
+RewriteCond %{HTTP_HOST} ^www.forcenter.cl
+RewriteRule menu/autos-nuevos-ford/autos/ford-mustang$ http://www.forcenter.cl/modelo/ford-mustang/ [R=301,NC,L]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

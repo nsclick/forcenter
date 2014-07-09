@@ -1,4 +1,23 @@
 <?php
+if ( !session_id() )
+session_start();
+
+/**
+ * Session Management
+ */
+add_action ( 'init', 'ns_start_session' );
+
+function ns_start_session () {
+	if ( !session_id() )
+		session_start();
+}
+
+add_action ( 'wp_login', 'ns_end_session' );
+add_action ( 'wp_logout', 'ns_end_session' );
+
+function ns_end_session() {
+	session_destroy();
+}
 
 define('THEME_PATH', get_theme_root() . '/nskameleon');
 
@@ -9,7 +28,13 @@ define('ACTIVE_CAMOUFLAGE', 'forcenter');
 define('ACTIVE_MOBILE_CAMOUFLAGE', 'forcenter-mb');
 
 // Camouflage  swichter
-if(ACTIVE_MOBILE_CAMOUFLAGE){
+//unset($_SESSION['force_desktop']);
+if(!$_SESSION['force_desktop']){
+	$_SESSION['force_desktop'] = isset($_REQUEST['force_desktop']) ? $_REQUEST['force_desktop'] : FALSE;
+}
+
+
+if(ACTIVE_MOBILE_CAMOUFLAGE && !$_SESSION['force_desktop']){
 	if(ismobile()){
 		define('ACTIVE_CAMOUFLAGE_PATH', THEME_PATH. '/camouflage/' . ACTIVE_MOBILE_CAMOUFLAGE);
 	}

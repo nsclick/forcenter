@@ -1,23 +1,6 @@
 <?php
 
 /**
- * Session Management
- */
-add_action ( 'init', 'ns_start_session' );
-
-function ns_start_session () {
-	if ( !session_id() )
-		session_start();
-}
-
-add_action ( 'wp_login', 'ns_end_session' );
-add_action ( 'wp_logout', 'ns_end_session' );
-
-function ns_end_session() {
-	session_destroy();
-}
-
-/**
  * Ajax Quote Handling
  */
 add_action ( 'wp_ajax_ns_quote', 'ns_ajax_quoting' );

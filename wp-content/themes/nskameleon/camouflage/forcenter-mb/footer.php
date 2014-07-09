@@ -2,6 +2,9 @@
 /* NSkameleon by NSclick */
 ?>
 		<div id="footer">
+			
+			<a class="link-switch-der" href="http://www.forcenter.cl/?force_desktop=1">Versión Escritorio</a>
+			
 			<!-- <a href="#">Ir a versi&oacute;n de Escritorio</a> -->
 			<div class="copyright">
 			<p><b>&copy; 2014 Forcenter todos los derechos reservados.</b><br>

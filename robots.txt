@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /
+Disallow: 
 
 http://forcenter.cl/sitemap_index.xml
 http://forcenter.cl/page-sitemap.xml
