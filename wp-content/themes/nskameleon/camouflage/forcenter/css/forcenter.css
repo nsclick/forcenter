@@ -58,7 +58,7 @@ select{}
 #header #toolbar .toolbar-box .sel span{font-size:9px;padding:5px 0 0 5px;display;block;text-align:left}
 #header #toolbar .toolbar-box .sea{display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sea input{border:1px solid #3056a4;width:62px;height:18px;background:url(../images/search-bg.png) repeat-x top left;font-size:11px;padding-left:2px;color:#444}
-#header #toolbar .toolbar-box .sea button{width:21px;height:20px;background:url(http://forcenter.nsclick.cl/wp-content/themes/nskameleon/camouflage/forcenter/images/ico-search.png);float:right}
+#header #toolbar .toolbar-box .sea button{width:21px;height:20px;background:url(../images/ico-search.png);float:right}
 #header #toolbar a.tool{}
 #header #toolbar a.tool:hover{}
 #header #toolbar a.tool i{}

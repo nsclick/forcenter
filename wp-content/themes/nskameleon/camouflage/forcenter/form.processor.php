@@ -77,7 +77,7 @@ class ServicioTecnico extends FormProcessor{
 class Mantenciones extends FormProcessor{
 
 	private $to = 'reservas@forcenter.cl';
-	private $headers = array('Cc: cvera@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: cperez@forcenter.cl', 'Cc: fgili@forcenter.cl', 'Cc: develop@nsclick.cl');
+	private $headers = array('Cc: vdiaz@forcenter.cl', 'Cc: cdiaz@forcenter.cl', 'Cc: jrubilar@forcenter.cl', 'Cc: mmonje@forcenter.cl', 'Cc: develop@nsclick.cl');
 //	private $to = 'creyes@nsclick.cl';
 //	private $headers = array('Cc: cesar.cesarreyes@gmail.com', 'Cc: develop@nsclick.cl');
 	private $subject = 'Solicitud de Agendamiento Mantenciones';
