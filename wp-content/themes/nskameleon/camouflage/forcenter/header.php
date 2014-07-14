@@ -58,11 +58,11 @@
 						<div class="col span_6_of_12">
 							<?php if(is_front_page()): ?>
 							<div id="logo-container">
-								<a href="<?php echo get_site_url(); ?>/" id="logo"><h1><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="Forcenter" title="Forcenter"/></h1></a>
+								<a href="<?php echo get_site_url(); ?>/" id="logo"><h1><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350-sub.png" alt="Forcenter" title="Forcenter"/></h1></a>
 							</div>
 							<?php else: ?>
 							<div id="logo-container">
-								<a href="<?php echo get_site_url(); ?>/" id="logo"> <img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="Forcenter" title="Forcenter"/> </a>
+								<a href="<?php echo get_site_url(); ?>/" id="logo"> <img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350-sub.png" alt="Forcenter" title="Forcenter"/> </a>
 							</div>
 							<?php endif; ?>
 						</div>

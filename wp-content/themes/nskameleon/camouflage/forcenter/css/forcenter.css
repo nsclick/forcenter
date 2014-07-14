@@ -50,10 +50,10 @@ select{}
 #header #toolbar{text-align:right}
 #header #toolbar .toolbar-box{display:inline-block;width:350px}
 #header #toolbar .toolbar-box span{display:block;margin-bottom:10px}
-#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:2px 0;text-align:left;float:right}
+#header #toolbar .toolbar-box a{color:#2850a3;font-size:10px;display:block;padding:2px 0;text-align:right;float:right}
 #header #toolbar .toolbar-box span a{float:none}
 #header #toolbar .toolbar-box span a{padding:0;display:block}
-#header #toolbar .toolbar-box a img{vertical-align:top}
+#header #toolbar .toolbar-box a img{vertical-align:top;max-height:40px}
 #header #toolbar .toolbar-box .sel{width:170px;height:20px;background:url(../images/select-bg.png) no-repeat right;display:block;float:right;margin-left:5px}
 #header #toolbar .toolbar-box .sel span{font-size:9px;padding:5px 0 0 5px;display;block;text-align:left}
 #header #toolbar .toolbar-box .sea{display:block;float:right;margin-left:5px}
@@ -75,6 +75,7 @@ select{}
 #header #toolbar #quick_cotizador .auto a{display:block;padding:3px;position:absolute;top:0;right:0}
 #header #toolbar #quick_cotizador .auto a i{display:inline;padding:0;position:relative;top:auto;right:auto;color:#e23a1c;font-size:16px}
 #header #logo-container{padding:0}
+#header #logo h1{padding:0}
 #header #logo-container a#logo{}
 #header #logo-container a#logo img{}
 #header #logo-container span#slogan{}

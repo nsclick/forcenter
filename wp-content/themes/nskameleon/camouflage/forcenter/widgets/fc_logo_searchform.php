@@ -31,7 +31,7 @@ class Fc_Logo_Widget extends WP_Widget {
 
 	<div id="toolbar">
 		<div class="toolbar-box">
-			<span><a href="<?php echo network_site_url( '' ) ?>"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-forcenter350.png" alt="Forcenter" title="Forcenter"/></a></span>
+			<span><a href="<?php echo network_site_url( '' ) ?>"><img src="<?php echo get_template_directory_uri(); ?>/camouflage/forcenter/images/logo-ford.png" alt="Forcenter" title="Forcenter"/></a></span>
 			<div class="sea">
 				<form id="buscar-form" method="post" accept-charset="utf-8" action="<?php echo network_site_url( '' ) ?>/buscar" >
 					<?php //CSRF prevention keys ?>
